@@ -1,0 +1,9 @@
+{
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "3f18a7f6fce636b419b00333e4706a0e683e71317a49320629bd3edcb1306040",
+  "test_evaluated": false,
+  "n_development": 2153941,
+  "n_variables": 40,
+  "n_pairs": 780,
+  "note": "TeX and figures generated from verified aggregate snapshots; compile main.tex separately"
+}

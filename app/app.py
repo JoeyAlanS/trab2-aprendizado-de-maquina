@@ -20,6 +20,7 @@ page = st.navigation(
             default=True,
         ),
         st.Page("app_pages/explorar.py", title="Explorar dados", icon=":material/query_stats:"),
+        st.Page("app_pages/relacoes.py", title="Relações e relatório", icon=":material/hub:"),
         st.Page("app_pages/modelos.py", title="Modelos", icon=":material/model_training:"),
         st.Page("app_pages/metodo.py", title="Qualidade e método", icon=":material/fact_check:"),
     ],

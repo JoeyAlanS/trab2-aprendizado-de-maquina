@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "status": "completed",
+  "created_at_utc": "2026-10-23T18:50:18.987095+00:00",
+  "file": "enem2023.sqlite3",
+  "sha256": "b56dbfd746ddb9de089605e39909f1293e94e7dc440a725d17ad7d43350ed1e5",
+  "bytes": 2237792256,
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "3f18a7f6fce636b419b00333e4706a0e683e71317a49320629bd3edcb1306040",
+  "target": "NU_NOTA_CN",
+  "test_evaluated": false,
+  "rows": 3933955,
+  "columns": 76,
+  "partitions": {
+    "development": 2153941,
+    "test": 538486
+  },
+  "missing_target": 1241528,
+  "zero_target": 16547,
+  "tables": {
+    "participantes": 3933955,
+    "particoes": 2692427,
+    "agregados_desenvolvimento": 54516,
+    "resumo_cv": 4,
+    "dobras_cv": 12,
+    "relacoes_alvo": 40,
+    "associacoes_entradas": 780,
+    "perfis": 254,
+    "cruzamentos": 29709,
+    "dicionario": 76,
+    "metadados": 6
+  },
+  "validation": {
+    "quick_check": "ok",
+    "foreign_key_check": "passed"
+  }
+}

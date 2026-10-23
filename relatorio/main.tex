@@ -1,0 +1,358 @@
+% Narrativa editável. Figuras/tabelas: scripts/gerar_relatorio.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{mathptmx,graphicx,booktabs,tabularx,amsmath,geometry,xcolor,hyperref}
+\usepackage{float,caption,fancyhdr,enumitem}
+\geometry{left=3cm,right=2cm,top=2.7cm,bottom=2.2cm}
+\definecolor{accent}{HTML}{087F8C}
+\definecolor{navy}{HTML}{142B40}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=navy,pdftitle={Ciências da Natureza no ENEM 2023: preparação, relações e modelos iniciais}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Ciências da Natureza no ENEM 2023}
+\fancyhead[R]{\small Relatório de desenvolvimento}
+\fancyfoot[L]{\footnotesize Dados oficiais do Inep | teste reservado}
+\fancyfoot[R]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{1.1cm}\setlength{\parskip}{3pt}
+\linespread{1.08}
+\setlist[itemize]{noitemsep,topsep=4pt,leftmargin=1.4em}
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+\newcommand{\fonte}{\par{\footnotesize Fonte: elaboração com os microdados do Inep (2023), somente desenvolvimento.}}
+\newcommand{\grafico}[3]{\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=#3,keepaspectratio]{images/#1}\caption{#2}\fonte\end{figure}}
+\newcommand{\nota}[1]{\par\noindent{\small\textbf{Leitura:} #1}\par}
+\input{tables/valores.tex}
+\begin{document}
+\noindent{\small\color{accent}\textbf{PROJETO 2 | APRENDIZADO DE MÁQUINA | 23 DE OUTUBRO DE 2026}}
+\begin{center}
+{\LARGE\bfseries\color{navy} Ciências da Natureza no ENEM 2023}\par\vspace{5pt}
+{\large Preparação dos dados, relações entre perfis e modelos iniciais}
+\end{center}
+\noindent\textbf{Alvo:} \texttt{NU\_NOTA\_CN}. \textbf{Natureza do documento:} relatório técnico de andamento.
+Autoria da equipe e endereço público do repositório ainda não foram informados.
+
+\noindent\textbf{Resumo.} Este trabalho investiga associações entre condições socioeconômicas,
+características escolares, perfil demográfico e a nota de Ciências da Natureza no ENEM 2023.
+A fonte nacional foi preservada e validada. Dos 2.692.427 registros com nota observada,
+2.153.941 compõem o desenvolvimento e 538.486 permanecem no teste reservado.
+Foram examinadas 40 entradas em relação à nota e todos os seus 780 pares.
+Renda familiar, computadores e escolaridade dos responsáveis apresentam diferenças
+descritivas relevantes entre grupos. Na comparação inicial, regressão linear e Ridge
+obtiveram RMSE de aproximadamente 76,48 pontos, contra 87,92 da referência pela média.
+O projeto inclui um frontend em Python para consultar resultados agregados.
+Os achados são observacionais e preliminares; a avaliação final do teste não foi realizada.
+
+\noindent\textbf{Palavras-chave:} ENEM; Ciências da Natureza; regressão; análise exploratória; reprodutibilidade.
+
+\section{Problema, fonte e população analisada}
+O objetivo é avaliar em que medida o perfil disponível permite estimar a nota de CN
+e descrever como ela varia entre grupos. Os microdados e o dicionário provêm da edição
+de 2023 disponibilizada pelo Inep \cite{inep}. A pesquisa considera a base nacional;
+o recorte do Ceará, disponível na interface, não substitui essa população.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}Xr@{}}\toprule
+Etapa ou condição & Registros\\\midrule
+Base nacional preparada / colunas preservadas & 3.933.955 / 76\\
+Alvo CN observado, incluindo zeros & 2.692.427\\
+Alvo CN ausente, mantido no diagnóstico & 1.241.528\\
+Desenvolvimento / teste reservado & 2.153.941 / 538.486\\
+Notas zero no desenvolvimento & 13.236\\
+Linhas removidas na preparação / IDs duplicados & 0 / 0\\\bottomrule
+\end{tabularx}\fonte
+\end{center}
+\grafico{distribuicao.png}{Distribuição da nota CN, com notas zero preservadas.}{42mm}
+\nota{A média é 495,77, a mediana 493,9 e o desvio amostral 87,92 pontos.
+O alvo não foi imputado. Ausência de nota e nota zero são situações distintas.}
+
+\clearpage
+\section{Preparação, protocolo e medidas das relações}
+O CSV original foi lido em latin-1, com separador ponto e vírgula e lotes de até
+50 mil linhas. A preparação gerou 79 partes Parquet com compressão, diagnóstico de
+qualidade e hashes SHA-256. Foram conferidos identificadores, duplicatas, tipos,
+conversões, contagens e integridade. Marcadores declarados de ausência foram normalizados;
+não houve descarte por idade, condição de treineiro ou nota zero.
+
+O alvo observado definiu a elegibilidade. A divisão fixa usa 80\% para desenvolvimento,
+20\% para teste e semente 42. No desenvolvimento, utiliza-se
+\texttt{KFold(3, shuffle=True, random\_state=42)} com as mesmas dobras em todas as comparações.
+Os transformadores são ajustados apenas no treino de cada dobra, em
+\textit{Pipelines} \cite{pipeline}: mediana e padronização para Q005; categoria explícita
+de ausência e codificação \textit{one-hot} para as demais entradas.
+
+\subsection*{Escopo da análise ampliada}
+As 40 entradas são Q005, 14 características demográficas/escolares e de localização,
+língua estrangeira e as 24 questões socioeconômicas restantes do questionário.
+Foram gerados 254 perfis de categorias e 29.709 células de cruzamento.
+``Todas as relações'' significa aqui as 40 relações com CN e os
+$\binom{40}{2}=780$ pares de entradas: 741 categórico--categórico e 39 mistos.
+Não se afirma que isso esgote interações de três ou mais variáveis ou modelos causais.
+
+\subsection*{Estatísticas utilizadas}
+Para grupos $g$, contagens $n_g$, médias $\bar y_g$ e média global $\bar y$,
+mede-se a diferença entre grupos por
+\[
+\eta^2=\frac{\sum_g n_g(\bar y_g-\bar y)^2}{\sum_i(y_i-\bar y)^2}.
+\]
+É uma decomposição descritiva da variação da nota; não é desempenho em dados de validação.
+Para duas categóricas, usa-se V de Cramér \cite{scipyV}:
+\[
+E_{ij}=\frac{n_{i\cdot}n_{\cdot j}}{n},\qquad
+\chi^2=\sum_{ij}\frac{(O_{ij}-E_{ij})^2}{E_{ij}},\qquad
+V=\sqrt{\frac{\chi^2}{n\min(r-1,c-1)}}.
+\]
+O cálculo não usa correção de continuidade. $V$ varia de zero a um e não fornece direção.
+Nos pares com Q005, $\eta^2$ descreve a entrada numérica entre categorias da outra entrada.
+Não se comparam $V$ e $\eta^2$ como se fossem a mesma medida.
+
+Somente Q005 recebe correlações numéricas com CN: Pearson mede associação linear e
+Spearman mede associação monotônica pelos postos, com empates tratados \cite{scipyR,scipyS}.
+Seus resultados foram, respectivamente, \PearsonPessoas{} e \SpearmanPessoas{}.
+Códigos de categorias não foram convertidos arbitrariamente em números para Pearson.
+
+\subsection*{Ausências e interpretação}
+Os efeitos principais usam os observados em cada variável/par; por isso o tamanho
+avaliado pode mudar. Ausências continuam como grupo explícito nos perfis e cruzamentos,
+e uma medida com essa categoria adicional permite análise de sensibilidade.
+Alternativas como ``Não respondeu'' são preservadas como respostas, não como nulos.
+Não se apresentam testes de significância, valores-$p$ ou conclusões causais.
+
+\clearpage
+\section{Relação das 40 entradas com a nota de CN}
+A Tabela~\ref{tab:all} apresenta todas as entradas. Valores maiores de $\eta^2$ indicam
+maior separação entre médias dos grupos observados, sem controlar outras características.
+O número de categorias e a cobertura diferem: esta ordenação não é uma seleção automática
+de atributos nem uma classificação de importância causal.
+\begin{table}[H]\centering
+\caption{Varredura completa: relação univariada com CN e cobertura.}\label{tab:all}
+{\fontsize{9.1}{10.5}\selectfont\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.03}
+\input{tables/todas_entradas.tex}}
+\fonte
+\end{table}
+\nota{A dependência administrativa tem o maior efeito entre seus observados, mas exclui
+1.574.391 ausências desse cálculo específico. Renda e computadores têm cobertura integral.
+O baixo $\eta^2$ de uma variável não elimina a possibilidade de interações ou uso preditivo.}
+
+\clearpage
+\section{Condições socioeconômicas e acesso a recursos}
+\grafico{socioeconomico.png}{Nota média por renda, escolaridade do pai, computadores e internet.}{96mm}
+\noindent\textbf{Renda familiar.} A média cresce de \RendaA{} no grupo A (nenhuma renda,
+$n=125.616$) para \RendaQ{} no grupo Q (acima de R\$ 26.400,00, $n=33.930$), diferença
+bruta de \DiferencaRenda{} pontos. As alternativas são as faixas monetárias do questionário
+de 2023, e não valores corrigidos para 2026. Renda familiar também não equivale a renda
+individual ou por pessoa.
+
+\noindent\textbf{Escolaridade dos responsáveis.} As categorias de escolaridade apresentam
+diferenças de média. Em Q001 e Q002, A significa nunca ter estudado; F, faculdade
+completa; G, pós-graduação; H, desconhecimento da resposta. H não representa um nível
+acima de G. Os rótulos completos de todas as alternativas estão no dicionário do painel.
+
+\noindent\textbf{Recursos domésticos.} Em Q024, a média é \ComputadorNao{} sem computador
+e \ComputadorQuatro{} com quatro ou mais. Em Q025, as médias são \InternetNao{} sem
+internet e \InternetSim{} com acesso. Esses resultados descrevem grupos com condições
+econômicas e escolares distintas; não estimam o efeito de fornecer um equipamento.
+
+\noindent\textbf{Pessoas na residência.} Pearson e Spearman para Q005 indicam associação
+negativa de pequena magnitude. A comparação por quantidades também não é monotônica
+em toda a escala. Grupos extremos têm poucos participantes; por exemplo, a alternativa
+19 contém apenas 20 observações. Na interface, o mínimo de 30 afeta apenas a exibição
+do gráfico, preservando os grupos nos dados e nas tabelas.
+
+\nota{As relações de renda, escolaridade e bens se sobrepõem. Seus efeitos univariados
+não devem ser somados para estimar uma ``explicação total'' da nota.}
+
+\clearpage
+\section{Contexto escolar, cobertura e cruzamentos}
+\grafico{escola.png}{Médias por contexto escolar e ausência nas entradas escolares.}{88mm}
+A média de CN é \EscolaPublica{} na escola pública ($n=666.620$) e \EscolaPrivada{}
+na privada ($n=177.424$), diferença bruta de \DiferencaEscola{} pontos.
+O grupo ``Não respondeu'' permanece separado ($n=1.309.897$, média 499,93).
+O tipo de escola não representa, isoladamente, a qualidade de uma escola ou rede.
+
+\grafico{escola_renda.png}{Nota média por tipo de escola e renda familiar.}{47mm}
+O cruzamento mostra como comparar perfis dentro de faixas de renda. Nenhuma célula
+é uma estimativa causal: escolaridade familiar, localização, trajetória e outras
+condições podem variar dentro dela. O painel oferece as contagens e o desvio de cada
+célula, inclusive as que não aparecem no mapa por terem menos de 30 participantes.
+
+As três entradas de dependência administrativa, localização e funcionamento têm
+73,09\% de ausência. Tipo/modalidade de ensino tem 61,66\%. As comparações observadas
+dessas variáveis usam apenas a parte preenchida, que pode ser seletiva.
+A imputação das entradas nos modelos é uma etapa distinta, aprendida no treino;
+não foi usada para inventar respostas nesta exploração.
+
+\clearpage
+\section{Perfil demográfico e distribuição territorial}
+\grafico{demografia.png}{Nota média por faixa etária, sexo, cor/raça e treineiro.}{72mm}
+Os grupos demográficos apresentam diferenças descritivas, mas os códigos de faixa
+etária são intervalos, não idades exatas. Cor/raça é autodeclarada; não se atribui
+uma explicação biológica a diferenças de notas. Categorias de não informação seguem
+o dicionário. Treineiros continuam incluídos, conforme o protocolo do estudo.
+
+\grafico{ufs.png}{Comparação entre as 27 UFs de aplicação, com tamanhos dos grupos.}{82mm}
+\nota{A UF identifica o local da prova, não necessariamente residência ou escola.
+Composição de participantes, renda e contexto escolar diferem entre UFs. As médias
+não constituem um ranking de qualidade educacional nem medem a população inteira de estudantes.}
+
+\clearpage
+\section{Associações entre entradas e possível redundância}
+Todos os 780 pares estão nos arquivos de resultados e na interface. A figura usa uma
+seleção legível de 12 categóricas; o usuário pode consultar a matriz das 39 categóricas.
+Nos 39 pares mistos, a análise da quantidade de moradores usa $\eta^2$ em tabela separada.
+\grafico{associacoes.png}{Associações categóricas em um subconjunto ilustrativo; diagonal omitida.}{79mm}
+\begin{table}[H]\centering\small
+\caption{Sete maiores valores de V de Cramér nos pares observados.}
+\input{tables/pares.tex}\fonte
+\end{table}
+O V de 1,000 entre conclusão do ensino médio e treineiro expressa uma relação
+determinística entre categorias observadas neste conjunto; não implica causalidade.
+Relações entre renda e bens, ou entre escolaridade e ocupação dos responsáveis,
+indicam informação parcialmente compartilhada. Elas justificam investigar redundância
+e regularização em novos experimentos, sem excluir automaticamente uma entrada.
+
+\nota{A tabela também mostra pares com cobertura parcial. O arquivo completo preserva
+o efeito com ausência como categoria adicional, útil para perceber associações
+ampliadas por padrões de preenchimento. Não foram usados limiares universais de ``forte'' ou ``fraco''.}
+
+\clearpage
+\section{Modelagem inicial: resultados e leitura correta}
+Foram realizadas 12 avaliações: quatro modelos nas mesmas três dobras de desenvolvimento.
+O baseline prevê a média do treino. A regressão linear não usa regularização;
+Ridge usa $\alpha=1$; a árvore usa profundidade máxima 12 e mínimo de 100 exemplos
+por folha. Não houve nova busca de hiperparâmetros nesta análise de relações.
+
+\grafico{modelos.png}{Comparação inicial em validação cruzada, média e desvio entre dobras.}{61mm}
+\begin{table}[H]\centering
+\caption{Métricas iniciais do desenvolvimento; DP com divisor 3.}
+{\fontsize{9}{11}\selectfont\setlength{\tabcolsep}{3pt}\input{tables/modelos.tex}}
+\fonte
+\end{table}
+RMSE é a medida principal; MAE e $R^2$ complementam sua interpretação \cite{metricas}.
+Para $e_i=y_i-\hat y_i$:
+\[
+\operatorname{RMSE}=\sqrt{\frac{1}{n}\sum_i e_i^2},\quad
+\operatorname{MAE}=\frac{1}{n}\sum_i|e_i|,\quad
+R^2=1-\frac{\sum_i e_i^2}{\sum_i(y_i-\bar y)^2}.
+\]
+Linear e Ridge reduziram o RMSE em aproximadamente 13,01\% frente ao baseline.
+A diferença entre seus RMSEs médios é menor que 0,001 ponto, inferior à variação entre
+dobras; não demonstra superioridade prática de Ridge. A árvore teve RMSE maior e
+consumiu mais tempo nessa configuração. O tempo soma ajuste, previsão e métricas
+nas três dobras; não inclui carga dos dados nem preparação nacional.
+
+$R^2\simeq0,243$ não significa 24,3\% de acertos. O resultado indica capacidade
+preditiva limitada da representação atual, sem avaliar o teste.
+Os desvios entre dobras não são intervalos de confiança. Ainda não foram produzidos
+gráficos de resíduos de uma solução final ou curvas que permitam diagnosticar seu ajuste.
+
+\clearpage
+\section{Implementação, frontend e reprodução}
+A arquitetura separa preparação, regras do estudo, análise e apresentação.
+O frontend usa Streamlit 1.66.1 e Plotly 6.9.0, com o mesmo princípio do trabalho
+anterior: filtros, indicadores, gráficos e tabelas. Os códigos e rótulos oficiais
+ficam disponíveis ao lado de alternativas legíveis.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{5.7cm}X@{}}\toprule
+Componente & Responsabilidade\\\midrule
+\path{src/enem_base/ingestion.py} & Importação em lotes, qualidade e persistência Parquet.\\
+\path{src/enem_base/study.py} & Fonte verificada e filtro dos IDs de desenvolvimento.\\
+\path{src/enem_base/database.py} & Banco SQLite completo, validação e leitura dos agregados.\\
+\path{src/enem_base/relations.py} & 40 entradas, 780 pares, perfis e cruzamentos.\\
+\path{src/enem_base/dashboard.py} & Snapshot leve para os filtros originais do painel.\\
+\path{src/enem_base/modeling.py} & Modelos, dobras, métricas e registro de experimentos.\\
+\path{app/app.py} e \path{app/app_pages/} & Navegação e cinco páginas da interface.\\
+\path{src/enem_base/reporting.py} & Figuras e tabelas LaTeX geradas dos agregados.\\
+\path{tests/} e \path{scripts/verificar.ps1} & Verificação de contratos, interações e dependências.\\\bottomrule
+\end{tabularx}
+\end{center}
+\noindent\textbf{Páginas.} Visão geral; Explorar dados; Relações e relatório;
+Modelos; Qualidade e método. Os filtros laterais afetam as duas primeiras.
+A página de relações apresenta resultados globais, seletores das 40 entradas,
+qualquer um dos 780 cruzamentos, mapas de associação, CSV, ZIP e este PDF.
+
+\noindent\textbf{Desempenho e rastreabilidade.} O snapshot original contém 54.516
+grupos em um Parquet de 989.247 bytes. O frontend não lê os milhões de registros a
+cada interação. São preservados os agregados exatos de contagens e somas; o histograma
+usa faixas de 25 pontos. Hashes verificam os ativos; fonte ausente ou incompatível
+interrompe a página, sem substituição por dados fictícios.
+
+\noindent\textbf{Execução local, na raiz do projeto:}
+\begin{verbatim}
+.\.venv\Scripts\python.exe -m streamlit run app/app.py
+.\.venv\Scripts\python.exe scripts/gerar_relatorio.py
+\end{verbatim}
+O endereço é \url{http://127.0.0.1:8501}. A narrativa editável está em
+\path{relatorio/main.tex}; figuras e tabelas são regeneráveis, sem sobrescrever a narrativa.
+A compilação LaTeX gera o PDF em \path{output/pdf/}.
+
+\subsection*{Banco de dados incluído no projeto existente}
+O arquivo \path{dados/database/enem2023-v1/enem2023.sqlite3} reúne a base limpa
+completa e as tabelas abaixo. Preserva texto, códigos, nulos e zeros; Q005 conserva
+o tipo da preparação e é convertida no tratamento do estudo. A view
+\texttt{desenvolvimento} une participantes e partições e restringe os indivíduos ao
+desenvolvimento. O frontend usa conexão somente leitura e consulta apenas as tabelas
+agregadas, sem abrir as notas do teste para análise.
+\begin{center}\footnotesize
+\begin{tabularx}{\linewidth}{@{}Xr@{}}\toprule
+Tabelas do banco & Linhas\\\midrule
+\texttt{participantes} (76 colunas) / \texttt{particoes} & 3.933.955 / 2.692.427\\
+\texttt{agregados\_desenvolvimento} & 54.516\\
+\texttt{relacoes\_alvo} / \texttt{associacoes\_entradas} & 40 / 780\\
+\texttt{perfis} / \texttt{cruzamentos} & 254 / 29.709\\
+\texttt{resumo\_cv} / \texttt{dobras\_cv} / \texttt{dicionario} / \texttt{metadados} & 4 / 12 / 76 / 6\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Validação.} Testes matemáticos confrontam as medidas com cálculos
+independentes; verificam ausência, constante, simetria e orientação dos pares.
+Testes AppTest simulam navegação, filtros e exportações \cite{streamlit}.
+A conferência nacional verifica todos os perfis e cruzamentos contra os tamanhos
+esperados. O registro técnico atualizado fica em \path{docs/relacoes_e_relatorio.md}.
+
+\clearpage
+\section{Conclusões, limites e próximos experimentos}
+Foi construída uma base técnica reproduzível, com dados nacionais preparados,
+partições fixas, análise exploratória sistemática, comparação inicial e frontend.
+As relações sugerem estudar conjuntamente recursos familiares, trajetória escolar
+e contexto socioeconômico. No estágio atual, os modelos lineares capturam parte da
+variação da nota e superam a referência pela média, mas permanece erro substancial.
+
+\noindent\textbf{Limites.} A análise é observacional; inclui somente candidatos do
+exame com CN observada no desenvolvimento. Não representa todos os estudantes do país,
+não controla todos os confundidores e não estima efeitos de intervenções.
+Respostas são autodeclaradas; ausência escolar é expressiva e pode ser seletiva.
+Associações univariadas e cruzamentos não esgotam interações de ordem superior.
+O grande número de comparações não foi usado para alegar significância estatística.
+O teste permanece reservado, e os resultados não demonstram generalização para outra edição.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{4.7cm}X@{}}\toprule
+Pendência & Próxima evidência necessária\\\midrule
+Famílias adicionais de modelos & Comparação nacional nas mesmas três dobras.\\
+Engenharia e seleção; PCA & Três atributos justificados; seleção e PCA em dois regressores.\\
+Balanceamento e buscas & Estratégia só no treino; pelo menos dez configurações em três regressores.\\
+Curva e avaliação final & Congelar a solução; curva em cinco tamanhos e avaliação única do teste.\\
+Entrega acadêmica final & Resíduos e erros por grupo; autores, GitHub, artigo e apresentações.\\\bottomrule
+\end{tabularx}
+\end{center}
+Este documento explica o trabalho executado até 23/10/2026. Não substitui a entrega
+final completa prevista no enunciado; resultados ainda não executados não foram inventados.
+
+\renewcommand{\refname}{Referências}
+\begin{thebibliography}{9}\small\setlength{\itemsep}{2pt}
+\bibitem{inep} INEP. \textit{Microdados do ENEM: edição de 2023 e documentação}.
+Disponível em: \href{https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem}{Portal de microdados do ENEM}. Acesso em: 23 out. 2026.
+\bibitem{scipyV} SCIPY. \textit{Contingency association: V de Cramér}.
+\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.contingency.association.html}{Documentação oficial}. Acesso em: 23 out. 2026.
+\bibitem{scipyR} SCIPY. \textit{Pearson correlation coefficient (pearsonr)}.
+\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html}{Documentação oficial}. Acesso em: 23 out. 2026.
+\bibitem{scipyS} SCIPY. \textit{Spearman rank-order correlation (spearmanr)}.
+\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html}{Documentação oficial}. Acesso em: 23 out. 2026.
+\bibitem{pipeline} SCIKIT-LEARN. \textit{Pipeline}.
+\href{https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html}{Documentação oficial}. Acesso em: 23 out. 2026.
+\bibitem{metricas} SCIKIT-LEARN. \textit{Metrics and scoring: regression metrics}.
+\href{https://scikit-learn.org/stable/modules/model_evaluation.html}{Documentação oficial}. Acesso em: 23 out. 2026.
+\bibitem{streamlit} STREAMLIT. \textit{AppTest: testes automatizados de aplicações}.
+\href{https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest}{Documentação oficial}. Acesso em: 23 out. 2026.
+\end{thebibliography}
+\end{document}

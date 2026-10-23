@@ -31,6 +31,10 @@ frontend. O servidor escuta apenas em `127.0.0.1`, para acesso neste computador.
    tempos, resultados completos para download e consulta das três dobras.
 4. **Qualidade e método**: contagens de ingestão, ausências do desenvolvimento,
    dicionário pesquisável com alternativas oficiais, protocolo, limites e manifesto.
+5. **Relações e relatório** (23/10): as 40 entradas em relação à nota, todos os
+   780 pares, cruzamentos, matrizes, CSV, ZIP e relatório técnico em PDF.
+   Esses resultados são globais e não usam os filtros laterais. Guia e evidências
+   em `docs/relacoes_e_relatorio.md`.
 
 Os filtros laterais se combinam por interseção: UF da aplicação da prova, tipo de
 escola, sexo informado e treineiro. Sem seleção de UF significa **todas as UFs**.
@@ -97,7 +101,8 @@ sessão com `Remove-Item Env:ENEM_DASHBOARD_DIR` e reinicie o servidor.
 | Caminho | Responsabilidade |
 |---|---|
 | `app/app.py` | Entrada, navegação, identificação do estudo e filtros compartilhados |
-| `app/app_pages/` | Quatro páginas de apresentação, sem regras de modelagem |
+| `app/app_pages/` | Cinco páginas de apresentação, sem regras de modelagem |
+| `src/enem_base/database.py` | Construção e leitura dos agregados do SQLite local |
 | `src/enem_base/dashboard.py` | Agregação, geração, validação e consultas dos dados do painel |
 | `src/enem_base/dashboard_ui.py` | Cache, rótulos oficiais, componentes e gráficos compartilhados |
 | `.streamlit/config.toml` | Tema e configuração local, sem CSS ou fontes remotas |
@@ -116,3 +121,18 @@ A conferência do snapshot real reconcilia os 2.153.941 participantes e a média
 495,774199 com a EDA existente. As demais verificações e as limitações da sessão
 estão em `docs/validacao-frontend.md`. O painel não completa as etapas científicas
 pendentes: buscas, seleção final e avaliação do teste continuam no andamento do estudo.
+
+## Banco SQLite local
+
+Quando `dados/database/enem2023-v1/enem2023.sqlite3` existe, o frontend carrega
+automaticamente as tabelas agregadas desse banco e informa a fonte na barra lateral.
+São consultas somente leitura, sem acesso às linhas individuais pelo painel. O cache
+confere tamanho, data de alteração e manifesto; uma nova carga valida o SHA-256.
+Para selecionar outro banco, defina `ENEM_DATABASE` com o caminho absoluto.
+As variáveis explícitas `ENEM_DASHBOARD_DIR` e `ENEM_RELATIONS_DIR` permitem usar
+os snapshots em arquivos quando `ENEM_DATABASE` não está definido.
+
+O banco nacional preserva todos os 3.933.955 participantes em 76 colunas. As relações
+e os gráficos usam exclusivamente desenvolvimento. Estrutura, comandos e exemplos
+de consulta estão em `dados/database/README.md`; as evidências atuais e o relatório
+estão descritos em `docs/relacoes_e_relatorio.md`.

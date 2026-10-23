@@ -16,6 +16,7 @@ dependencies = [
   "threadpoolctl>=3.5,<4",
   "streamlit>=1.66,<2",
   "plotly>=6.9,<7",
+  "scipy>=1.15,<2",
 ]
 
 [project.optional-dependencies]

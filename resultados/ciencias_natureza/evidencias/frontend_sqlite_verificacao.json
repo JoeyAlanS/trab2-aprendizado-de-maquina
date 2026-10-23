@@ -1,0 +1,15 @@
+{
+  "backend": "sqlite",
+  "database_bytes": 2237792256,
+  "database_sha256": "b56dbfd746ddb9de089605e39909f1293e94e7dc440a725d17ad7d43350ed1e5",
+  "test_evaluated": false,
+  "pages": {
+    "visao_geral": "passed",
+    "explorar": "passed",
+    "relacoes": "passed",
+    "modelos": "passed",
+    "metodo": "passed"
+  },
+  "relation_modes": "4 passed",
+  "pdf_download_control": "available"
+}

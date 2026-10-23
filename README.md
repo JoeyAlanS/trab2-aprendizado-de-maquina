@@ -26,6 +26,17 @@ O painel usa agregados dos 2.153.941 participantes de desenvolvimento e mantém 
 reservado. Consulte [o guia do frontend](docs/frontend.md) para navegação, exportações,
 arquitetura e atualização dos dados. Alternativa: `scripts/iniciar_frontend.ps1`.
 
+**Ampliação em 23/10/2026:** a página **Relações e relatório** inclui as 40 entradas
+em relação à nota, todos os 780 pares, 254 perfis e 29.709 células de cruzamento.
+O relatório em LaTeX está em `relatorio/`, e o PDF de dez páginas em
+`output/pdf/relatorio_ciencias_natureza.pdf`. Consulte
+[o registro da análise ampliada](docs/relacoes_e_relatorio.md).
+
+O **banco SQLite com a base limpa completa** também está no projeto existente,
+em `dados/database/enem2023-v1/enem2023.sqlite3`. O frontend usa esse banco
+automaticamente, em modo somente leitura, consultando seus resultados agregados.
+Veja [as tabelas e instruções do banco](dados/database/README.md).
+
 ## Começar no Windows PowerShell
 
 Requisito: Python **3.13** e Git. Execute a partir da raiz do repositório.

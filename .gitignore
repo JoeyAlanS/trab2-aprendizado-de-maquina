@@ -25,3 +25,5 @@ resultados/figuras/*
 !resultados/figuras/README.md
 *.log
 .streamlit/secrets.toml
+dados/database/**/*.sqlite3
+dados/database/**/*.sqlite3-*

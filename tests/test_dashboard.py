@@ -1,5 +1,7 @@
 """Contratos do painel: pesos, isolamento do teste, integridade e interações."""
 
+import sqlite3
+from contextlib import closing
 from dataclasses import replace
 
 import numpy as np
@@ -16,10 +18,12 @@ from enem_base.dashboard import (
     load_dashboard,
     statistics,
 )
+from enem_base.database import build_database, load_database, readonly_connection
 from enem_base.exploration import explore_development
 from enem_base.ingestion import prepare
 from enem_base.modeling import compare_models
 from enem_base.provenance import write_json
+from enem_base.relations import build_relations, load_relations, pair_cells
 from enem_base.study import StudyConfig, create_study_splits, load_development
 
 
@@ -177,3 +181,116 @@ def test_ui_missing_bundle_explains_recovery(tmp_path, monkeypatch):
     assert not at.exception
     assert at.error and "integridade" in at.error[0].value
     assert not at.metric
+
+
+def test_relations_cover_all_pairs_and_missing_sensitivity(dashboard_study, tmp_path):
+    output = tmp_path / "relations"
+    build_relations(dashboard_study, output)
+    data = load_relations(output)
+    assert len(data.target) == 6
+    assert len(data.pairs) == 15
+    assert data.profiles.groupby("variable").n.sum().eq(48).all()
+    assert data.cells.groupby(["variable_a", "variable_b"]).n.sum().eq(48).all()
+    assert data.target.loc[data.target.kind.eq("categorical"), "pearson"].isna().all()
+    cells = pair_cells(data, "TP_ESCOLA", "Q005")
+    assert cells.n.sum() == 48
+    assert cells.variable_a.eq("TP_ESCOLA").all()
+    assert cells.variable_b.eq("Q005").all()
+    with pytest.raises(ValueError, match="distintas"):
+        pair_cells(data, "Q005", "Q005")
+    expected = {
+        key: data.manifest[key]
+        for key in (
+            "source_sha256",
+            "splits_sha256",
+            "study_sha256",
+            "dictionary_sha256",
+            "target",
+            "n_development",
+        )
+    }
+    expected["source_sha256"] = "different"
+    with pytest.raises(ValueError, match="proveniências"):
+        load_relations(output, expected)
+    with (output / "pares.csv").open("a") as stream:
+        stream.write("\n")
+    with pytest.raises(ValueError, match="Integridade"):
+        load_relations(output)
+
+
+def test_ui_relation_views_and_joint_orientation(
+    dashboard_bundle, dashboard_study, tmp_path, monkeypatch
+):
+    output = tmp_path / "relations"
+    build_relations(dashboard_study, output)
+    monkeypatch.setenv("ENEM_DASHBOARD_DIR", str(dashboard_bundle))
+    monkeypatch.setenv("ENEM_RELATIONS_DIR", str(output))
+    at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=30).run()
+    at.switch_page("app_pages/relacoes.py").run()
+    assert not at.exception
+    assert at.metric[0].value == "6"
+    assert at.metric[1].value == "15"
+    at.selectbox(key="relation_field").set_value("Q005").run()
+    assert not at.exception
+    at.segmented_control(key="relations_mode").set_value("Cruzamentos de perfis").run()
+    assert not at.exception
+    assert at.dataframe[0].value.n.sum() == 48
+    at.selectbox(key="joint_a").set_value("TP_ESCOLA").run()
+    at.selectbox(key="joint_b").set_value("Q005").run()
+    assert not at.exception
+    assert at.dataframe[0].value.variable_a.eq("TP_ESCOLA").all()
+    at.segmented_control(key="relations_mode").set_value("Associações entre entradas").run()
+    assert not at.exception
+    at.selectbox(key="pair_metric").set_value("eta_squared").run()
+    assert not at.exception
+    assert len(at.dataframe[0].value) == 5
+    at.segmented_control(key="relations_mode").set_value("Relatório PDF").run()
+    assert not at.exception
+    assert any(
+        button.proto.label == "Baixar todas as tabelas (ZIP)"
+        for button in at.get("download_button")
+    )
+
+
+@pytest.fixture
+def study_database(dashboard_bundle, dashboard_study, tmp_path):
+    relations = tmp_path / "relations"
+    build_relations(dashboard_study, relations)
+    output = tmp_path / "database"
+    build_database(dashboard_study, output, dashboard_bundle, relations)
+    return output / "enem2023.sqlite3"
+
+
+def test_database_preserves_clean_rows_null_zero_and_partition_view(study_database):
+    bundle = load_database(study_database)
+    assert bundle.manifest["rows"] == 61
+    assert bundle.manifest["partitions"] == {"development": 48, "test": 12}
+    assert bundle.dashboard.manifest["storage"] == "sqlite"
+    with readonly_connection(study_database) as connection:
+        missing, zeros = connection.execute(
+            "SELECT SUM(alvo IS NULL), SUM(alvo=0) FROM participantes"
+        ).fetchone()
+        assert (missing, zeros) == (1, 1)
+        assert connection.execute("SELECT COUNT(*) FROM desenvolvimento").fetchone()[0] == 48
+        assert connection.execute("SELECT COUNT(*) FROM participantes").fetchone()[0] == 61
+        assert connection.execute("PRAGMA foreign_key_check").fetchone() is None
+        with pytest.raises(sqlite3.OperationalError):
+            connection.execute("UPDATE participantes SET alvo=0")
+    assert bundle.relations.profiles.groupby("variable").n.sum().eq(48).all()
+    with closing(sqlite3.connect(study_database)) as connection:
+        connection.execute("UPDATE participantes SET alvo=123 WHERE registro_id='SIM-000'")
+        connection.commit()
+    with pytest.raises(ValueError, match="alterado"):
+        load_database(study_database)
+
+
+def test_frontend_uses_sqlite_when_selected(study_database, monkeypatch):
+    monkeypatch.setenv("ENEM_DATABASE", str(study_database))
+    at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=30).run()
+    assert not at.exception
+    assert at.metric[0].value == "48"
+    assert any("Banco local" in item.value for item in at.caption)
+    at.switch_page("app_pages/relacoes.py").run()
+    assert not at.exception
+    assert at.metric[0].value == "6"
+    assert at.metric[1].value == "15"

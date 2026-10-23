@@ -17,9 +17,13 @@ from enem_base.dashboard import (
     load_dashboard,
     statistics,
 )
+from enem_base.database import DatabaseData, load_database
+from enem_base.relations import RELATION_ASSETS, RelationData, load_relations
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BUNDLE = PROJECT_ROOT / "resultados/ciencias_natureza/dashboard-v1"
+DEFAULT_RELATIONS = PROJECT_ROOT / "resultados/ciencias_natureza/relacoes-v1"
+DEFAULT_DATABASE = PROJECT_ROOT / "dados/database/enem2023-v1/enem2023.sqlite3"
 TEAL = "#087f8c"
 NAVY = "#2b5278"
 GOLD = "#db9642"
@@ -43,7 +47,33 @@ def _cached_data(path: str, signature: tuple) -> DashboardData:
     return load_dashboard(Path(path))
 
 
+def database_path() -> Path | None:
+    explicit = os.environ.get("ENEM_DATABASE")
+    if explicit:
+        return Path(explicit)
+    # Seleções explícitas de snapshots, inclusive fixtures, prevalecem sobre o padrão.
+    if os.environ.get("ENEM_DASHBOARD_DIR") or os.environ.get("ENEM_RELATIONS_DIR"):
+        return None
+    return DEFAULT_DATABASE if DEFAULT_DATABASE.exists() else None
+
+
+@st.cache_data(max_entries=2, ttl=3600, show_spinner="Conferindo o banco SQLite local…")
+def _cached_database(path: str, signature: tuple) -> DatabaseData:
+    return load_database(Path(path))
+
+
+def database_data(path: Path) -> DatabaseData:
+    signature = tuple(
+        (file.stat().st_mtime_ns, file.stat().st_size)
+        for file in (path, path.parent / "manifesto.json")
+    )
+    return _cached_database(str(path), signature)
+
+
 def dashboard_data() -> DashboardData:
+    local_database = database_path()
+    if local_database is not None:
+        return database_data(local_database).dashboard
     path = Path(os.environ.get("ENEM_DASHBOARD_DIR", DEFAULT_BUNDLE))
     # Invalidar também se um ativo muda sem alteração no manifesto.
     signature = tuple(
@@ -51,6 +81,34 @@ def dashboard_data() -> DashboardData:
         for name in ("manifesto.json", *ASSETS)
     )
     return _cached_data(str(path), signature)
+
+
+@st.cache_data(max_entries=2, ttl=3600, show_spinner="Conferindo as análises de relações…")
+def _cached_relations(path: str, signature: tuple, expected: dict) -> RelationData:
+    return load_relations(Path(path), expected)
+
+
+def relations_data(data: DashboardData) -> RelationData:
+    local_database = database_path()
+    if local_database is not None:
+        return database_data(local_database).relations
+    path = Path(os.environ.get("ENEM_RELATIONS_DIR", DEFAULT_RELATIONS))
+    signature = tuple(
+        (name, (path / name).stat().st_mtime_ns, (path / name).stat().st_size)
+        for name in ("manifesto.json", *RELATION_ASSETS)
+    )
+    expected = {
+        key: data.manifest[key]
+        for key in (
+            "source_sha256",
+            "splits_sha256",
+            "study_sha256",
+            "dictionary_sha256",
+            "target",
+            "n_development",
+        )
+    }
+    return _cached_relations(str(path), signature, expected)
 
 
 def category_label(data: DashboardData, field: str, code: str) -> str:
@@ -73,6 +131,8 @@ def sidebar_filters(data: DashboardData) -> None:
     with st.sidebar:
         st.header("ENEM / 2023", anchor=False)
         st.caption("Ciências da Natureza e suas Tecnologias")
+        if data.manifest.get("storage") == "sqlite":
+            st.caption("Banco local · SQLite · consultas em modo leitura")
         st.divider()
         st.subheader("Seu recorte", anchor=False)
         st.caption("Filtros da visão geral e da exploração.")

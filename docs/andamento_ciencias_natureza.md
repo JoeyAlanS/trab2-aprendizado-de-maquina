@@ -138,6 +138,21 @@ Não expõe linhas individuais e não avalia o teste. A interface mantém explí
 as pendências científicas. Execução: `python -m streamlit run app/app.py` no ambiente.
 Guia em `docs/frontend.md` e evidências em `docs/validacao-frontend.md`.
 
+Continuação em **23/10/2026**: análise sistemática de todas as 40 entradas e de seus
+780 pares, com 254 perfis e 29.709 células agregadas, usando o desenvolvimento
+completo. Página de relações e relatório PDF em LaTeX com dez páginas acrescentados.
+Os resultados principais são acompanhados da cobertura observada; ausências são
+preservadas nos perfis. Ver `docs/relacoes_e_relatorio.md`. Verificação atual:
+**80 testes aprovados**, lint/formatação e dependências aprovados. O teste permanece
+reservado e as próximas etapas de modelagem abaixo continuam pendentes.
+
+O banco SQLite foi incorporado ao mesmo projeto em
+`dados/database/enem2023-v1/enem2023.sqlite3`: 3.933.955 registros, 76 colunas,
+aproximadamente 2,24 GB, com integridade e chaves estrangeiras verificadas.
+As partições, o dicionário e os resultados agregados estão no banco. O frontend
+consulta seus agregados em modo leitura; cinco páginas e quatro opções da página
+de relações foram verificadas com a base nacional. O PDF documenta essa integração.
+
 ## Próximas etapas para completar o trabalho
 
 1. Executar as demais famílias exigidas, preservando todos os elegíveis e as mesmas dobras.

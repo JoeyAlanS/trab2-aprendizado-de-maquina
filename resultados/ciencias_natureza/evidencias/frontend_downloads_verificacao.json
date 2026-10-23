@@ -1,0 +1,17 @@
+{
+  "browser": "in-app browser",
+  "url": "http://127.0.0.1:8501/relacoes",
+  "backend_visible": "sqlite",
+  "pdf_download": "passed",
+  "pdf_sha256": "aef10908cb6a5881d77e6b2f5b938dc60522b5fa4f2fadd4bbc40395b3268261",
+  "pdf_pages": 10,
+  "zip_download": "passed",
+  "zip_sha256": "071baf11b7140ef6a7fd2d4213a97ba2cecf79b5fb4c6fddd4936933e06e00a6",
+  "csv_rows": {
+    "alvo.csv": 40,
+    "pares.csv": 780,
+    "perfis.csv": 254,
+    "cruzamentos.csv": 29709
+  },
+  "screenshot": "frontend_sqlite.png"
+}

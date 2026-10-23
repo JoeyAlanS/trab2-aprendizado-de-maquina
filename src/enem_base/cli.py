@@ -45,6 +45,14 @@ def main(argv: list[str] | None = None) -> int:
     dashboard.add_argument("--output", type=Path, required=True)
     dashboard.add_argument("--eda", type=Path, required=True)
     dashboard.add_argument("--cv", type=Path, required=True)
+    relations = commands.add_parser("relations", help="Analisar todas as entradas e seus pares")
+    relations.add_argument("--study", type=Path, required=True)
+    relations.add_argument("--output", type=Path, required=True)
+    database = commands.add_parser("database", help="Criar SQLite com a base limpa e os resultados")
+    database.add_argument("--study", type=Path, required=True)
+    database.add_argument("--output", type=Path, required=True)
+    database.add_argument("--dashboard", type=Path, required=True)
+    database.add_argument("--relations", type=Path, required=True)
     for command, help_text in (
         ("eda", "Explorar somente o desenvolvimento"),
         ("compare", "Comparar modelos no desenvolvimento, sem avaliar teste"),
@@ -99,6 +107,14 @@ def main(argv: list[str] | None = None) -> int:
                 from enem_base.dashboard import build_dashboard
 
                 result = build_dashboard(study, args.output, args.eda, args.cv)
+            elif args.command == "relations":
+                from enem_base.relations import build_relations
+
+                result = build_relations(study, args.output)
+            elif args.command == "database":
+                from enem_base.database import build_database
+
+                result = build_database(study, args.output, args.dashboard, args.relations)
             elif args.command == "eda":
                 from enem_base.exploration import explore_development
 
