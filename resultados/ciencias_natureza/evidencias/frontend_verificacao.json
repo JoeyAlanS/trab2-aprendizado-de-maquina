@@ -1,0 +1,45 @@
+{
+  "dataset": "official",
+  "test_evaluated": false,
+  "summary": {
+    "count": 2153941,
+    "mean": 495.77419906116273,
+    "std": 87.92108446177731,
+    "zeros": 13236,
+    "min": 0.0,
+    "max": 868.4
+  },
+  "pages": {
+    "visao_geral": {
+      "status": "passed",
+      "charts": 2,
+      "dataframes": 1
+    },
+    "explorar": {
+      "status": "passed",
+      "charts": 1,
+      "dataframes": 1
+    },
+    "modelos": {
+      "status": "passed",
+      "charts": 1,
+      "dataframes": 1
+    },
+    "metodo": {
+      "status": "passed",
+      "charts": 1,
+      "dataframes": 1
+    }
+  },
+  "ce_filter": {
+    "count": 139838,
+    "mean": 482.65719761438226,
+    "std": 88.68528200195772,
+    "zeros": 835,
+    "min": 0.0,
+    "max": 856.7
+  },
+  "dictionary_search": "passed",
+  "health": "checked separately via HTTP",
+  "visual_browser_check": "unavailable: no enabled browser surface"
+}

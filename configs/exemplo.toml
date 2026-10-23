@@ -1,0 +1,17 @@
+[project]
+root = ".."
+
+[data]
+kind = "synthetic"
+source = "exemplos/dados_ficticios.csv"
+output = "dados/processed/exemplo-v1"
+identifier = "registro_id"
+separator = ";"
+encoding = "utf-8"
+decimal = "."
+chunksize = 4
+missing_tokens = ["", "NA"]
+numeric_columns = ["medida_a", "medida_b"]
+required_columns = ["registro_id", "categoria", "medida_a", "medida_b", "codigo_local"]
+expected_rows = 12
+expected_columns = 5

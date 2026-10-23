@@ -1,0 +1,2 @@
+# Ambiente completo de desenvolvimento validado; instalar depois o pacote com -e .
+-r requirements.lock.txt

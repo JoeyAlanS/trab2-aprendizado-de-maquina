@@ -1,0 +1,28 @@
+{
+  "note": "Hashes dos fontes entregues nesta etapa; repositório ainda sem commit.",
+  "sha256": {
+    "src/enem_base/__init__.py": "e6374b684971eca8f6cb40dd5fbee6b5d5a3e7b4e8880d8f5b21a43652433cd4",
+    "src/enem_base/__main__.py": "91f20eada44a1eccff337d9553aa2392f036f648d4b3dd21b288904d5fe179da",
+    "src/enem_base/acquisition.py": "22f3e0e0cbbd3f1423916901adbb4d9ea6e896a74210ed2d2f99c961a2f5c1bf",
+    "src/enem_base/cleaning.py": "256f42677d4ee5fba0daa3d55aff1bd27c560f337c4b3613f0ec49cfce27c72d",
+    "src/enem_base/cli.py": "d5884e0c6eea77abb9393bbb4619ca410aee411e771549a5bbeebc6c3946a99e",
+    "src/enem_base/config.py": "4ac6de2f5c64c64560ed590ee237d59e807a24a4c14698dac9b0e7466e6bae25",
+    "src/enem_base/exploration.py": "cc304f733ddb047720fde9b370fd038c4239dba19ccb284e536d5c36a473bf30",
+    "src/enem_base/features.py": "44420ada99020c8f5dc4f77e4f1057e28440989db0f652e0e2875510ddc9ca89",
+    "src/enem_base/ingestion.py": "ee42e74643de981037af4f952849bc06fce7978e41d3ea9ae6a874aa15ec4003",
+    "src/enem_base/integration.py": "1d65f4a3cfbe962ae58fb3c4c25bcd5fc38f27b67f7130972aa8d6bfbb980943",
+    "src/enem_base/modeling.py": "3905130fadbc555c8cc6870ed2982b8e356187f02aee3078cbacc1bfd1bfb9fb",
+    "src/enem_base/official.py": "5b19f69fc2640683a62cd02763d07cdce39aadffb598aac676704428ffbde0cf",
+    "src/enem_base/preprocessing.py": "c553f2cf5d59e9dcc50ff76f861d691b975d7d2a6fa5bc6e0a4758380abb2bc8",
+    "src/enem_base/provenance.py": "ab9c8e3d93c8c77d291b77baf293e36c82bbe3171a0bbd67c063ab31c878f4c6",
+    "src/enem_base/quality.py": "90afec110f607dd754586911fe08305807f5d29c2d1fa7f3c46bf446718b5571",
+    "src/enem_base/splits.py": "1951908394f0e73191eaca02a5e3d416ddd04c6114cacc692956980fa3115060",
+    "src/enem_base/study.py": "e191e832f22ec6760fc2dba1dc3ff9eeddd7a429948ce3f5455c8a7c0d94852e",
+    "src/enem_base/visualization.py": "c57c71dd554dd8e3f6bc8aef383507394b57d209e6f65044d6acffe94435e03f",
+    "configs/ciencias_natureza.toml": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+    "configs/enem2023.toml": "122cfa105316b799ddc2ddead78c5855ad6d38898a1e90db77e88e40049670a7",
+    "configs/exemplo.toml": "f8b2e351d610afd60ab1c7428ce2f6741002083234bfdd21cb9e9dd36ec21971",
+    "pyproject.toml": "3a43ca78608979a060013e3fcfd3c8ac3e99e6cf506e74be31ba6f3590868685",
+    "requirements.lock.txt": "cad5b40e4bffc1b8c1158c60125828379c11be3199d5ac01ee333262d289fd8a"
+  }
+}

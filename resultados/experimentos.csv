@@ -1,0 +1,1 @@
+experiment_id,row_type,hypothesis,features_json,preparation_json,model,parameters_json,evaluated_set,fold,rmse,mae,r2,rmse_std,mae_std,r2_std,std_ddof,elapsed_seconds,n_train,n_evaluated,target,source_sha256,splits_sha256,git_commit,conclusion

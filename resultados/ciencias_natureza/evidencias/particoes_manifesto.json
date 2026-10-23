@@ -1,0 +1,17 @@
+{
+  "kind": "enem2023",
+  "target": "NU_NOTA_CN",
+  "identifier": "NU_INSCRICAO",
+  "seed": 42,
+  "test_size": 0.2,
+  "n_splits": 3,
+  "shuffle": true,
+  "source_rows": 3933955,
+  "eligible": 2692427,
+  "missing_target": 1241528,
+  "development": 2153941,
+  "test": 538486,
+  "rule": "Alvo observado; zero é elegível; outras notas não são exigidas.",
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "partitions_sha256": "3f18a7f6fce636b419b00333e4706a0e683e71317a49320629bd3edcb1306040"
+}

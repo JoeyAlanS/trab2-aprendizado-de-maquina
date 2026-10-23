@@ -1,0 +1,33 @@
+[project]
+root = ".."
+
+[study]
+theme = "Ciências da Natureza e suas Tecnologias"
+target = "NU_NOTA_CN"
+identifier = "NU_INSCRICAO"
+kind = "enem2023"
+assigned_on = "2026-10-21"
+question = "Em que medida o perfil socioeconômico, escolar e demográfico permite estimar a nota de Ciências da Natureza no ENEM 2023?"
+
+[paths]
+dataset = "dados/processed/enem2023-v1"
+splits = "dados/splits/ciencias-natureza-v1"
+results = "resultados/ciencias_natureza"
+dictionary = "docs/referencias/dicionario_enem2023.json"
+
+[protocol]
+seed = 42
+test_size = 0.2
+n_splits = 3
+
+# A lista efetiva será confrontada com o dicionário oficial antes de modelar.
+[features]
+numeric = ["Q005"]
+categorical = [
+  "TP_FAIXA_ETARIA", "TP_SEXO", "TP_ESTADO_CIVIL", "TP_COR_RACA", "TP_NACIONALIDADE",
+  "TP_ST_CONCLUSAO", "TP_ANO_CONCLUIU", "TP_ESCOLA", "TP_ENSINO", "IN_TREINEIRO",
+  "TP_DEPENDENCIA_ADM_ESC", "TP_LOCALIZACAO_ESC", "TP_SIT_FUNC_ESC", "SG_UF_PROVA",
+  "TP_LINGUA", "Q001", "Q002", "Q003", "Q004", "Q006", "Q007", "Q008", "Q009",
+  "Q010", "Q011", "Q012", "Q013", "Q014", "Q015", "Q016", "Q017", "Q018",
+  "Q019", "Q020", "Q021", "Q022", "Q023", "Q024", "Q025",
+]

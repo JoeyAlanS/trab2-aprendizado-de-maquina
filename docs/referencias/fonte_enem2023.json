@@ -1,0 +1,66 @@
+{
+  "obtained_at_utc": "2026-10-21T09:02:15.219570+00:00",
+  "source_page": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem",
+  "url": "https://download.inep.gov.br/microdados/microdados_enem_2023.zip",
+  "archive": "microdados_enem_2023.zip",
+  "bytes": 549511687,
+  "sha256": "19512b7e29c9c8e940554396969722081341caa275c245a6c9d2d559c5d13a0a",
+  "checksum_compared_to_publisher": false,
+  "extracted": [
+    {
+      "member": "microdados_enem_2023/DADOS/MICRODADOS_ENEM_2023.csv",
+      "file": "MICRODADOS_ENEM_2023.csv",
+      "bytes": 1777162429,
+      "sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666"
+    },
+    {
+      "member": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.ods",
+      "file": "Dicionário_Microdados_Enem_2023.ods",
+      "bytes": 20639,
+      "sha256": "a3dc8a5dc8902ec1e47a56319ba45df6777bd4be6b17a41ddb106bece82174a1"
+    },
+    {
+      "member": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.xlsx",
+      "file": "Dicionário_Microdados_Enem_2023.xlsx",
+      "bytes": 32897,
+      "sha256": "1411ad89784f7f960dc1c1fc13b0d22eee696e2613cb762072665fa547ae6cf6"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Edital_Enem_2023_Impresso.pdf",
+      "file": "Edital_Enem_2023_Impresso.pdf",
+      "bytes": 582211,
+      "sha256": "ea94b7f7d1050b6c119b98badc2c42c026f7cc72d158becd070e5f337f1d13b5"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/enem_procedimentos_de_analise.pdf",
+      "file": "enem_procedimentos_de_analise.pdf",
+      "bytes": 911243,
+      "sha256": "fc97f121af817d86920b62c9a92ae04f55dcf4ec18e274a684e911bef14812fb"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/entenda_a_sua_nota_no_enem_guia_do_participante.pdf",
+      "file": "entenda_a_sua_nota_no_enem_guia_do_participante.pdf",
+      "bytes": 13206250,
+      "sha256": "b93bc7ec4dd5fbb770561a071069cefa265b445e9e2b9773f28dd6f486337394"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Leia_Me_Enem_2023.pdf",
+      "file": "Leia_Me_Enem_2023.pdf",
+      "bytes": 195032,
+      "sha256": "d2e0c39ba2223562b3bdc41f1d14ff77ad5c5d45018e9afb1a109103be14938b"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/manual_de_redacao_do_enem_2023.pdf",
+      "file": "manual_de_redacao_do_enem_2023.pdf",
+      "bytes": 6236600,
+      "sha256": "3e85231bf27363f12e79c7c3a950c8fb8678ddd323eddc0cfe57496f3f784e6c"
+    },
+    {
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/matriz_referencia_enem.pdf",
+      "file": "matriz_referencia_enem.pdf",
+      "bytes": 177800,
+      "sha256": "6b56d523ccb85f74f7ed33e0cd679f3dd178ed6f13a5b0948bcfdfe8964ce6a1"
+    }
+  ],
+  "method": "HTTPS com verificação TLS; extração seletiva com verificação CRC do ZIP"
+}

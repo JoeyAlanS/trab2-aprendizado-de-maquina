@@ -1,0 +1,21 @@
+# Contrato derivado do enunciado. Conferir codificação e dicionário com a fonte recebida.
+# Não define alvo nem escolhe features. Importa e contabiliza todas as colunas e linhas.
+[project]
+root = ".."
+
+[data]
+kind = "enem2023"
+source = "dados/raw/MICRODADOS_ENEM_2023.csv"
+output = "dados/processed/enem2023-v1"
+identifier = "NU_INSCRICAO"
+separator = ";"
+encoding = "latin-1"
+decimal = "."
+chunksize = 50000
+missing_tokens = [""]
+numeric_columns = ["NU_ANO", "NU_NOTA_MT", "NU_NOTA_CN", "NU_NOTA_CH", "NU_NOTA_LC", "NU_NOTA_REDACAO"]
+required_columns = ["NU_INSCRICAO", "NU_ANO", "NU_NOTA_MT", "NU_NOTA_CN", "NU_NOTA_CH", "NU_NOTA_LC", "NU_NOTA_REDACAO"]
+year_column = "NU_ANO"
+expected_year = 2023
+expected_rows = 3933955
+expected_columns = 76

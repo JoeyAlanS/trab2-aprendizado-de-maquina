@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "rows": 3933955,
+  "column_count": 76,
+  "duplicate_identifiers": 0,
+  "missing_identifiers": 0,
+  "rows_removed": 0,
+  "invalid_numeric": {
+    "NU_ANO": 0,
+    "NU_NOTA_MT": 0,
+    "NU_NOTA_CN": 0,
+    "NU_NOTA_CH": 0,
+    "NU_NOTA_LC": 0,
+    "NU_NOTA_REDACAO": 0
+  },
+  "errors": []
+}

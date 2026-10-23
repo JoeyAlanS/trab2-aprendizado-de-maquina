@@ -1,0 +1,14 @@
+{
+  "partition_rows": 2692427,
+  "duplicate_ids": 0,
+  "counts": {
+    "development": 2153941,
+    "test": 538486
+  },
+  "development_folds": {
+    "0": 717981,
+    "1": 717980,
+    "2": 717980
+  },
+  "test_folds_null": true
+}
