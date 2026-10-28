@@ -12,7 +12,7 @@ import pandas as pd
 from scipy.stats import pearsonr, spearmanr
 
 from enem_base.dashboard import MISSING, read_json
-from enem_base.provenance import sha256_file, write_json
+from enem_base.provenance import sha256_file, verify_sha256, write_json
 from enem_base.study import StudyConfig, load_development
 
 logger = logging.getLogger(__name__)
@@ -254,8 +254,8 @@ def build_relations(config: StudyConfig, output: Path) -> dict:
     with TemporaryDirectory(prefix=".relacoes-", dir=output.parent) as temp:
         staging = Path(temp) / "snapshot"
         staging.mkdir()
-        result.target.to_csv(staging / "alvo.csv", index=False)
-        result.pairs.to_csv(staging / "pares.csv", index=False)
+        result.target.to_csv(staging / "alvo.csv", index=False, lineterminator="\n")
+        result.pairs.to_csv(staging / "pares.csv", index=False, lineterminator="\n")
         result.profiles.to_parquet(staging / "perfis.parquet", index=False, compression="zstd")
         result.cells.to_parquet(staging / "cruzamentos.parquet", index=False, compression="zstd")
         manifest = {
@@ -313,8 +313,7 @@ def load_relations(path: Path, expected: dict | None = None) -> RelationData:
         if expected is not None and manifest[key] != expected[key]:
             raise ValueError("Relações e painel usam proveniências diferentes.")
     for name in RELATION_ASSETS:
-        if sha256_file(path / name) != manifest["assets"][name]:
-            raise ValueError(f"Integridade das relações reprovada: {name}")
+        verify_sha256(path / name, manifest["assets"][name], "Integridade das relações reprovada")
     result = RelationData(
         manifest,
         pd.read_csv(path / "alvo.csv"),

@@ -3,7 +3,24 @@
 *.md text eol=lf
 *.toml text eol=lf
 *.yml text eol=lf
+*.json text eol=lf
 *.csv text eol=lf
+*.sql text eol=lf
+*.tex text eol=lf
 *.ps1 text eol=crlf
+# Artefatos com hash SHA-256 em manifestos: LF em qualquer sistema operacional.
+resultados/** text eol=lf
+dados/** text eol=lf
+# Binários por último: no Git a última regra prevalece, então estas linhas impedem
+# que as regras de pasta acima convertam bytes de Parquet, imagens ou bancos.
 *.pdf binary
 *.png binary
+*.jpg binary
+*.parquet binary
+*.zip binary
+*.zst binary
+*.sqlite binary
+*.sqlite3 binary
+*.db binary
+*.joblib binary
+*.pkl binary

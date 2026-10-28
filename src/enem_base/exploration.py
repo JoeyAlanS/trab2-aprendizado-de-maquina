@@ -109,7 +109,7 @@ def explore_development(config: StudyConfig, output: Path) -> dict:
     group["TP_ESCOLA"] = group.TP_ESCOLA.fillna("__MISSING__")
     school_labels = {"1": "Não respondeu", "2": "Pública", "3": "Privada", "__MISSING__": "Ausente"}
     group["tipo_escola"] = group.TP_ESCOLA.map(school_labels).fillna(group.TP_ESCOLA)
-    group.to_csv(output / "nota_por_tipo_escola.csv", index=False)
+    group.to_csv(output / "nota_por_tipo_escola.csv", index=False, lineterminator="\n")
     fig, ax = plt.subplots(figsize=(10, 5))
     x = np.arange(len(group))
     ax.bar(x, group["mean"], color="#216477")

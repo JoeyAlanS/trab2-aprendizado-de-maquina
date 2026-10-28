@@ -192,7 +192,7 @@ def build_database(
                     "SELECT sql FROM sqlite_master WHERE sql IS NOT NULL ORDER BY type,name"
                 )
             )
-            (staging / "schema.sql").write_text(schema + "\n", encoding="utf-8")
+            (staging / "schema.sql").write_text(schema + "\n", encoding="utf-8", newline="\n")
         manifest = {
             "version": 1,
             "status": "completed",

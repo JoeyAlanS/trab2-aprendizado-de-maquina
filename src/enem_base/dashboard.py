@@ -14,7 +14,7 @@ from tempfile import TemporaryDirectory
 import numpy as np
 import pandas as pd
 
-from enem_base.provenance import sha256_file, write_json
+from enem_base.provenance import sha256_file, verify_sha256, write_json
 from enem_base.study import StudyConfig, load_development
 
 DIMENSIONS = ("SG_UF_PROVA", "TP_ESCOLA", "TP_SEXO", "IN_TREINEIRO", "Q006")
@@ -173,7 +173,7 @@ def build_dashboard(config: StudyConfig, output: Path, eda_dir: Path, cv_dir: Pa
         # A tabela de dobras contém só métricas e tamanhos, sem linhas individuais.
         folds[
             ["model", "evaluated_set", "fold", "rmse", "mae", "r2", "n_train", "n_evaluated"]
-        ].to_csv(staging / "dobras.csv", index=False)
+        ].to_csv(staging / "dobras.csv", index=False, lineterminator="\n")
         manifest = {
             "version": 1,
             "created_at_utc": datetime.now(UTC).isoformat(),
@@ -218,8 +218,7 @@ def load_dashboard(path: Path) -> DashboardData:
     ):
         raise ValueError("Snapshot inválido ou fora do conjunto de desenvolvimento.")
     for name in ASSETS:
-        if sha256_file(path / name) != manifest["assets"][name]:
-            raise ValueError(f"Integridade do snapshot reprovada: {name}")
+        verify_sha256(path / name, manifest["assets"][name], "Integridade do snapshot reprovada")
     cube = pd.read_parquet(path / "agregados.parquet")
     cv = pd.read_csv(path / "resumo_cv.csv")
     folds = pd.read_csv(path / "dobras.csv")

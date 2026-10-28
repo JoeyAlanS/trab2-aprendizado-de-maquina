@@ -130,6 +130,23 @@ def test_bundle_integrity_and_refusal_to_overwrite(dashboard_bundle, dashboard_s
         load_dashboard(dashboard_bundle)
 
 
+def test_line_ending_change_is_rejected_with_specific_guidance(dashboard_bundle):
+    # Simula checkout em outro sistema: mesmo conteúdo, fim de linha CRLF.
+    target = dashboard_bundle / "diagnostico.json"
+    original = target.read_bytes()
+    assert b"\r\n" not in original
+    target.write_bytes(original.replace(b"\n", b"\r\n"))
+    with pytest.raises(ValueError, match=r"Integridade.*diagnostico\.json.*fim de linha"):
+        load_dashboard(dashboard_bundle)
+    target.write_bytes(original)
+    assert load_dashboard(dashboard_bundle).manifest["test_evaluated"] is False
+    # Alteração real de conteúdo não recebe a orientação de fim de linha.
+    target.write_bytes(original.replace(b"{", b"{ ", 1))
+    with pytest.raises(ValueError, match="Integridade") as error:
+        load_dashboard(dashboard_bundle)
+    assert "fim de linha" not in str(error.value)
+
+
 def test_ui_filter_reset_and_empty_intersection(dashboard_bundle, monkeypatch):
     monkeypatch.setenv("ENEM_DASHBOARD_DIR", str(dashboard_bundle))
     at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=30).run()

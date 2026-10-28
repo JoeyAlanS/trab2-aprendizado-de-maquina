@@ -243,7 +243,7 @@ def create_tables(data: RelationData, dashboard: DashboardData, directory: Path)
             f"& {br(row.missing / row.n * 100, 2)} " + r"\\"
         )
     (directory / "todas_entradas.tex").write_text(
-        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8"
+        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8", newline="\n"
     )
     pairs = (
         data.pairs.loc[data.pairs.metric.eq("cramers_v")]
@@ -260,7 +260,7 @@ def create_tables(data: RelationData, dashboard: DashboardData, directory: Path)
         for row in pairs.itertuples()
     ]
     (directory / "pares.tex").write_text(
-        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8"
+        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8", newline="\n"
     )
     header = (
         r"\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule "
@@ -275,7 +275,7 @@ def create_tables(data: RelationData, dashboard: DashboardData, directory: Path)
         for row in dashboard.cv.sort_values("rmse_mean").itertuples()
     ]
     (directory / "modelos.tex").write_text(
-        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8"
+        header + "\n".join(lines) + r"\bottomrule\end{tabularx}", encoding="utf-8", newline="\n"
     )
     profiles = data.profiles.set_index(["variable", "code"])
 
@@ -301,7 +301,9 @@ def create_tables(data: RelationData, dashboard: DashboardData, directory: Path)
     for key, value in macros.items():
         decimals = 4 if key in ("PearsonPessoas", "SpearmanPessoas") else 2
         macro_lines.append(f"\\newcommand{{\\{key}}}{{{br(value, decimals)}}}")
-    (directory / "valores.tex").write_text("\n".join(macro_lines) + "\n", encoding="utf-8")
+    (directory / "valores.tex").write_text(
+        "\n".join(macro_lines) + "\n", encoding="utf-8", newline="\n"
+    )
 
 
 def prepare_report(relations_dir: Path, dashboard_dir: Path, project: Path) -> dict:

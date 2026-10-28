@@ -67,8 +67,8 @@
     "inference": "descriptive effects only; no significance claims or causal conclusions"
   },
   "assets": {
-    "alvo.csv": "c1c6325546d5f2a6e700e5a29ed173b3673288765f716f02fe9081d193d20dcd",
-    "pares.csv": "3fc81b2be3d535f6e03430e743dd34932ed4fb553c10ed0f3d3f87558418d635",
+    "alvo.csv": "7363339c753460a8cf66d63e8b28f59a9ef80e8e86a78487da9af10c359b4d61",
+    "pares.csv": "34a362ae77a6743b9884d6775869584864d8ca23a75c42bc16d5a226aaefffac",
     "perfis.parquet": "e16fc00db9045b1ca09f70df734e16016b5e5e39ec1891dd846261241d5447f1",
     "cruzamentos.parquet": "55a202b7112f3710054b0a3a7246d0dc870b29ca70c67948aeee327b57cd3138"
   }

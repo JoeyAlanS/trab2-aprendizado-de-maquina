@@ -215,7 +215,9 @@ def compare_models(
                         **provenance,
                     }
                     records.append(record)
-                    pd.DataFrame(records).to_csv(output / "experimentos.csv", index=False)
+                    pd.DataFrame(records).to_csv(
+                        output / "experimentos.csv", index=False, lineterminator="\n"
+                    )
                     logger.info(
                         "%s, dobra %s: RMSE %.3f; %.1f s; avisos=%s",
                         name,
@@ -241,7 +243,9 @@ def compare_models(
                 row[metric + "_mean"] = float(values.mean()) if len(values) else None
                 row[metric + "_std"] = float(values.std(ddof=0)) if len(values) else None
             summary.append(row)
-        pd.DataFrame(summary).sort_values("rmse_mean").to_csv(output / "resumo_cv.csv", index=False)
+        pd.DataFrame(summary).sort_values("rmse_mean").to_csv(
+            output / "resumo_cv.csv", index=False, lineterminator="\n"
+        )
         from enem_base.exploration import plot_cv_summary
 
         plot_cv_summary(
