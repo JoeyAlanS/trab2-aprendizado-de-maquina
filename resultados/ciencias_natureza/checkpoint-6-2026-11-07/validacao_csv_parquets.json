@@ -1,0 +1,569 @@
+{
+  "status": "passed",
+  "source": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/raw/MICRODADOS_ENEM_2023.csv",
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "rows": 3933955,
+  "columns": 76,
+  "eligible_cn": 2692427,
+  "missing_cn": 1241528,
+  "zero_cn": 16547,
+  "all_cells_equal_after_normalization": true,
+  "parts": [
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00000.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "33e4a0874583b20ddaa68ef387f3c7f5c81d1b07f9a4cc717d4111dedaa75766"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00001.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "d906eb1b5dc76812bf70c0d92765a9baac50e5afbf7e4130c980df8e5b2eae16"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00002.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "7f0770938fe968398c42b79097ddb858f425321c1487e2899a4b6e37b39d4dcd"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00003.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "4f59a20ab25f962f8b753a54e8c729e4e135821a71b4c2164831995ef5c9bf3c"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00004.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "fc8a67d845e38ac4f1ce0abadbf59122d7c3d4931e4424c7a6e056222b0f414c"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00005.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "423c3c68b91f701f5db04387bf7a6f6db29fd3a71e7e16d09d7f87ba101d734e"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00006.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "b8d79db62b547de4b17c7fde536ec95e04c0014071f64f780d40342ded9b5f88"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00007.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "7bdd83449f944015496b31f63176998036b9b39c5785018ab4f2638ddab5a120"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00008.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "825cc4a6b553f7485f9ef187cc2c2fe536ae8b9d9a1e1143dd0bbadb4367d3cd"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00009.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "3a6f1721addf1ee61165d4bbbbdfe83679312a8a3abbdc2e4189271d16ad7a08"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00010.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "da18879e1e258ef8b6dda3522c23f94163a0a2eeb0b461f96e12e4deefadd596"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00011.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "3fe325703f202cd47311f4dd5181ca738a6ec5114492457a3c9ed024c367d0bd"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00012.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "f53e4480b2641899af8a02e94c98e7b40d27ed9818779f4eaa98930406cb5ad2"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00013.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "57a8528826c6db6fd601f76a361de221418b11a84d6a11e1e3b7f36932e3463f"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00014.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "0540469fce4a9858000138606a44082b923d22123daf7526aeb94d6ca6dcd8f3"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00015.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "91b1be008fb18d26b6bf715128cd4a4d5a43b4d87655e029173f7e249fbd06b1"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00016.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "de4333972220eeb7b40a5e176582743a83ea821bbd03d393bcb5c1d11f9807b1"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00017.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "6b727083a5cad25615f6b5b31b269e6e18e2514d148eecb50b823ee5351335a7"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00018.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "874e71f9c62da0643adf7ece361ce0b062e97d61dda0a651d7c48137f3f04653"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00019.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "763ebee80134b8898af0427f195dbe0f881e0a90b41387957d21327e6b79835a"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00020.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "1c129f8e7cadcb97214156538fe50fe95e52030ea63f512b9d6f4d7b07781214"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00021.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "a44928a22527c4c3d0b20e60c0412d7e1737b98d55f77f7352ae31f96b5747c9"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00022.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "43b3ee8df44a01a556b9606d30a3e1327f03bba55aec7e821dacbc143774434e"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00023.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "9d8effb3a291a34a479042af06d7cf8b0c94e2b5ae0c4f9b09223092a73dae8f"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00024.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "667b356e91f811ef6682d127352caf6eb879047f9219eb5c015823a8bd217b35"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00025.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "d01fbda047015667b83e427bbd4cb365d2ead1a84415544e989dbfe5e3573fe5"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00026.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "a7186639e3b4d335856b978fc84f6a0d5295a75a0d213ab2c4b99a519bcfa8ad"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00027.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "9362feff7aac304b2acd277a719dcc71c0a2ab25f5c12f57c69ab4a17b3dc06a"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00028.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "d2a9846ee01da0702cccc9675e85e6773692023665d678a7dd0682c2f658e420"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00029.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "a1838a5c6e509cb119fbf57b4e9e6b83083276160e484fee2f1a82d1828dc29d"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00030.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "75e9ba283088b5f1f4dba2676f781a14a2988f67ccfcfd4901f8daa4a559275e"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00031.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "3e390c23a6c9ab9206ad73ee637b439c5f0c998ac39f2a1ccbd8e1c31863e231"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00032.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "f30115506ef7f3ec57a88e1565daf4b90796b771ae6f00c084a47659312595d5"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00033.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "675095c1fe7a75f686281327ac340a7a09282ddf113d4307d5863d1137e755f8"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00034.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "95ec40f4960c83938892b24412daf888399d5139215bd8b47916c6413d2a75ea"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00035.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "2911622de892d3e1c7e6717aa095956f839316095e58ad39cbb95775b16d94d2"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00036.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "58f3456260acef26c3e90e29955e80029b5aa4cd83aec459714ea7c1ac1d48a7"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00037.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "7d5e2581bb5fc41d7784b8c7b3ce3aff19157cede5d4620ac54f213eaabf2498"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00038.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "9f61a89d8f0b774dc0f564348234304632135819b52c9259c8bc69257aac8d1d"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00039.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "6ea69fa8fa4585b7abcfe3530b478ae20fcdac63ab7666cb65823cb57ed6c23e"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00040.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "e27bebb548e1bd5fa5b14a733fc7e9bf39283d1354ffc6c350d87210e0dd80b1"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00041.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "0d1a05effd7fbc0ac63970be4c1ef2cee3682d90c0f42059a0784dadb62aa19b"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00042.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "bb8768e91fce49790423720ed01a95b0889414b288c398604125358e8856ae24"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00043.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "5eb1292dd73721eaea35e32f30fdf204758e27253ad14711e3ac4a246b20518c"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00044.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "622d7904f23f11da748b4c119f2b3c6c4a56ebde5a5a46f2601d9c83e41ee427"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00045.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "a5204cfabf2eed20b4aa8e777272dd356135958f4559f1608f3d84056eb0ad04"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00046.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "7e777af7a23a10d1dd1bc1a251160b7b0b86291f829afd437e1bdf66cc6b9f11"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00047.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "601f407d31a1897728bb5ee5fc2860ea9e6fe2e6fb6772379a44ccd67a7de680"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00048.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "689535483e7e01f1d59d156813f1c825a4c73b10eb0851849ea6f228532754f9"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00049.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "fa9e80a5c4f45cb89dcbb593d24125272eba779fb74ada8c37690e9bad724266"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00050.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "2e151537a47ea19d7053c0a86575575f8089f6b07830e3b9a2d67d8efadc68f5"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00051.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "81ba9280732b713929a8173da219b57d67763aa6cc79e2f5511465cef7abe779"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00052.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "4eae1ef56e0da6df726d6b6b6b8e6c980454516c0f162cc1ec67ff9f5182a54c"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00053.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "4d4560da0d49b262b54e7de3ef90dbfa491c3e1673f472dfcddef4891f897299"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00054.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "376d9bda67ba256a62c4405073162ff3f82ef148b5a883a2f81d0040fa29df53"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00055.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "bc6140dc756539034d3780d592cdaae46c345dcd5c623f4f32bbd642bf452428"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00056.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "0d33b2accdcb56363098ab0a2830e6094ef6ba72c93b1edaac6fbbe180d8b509"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00057.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "67bbfc9e0a5ae1209e899877e17214adfb7b636ab166b26d9da9e6b412e5b3a2"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00058.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "6a07dffa4a093398b3bcc1a67493389a9d165ecc1639982d0a431cb0f03b0444"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00059.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "57d9ca57d6c1b8a7af968377da112c5e67dc1476bee16c1d1a3f8eaf6897a9b1"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00060.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "664f91ef95c9a3d209880997ec3f1fd568b47c7739927ec56bcbbfd021da5f61"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00061.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "09f60b2c5664b17f93e5b3498c18848b2ad0e02b83a45e78b7466b1592c8d7d6"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00062.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "a5d773e2553eb11b2f7bf4ee41177b0724889e0568c9f5d4e558ae8953f3d3ec"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00063.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "756774fd4cd8b50d566c0ef4751be00e0e9b532236f17c9f79a043c9b7bc0fce"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00064.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "765aa7fefa78be6fc3fb6966dcc683a2c6f034e9a97d131bddb3768b2fa1398a"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00065.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "e8fa79b704febf2ef7f97f0776e4aa854dfa109c98c6c6f220031d33d1c74050"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00066.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "bec3606fd0c8bda10f01d95848c3233c19587d072748e55f27082772f02331d8"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00067.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "deb00b87c84975e51a1ddccc57ac71da6453c8cc1341da1d28bd0c4465640e31"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00068.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "e7096dbeecaa007c233ff0c160acb73b678308d7f6b8e6e77ba78fc16efb0b6f"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00069.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "662b3e36ab20c6dd0a764e22b7a0a46d558d278b0034222597b1fef14a05272e"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00070.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "04252639e9339e69699768ad23479c81c94d2810ea66ed70451de6500c29db27"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00071.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "03b602b30605ca17c28c6bf752ca9daa9003f3af65c2fab2b6c3b4c44a41644c"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00072.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "7804b439f9d968ee113dbe67ab73cdfac4a38c6de2f67573dab4abf9b32639a5"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00073.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "27ac261076edc00a31a7186c4379f1d263fc8ecc7344cb05faf2a0dfd1ece9df"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00074.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "ac52ecbf44275e3ab436f3769db79d804633c161d51be8894e65fc0f132811b6"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00075.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "5126774ed9b4e9b8c78dd58550bf363a590b6b1bb5d2336b8b88bcc020346194"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00076.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "9597ea337b615fa6248ab4c424df3afc9641b0b543a3b78b724b3cd75f9da0ca"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00077.parquet",
+      "rows": 50000,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "bccfa9961ce6061c6d0a674a6aa92ca49772f26391606d2a289e05f8d6cc332d"
+    },
+    {
+      "part": "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/dados/processed/enem2023-v1/part-00078.parquet",
+      "rows": 33955,
+      "columns": 76,
+      "all_cells_equal_after_normalization": true,
+      "sha256": "17a314d631f1c591778d1633cfbd8b26afe41a647933a09c34c47ca1aa419b9b"
+    }
+  ],
+  "models_retrained": false,
+  "partitions_changed": false,
+  "scientific_results_changed": false
+}

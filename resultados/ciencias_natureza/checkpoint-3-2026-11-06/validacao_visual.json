@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "plots": [
+    {
+      "stem": "curvas_aprendizado_rmse",
+      "png_sha256": "d5620968e85165ca20a0433c49f8a62c45e67e8e5b64940cf58043182c11ff41",
+      "svg_sha256": "85e1af2b3ca7e4a7eec54de4d30d60a181b627d2123b38a3755a5b004e135bf3",
+      "pixels": [
+        4084,
+        1692
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "svg_xml_valid": true,
+      "png_visually_inspected": true,
+      "titles_axes_legends_and_source_legible": true,
+      "no_observed_overlap_or_clipping": true
+    },
+    {
+      "stem": "comparacao_validacao",
+      "png_sha256": "f3f6656eaec403570e7f9a4054eac65c85cf87f7f7ba571f7f8640bc7420ee4a",
+      "svg_sha256": "45990ffd5aa2146da62c9ae7608751f3063434180aab99d8359b16c4df358329",
+      "pixels": [
+        4084,
+        1692
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "svg_xml_valid": true,
+      "png_visually_inspected": true,
+      "titles_axes_legends_and_source_legible": true,
+      "no_observed_overlap_or_clipping": true
+    },
+    {
+      "stem": "lacuna_generalizacao",
+      "png_sha256": "038faaca65ffd70f574d98550397e114df3b896c789c08ef1b330a8ea45af108",
+      "svg_sha256": "41bd06c3e26dd2d4198f3c02abffd6a748b54a06a23df69d0b10a222b6279af2",
+      "pixels": [
+        2884,
+        1703
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "svg_xml_valid": true,
+      "png_visually_inspected": true,
+      "titles_axes_legends_and_source_legible": true,
+      "no_observed_overlap_or_clipping": true
+    }
+  ],
+  "inspection": "PNG displayed and inspected; SVG XML/text and hashes verified",
+  "test_evaluated": false
+}

@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "file": "output/pdf/fontes_latex_ciencias_natureza.zip",
+      "sha256": "c540aa71cf57880bb8513e7a0c9664956cfec46686ce5384a368749a7a431d73",
+      "members": [
+        "dados_relatorio.json",
+        "images/associacoes.png",
+        "images/demografia.png",
+        "images/distribuicao.png",
+        "images/escola.png",
+        "images/escola_renda.png",
+        "images/modelos.png",
+        "images/socioeconomico.png",
+        "images/ufs.png",
+        "main.tex",
+        "README.md",
+        "schema_banco.sql",
+        "tables/modelos.tex",
+        "tables/pares.tex",
+        "tables/todas_entradas.tex",
+        "tables/valores.tex"
+      ],
+      "crc_valid": true,
+      "invalidated_figure_names_present": []
+    },
+    {
+      "file": "output/relacoes_enem_cn.zip",
+      "sha256": "071baf11b7140ef6a7fd2d4213a97ba2cecf79b5fb4c6fddd4936933e06e00a6",
+      "members": [
+        "alvo.csv",
+        "pares.csv",
+        "perfis.csv",
+        "cruzamentos.csv",
+        "LEIA-ME.txt"
+      ],
+      "crc_valid": true,
+      "invalidated_figure_names_present": []
+    },
+    {
+      "file": "output/relatorio_overleaf.zip",
+      "sha256": "718aa5ba42dadb234ed677464a76aa06322dbae1ce5994d76857e391594cc945",
+      "members": [
+        "LEIA-ME-STATUS.md",
+        "README.md",
+        "dados_relatorio.json",
+        "images/associacoes.png",
+        "images/demografia.png",
+        "images/distribuicao.png",
+        "images/escola.png",
+        "images/escola_renda.png",
+        "images/modelos.png",
+        "images/socioeconomico.png",
+        "images/ufs.png",
+        "main.tex",
+        "schema_banco.sql",
+        "tables/modelos.tex",
+        "tables/pares.tex",
+        "tables/todas_entradas.tex",
+        "tables/valores.tex"
+      ],
+      "crc_valid": true,
+      "invalidated_figure_names_present": []
+    },
+    {
+      "file": "output/pdf/main.pdf",
+      "sha256": "02b76c66c01954c85d725fcdb2dc9e70dad2f275e8a14e730defb81c300a63f4",
+      "pdfinfo_exit_code": 0,
+      "pdfinfo": "Title:           Ciências da Natureza no ENEM 2023: preparação, relações e modelos iniciais\nCreator:         LaTeX with hyperref\nProducer:        xdvipdfmx (0.1)\nCreationDate:    Fri Oct 23 11:19:57 2026 -03\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       595.28 x 841.89 pts (A4)\nPage rot:        0\nFile size:       707423 bytes\nOptimized:       no\nPDF version:     1.5\n",
+      "scope": "Relatório preliminar histórico; não recompilado nesta correção"
+    },
+    {
+      "file": "output/pdf/relatorio_ciencias_natureza.pdf",
+      "sha256": "aef10908cb6a5881d77e6b2f5b938dc60522b5fa4f2fadd4bbc40395b3268261",
+      "pdfinfo_exit_code": 0,
+      "pdfinfo": "Title:           Ciências da Natureza no ENEM 2023: preparação, relações e modelos iniciais\nCreator:         LaTeX with hyperref\nProducer:        xdvipdfmx (0.1)\nCreationDate:    Fri Oct 23 15:50:13 2026 -03\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       595.28 x 841.89 pts (A4)\nPage rot:        0\nFile size:       710725 bytes\nOptimized:       no\nPDF version:     1.5\n",
+      "scope": "Relatório preliminar histórico; não recompilado nesta correção"
+    },
+    {
+      "file": "resultados/ciencias_natureza/figuras-corrigidas-v4",
+      "visual_inspection": "Três imagens inspecionadas após ajuste do rodapé; eixos, fontes e legendas legíveis",
+      "assets_verified": true,
+      "missing_figures": [
+        "Comparação antes/depois das buscas nos três melhores",
+        "Curva de aprendizado do modelo final",
+        "Observado versus previsto e resíduos reais do teste",
+        "Erros reais do teste por faixa e grupo"
+      ]
+    }
+  ],
+  "final_pdfs_present": {
+    "artigo.pdf": false,
+    "acompanhamento.pdf": false,
+    "pitch.pdf": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "124 files already formatted"
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "Checked 54 packages in 0.75ms\nAll installed packages are compatible"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "81",
+    "time": "11.442",
+    "timestamp": "2026-11-07T23:05:51.965124-03:00",
+    "hostname": "archjo"
+  },
+  "pytest_sha256": "e2a8c736cf6b7ead5a9b38d8ba3d1ec14ffd3aadc4cc873b0e3c4334829c0620",
+  "sealed_checkpoint5_input_code_and_asset_hashes_verified": 243,
+  "scientific_code_changed_during_document_delivery": false,
+  "new_unit_tests_created": false,
+  "individual_prediction_files_excluded_from_git": true,
+  "test_platform": "Linux local",
+  "remote_ci_not_part_of_local_validation": true,
+  "whitespace_scope": "Código/textos ativos; SVGs gerados em resultados/historico preservados byte a byte e excluídos da checagem de espaços via .gitattributes.",
+  "staged_changed_files_reviewed": 669,
+  "secret_pattern_scan": "Nenhum padrão de chave privada ou token encontrado nos arquivos de texto alterados.",
+  "large_data_and_individual_predictions_staged": false
+}

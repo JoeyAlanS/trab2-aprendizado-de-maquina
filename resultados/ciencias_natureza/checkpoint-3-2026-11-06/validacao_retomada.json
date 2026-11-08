@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "model": "svm",
+  "points_reused": 15,
+  "new_fits": 0,
+  "all_files_byte_identical": true,
+  "log_sha256": "c4c5c0de00756b603eee37c70ac3aa03c9ea4fbc23499f54d378ed87e5ce69b3",
+  "original_file_hashes_sha256": "bde776ffdf50835f7d877cbc1af552201c35740c258b803c198b925cee48b6de"
+}

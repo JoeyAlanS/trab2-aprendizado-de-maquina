@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "publication": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_curvas_finais",
+  "figures": {
+    "curvas_rmse.png": "edb5f7ac637971403718bb81420a73652faa148da8018dae6cfc6b145314cbd7",
+    "lacuna_generalizacao.png": "e489bf2bb55b72d5c98c139a154bbb9126575f930da23c7d45053ad5eddb2e04"
+  },
+  "checks": [
+    "Legendas sem sobreposição",
+    "Eixos e títulos legíveis",
+    "Mesma escala de RMSE para os três modelos",
+    "Faixas identificadas como DP, não IC"
+  ],
+  "test_evaluated": false
+}

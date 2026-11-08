@@ -1,0 +1,4 @@
+# Ambiente completo de desenvolvimento validado; instalar depois o pacote com -e .
+-r requirements.lock.txt
+# Backend exato para tornar viável o KNN nacional; demais versões históricas preservadas.
+faiss-cpu==1.15.1

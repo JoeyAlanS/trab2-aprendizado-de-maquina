@@ -1,193 +1,236 @@
-# Projeto 2 - Ciências da Natureza no ENEM 2023
+# Projeto 2 — Ciências da Natureza no ENEM 2023
 
-**Tema definido em 21/10/2026: Ciências da Natureza e suas Tecnologias. Alvo: NU_NOTA_CN.**
-A fase 1 estabeleceu a estrutura geral; a fase atual inicia o estudo com dados oficiais.
-O estado verificável e as pendências ficam em `docs/andamento_ciencias_natureza.md`.
-Os dados de demonstração em `exemplos/` continuam fictícios e separados da pesquisa.
+Regressão de **NU_NOTA_CN** a partir do perfil socioeconômico, escolar e demográfico.
+Fonte nacional: **Inep / ENEM 2023**, 3.933.955 participantes e 76 colunas.
+Repositório: https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina
 
-O enunciado determina ENEM **2023 nacional completo**, regressão e protocolo de
-avaliação. A escolha de Ciências da Natureza foi informada pelo usuário. A pergunta
-e as hipóteses propostas estão em [docs/pesquisa_ciencias_natureza.md](docs/pesquisa_ciencias_natureza.md).
-As demais exigências estão mapeadas em
-[docs/requisitos.md](docs/requisitos.md), com distinção entre implementado e futuro.
+## Estado atual e integridade científica
 
-## Frontend com os dados preparados
+**Desenvolvimento em checkpoints (atualizado em 07/11/2026):** o Checkpoint 1 está concluído e validado:
+sete algoritmos e 21 avaliações nacionais, sem uso do teste nessa etapa. O Checkpoint 2 selecionou
+**Stacking, SVM linear e Random Forest** entre esses sete, pelo RMSE médio.
+O Checkpoint 3 foi concluído e validado em 07/11/2026: 45 ajustes reais, curvas
+e análise dos três modelos; consulte [os resultados](docs/checkpoint-3-resultados.md).
+O [Checkpoint 4](docs/checkpoint-4-resultados.md) está concluído: buscas, receitas finais,
+curvas e avaliação dos mesmos 538.486 participantes de teste em cinco modelos.
+Stacking teve o menor RMSE (76,190), com redução de 13,38% frente ao baseline.
+O [Checkpoint 5](docs/checkpoint-5-resultados.md) reúne 17 gráficos PNG/SVG, 14 tabelas
+e uma [galeria local](resultados/ciencias_natureza/checkpoint-5-2026-11-07/index.html),
+com validação numérica e visual. O [Checkpoint 6](docs/checkpoint-6-resultados.md)
+concluiu o [artigo de dez páginas](output/pdf/artigo_ciencias_natureza.pdf), com autores,
+resultados reais e referências. O [Checkpoint 7](docs/checkpoint-7-resultados.md) entrega o roteiro do pitch, o
+acompanhamento e a versão LaTeX do artigo, com PDFs e [pacote Overleaf](output/overleaf-enem2023.zip).
+Slides foram dispensados pelo pedido atual; ensaio e apresentação ainda dependem da equipe.
+Consulte [a seleção e sua justificativa](docs/checkpoint-2-resultados.md),
+[a comparação inicial](docs/checkpoint-1-resultados.md) e
+[o protocolo e o acompanhamento](docs/checkpoints.md). O KNN utiliza busca euclidiana
+exata com índice binário do Faiss para reduzir tempo e memória, com verificação contra
+o scikit-learn. `uv sync --locked --extra dev` instala a dependência local necessária.
 
-O dashboard em **Streamlit + Plotly**, no padrão de organização do Projeto 1,
-apresenta visão geral, exploração com filtros, modelos e qualidade/metodologia.
-Nesta pasta, o snapshot oficial do desenvolvimento já foi gerado. Para abrir:
+A correção de 05/11/2026 identificou resultados fixos/simulados em arquivos de entrega.
+Esses arquivos foram preservados, com hashes, em `historico/2026-11-05/artefatos-nao-validados.zip`.
+**Não são resultados científicos e não devem ser utilizados no artigo ou nas apresentações.**
+Os geradores ativos agora exigem execuções concluídas e verificadas; não preenchem etapas ausentes.
 
-```powershell
-.\.venv\Scripts\python.exe -m streamlit run app/app.py
+A base limpa SQLite original foi localizada no ambiente, conferida pelo SHA-256 do manifesto
+e recuperada em `dados/database/enem2023-v1/enem2023.sqlite3`. A recuperação exportou todas
+as linhas para Parquet e comprovou que os IDs e as dobras coincidem com o protocolo original.
+Os ZIPs nacional e de competências foram incorporados em 07/11/2026. O CSV bruto
+normalizado foi comparado integralmente com os 79 Parquets, com igualdade em todos
+os valores. Consulte a [identificação e validação das fontes](docs/origem-arquivos-enem.md). O banco e os dados grandes
+não são versionados no Git. As instruções abaixo permitem obtê-los ou recuperar uma cópia válida.
+
+| Parte | Situação |
+|---|---|
+| Preparação, partições, EDA e dashboard | Implementados; dados reais recuperados e verificações documentadas |
+| Comparação inicial | Quatro referências em `cv-recuperado-v2` e sete algoritmos concluídos em `checkpoint-1-2026-11-06` |
+| Seleção de três modelos | Checkpoint 2 concluído; configurações iniciais e ranking registrados, com escopo explícito dos sete algoritmos |
+| Engenharia, seleção de atributos, PCA, ponderação e ablações | Executados na base nacional: 21 avaliações adicionais nas três dobras |
+| Curvas dos três selecionados | Checkpoint 3 concluído: cinco tamanhos, três dobras, 45 pontos e três figuras PNG/SVG validados |
+| Busca, congelamento e teste final | Checkpoint 4 concluído: 60 configurações, 180 avaliações CV, 45 pontos finais e cinco modelos avaliados no teste; [resultados e nove gráficos](docs/checkpoint-4-resultados.md) |
+| Visualizações finais | Checkpoint 5 concluído: coleção com 17 figuras, galeria e tabelas verificadas |
+| Artigo | Checkpoint 6 concluído: dez páginas, sete figuras, três tabelas, quadro de parâmetros e oito referências |
+| Acompanhamento e pitch | Checkpoint 7: documentos de texto em LaTeX e PDF; roteiro oral sem slides, conforme solicitado |
+
+Consulte [o relatório de correção](docs/relatorio-correcao-2026-11-05.md),
+[o guia de validação manual](docs/validacao-manual.md) e
+[a auditoria anterior](docs/auditoria-2026-11-05.md). A auditoria retrata a pasta antes
+que o banco em Downloads fosse localizado; o relatório de correção registra a recuperação.
+
+O consolidado real contém 54 avaliações por dobra e 18 resumos em
+`resultados/experimentos.csv`. As figuras do Checkpoint 1 estão em
+`resultados/ciencias_natureza/checkpoint-1-2026-11-06/publicacao-v2/`;
+distribuição e PCA anteriores permanecem em `figuras-corrigidas-v4/`. A engenharia com Ridge obteve
+RMSE 76,458; a ponderação piorou para 125,202. Esses valores são de desenvolvimento. A escolha final e o teste estão
+registrados no Checkpoint 4 e integrados ao artigo no Checkpoint 6. Entre os sete modelos do Checkpoint 1, Stacking teve o menor RMSE médio: 76,175. Isso não é resultado de teste.
+O Checkpoint 2 não adicionou treinamentos ao consolidado. Linear e Ridge permanecem
+como referências fora da seleção dos sete; o relatório explicita que o ranking do
+catálogo ampliado difere do trio solicitado. As buscas foram executadas posteriormente no Checkpoint 4. Suas tabelas e os resultados
+de teste permanecem separados do consolidado inicial, em
+`resultados/ciencias_natureza/checkpoint-4-2026-11-07/`; a publicação final é `publicacao-v2/`.
+
+## Ambiente
+
+Python **3.13**. Executar os comandos na raiz do repositório.
+O ambiente local existente pode ser utilizado sem reinstalação:
+
+```bash
+.venv/bin/python --version
+.venv/bin/python -m enem_base --help
+.venv/bin/python -m streamlit run app/app.py --server.address 127.0.0.1
 ```
 
-Acesse **http://127.0.0.1:8501**. Não é necessário repetir o download nem o treinamento.
-O painel usa agregados dos 2.153.941 participantes de desenvolvimento e mantém o teste
-reservado. Consulte [o guia do frontend](docs/frontend.md) para navegação, exportações,
-arquitetura e atualização dos dados. Alternativa: `scripts/iniciar_frontend.ps1`.
+Instalação nova com o lock do projeto:
 
-**Ampliação em 23/10/2026:** a página **Relações e relatório** inclui as 40 entradas
-em relação à nota, todos os 780 pares, 254 perfis e 29.709 células de cruzamento.
-O relatório em LaTeX está em `relatorio/`, e o PDF de dez páginas em
-`output/pdf/relatorio_ciencias_natureza.pdf`. Consulte
-[o registro da análise ampliada](docs/relacoes_e_relatorio.md).
-
-O **banco SQLite com a base limpa completa** também está no projeto existente,
-em `dados/database/enem2023-v1/enem2023.sqlite3`. O frontend usa esse banco
-automaticamente, em modo somente leitura, consultando seus resultados agregados.
-Veja [as tabelas e instruções do banco](dados/database/README.md).
-
-## Começar no Windows PowerShell
-
-Requisito: Python **3.13** e Git. Execute a partir da raiz do repositório.
-Não é necessário ativar o ambiente nem alterar a política de execução do Windows.
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e .
-
-.\.venv\Scripts\python.exe -m enem_base --verbose prepare --config configs/exemplo.toml
-.\.venv\Scripts\python.exe -m enem_base plot-quality --report dados/processed/exemplo-v1/qualidade.json --output resultados/figuras/qualidade-exemplo.png
-.\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe -m ruff check .
-.\.venv\Scripts\python.exe -m ruff format --check .
+```bash
+uv sync --locked --extra dev
 ```
 
-Em Linux/macOS, substitua `.\.venv\Scripts\python.exe` por `.venv/bin/python`.
-O lock foi gerado no ambiente registrado em `docs/validacao-fase1.md`. O CI está
-preparado para Windows e Linux, mas execução remota só poderá ser confirmada após
-publicação. Em instalação nova sem lock, use `python -m pip install -e '.[dev]'`;
-isso permite resolver novas versões dentro dos limites do `pyproject.toml`.
+Alternativa com pip e o lock histórico:
 
-A demonstração lê 12 linhas em três lotes, normaliza espaços e marcadores declarados
-de ausência, valida o contrato e gera um **dataset Parquet particionado** em
-`dados/processed/exemplo-v1/`, `qualidade.json` e `manifesto.json`. Códigos como
-`001` continuam sendo texto. Zeros são preservados. Não há imputação nessa etapa.
-O código recusa sobrescrever saídas: para repetir, altere `output` em uma cópia do
-TOML e escolha outro nome de execução. O diretório de uma saída reprovada é descartado;
-erros de qualidade saem como JSON no stderr e o comando retorna código 2.
-
-## Organização
-
-```text
-configs/                contratos de importação (exemplo e ENEM 2023)
-app/                    frontend Streamlit com quatro páginas
-.streamlit/             tema e configuração local do frontend
-dados/
-  raw/                  originais preservados; instruções de obtenção
-  processed/            Parquet e metadados por execução; fora do Git
-  splits/               identificadores e dobras quando o alvo for definido
-docs/                   requisitos, decisões, metodologia e roteiros de entregas
-exemplos/               CSV fictício pequeno e versionado
-notebooks/              exploração técnica e roteiro para análise futura
-src/enem_base/          módulos reutilizáveis e CLI
-tests/                  contratos, regressões e execução integrada
-resultados/             esquemas de experimentos, previsões e figuras
-scripts/                verificação local reproduzível
-.github/workflows/      qualidade e testes automáticos
+```bash
+python3.13 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip install --no-deps --no-build-isolation -e .
 ```
 
-## Procedimentos implementados
+No Windows, substituir `.venv/bin/python` por `.venv\Scripts\python.exe`.
+`requirements.lock.txt` preserva o ambiente histórico; `uv.lock` é o lock usado pela
+instalação com uv. Não misturar as duas formas para alegar reprodução exata do ambiente.
+Não há credenciais nem variáveis de ambiente obrigatórias para o estudo local.
 
-- Coleta explícita de arquivo local ou URL HTTPS, com limite de tamanho, SHA-256,
-  manifesto e proteção contra sobrescrita; sem download automático da base nacional.
-- CSV com separador, codificação, decimal, marcadores de ausência e tipos declarados.
-  Rejeição de cabeçalhos ambíguos, linhas com quantidade incorreta de campos e
-  conversões numéricas inválidas; não há descarte silencioso de linhas.
-- Processamento completo em lotes e armazenamento Parquet com compressão Zstandard.
-  Não concatena os lotes em memória, não amostra e não filtra por nota ou perfil.
-- Diagnóstico de ausências, valores numéricos, zeros, duplicatas de conteúdo e
-  identificadores repetidos entre lotes. SQLite temporário mantém os índices em disco.
-- Rastreabilidade por hash da fonte, configuração, partes Parquet, versões, duração
-  e estado do Git. Original e configurações são preservados.
-- Fábrica de pré-processamento **não ajustada**: imputação numérica configurável,
-  indicador de ausência, padronização e codificação categórica esparsa. Deve integrar
-  um `Pipeline` ajustado somente no treino de cada dobra; não é executada no ENEM.
-- Funções para partições 80/20, semente 42 e três dobras no desenvolvimento. Exigem
-  alvo explícito e salvam só identificadores, conjunto e dobra; não avaliam modelos.
-- Junção opcional de contexto com chave única, cardinalidade `many_to_one`, referência
-  2023, cobertura e perdas. Nenhuma fonte externa foi escolhida ou integrada.
-- Figura técnica de ausências, permitida nesta fase apenas para dados fictícios.
+## Dados reais e recuperação
 
-## Estudo de Ciências da Natureza
+Fonte: https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem
 
-Em 21/10/2026 foram concluídas obtenção/validação da fonte nacional, partições,
-exploração do desenvolvimento e comparação inicial de quatro modelos em três dobras.
-Consulte [o relatório de andamento](docs/andamento_ciencias_natureza.md) e
-[o rascunho do artigo](docs/artigo_ciencias_natureza_rascunho.md).
-Os comandos de obtenção e as saídas v1 já foram executados nesta pasta; não é necessário
-repetir o download para consultar os resultados. Para percorrê-los:
+Se o CSV original não estiver disponível, mas houver o SQLite original e seu manifesto
+válido, colocá-los em `dados/database/enem2023-v1/`. O nome esperado do banco é `enem2023.sqlite3`.
+Somente quando os diretórios de dataset e partições **ainda não existirem**:
 
-```powershell
-.\.venv\Scripts\python.exe notebooks/01_ciencias_natureza.py
+```bash
+.venv/bin/python -m enem_base --verbose recover-database \
+  --study configs/ciencias_natureza.toml \
+  --database dados/database/enem2023-v1/enem2023.sqlite3
 ```
 
-Contrato: `configs/ciencias_natureza.toml`. Os comandos abaixo devem seguir esta ordem.
-Saídas existentes são preservadas; a segunda execução exige novos nomes de saída.
+Isso recupera a base limpa; não fabrica o CSV bruto nem declara recuperar seu conteúdo byte a byte.
+Os hashes novos de Parquet/partições são registrados junto aos hashes históricos, mantendo
+os mesmos participantes e as mesmas dobras. O SQLite é aberto somente para leitura.
 
-```powershell
-.\.venv\Scripts\python.exe -m enem_base fetch-enem --raw dados/raw
-.\.venv\Scripts\python.exe -m enem_base --verbose prepare --config configs/enem2023.toml
-.\.venv\Scripts\python.exe -m enem_base split --study configs/ciencias_natureza.toml
-.\.venv\Scripts\python.exe -m enem_base eda --study configs/ciencias_natureza.toml --output resultados/ciencias_natureza/eda-v1
-.\.venv\Scripts\python.exe -m enem_base --verbose compare --study configs/ciencias_natureza.toml --output resultados/ciencias_natureza/cv-inicial-v1
+Para obter a fonte original do Inep em um ambiente sem a preparação:
+
+```bash
+.venv/bin/python -m enem_base fetch-enem --raw dados/raw
+.venv/bin/python -m enem_base --verbose prepare --config configs/enem2023.toml
+.venv/bin/python -m enem_base split --study configs/ciencias_natureza.toml
 ```
 
-O download usa HTTPS com verificação TLS pelo curl do sistema, retomada de `.part`,
-trava contra execução simultânea e CRC do ZIP antes de publicar. Só extrai CSV nacional,
-dicionário e Leia-me; mantém o ZIP. Após uma interrupção abrupta do processo, investigar
-uma eventual trava remanescente antes de tentar novamente.
+As saídas existentes não são sobrescritas. Uma trava de download abandonada deve ser
+investigada antes de nova transferência; o arquivo `.part` não é uma base válida.
 
-`split` utiliza somente ID e NU_NOTA_CN, sem exigir outras notas. `eda` e `compare`
-verificam os hashes da fonte preparada e das partições e filtram IDs de desenvolvimento
-antes de ler as features. O teste não é avaliado nesses comandos. A comparação padrão
-tem quatro referências: média, linear sem regularização, Ridge e árvore. O catálogo
-adicional aceita `--models svm knn bagging pasting random_forest boosting stacking`;
-sua existência não prova execução ou atendimento de todas as exigências acadêmicas.
+## Protocolo e entradas
 
-## Fonte nacional
+Dos registros nacionais, 2.692.427 têm CN observada; os demais entram no diagnóstico.
+O desenvolvimento tem 2.153.941 participantes e o teste reservado, 538.486.
+Zeros, treineiros e faixas etárias são preservados. Não se exigem notas de outras áreas.
 
-O [portal oficial do Inep](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem)
-lista a edição de 2023. Consulte [dados/raw/README.md](dados/raw/README.md) para obter
-o arquivo e o dicionário. A fonte e os tipos deverão ser conferidos no pacote recebido.
-O contrato `configs/enem2023.toml` exige os **3.933.955 registros e 76 colunas citados
-no enunciado**; uma divergência deve ser investigada e registrada, sem ajustar esses
-números apenas para fazer o processamento passar.
+A configuração lista Q005 numérica e 39 categóricas. Inclui UF **da prova**, não residência.
+Notas, competências, respostas, gabaritos, presença, status da redação, ID, ano e códigos
+de prova são bloqueados como entradas. Transformações aprendem somente no treino de cada dobra.
 
-```powershell
-# Somente após obter e conferir o CSV nacional:
-.\.venv\Scripts\python.exe -m enem_base --verbose prepare --config configs/enem2023.toml
+As três novas features implementadas são computadores por morador (contagem superior
+limitada), acesso digital e escolaridade máxima dos responsáveis quando ambos são conhecidos.
+Desconhecimento não recebe nível escolar intermediário. Definições e limitações estão no guia.
+
+## Execução científica
+
+Escolher um nome de saída novo para cada rodada. Os comandos não usam amostras para a
+comparação principal. Modelos como KNN, ensembles e buscas podem exigir execução prolongada.
+
+```bash
+.venv/bin/python -m enem_base --verbose compare --study configs/ciencias_natureza.toml \
+  --output resultados/ciencias_natureza/cv-nova \
+  --models baseline linear ridge arvore svm knn bagging pasting random_forest boosting stacking
 ```
 
-O diagnóstico geral contabiliza todos os registros; a exploração que orienta decisões
-de modelagem deverá ocorrer no desenvolvimento, após definir o alvo e reservar o teste.
-Não imputar o alvo nem exigir outras notas. Não remover treineiros, idades ou notas zero.
-O módulo `features.py` bloqueia notas, respostas, gabaritos, presença, situação da
-redação, identificadores e ano como entradas. Códigos de prova também ficam bloqueados
-conservadoramente; eventual revisão exige justificativa explícita pelo dicionário.
-Essa barreira não substitui a revisão semântica das futuras features.
+Também é permitido separar os modelos em rodadas, mantendo as mesmas partições. Para as
+variantes, usar `compare --variant ... --models ...`, conforme o guia manual:
 
-## Próxima fase e documentação
+- `engineered`: três atributos derivados, por exemplo com Ridge;
+- `selected`: mesmos atributos mais seleção de 75% das colunas codificadas;
+- `pca`: PCA centrado, retendo pelo menos 80% da variância do treino; executar em Ridge e árvore;
+- `weighted`: Ridge com pesos aprendidos da distribuição do alvo no treino;
+- `without_socio` e `without_uf`: duas hipóteses adicionais de ablação, por exemplo com Ridge.
 
-Alvo registrado em [docs/decisoes.md](docs/decisoes.md). Conferir o dicionário,
-gerar e congelar as partições e explorar o desenvolvimento antes das comparações.
-Criação de atributos, seleção, PCA, balanceamento, buscas e avaliação final seguem
-[docs/metodologia.md](docs/metodologia.md), distinguindo execução real de planejamento.
-Os roteiros em `docs/templates/` não são o artigo nem os slides finais.
+O boosting implementado é `GradientBoostingRegressor`. Não há evidência de um
+HistGradientBoosting vencedor. O stacking original mantém o pré-processamento dentro das
+suas dobras internas; variantes que ainda não preservam esse protocolo são recusadas.
 
-Consulte também [docs/arquitetura.md](docs/arquitetura.md),
-[docs/boas-praticas.md](docs/boas-praticas.md),
-[docs/referencias.md](docs/referencias.md) e
-[docs/validacao-fase1.md](docs/validacao-fase1.md).
+Etapas finais, somente após concluir as comparações exigidas:
 
-## Limites desta entrega
+```bash
+.venv/bin/python -m enem_base search --study configs/ciencias_natureza.toml \
+  --cv resultados/ciencias_natureza/cv-nova --output resultados/ciencias_natureza/busca-nova
+```
 
-O histórico da validação sintética está em `docs/validacao-fase1.md`; o progresso real
-do estudo atual está em `docs/andamento_ciencias_natureza.md`. O índice SQLite cresce
-com o número de registros e exige espaço em disco.
-A importação faz leituras adicionais para validar o CSV e verificar a integridade;
-ela privilegia rastreabilidade e detecção de erros. Os transformadores e o particionamento
-trabalham com seus dados em memória: antes do uso nacional, planejar recursos conforme
-`docs/arquitetura.md`. A preparação de comandos e roteiros não é uma entrega científica
-final; conferir as etapas executadas e ainda pendentes no relatório de andamento.
+`freeze-solution` confere todas as famílias, busca nos três melhores e variantes obrigatórias;
+`learning-curve` usa a solução congelada; `evaluate-final` exige a curva completa e cria uma
+trava persistente por partição. Não execute o teste para decidir modelos ou parâmetros.
+Comandos completos e critérios de aprovação estão em `docs/validacao-manual.md`.
+
+## Resultados e figuras
+
+Cada comparação grava dobras, resumo, erros por grupo, parâmetros, avisos e hashes.
+O nome do arquivo não prova sucesso: conferir `status`, proveniência e ativos do manifesto.
+Para publicar somente comparações concluídas:
+
+```bash
+.venv/bin/python scripts/preencher_resultados_experimentos.py \
+  --runs resultados/ciencias_natureza/cv-recuperado-v2 \
+  --output resultados/publicacao-nova
+.venv/bin/python scripts/gerar_figuras_artigo.py \
+  --dashboard resultados/ciencias_natureza/dashboard-v1 \
+  --runs resultados/ciencias_natureza/cv-recuperado-v2 \
+  --output resultados/figuras/execucao-nova
+```
+
+Os opcionais `--search`, `--curve` e `--final` no gerador de figuras adicionam somente
+artefatos reais verificados. A ausência de uma etapa é registrada como pendência.
+O consolidado só exporta previsões quando recebe `--final` de uma avaliação final válida.
+
+## Dashboard e entregas
+
+O dashboard consulta os agregados do SQLite em modo leitura; na ausência do banco,
+utiliza os snapshots verificados. Não executa treinamento nem avaliação do teste.
+`ENEM_DATABASE`, `ENEM_DASHBOARD_DIR` e `ENEM_RELATIONS_DIR` são substituições opcionais
+de caminhos, não credenciais. Scripts de início estão em `scripts/iniciar_frontend.*`.
+
+Entregas atuais, compiladas de fontes LaTeX:
+
+- [Pitch: roteiro oral e perguntas](output/pdf/pitch.pdf), sem slides.
+- [Acompanhamento e auditoria das execuções](output/pdf/acompanhamento.pdf).
+- [Artigo em LaTeX, dez páginas](output/pdf/artigo_latex.pdf).
+- [Pacote para importar no Overleaf](output/overleaf-enem2023.zip) e [instruções](relatorio/README.md).
+
+Os relatórios preliminares e pacotes antigos foram retirados da área ativa e
+preservados em `historico/2026-11-07/limpeza-pre-entrega.zip`. O artigo original do
+Checkpoint 6 continua preservado para rastreabilidade; a entrega atual compilável
+é a versão LaTeX indicada acima. Nomes: Joey Alan de Freitas Solis e Paulo Henrico,
+Unifor, professor Tulio. A equipe deve ensaiar e consultar o prazo no AVA.
+
+## Verificações de código e evidências científicas
+
+```bash
+.venv/bin/python -m ruff check .
+.venv/bin/python -m ruff format --check .
+uv pip check --python .venv/bin/python
+```
+
+A suíte existente em `tests/` usa fixtures técnicas e foi executada na revisão de
+07/11/2026: **81 testes aprovados**. Isso é distinto das avaliações científicas com
+os microdados nacionais. Na correção de 05/11 ela não havia sido executada; esse
+registro histórico permanece verdadeiro. Não foram criados novos arquivos de testes.
+A revisão atual também recompôs as 180 avaliações de busca e as métricas/grupos dos
+cinco modelos no teste, sem novos treinamentos. [Cobertura e limites](docs/checkpoint-7-resultados.md).
+Ruff ignora somente cópias históricas de código em `historico/` e `resultados/**/codigo`;
+o código ativo em `src/`, `app/`, `scripts/` e `tests/` continua verificado.

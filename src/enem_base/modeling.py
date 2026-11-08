@@ -11,6 +11,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pyarrow as pa
+from sklearn import config_context
 from sklearn.base import BaseEstimator, clone
 from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import (
@@ -22,12 +24,12 @@ from sklearn.ensemble import (
 from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_error
 from sklearn.model_selection import KFold
-from sklearn.neighbors import KNeighborsRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVR
 from sklearn.tree import DecisionTreeRegressor
 from threadpoolctl import threadpool_limits
 
+from enem_base.neighbors import ExactProfileKNeighborsRegressor
 from enem_base.preprocessing import build_preprocessor
 from enem_base.provenance import runtime_metadata, write_json
 from enem_base.study import StudyConfig, load_development
@@ -86,7 +88,9 @@ def model_catalog(config: StudyConfig) -> dict:
         "arvore": pipeline(
             DecisionTreeRegressor(max_depth=12, min_samples_leaf=100, random_state=42)
         ),
-        "knn": pipeline(KNeighborsRegressor(n_neighbors=25, weights="distance", n_jobs=2)),
+        "knn": pipeline(
+            ExactProfileKNeighborsRegressor(n_neighbors=25, weights="distance", n_jobs=2)
+        ),
         "bagging": pipeline(
             BaggingRegressor(
                 estimator=tree,
@@ -153,23 +157,64 @@ def regression_metrics(observed, predicted) -> dict:
 
 
 def compare_models(
-    config: StudyConfig, output: Path, models: tuple[str, ...] = DEFAULT_MODELS
+    config: StudyConfig,
+    output: Path,
+    models: tuple[str, ...] = DEFAULT_MODELS,
+    *,
+    variant: str = "original",
+    resume: bool = False,
 ) -> dict:
-    if output.exists():
+    if output.exists() and not resume:
         raise FileExistsError("A comparação já existe; escolha um novo diretório.")
-    catalog = model_catalog(config)
+    from enem_base.checkpointing import run_lock
+
+    with run_lock(output):
+        return _compare_models(config, output, models, variant=variant, resume=resume)
+
+
+def _compare_models(config, output, models, *, variant, resume):
+    from enem_base.checkpointing import (
+        atomic_json,
+        identifiers_digest,
+        load_fold,
+        prediction_blocks,
+        save_fold,
+    )
+    from enem_base.evidence import PROVENANCE_KEYS, group_errors, read_run, seal_run
+    from enem_base.variants import fitted_diagnostics, variant_catalog
+
+    catalog, feature_names = variant_catalog(config, variant)
     if not models or len(models) != len(set(models)) or set(models) - set(catalog):
         raise ValueError(f"Modelos inválidos. Disponíveis: {sorted(catalog)}")
     frame, provenance = load_development(config)
+    # O scanner nacional não precisa manter buffers de leitura durante o treinamento.
+    pa.default_memory_pool().release_unused()
     x, y = frame[config.features], frame[config.target].to_numpy(dtype=float)
     fold_labels = frame.validation_fold.to_numpy(dtype=int)
-    output.mkdir(parents=True)
+    previous = None
+    if output.exists():
+        if not resume:
+            raise FileExistsError("A comparação já existe.")
+        previous = json.loads((output / "manifesto.json").read_text(encoding="utf-8"))
+        if (
+            previous.get("models") != list(models)
+            or previous.get("variant") != variant
+            or previous.get("test_evaluated") is not False
+            or any(previous.get(k) != provenance[k] for k in PROVENANCE_KEYS)
+            or previous["parameters"] != {n: estimator_spec(catalog[n]) for n in models}
+        ):
+            raise ValueError("A retomada exige as mesmas fontes, partições, modelos e parâmetros.")
+        if previous["status"] == "completed":
+            return read_run(output, provenance)
+    output.mkdir(parents=True, exist_ok=resume)
     manifest = {
         **runtime_metadata(),
         **provenance,
         "status": "running",
         "models": list(models),
-        "features": config.features,
+        "features": feature_names,
+        "variant": variant,
+        "experiment_kind": "comparison",
         "numeric_imputation": "median fitted within each fold",
         "categorical_encoding": "one-hot with explicit missing category; unknown ignored",
         "evaluated_set": "development_cv",
@@ -179,17 +224,121 @@ def compare_models(
         "all_development_rows": True,
         "test_evaluated": False,
         "parameters": {name: estimator_spec(catalog[name]) for name in models},
+        "execution": {
+            "threadpool_limit": 2,
+            "working_memory_mib": 64,
+            "knn_prediction_batch_rows": 2048,
+            "knn_search": (
+                "ExactProfileKNeighborsRegressor; binary exhaustive search "
+                "plus numeric distance; no subsampling"
+            ),
+        },
     }
-    write_json(output / "manifesto.json", manifest)
+    if previous:
+        for package, version in previous["dependencies"].items():
+            if manifest["dependencies"].get(package) != version:
+                raise ValueError(f"Dependência mudou antes da retomada: {package}")
+        history = output / "retomadas"
+        attempt = len(list(history.glob("*.json"))) + 1
+        atomic_json(history / f"antes-{attempt:03d}.json", previous)
+        manifest["resumed_from_status"] = previous["status"]
+        manifest["resume_attempt"] = attempt
+    legacy_records, legacy_groups = [], pd.DataFrame()
+    if previous and not list((output / "dobras").glob("*.json")):
+        if (output / "experimentos.csv").exists():
+            legacy = pd.read_csv(output / "experimentos.csv")
+            if legacy.duplicated(["model", "fold"]).any():
+                raise ValueError("A execução parcial tem dobras duplicadas.")
+            legacy_records = legacy.astype(object).where(legacy.notna(), None).to_dict("records")
+            legacy_groups = pd.read_csv(output / "erros_grupos.csv")
+    atomic_json(output / "manifesto.json", manifest)
     records = []
+    groups = []
     try:
-        with threadpool_limits(limits=2):
+        with threadpool_limits(limits=2), config_context(working_memory=64):
             for name in models:
+                estimator = None
                 for fold in range(3):
                     train = np.flatnonzero(fold_labels != fold)
                     validation = np.flatnonzero(fold_labels == fold)
+                    context = {
+                        **provenance,
+                        "model": name,
+                        "fold": fold,
+                        "variant": variant,
+                        "parameters": manifest["parameters"][name],
+                        "dependencies": manifest["dependencies"],
+                        "implementation": {
+                            k: v
+                            for k, v in manifest["source_code_sha256"].items()
+                            if Path(k).name
+                            in {"preprocessing.py", "neighbors.py", "variants.py", "study.py"}
+                        },
+                        "train_ids_sha256": identifiers_digest(
+                            frame.iloc[train][config.identifier]
+                        ),
+                        "validation_ids_sha256": identifiers_digest(
+                            frame.iloc[validation][config.identifier]
+                        ),
+                    }
+                    fold_path = output / "dobras" / f"{name}-{fold}.json"
+                    preserved = None
+                    if fold_path.exists():
+                        preserved = load_fold(fold_path, context)
+                    else:
+                        old = [
+                            r for r in legacy_records if r["model"] == name and r["fold"] == fold
+                        ]
+                        if old:
+                            old_groups = legacy_groups.loc[
+                                legacy_groups.model.eq(name) & legacy_groups.fold.eq(fold)
+                            ]
+                            preserved = (
+                                old[0],
+                                old_groups.astype(object)
+                                .where(old_groups.notna(), None)
+                                .to_dict("records"),
+                            )
+                    if preserved:
+                        record, fold_groups = preserved
+                        if (
+                            record["n_train"] != len(train)
+                            or record["n_evaluated"] != len(validation)
+                            or record["evaluated_set"] != "development_cv"
+                            or record["row_type"] != "fold"
+                            or record["model"] != name
+                            or record["fold"] != fold
+                            or record["test_evaluated"] is not False
+                            or any(record[k] != provenance[k] for k in PROVENANCE_KEYS)
+                            or json.loads(record["parameters_json"]) != manifest["parameters"][name]
+                            or not np.isfinite(
+                                [record[k] for k in ("rmse", "mae", "r2", "elapsed_seconds")]
+                            ).all()
+                            or not fold_groups
+                            or not pd.DataFrame(fold_groups)
+                            .groupby("group")
+                            .n.sum()
+                            .eq(len(validation))
+                            .all()
+                        ):
+                            raise ValueError(f"Dobra parcial inconsistente: {name}/{fold}")
+                        if not fold_path.exists():
+                            save_fold(fold_path, context, record, fold_groups)
+                        records.append(record)
+                        groups.extend(fold_groups)
+                        logger.info("Preservando %s, dobra %s, já concluída", name, fold)
+                        continue
                     estimator = clone(catalog[name])
                     started = time.perf_counter()
+                    cached_prediction_seconds = prior_fit_seconds = 0.0
+                    reused_blocks = 0
+                    logger.info(
+                        "Iniciando %s, dobra %s: %s treino, %s validação",
+                        name,
+                        fold,
+                        len(train),
+                        len(validation),
+                    )
                     with warnings.catch_warnings(record=True) as captured:
                         warnings.simplefilter("always")
                         if name == "baseline":
@@ -197,27 +346,76 @@ def compare_models(
                             predicted = estimator.predict(np.zeros((len(validation), 1)))
                         else:
                             estimator.fit(x.iloc[train], y[train])
-                            predicted = estimator.predict(x.iloc[validation])
+                            if name == "knn":
+                                fit_seconds = time.perf_counter() - started
+                                predicted = np.empty(len(validation), dtype=float)
+                                blocks = prediction_blocks(
+                                    estimator,
+                                    x.iloc[validation],
+                                    frame.iloc[validation][config.identifier],
+                                    output / "predicoes_parciais" / f"dobra-{fold}",
+                                    context,
+                                    fit_seconds,
+                                )
+                                for (
+                                    start,
+                                    stop,
+                                    values,
+                                    reused,
+                                    saved_seconds,
+                                    saved_prior_fit_seconds,
+                                ) in blocks:
+                                    prior_fit_seconds = saved_prior_fit_seconds
+                                    predicted[start:stop] = values
+                                    if reused:
+                                        cached_prediction_seconds += saved_seconds
+                                        reused_blocks += 1
+                                    logger.info(
+                                        "KNN dobra %s: %s/%s previsões reais; bloco reutilizado=%s",
+                                        fold,
+                                        stop,
+                                        len(validation),
+                                        reused,
+                                    )
+                            else:
+                                predicted = estimator.predict(x.iloc[validation])
                     record = {
-                        "experiment_id": f"inicial-{name}",
+                        "experiment_id": f"{output.name}-{variant}-{name}",
                         "row_type": "fold",
                         "model": name,
                         "hypothesis": "Comparação inicial do perfil tabular para estimar a nota CN",
-                        "features_json": json.dumps(config.features),
+                        "features_json": json.dumps(feature_names),
+                        "preparation_json": json.dumps({"variant": variant}),
+                        "variant": variant,
                         "parameters_json": json.dumps(manifest["parameters"][name]),
                         "evaluated_set": "development_cv",
                         "fold": fold,
                         **regression_metrics(y[validation], predicted),
-                        "elapsed_seconds": time.perf_counter() - started,
+                        "elapsed_seconds": time.perf_counter()
+                        - started
+                        + cached_prediction_seconds
+                        + prior_fit_seconds,
+                        "prediction_blocks_reused": reused_blocks,
                         "n_train": len(train),
                         "n_evaluated": len(validation),
                         "warnings_json": json.dumps([str(w.message) for w in captured]),
+                        "diagnostics_json": json.dumps(fitted_diagnostics(estimator)),
+                        "conclusion": "Métricas observadas; comparar média e variação das dobras.",
                         **provenance,
                     }
-                    records.append(record)
-                    pd.DataFrame(records).to_csv(
-                        output / "experimentos.csv", index=False, lineterminator="\n"
+                    fold_groups = group_errors(
+                        frame.iloc[validation], predicted, config.target, name, fold
                     )
+                    save_fold(fold_path, context, record, fold_groups)
+                    records.append(record)
+                    groups.extend(fold_groups)
+                    for filename, values in [
+                        ("erros_grupos.csv", groups),
+                        ("experimentos.csv", records),
+                    ]:
+                        temporary = output / (filename + ".tmp")
+                        pd.DataFrame(values).to_csv(temporary, index=False, lineterminator="\n")
+                        temporary.replace(output / filename)
                     logger.info(
                         "%s, dobra %s: RMSE %.3f; %.1f s; avisos=%s",
                         name,
@@ -228,6 +426,7 @@ def compare_models(
                     )
                 del estimator
         results = pd.DataFrame(records)
+        results.to_csv(output / "experimentos.csv", index=False)
         summary = []
         for name, group in results.groupby("model", sort=False):
             row = {
@@ -255,7 +454,8 @@ def compare_models(
         )
         manifest["status"] = "completed"
         manifest["results"] = summary
-        write_json(output / "manifesto.json", manifest)
+        pd.DataFrame(groups).to_csv(output / "erros_grupos.csv", index=False)
+        seal_run(output, manifest)
     except Exception as error:
         manifest["status"] = "failed"
         manifest["failure_type"] = type(error).__name__

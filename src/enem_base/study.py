@@ -122,7 +122,9 @@ def load_development(config: StudyConfig) -> tuple[pd.DataFrame, dict]:
     selected = ds.field(config.identifier).isin(development[config.identifier].tolist())
     columns = [config.identifier, config.target] + config.features
     # O filtro no scanner mantém fora da tabela retornada as linhas reservadas.
-    frame = dataset.to_table(columns=columns, filter=selected).to_pandas()
+    frame = dataset.to_table(columns=columns, filter=selected).to_pandas(
+        categories=list(config.categorical)
+    )
     frame = development.merge(frame, on=config.identifier, how="left", validate="one_to_one")
     if frame[config.target].isna().any() or not np.isfinite(frame[config.target]).all():
         raise ValueError("Participantes do desenvolvimento sem alvo numérico observado.")

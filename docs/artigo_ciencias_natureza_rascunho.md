@@ -1,4 +1,8 @@
+> Documento histórico de andamento. Foi substituído pelo [artigo final do Checkpoint 6](artigo.md) e seu [PDF](artigo.pdf). Não utilizar como versão de entrega.
+
 # Estimativa da nota de Ciências da Natureza no ENEM 2023 a partir do perfil dos participantes
+
+> Registro histórico preservado. Para o estado atual da comparação nacional, consulte [Checkpoint 4 — resultados de 07/11/2026](checkpoint-4-resultados.md).
 
 **Rascunho em desenvolvimento, iniciado em 21/10/2026.** Não é o artigo final em PDF.
 Autores, afiliação, equipe e link do repositório: a preencher. A formatação ABNT e o

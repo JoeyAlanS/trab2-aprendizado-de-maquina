@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "pdf_sha256": "3183e8ce3577b080dff347158409913e5419118e5aff31d74b4e58719fe3bf23",
+  "method": "Renderização Poppler a 1100 px; inspeção das dez páginas, comparação por hash das páginas inalteradas entre revisões.",
+  "checks": [
+    "legibilidade de corpo, gráficos e tabelas",
+    "acentuação e caracteres",
+    "margens e paginação",
+    "ausência de cortes e sobreposição",
+    "títulos, eixos, legendas e fontes",
+    "separação CV/teste e tamanhos dos grupos"
+  ],
+  "page_renders": {
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-01.png": "a4c5a9d459434d1f631b91a7f15b225ff1c8e18716eea5d8aa01ffba9928029a",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-02.png": "480a10d7e375dc6047807a4e3d6d895af48c9ca772ba4cccd64b4cc9ee001e14",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-03.png": "40d865e777fbd124a919c0ea23143ad44f3d7822c2bad812d91be9c182b487bd",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-04.png": "7e425746cb7d604bf1b3dbda379ba9ade43bc6abbb32a92f66d42c6c475795a8",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-05.png": "3b3e3850c864f35203893d01123cf0e6ae60760faa59f2941e7589d27b2a9769",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-06.png": "a01914e75f61ef28ddb58893a76d5af144c3cc6e0621de27decdeea96585e859",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-07.png": "5bb6726937df28e3f03ee30e281a6c5115d689cf61477657c28ec649b38c7473",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-08.png": "9646f391f1170ce29e3938ba0306ef4994ce2f602c05dddbfecda9d1f3b98f5b",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-09.png": "62db2bdf3d1e868c4fec0ee9cdbcce47bcb37370fa540e2eff489c0aa6848825",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/revisao_visual/pagina-10.png": "f27e240a8e62279170bf6d168a701f53859aa16da5abcbc3d2762bd3b2390d97"
+  }
+}

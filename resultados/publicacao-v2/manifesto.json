@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "inputs": {
+    "resultados/ciencias_natureza/cv-recuperado-v2": "3b3988286bf4a3f62a70fa454846c4dd72e60ab282b4cdf28102da6447191d36"
+  },
+  "rows": 16,
+  "test_evaluated": false,
+  "pending": [
+    "avaliação final e previsões reais de teste"
+  ],
+  "assets": {
+    "experimentos.csv": "33131ce6a74f820f023175c01d439f68d0be4d54d57fbc2816f8dfb4673aa6db"
+  }
+}

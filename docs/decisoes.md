@@ -1,5 +1,12 @@
 # Decisões e pendências
 
+**Atualização em 05/11/2026:** o registro de 21/10 abaixo é histórico. Foram definidas e
+executadas três features derivadas, seleção F-regression de 75%, PCA de ≥80% (45 componentes
+observados nas dobras), ponderação por dez faixas do treino e ablações socioeconômica/UF.
+Fonte, partições e dicionário têm manifestos verificados. Detalhes e limitações estão em
+`relatorio-correcao-2026-11-05.md` e `validacao-manual.md`; as opções abaixo não devem ser
+interpretadas como todas ainda indefinidas. Equipe, prazos e solução final continuam pendentes.
+
 Atualização em **21/10/2026**: o usuário definiu **Ciências da Natureza e suas Tecnologias**.
 Alvo: **NU_NOTA_CN**. O registro da fase inicial, de 16/10/2026, permanece no relatório
 de validação da fase 1. A restrição de manter o alvo indefinido foi superada por essa

@@ -1,0 +1,160 @@
+{
+  "created_at_utc": "2026-11-06T17:08:46.395469+00:00",
+  "python": "3.13.17",
+  "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+  "git_commit": "e9f04552830fb12863b69ef7be5de0515619507a",
+  "git_dirty": true,
+  "source_code_sha256": {
+    "src/enem_base/__init__.py": "5fcabeaa7b73ffcf0e87c1e2eb6039eb6c9d8a8eb600815c98cd829df1ab4db7",
+    "src/enem_base/__main__.py": "91f20eada44a1eccff337d9553aa2392f036f648d4b3dd21b288904d5fe179da",
+    "src/enem_base/acquisition.py": "22f3e0e0cbbd3f1423916901adbb4d9ea6e896a74210ed2d2f99c961a2f5c1bf",
+    "src/enem_base/checkpointing.py": "2f86278acb846d8b94709555c0d9cbccdedff70bac30aceeebbd5491151c3831",
+    "src/enem_base/cleaning.py": "256f42677d4ee5fba0daa3d55aff1bd27c560f337c4b3613f0ec49cfce27c72d",
+    "src/enem_base/cli.py": "7ac5d9ff9e87a7a049f8fb0844cbd78a646fa1c2d7f1634d3a7a4edf3c8661b5",
+    "src/enem_base/config.py": "4ac6de2f5c64c64560ed590ee237d59e807a24a4c14698dac9b0e7466e6bae25",
+    "src/enem_base/dashboard.py": "7d2aeece5a358c5be487a16360a01f1c61a8d419cdc1859485823c80337fa3a1",
+    "src/enem_base/dashboard_ui.py": "9686418be2373dd920a1cd3e274a98f80e4a854a30c943092d4c13c7a79dd85d",
+    "src/enem_base/database.py": "8669dbcd5b80a23e9280a4c6f74b0c790f7854828dcef0d5b86757436bebde51",
+    "src/enem_base/evidence.py": "ba58b4aadeb1a625e8d54645102d3862bf9771bf7c48768d2b40a42a2b7a0312",
+    "src/enem_base/exploration.py": "415c1f514d8a7fcb676d5fa823e6f25b5d0484fe681f25b68c56b0de43d1b205",
+    "src/enem_base/exports.py": "1548b2e4b81cf9e3c8334ec2e0d6f535eb54008c4a03db3de20da95b09891928",
+    "src/enem_base/features.py": "44420ada99020c8f5dc4f77e4f1057e28440989db0f652e0e2875510ddc9ca89",
+    "src/enem_base/ingestion.py": "ee42e74643de981037af4f952849bc06fce7978e41d3ea9ae6a874aa15ec4003",
+    "src/enem_base/integration.py": "1d65f4a3cfbe962ae58fb3c4c25bcd5fc38f27b67f7130972aa8d6bfbb980943",
+    "src/enem_base/modeling.py": "df3d766faa111388c873248a678a0d66f94376a5f249031c850d62b0f40cad82",
+    "src/enem_base/neighbors.py": "317674be4f2e6a90d918844bde80dff78595811bf7f54d91b422fd67f337a868",
+    "src/enem_base/official.py": "5d661dc646ed2d387b5274062726fae5a8ba50d503a64fdf82c0b0a3c0966f45",
+    "src/enem_base/preprocessing.py": "1da006461960b588541fa56bd1349c502cba829bc3ec641c8075e9242c323881",
+    "src/enem_base/provenance.py": "d41a5961aa5d7de84ea0619669a89c7331804345b56177c7d05fd283f200e347",
+    "src/enem_base/quality.py": "90afec110f607dd754586911fe08305807f5d29c2d1fa7f3c46bf446718b5571",
+    "src/enem_base/recovery.py": "43c7dc6c46d87af34b2e65fd1e05d9476ebff44c57d7c577e0867bf4d293e431",
+    "src/enem_base/relations.py": "be9f72664d5ba5a6244e5bc0494e82cb01fc5b340cd54755791fb965d352efc7",
+    "src/enem_base/reporting.py": "1cc90edc6e214e5309405d7a1c4fb30a4ae84a24385885eb7d914fc2d9c220d5",
+    "src/enem_base/selection.py": "bdabdeb9848413d7a1bd7203c7afc5ec945dde77566510bf28733c34e7cfda66",
+    "src/enem_base/splits.py": "1951908394f0e73191eaca02a5e3d416ddd04c6114cacc692956980fa3115060",
+    "src/enem_base/study.py": "74af9b57fc9613679b6d7cc36a42cddb7c98c62d07773c0d7105bee2b04e1c55",
+    "src/enem_base/variants.py": "32ce03c3f2ff80649c5b21b4144b99238a0a8adaeb6d5c1d0af537ab01337515",
+    "src/enem_base/visualization.py": "c57c71dd554dd8e3f6bc8aef383507394b57d209e6f65044d6acffe94435e03f",
+    "src/enem_base/workflow.py": "11df7d174645004c98c502854ff331ae0434a38ccf459b19f892b3b1bbd49aed"
+  },
+  "dependencies": {
+    "enem-base": "0.1.0",
+    "pandas": "3.1.0",
+    "pyarrow": "24.0.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "faiss-cpu": "1.15.1"
+  },
+  "status": "passed",
+  "manifest_sha256": "46a40083ac23a4f6297762a1617ba33ea8780c31c8f2ffbfe2108610f57fb9e3",
+  "source_folds_recomputed": 21,
+  "selected_models": [
+    "stacking",
+    "svm",
+    "random_forest"
+  ],
+  "mean_and_std_match": true,
+  "same_top_three_in_each_fold": true,
+  "same_top_three_in_each_metric": true,
+  "paired_margins_match": true,
+  "original_inputs_unchanged": true,
+  "existing_output_refused": {
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/scripts/selecionar_checkpoint2.py\", line 35, in <module>\n    main()\n    ~~~~^^\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/scripts/selecionar_checkpoint2.py\", line 18, in main\n    result = select_checkpoint2(\n        load_study(args.study), args.checkpoint1, args.output, references=args.references\n    )\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/src/enem_base/selection.py\", line 144, in select_checkpoint2\n    raise FileExistsError(\"Seleção existente; preservar e escolher outra saída.\")\nFileExistsError: Seleção existente; preservar e escolher outra saída.\n",
+    "manifest_unchanged": true
+  },
+  "images": [
+    {
+      "file": "ranking_sete_modelos.png",
+      "size": [
+        3334,
+        1769
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "9c58b8274b28713fda5d59b6cb41f828c67dcb399f05743b3194790dde1df5f6"
+    },
+    {
+      "file": "comparacao_tres_modelos.png",
+      "size": [
+        3634,
+        1592
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "1eb079674938b79524fe45a8b86a37476c46f6caf30676fcaa067cb0fc03c44f"
+    }
+  ],
+  "visual_review": "Dois PNG inspecionados; títulos, eixos, legendas e fonte legíveis, sem sobreposição; SVGs analisados como XML",
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "93 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check",
+        "--python",
+        ".venv/bin/python"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Checked 54 packages in 0.69ms\nAll installed packages are compatible\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "test_evaluated": false,
+  "trained_new_models": false,
+  "automated_test_files_created": false,
+  "synthetic_data_used": false,
+  "selector_script_sha256": "d4239d289b12d29bfc5c4d749a62631974dfaa5ec56f6b15d4ff852c9f42f08d"
+}

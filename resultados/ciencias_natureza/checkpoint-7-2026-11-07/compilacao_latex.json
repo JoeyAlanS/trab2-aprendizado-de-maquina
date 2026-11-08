@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "engine": "Tectonic 0.17.0",
+  "documents": [
+    {
+      "source": "relatorio/artigo.tex",
+      "output": "output/pdf/artigo_latex.pdf",
+      "exit_code": 0,
+      "pdf_sha256": "24127effd7ec3137acf20a84eed1df481bc2d046835223d146f5088a38647b1d",
+      "log_sha256": "1426e8fd5a7e7c092367ede475b5395c37def577977e6506b1299945cd34d15f",
+      "overfull_boxes": 0,
+      "missing_glyphs": 0
+    },
+    {
+      "source": "relatorio/pitch.tex",
+      "output": "output/pdf/pitch.pdf",
+      "exit_code": 0,
+      "pdf_sha256": "d2ca0c9d2057b206fe86cc7c07d02021ad14b3436658dc18e576c3579be69661",
+      "log_sha256": "19aa9e5aa5d267ae067c77c9e389cce55a8ee3f2ebf8e0d3fab7825e7e632b03",
+      "overfull_boxes": 0,
+      "missing_glyphs": 0
+    },
+    {
+      "source": "relatorio/acompanhamento.tex",
+      "output": "output/pdf/acompanhamento.pdf",
+      "exit_code": 0,
+      "pdf_sha256": "94566d2d5ddc27dadec97f08fb5929b7355305d7cec8bdc3fbfc1539be33d170",
+      "log_sha256": "4532ccd8c5eaa8edfba490ff3bb3e9fa1f848248748a1a3876f8d7834ed5e6b6",
+      "overfull_boxes": 0,
+      "missing_glyphs": 0
+    }
+  ],
+  "compiled_inside_overleaf": false,
+  "visual_review_required": true
+}

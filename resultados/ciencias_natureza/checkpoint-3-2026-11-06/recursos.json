@@ -1,0 +1,10 @@
+{
+  "max_simultaneous_families": 2,
+  "random_forest_workers": 6,
+  "other_process": "svm then stacking",
+  "blas_threads_per_process": 2,
+  "timing_is_isolated_benchmark": false,
+  "selection_parameters_preserved_except_execution_n_jobs": true,
+  "parallel_preflight_sha256": "8e69e38fa334902015ac8e843f764c75078e32393031f64918958781157817fe",
+  "launcher_sha256": "de7f300c22e3fb58c5e4bfdcd442737d9ea6b99c83c3820835c283e5d268af5a"
+}

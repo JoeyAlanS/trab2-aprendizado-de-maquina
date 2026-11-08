@@ -1,0 +1,195 @@
+{
+  "status": "completed",
+  "reason": "Relatórios preliminares e pacotes duplicados substituídos pela entrega LaTeX atual. Funcionalidades e dados científicos preservados.",
+  "archive": "historico/2026-11-07/limpeza-pre-entrega.zip",
+  "archive_sha256": "d2d5b98d201ffc9f95df213b978e2e655ab8863da8fd8e0d9767d113f8c35a34",
+  "removed_active_files": {
+    "output/overleaf_bundle/LEIA-ME-STATUS.md": {
+      "sha256": "b491c80602b293139729bbbf08ec875687f8210b9f738f338f6e59ba6aef6542",
+      "bytes": 485
+    },
+    "output/overleaf_bundle/README.md": {
+      "sha256": "f14520af22b364e32ccd032b18151243141a746e275240b4db7555b4bce7d3f2",
+      "bytes": 1231
+    },
+    "output/overleaf_bundle/dados_relatorio.json": {
+      "sha256": "c47466059615ef75e162c7b2a5432c20e686b97e250e9e38705eb1841f06fcf4",
+      "bytes": 373
+    },
+    "output/overleaf_bundle/images/associacoes.png": {
+      "sha256": "ea980fbef212c97d4f62033d16a669f2599295dbbb99585c7db554fc7ee26044",
+      "bytes": 86041
+    },
+    "output/overleaf_bundle/images/demografia.png": {
+      "sha256": "346bbdb2d1301e24ffdaa9067d11844b22abe3d023affbc2cb59821ab4b6b85a",
+      "bytes": 69375
+    },
+    "output/overleaf_bundle/images/distribuicao.png": {
+      "sha256": "338545bcc4b83a8becb520b03c401219d37ef25941be84b4743e5890c2257a52",
+      "bytes": 36323
+    },
+    "output/overleaf_bundle/images/escola.png": {
+      "sha256": "a2ad1981fa96c4d21ae0515b6f6594340a69fd13b8f02c5482dc697417ec58f7",
+      "bytes": 96609
+    },
+    "output/overleaf_bundle/images/escola_renda.png": {
+      "sha256": "aeb32c8cad66652834c2bcfeb3dbd33270230d866a991750e8adaa89e5a4cf25",
+      "bytes": 87874
+    },
+    "output/overleaf_bundle/images/modelos.png": {
+      "sha256": "1525a1d361405c76d6e68a2b27a7c47db5451d6b20eb2ea4f790afa0bde7c897",
+      "bytes": 34305
+    },
+    "output/overleaf_bundle/images/socioeconomico.png": {
+      "sha256": "f7135b2627edba3565f6639db482b887dd0e2674a48cd66011ee862ad33ce6eb",
+      "bytes": 94908
+    },
+    "output/overleaf_bundle/images/ufs.png": {
+      "sha256": "388ec977c637d70daeda5f7887f4e0205ce524e5135a167e0967692ce188a0bf",
+      "bytes": 113723
+    },
+    "output/overleaf_bundle/main.tex": {
+      "sha256": "b67041ee810a0416d0b001402e92cb91cadf845efa904400dd970b9eeb2c958d",
+      "bytes": 22681
+    },
+    "output/overleaf_bundle/schema_banco.sql": {
+      "sha256": "b7af0e6e5991087d887d4dc65b6164b36b6fcd1fdcb6e7c3ac4ac8751f92d1ca",
+      "bytes": 4552
+    },
+    "output/overleaf_bundle/tables/modelos.tex": {
+      "sha256": "b7543acf0730c78529dc3e028bd77dfd4dfc41280fddc2b69ad802545eaaa494",
+      "bytes": 465
+    },
+    "output/overleaf_bundle/tables/pares.tex": {
+      "sha256": "89c21f40c811be485945ca7604fdd76c82c0c8136812abf48cee33a273624684",
+      "bytes": 568
+    },
+    "output/overleaf_bundle/tables/todas_entradas.tex": {
+      "sha256": "1110e135db5409b45a06b2754ed8211a313af2cf4e69e16f41adf53b821badaf",
+      "bytes": 2091
+    },
+    "output/overleaf_bundle/tables/valores.tex": {
+      "sha256": "4b24ce18e5e79e9b160269a1046a89402b62407a717c5fafd060ac1c0cd8aa34",
+      "bytes": 424
+    },
+    "output/pdf/fontes_latex_ciencias_natureza.zip": {
+      "sha256": "c540aa71cf57880bb8513e7a0c9664956cfec46686ce5384a368749a7a431d73",
+      "bytes": 586092
+    },
+    "output/pdf/main.pdf": {
+      "sha256": "02b76c66c01954c85d725fcdb2dc9e70dad2f275e8a14e730defb81c300a63f4",
+      "bytes": 707423
+    },
+    "output/pdf/relatorio_ciencias_natureza.pdf": {
+      "sha256": "aef10908cb6a5881d77e6b2f5b938dc60522b5fa4f2fadd4bbc40395b3268261",
+      "bytes": 710725
+    },
+    "output/relacoes_enem_cn.zip": {
+      "sha256": "071baf11b7140ef6a7fd2d4213a97ba2cecf79b5fb4c6fddd4936933e06e00a6",
+      "bytes": 770351
+    },
+    "output/relatorio_overleaf.zip": {
+      "sha256": "718aa5ba42dadb234ed677464a76aa06322dbae1ce5994d76857e391594cc945",
+      "bytes": 586611
+    },
+    "relatorio/README.md": {
+      "sha256": "8780d29548f8f94973e873845708ee9a5b7313ed84be384631b25ec9b8ee0a4f",
+      "bytes": 1828
+    },
+    "relatorio/dados_relatorio.json": {
+      "sha256": "c47466059615ef75e162c7b2a5432c20e686b97e250e9e38705eb1841f06fcf4",
+      "bytes": 373
+    },
+    "relatorio/images/associacoes.png": {
+      "sha256": "ea980fbef212c97d4f62033d16a669f2599295dbbb99585c7db554fc7ee26044",
+      "bytes": 86041
+    },
+    "relatorio/images/demografia.png": {
+      "sha256": "346bbdb2d1301e24ffdaa9067d11844b22abe3d023affbc2cb59821ab4b6b85a",
+      "bytes": 69375
+    },
+    "relatorio/images/distribuicao.png": {
+      "sha256": "338545bcc4b83a8becb520b03c401219d37ef25941be84b4743e5890c2257a52",
+      "bytes": 36323
+    },
+    "relatorio/images/escola.png": {
+      "sha256": "a2ad1981fa96c4d21ae0515b6f6594340a69fd13b8f02c5482dc697417ec58f7",
+      "bytes": 96609
+    },
+    "relatorio/images/escola_renda.png": {
+      "sha256": "aeb32c8cad66652834c2bcfeb3dbd33270230d866a991750e8adaa89e5a4cf25",
+      "bytes": 87874
+    },
+    "relatorio/images/modelos.png": {
+      "sha256": "1525a1d361405c76d6e68a2b27a7c47db5451d6b20eb2ea4f790afa0bde7c897",
+      "bytes": 34305
+    },
+    "relatorio/images/socioeconomico.png": {
+      "sha256": "f7135b2627edba3565f6639db482b887dd0e2674a48cd66011ee862ad33ce6eb",
+      "bytes": 94908
+    },
+    "relatorio/images/ufs.png": {
+      "sha256": "388ec977c637d70daeda5f7887f4e0205ce524e5135a167e0967692ce188a0bf",
+      "bytes": 113723
+    },
+    "relatorio/main.tex": {
+      "sha256": "b67041ee810a0416d0b001402e92cb91cadf845efa904400dd970b9eeb2c958d",
+      "bytes": 22681
+    },
+    "relatorio/relatorio_final.tex": {
+      "sha256": "57454c5232c448747ee455894718ed53517b588e88b167cb98f6fbeece3b4a2a",
+      "bytes": 225
+    },
+    "relatorio/schema_banco.sql": {
+      "sha256": "b7af0e6e5991087d887d4dc65b6164b36b6fcd1fdcb6e7c3ac4ac8751f92d1ca",
+      "bytes": 4552
+    },
+    "relatorio/tables/modelos.tex": {
+      "sha256": "b7543acf0730c78529dc3e028bd77dfd4dfc41280fddc2b69ad802545eaaa494",
+      "bytes": 465
+    },
+    "relatorio/tables/pares.tex": {
+      "sha256": "89c21f40c811be485945ca7604fdd76c82c0c8136812abf48cee33a273624684",
+      "bytes": 568
+    },
+    "relatorio/tables/todas_entradas.tex": {
+      "sha256": "1110e135db5409b45a06b2754ed8211a313af2cf4e69e16f41adf53b821badaf",
+      "bytes": 2091
+    },
+    "relatorio/tables/valores.tex": {
+      "sha256": "4b24ce18e5e79e9b160269a1046a89402b62407a717c5fafd060ac1c0cd8aa34",
+      "bytes": 424
+    },
+    "scripts/compilar_relatorio.ps1": {
+      "sha256": "c5a8ae213d0c97c7b11ee68159d90e3204b8beb9e884caeceecb3175dd4f9a2d",
+      "bytes": 1379
+    },
+    "scripts/gerar_relatorio.py": {
+      "sha256": "ffe8ba06632e253ac39a823ae1b3274afbd5cd55b674f6b384efc4289162a462",
+      "bytes": 544
+    },
+    "docs/templates/acompanhamento.md": {
+      "sha256": "3f70c3a072f2a5c1d3f643e2d7e61887336c86525c421b9fa62a56d952a423aa",
+      "bytes": 906
+    },
+    "docs/templates/artigo.md": {
+      "sha256": "e0a6d46b6c1a4e96c963859f1260b87388c45bc92e96e2eff25afa0c2a17fa7e",
+      "bytes": 2287
+    },
+    "docs/templates/pitch.md": {
+      "sha256": "d2b35b99d495a20bb882b2adb4482323fb804d51d61ba3300ef504d414ed2e1c",
+      "bytes": 986
+    }
+  },
+  "file_count": 44,
+  "original_bytes": 4671697,
+  "archive_bytes": 4410464,
+  "scientific_inputs_removed": false,
+  "additional_archives": [
+    {
+      "path": "historico/2026-11-07/templates-pre-entrega.zip",
+      "sha256": "28e2b269458a69dec4e533e39bfa292a840e76ec057d023169e81442b109a30b",
+      "bytes": 2734
+    }
+  ]
+}

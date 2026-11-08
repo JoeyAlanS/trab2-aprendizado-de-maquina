@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "publication": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2",
+  "figures": {
+    "erros_faixa_nota.png": {
+      "sha256": "3319b999804463ea6d3072f219028d1cb6c72716dcb4daee2976143d0f165138",
+      "size": [
+        2734,
+        1764
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "comparacao_teste.png": {
+      "sha256": "dc59edd62176d72bfebec42325c7af95f58371b2a4c965f911a17f09d321f70f",
+      "size": [
+        4235,
+        1819
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "observado_versus_previsto.png": {
+      "sha256": "cdd31d0fe3db2819c196dc622a8a3d2b9d9e416cbfd472ebcf22f3ef118ee6c8",
+      "size": [
+        4532,
+        1701
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "erros_sg_uf_prova.png": {
+      "sha256": "65865e2fef67f8396c359971ee95d1d36c9dfed42eb6d28d6c0db07619a61b88",
+      "size": [
+        3634,
+        1764
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "erros_tp_escola.png": {
+      "sha256": "b089039b9875c44504d027eb14be80518905bb8f18e6ddf9d88db89458e7ee17",
+      "size": [
+        2734,
+        1764
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "curvas_configuracoes_finais.png": {
+      "sha256": "a4c48584128b2dd665b864e3ede1db342de6e54ccfaa583fcb49078b04cd1e17",
+      "size": [
+        4234,
+        1764
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "erros_q006.png": {
+      "sha256": "d31b5a710fc15ee25a5db2f59eae96fc0d92ca885230429abd8fcd3954f95591",
+      "size": [
+        3634,
+        1764
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "validacao_versus_teste.png": {
+      "sha256": "a1400389a6d5ec43c6c4a03ca58843c051c739f1554c1459eb2eed94d888b8d8",
+      "size": [
+        2734,
+        1675
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "distribuicao_residuos.png": {
+      "sha256": "2a43593e6b13cf6381c5c45040fe5afcbc886c53e7c53ab48e5e1222524cc319",
+      "size": [
+        4234,
+        1672
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  },
+  "png_count": 9,
+  "svg_count": 9,
+  "checks": [
+    "Nove figuras inspecionadas visualmente",
+    "Rótulo negativo do baseline em R² corrigido, sem sobreposição",
+    "Títulos, eixos, legendas e fontes legíveis",
+    "Densidades com mesma escala, limites e células",
+    "CSVs idênticos à primeira publicação; somente apresentação alterada"
+  ],
+  "supersedes": "publicacao",
+  "test_evaluated": true
+}

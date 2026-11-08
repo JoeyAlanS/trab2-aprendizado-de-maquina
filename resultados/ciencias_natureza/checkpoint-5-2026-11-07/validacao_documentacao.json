@@ -1,0 +1,322 @@
+{
+  "status": "passed",
+  "documents_sha256": {
+    "README.md": "727af7716a65ea363c6ecc67f042ac3386a0c90a0cf60a00ff12f5386191a262",
+    "resultados/README.md": "6270c94e60f41507fa6273f4fd523d0b6ed5e8a05e5d1bb3c47d37d4b24e1942",
+    "docs/checkpoints.md": "31231d0bbd26b3b090ecf46080e6f89f5cfda55dccdbc5f765acd81677248106",
+    "docs/requisitos.md": "ca795d9dbc22692bf240a8d0ef742fe6c2d909b661b6b8f9d9410637c35b7e68",
+    "docs/acompanhamento.md": "9a756fd55691c9e2034fc49123f87403d825f5dc97166e6d376080efcffcf925",
+    "docs/artigo.md": "d191d9fef9054f1a29b23c0a612e9611bf6832dce28260d62b72610d7849e7dd",
+    "docs/validacao-manual.md": "db6103edc88c459696c8301357f51ad421750aa5d803b33f48f9aec539ce8577",
+    "docs/checkpoint-5-resultados.md": "7af3e2cdb82589c3831128a05fdc505ec88503ead7732d6d88daa35e3dfa807f",
+    "docs/origem-arquivos-enem.md": "b87cd65f7cd9e2dba1a189f6b8fcdde8dfca3972f3a7070a2ec404093b988473"
+  },
+  "local_links": [
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-3-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-4-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-5-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "resultados/ciencias_natureza/checkpoint-5-2026-11-07/index.html"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-2-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-1-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoints.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/origem-arquivos-enem.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-4-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/relatorio-correcao-2026-11-05.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validacao-manual.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/auditoria-2026-11-05.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-5-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-protocolo.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-protocolo.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-curvas.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-5-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "relatorio-correcao-2026-11-05.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoints.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-5-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-3-protocolo.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-protocolo.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-curvas.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-5-resultados.md"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/index.html"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../output/checkpoint-5-visualizacoes-2026-11-07.zip"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/01_distribuicao.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/02_sete_algoritmos.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/03_trio_selecionado.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/04_catalogo_variantes.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/05_pca.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/06_buscas.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/07_ganhos_buscas.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/08_curvas_finais.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/09_teste.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/10_cv_teste.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/11_observado_previsto.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/12_distribuicao_residuos.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/13_faixas.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/14_escola.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/15_uf.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/16_renda.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/figuras/17_residuos_previsto.png"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../scripts/publicar_checkpoint5.py"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../scripts/validar_checkpoint5.py"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/catalogo.json"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao.json"
+    },
+    {
+      "document": "docs/checkpoint-5-resultados.md",
+      "target": "origem-arquivos-enem.md"
+    },
+    {
+      "document": "docs/origem-arquivos-enem.md",
+      "target": "referencias/fonte_enem2023.json"
+    },
+    {
+      "document": "docs/origem-arquivos-enem.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_integridade_encerramento.json"
+    },
+    {
+      "document": "docs/origem-arquivos-enem.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/avaliacao_final/previsoes_teste.csv"
+    },
+    {
+      "document": "docs/origem-arquivos-enem.md",
+      "target": "../dados/raw/README.md"
+    }
+  ],
+  "local_link_count": 76,
+  "archive_verified": "bb4b240fba665fcda0aee87f1336ba300fe00d20cb93b7418afe352f83b8f2a2"
+}

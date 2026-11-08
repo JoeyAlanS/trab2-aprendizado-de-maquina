@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENEM 2023 — coleção de gráficos</title>
+<style>
+body{margin:0;
+background:#f3f5f7;
+color:#172d3c;
+font:17px/1.6 system-ui,sans-serif}
+header,main{max-width:1150px;
+margin:auto;
+padding:30px}
+h1{font-size:36px;
+line-height:1.2}
+h2{font-size:23px}
+article{background:white;
+border:1px solid #d7dfe4;
+border-radius:12px;
+padding:24px;
+margin:26px 0}
+img{width:100%;
+height:auto}
+a{color:#146075}
+button{font:inherit;
+border:1px solid #146075;
+color:#146075;
+background:white;
+padding:8px 18px;
+border-radius:6px;
+cursor:pointer}
+button[aria-pressed=true]{background:#146075;
+color:white}
+.tag{font-size:14px;
+font-weight:700;
+color:#595959}
+.tables{font-size:14px;
+overflow-wrap:anywhere}
+[hidden]{display:none}
+nav{display:flex;
+gap:10px;
+flex-wrap:wrap}
+@media print{nav{display:none}
+article{break-inside:avoid;
+border:0}
+body{background:white}
+}
+
+</style>
+<header>
+<p>CHECKPOINT 5 · CIÊNCIAS DA NATUREZA</p>
+<h1>Comparação nacional de modelos<br>ENEM 2023</h1>
+<p>17 figuras com tabelas de apoio. Desenvolvimento: 2.153.941 participantes · Teste: 538.486.</p>
+<p>As configurações foram fixadas antes do teste. DP entre dobras não é intervalo de confiança.
+A comparação é de regressão; resíduos e erros por grupo são as visualizações adequadas.</p>
+<p>
+<a href="catalogo.json">Catálogo e fontes</a> · <a href="README.md">Guia da coleção</a>
+</p>
+<nav aria-label="Filtrar por etapa"><button type="button" data-filter="Todos" aria-pressed="true">Todos</button><button type="button" data-filter="Desenvolvimento" aria-pressed="false">Desenvolvimento</button><button type="button" data-filter="Teste" aria-pressed="false">Teste</button></nav><p id="count" aria-live="polite">17 figuras</p></header><main><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Distribuição da nota alvo no desenvolvimento</h2><a href="figuras/01_distribuicao.svg"><img loading="lazy" src="figuras/01_distribuicao.png" alt="Distribuição da nota alvo no desenvolvimento"></a><p>Todos os 2.153.941 participantes do desenvolvimento; 13.236 notas zero preservadas. Ausência de nota não foi convertida em zero. Intervalos de 25 pontos.</p><p><a href="figuras/01_distribuicao.png" download>PNG · 300 dpi</a> · <a href="figuras/01_distribuicao.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/distribuicao_desenvolvimento.csv">distribuicao_desenvolvimento</a> · <a href="tabelas/populacao.csv">populacao</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Comparação nacional dos sete algoritmos — configurações iniciais</h2><a href="figuras/02_sete_algoritmos.svg"><img loading="lazy" src="figuras/02_sete_algoritmos.png" alt="Comparação nacional dos sete algoritmos — configurações iniciais"></a><p>Mesmas três dobras e 40 entradas. Barras de erro: DP populacional entre dobras; não intervalos de confiança.</p><p><a href="figuras/02_sete_algoritmos.png" download>PNG · 300 dpi</a> · <a href="figuras/02_sete_algoritmos.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/comparacao_sete.csv">comparacao_sete</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Três selecionados na validação — detalhe das diferenças</h2><a href="figuras/03_trio_selecionado.svg"><img loading="lazy" src="figuras/03_trio_selecionado.png" alt="Três selecionados na validação — detalhe das diferenças"></a><p>Seleção do Checkpoint 2 entre os sete. Eixos ampliados, sem barras partindo de zero; a seleção não usa o teste.</p><p><a href="figuras/03_trio_selecionado.png" download>PNG · 300 dpi</a> · <a href="figuras/03_trio_selecionado.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/trio_selecionado_inicial.csv">trio_selecionado_inicial</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Referências, engenharia de atributos e variantes — validação cruzada</h2><a href="figuras/04_catalogo_variantes.svg"><img loading="lazy" src="figuras/04_catalogo_variantes.png" alt="Referências, engenharia de atributos e variantes — validação cruzada"></a><p>Inclui baseline e resultados sem melhoria. As variantes são comparações do modelo indicado, não novas buscas sobre o teste. Tempos completos estão na tabela.</p><p><a href="figuras/04_catalogo_variantes.png" download>PNG · 300 dpi</a> · <a href="figuras/04_catalogo_variantes.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/comparacoes_cv_completas.csv">comparacoes_cv_completas</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>PCA — número de componentes escolhido em cada treino</h2><a href="figuras/05_pca.svg"><img loading="lazy" src="figuras/05_pca.png" alt="PCA — número de componentes escolhido em cada treino"></a><p>PCA centrado, ajustado apenas no treino de cada dobra. Ridge e árvore retiveram 45 componentes para alcançar pelo menos 80% da variância; as seis curvas quase coincidem.</p><p><a href="figuras/05_pca.png" download>PNG · 300 dpi</a> · <a href="figuras/05_pca.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/pca_variancia.csv">pca_variancia</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Modelos antes e depois das buscas</h2><a href="figuras/06_buscas.svg"><img loading="lazy" src="figuras/06_buscas.png" alt="Modelos antes e depois das buscas"></a><p>Cinco modelos, 12 configurações por modelo. Inclui o trio solicitado e os três melhores do catálogo ampliado.</p><p><a href="figuras/06_buscas.png" download>PNG · 300 dpi</a> · <a href="figuras/06_buscas.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/antes_depois.csv">antes_depois</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Magnitude das melhorias nas buscas</h2><a href="figuras/07_ganhos_buscas.svg"><img loading="lazy" src="figuras/07_ganhos_buscas.png" alt="Magnitude das melhorias nas buscas"></a><p>Ganhos muito pequenos; a mudança do Stacking não demonstrou relevância prática ou estatística.</p><p><a href="figuras/07_ganhos_buscas.png" download>PNG · 300 dpi</a> · <a href="figuras/07_ganhos_buscas.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/antes_depois.csv">antes_depois</a> · <a href="tabelas/todas_configuracoes.csv">todas_configuracoes</a></p></article><article data-stage="Desenvolvimento"><p class="tag">Desenvolvimento</p><h2>Curvas das configurações finais</h2><a href="figuras/08_curvas_finais.svg"><img loading="lazy" src="figuras/08_curvas_finais.png" alt="Curvas das configurações finais"></a><p>Treino e validação em cinco tamanhos, nas três dobras; receitas fixadas antes do teste.</p><p><a href="figuras/08_curvas_finais.png" download>PNG · 300 dpi</a> · <a href="figuras/08_curvas_finais.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/curvas_resumo.csv">curvas_resumo</a> · <a href="tabelas/curvas_por_dobra.csv">curvas_por_dobra</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Comparação final no teste</h2><a href="figuras/09_teste.svg"><img loading="lazy" src="figuras/09_teste.png" alt="Comparação final no teste"></a><p>Trio, baseline e linear nos mesmos 538.486 participantes. A linear tem RMSE menor que SVM e Random Forest.</p><p><a href="figuras/09_teste.png" download>PNG · 300 dpi</a> · <a href="figuras/09_teste.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/comparacao_teste.csv">comparacao_teste</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Validação versus teste</h2><a href="figuras/10_cv_teste.svg"><img loading="lazy" src="figuras/10_cv_teste.png" alt="Validação versus teste"></a><p>CV em três dobras e teste em modelos reajustados no desenvolvimento completo; populações de treino distintas.</p><p><a href="figuras/10_cv_teste.png" download>PNG · 300 dpi</a> · <a href="figuras/10_cv_teste.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/validacao_e_teste.csv">validacao_e_teste</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Notas observadas versus previstas</h2><a href="figuras/11_observado_previsto.svg"><img loading="lazy" src="figuras/11_observado_previsto.png" alt="Notas observadas versus previstas"></a><p>Todos os participantes; mesma escala de células e linha da previsão perfeita para o trio.</p><p><a href="figuras/11_observado_previsto.png" download>PNG · 300 dpi</a> · <a href="figuras/11_observado_previsto.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/comparacao_teste.csv">comparacao_teste</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Distribuição dos resíduos</h2><a href="figuras/12_distribuicao_residuos.svg"><img loading="lazy" src="figuras/12_distribuicao_residuos.png" alt="Distribuição dos resíduos"></a><p>Intervalos comuns e todos os resíduos; a média global não descreve os erros extremos.</p><p><a href="figuras/12_distribuicao_residuos.png" download>PNG · 300 dpi</a> · <a href="figuras/12_distribuicao_residuos.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/comparacao_teste.csv">comparacao_teste</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Erros por faixa de nota</h2><a href="figuras/13_faixas.svg"><img loading="lazy" src="figuras/13_faixas.png" alt="Erros por faixa de nota"></a><p>Faixas fixadas no desenvolvimento e tamanhos dos grupos. Erros maiores nas notas extremas.</p><p><a href="figuras/13_faixas.png" download>PNG · 300 dpi</a> · <a href="figuras/13_faixas.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/erros_grupos.csv">erros_grupos</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Erros por tipo de escola</h2><a href="figuras/14_escola.svg"><img loading="lazy" src="figuras/14_escola.png" alt="Erros por tipo de escola"></a><p>Códigos de TP_ESCOLA e contagens; associação observacional, sem inferência causal.</p><p><a href="figuras/14_escola.png" download>PNG · 300 dpi</a> · <a href="figuras/14_escola.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/erros_grupos.csv">erros_grupos</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Erros por UF de aplicação</h2><a href="figuras/15_uf.svg"><img loading="lazy" src="figuras/15_uf.png" alt="Erros por UF de aplicação"></a><p>UF da prova não é necessariamente residência; contagens por UF na tabela.</p><p><a href="figuras/15_uf.png" download>PNG · 300 dpi</a> · <a href="figuras/15_uf.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/erros_grupos.csv">erros_grupos</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Erros por faixa de renda</h2><a href="figuras/16_renda.svg"><img loading="lazy" src="figuras/16_renda.png" alt="Erros por faixa de renda"></a><p>Categorias de Q006; contagens na tabela. Diferenças não determinam a capacidade individual.</p><p><a href="figuras/16_renda.png" download>PNG · 300 dpi</a> · <a href="figuras/16_renda.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/erros_grupos.csv">erros_grupos</a></p></article><article data-stage="Teste"><p class="tag">Teste</p><h2>Resíduos do Stacking em função da nota prevista</h2><a href="figuras/17_residuos_previsto.svg"><img loading="lazy" src="figuras/17_residuos_previsto.png" alt="Resíduos do Stacking em função da nota prevista"></a><p>Todos os 538.486 participantes agregados em células, sem amostra ou corte de extremos. Resíduo negativo: superestimação. A dispersão remanescente limita a precisão individual.</p><p><a href="figuras/17_residuos_previsto.png" download>PNG · 300 dpi</a> · <a href="figuras/17_residuos_previsto.svg" download>SVG</a></p><p class="tables">Tabelas: <a href="tabelas/residuos_stacking_celulas.csv">residuos_stacking_celulas</a></p></article></main><script>
+const buttons=[...document.querySelectorAll('button[data-filter]')];
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+let n=0;
+document.querySelectorAll('article').forEach(a=>{a.hidden=b.dataset.filter!=='Todos'&&a.dataset.stage!==b.dataset.filter;
+if(!a.hidden)n++}
+);
+document.querySelector('#count').textContent=n+' figuras';
+}
+));
+
+</script></html>

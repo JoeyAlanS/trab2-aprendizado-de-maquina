@@ -1,5 +1,11 @@
 # Dados preparados
 
+**Estado em 05/11/2026:** os arquivos locais foram recuperados da cópia SQLite original,
+com todas as linhas, sem recriar o CSV bruto. O manifesto atual registra a recuperação,
+os hashes dos novos Parquet e os metadados históricos de ingestão. A reexecução em
+`resultados/ciencias_natureza/cv-recuperado-v2` reproduziu exatamente as métricas históricas.
+O texto abaixo descreve a ingestão original, não uma nova transferência realizada hoje.
+
 `enem2023-v1/` contém a importação nacional aprovada de 21/10/2026: 3.933.955 linhas,
 76 colunas e 79 partes. O manifesto da **ingestão** permanece neutro quanto ao alvo e
 registra `models_trained=false` porque essa etapa apenas prepara dados. O alvo de

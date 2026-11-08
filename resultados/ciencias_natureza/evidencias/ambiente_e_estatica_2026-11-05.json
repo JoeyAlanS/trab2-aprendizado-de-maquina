@@ -1,0 +1,102 @@
+{
+  "python": "3.13.17 (main, Oct 21 2026, 17:49:22) [Clang 23.1.3 ]",
+  "packages": {
+    "pandas": "3.1.0",
+    "pyarrow": "24.0.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "streamlit": "1.66.1",
+    "plotly": "6.9.0",
+    "threadpoolctl": "3.7.0",
+    "ruff": "0.17.3"
+  },
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "84 files already formatted",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check",
+        "--python",
+        ".venv/bin/python"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Checked 53 packages in 11ms\nAll installed packages are compatible"
+    },
+    {
+      "command": [
+        "uv",
+        "lock",
+        "--check",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 54 packages in 8ms"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "enem_base",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: __main__.py [-h] [--verbose]\n                   {prepare,collect,plot-quality,fetch-enem,recover-database,split,dashboard-data,relations,database,search,freeze-solution,learning-curve,evaluate-final,eda,compare} ...\n\nProjeto 2 - preparação e estudo de Ciências da Natureza.\n\npositional arguments:\n  {prepare,collect,plot-quality,fetch-enem,recover-database,split,dashboard-data,relations,database,search,freeze-solution,learning-curve,evaluate-final,eda,compare}\n    prepare             Validar CSV completo e gerar Parquet em lotes\n    collect             Copiar fonte local ou baixar URL HTTPS explícita\n    plot-quality        Figura de qualidade de dados fictícios\n    fetch-enem          Obter e extrair o pacote oficial de 2023\n    recover-database    Recuperar dataset e partições de um SQLite real\n                        verificado\n    split               Reservar teste e persistir dobras para o alvo definido\n    dashboard-data      Gerar snapshot agregado do desenvolvimento para o\n                        frontend\n    relations           Analisar todas as entradas e seus pares\n    database            Criar SQLite com a base limpa e os resultados\n    search              Etapa científica com dados reais e proveniência\n    freeze-solution     Etapa científica com dados reais e proveniência\n    learning-curve      Etapa científica com dados reais e proveniência\n    evaluate-final      Etapa científica com dados reais e proveniência\n    eda                 Explorar somente o desenvolvimento\n    compare             Comparar modelos no desenvolvimento, sem avaliar teste\n\noptions:\n  -h, --help            show this help message and exit\n  --verbose",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "app"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "new_test_files_created": false,
+  "legacy_synthetic_suite_executed": false
+}

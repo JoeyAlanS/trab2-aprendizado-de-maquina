@@ -11,12 +11,13 @@ requires-python = ">=3.13,<3.14"
 dependencies = [
   "pandas>=2.2,<4",
   "pyarrow>=19,<25",
-  "scikit-learn>=1.6,<2",
+  "scikit-learn>=1.7,<2",
   "matplotlib>=3.9,<4",
   "threadpoolctl>=3.5,<4",
   "streamlit>=1.66,<2",
   "plotly>=6.9,<7",
   "scipy>=1.15,<2",
+  "faiss-cpu>=1.15,<2",
 ]
 
 [project.optional-dependencies]
@@ -35,6 +36,7 @@ addopts = "-ra"
 [tool.ruff]
 target-version = "py313"
 line-length = 100
+extend-exclude = ["historico", "resultados/**/codigo"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]

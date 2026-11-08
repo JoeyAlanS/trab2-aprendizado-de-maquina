@@ -1,0 +1,187 @@
+{
+  "status": "passed",
+  "incorporated_at": "2026-11-07T18:51:26.036235-03:00",
+  "method": "ZIPs locais fornecidos pelo usuário; CRC de todos os membros e SHA-256; movimentação e extração seletiva",
+  "packages": [
+    {
+      "source": "/home/joey/Downloads/microdados_enem_2023.zip",
+      "destination": "dados/raw/microdados_enem_2023.zip",
+      "sha256": "19512b7e29c9c8e940554396969722081341caa275c245a6c9d2d559c5d13a0a",
+      "bytes": 549511687,
+      "crc_all_members_passed": true
+    },
+    {
+      "source": "/home/joey/Downloads/competencias_redacao_enem_2023.zip",
+      "destination": "dados/raw/competencias_redacao_enem_2023.zip",
+      "sha256": "db3118c5908645a92d95e81a02b8474c561daf852602abf459d8952becf40a34",
+      "bytes": 377423159,
+      "crc_all_members_passed": true
+    }
+  ],
+  "extracted": [
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/DADOS/MICRODADOS_ENEM_2023.csv",
+      "file": "dados/raw/MICRODADOS_ENEM_2023.csv",
+      "bytes": 1777162429,
+      "sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.ods",
+      "file": "dados/raw/documentacao_enem2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.ods",
+      "bytes": 20639,
+      "sha256": "a3dc8a5dc8902ec1e47a56319ba45df6777bd4be6b17a41ddb106bece82174a1"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.xlsx",
+      "file": "dados/raw/documentacao_enem2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.xlsx",
+      "bytes": 32897,
+      "sha256": "1411ad89784f7f960dc1c1fc13b0d22eee696e2613cb762072665fa547ae6cf6"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Edital_Enem_2023_Impresso.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Edital_Enem_2023_Impresso.pdf",
+      "bytes": 582211,
+      "sha256": "ea94b7f7d1050b6c119b98badc2c42c026f7cc72d158becd070e5f337f1d13b5"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/enem_procedimentos_de_analise.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/enem_procedimentos_de_analise.pdf",
+      "bytes": 911243,
+      "sha256": "fc97f121af817d86920b62c9a92ae04f55dcf4ec18e274a684e911bef14812fb"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/entenda_a_sua_nota_no_enem_guia_do_participante.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/entenda_a_sua_nota_no_enem_guia_do_participante.pdf",
+      "bytes": 13206250,
+      "sha256": "b93bc7ec4dd5fbb770561a071069cefa265b445e9e2b9773f28dd6f486337394"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Leia_Me_Enem_2023.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/Leia_Me_Enem_2023.pdf",
+      "bytes": 195032,
+      "sha256": "d2e0c39ba2223562b3bdc41f1d14ff77ad5c5d45018e9afb1a109103be14938b"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/manual_de_redacao_do_enem_2023.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/manual_de_redacao_do_enem_2023.pdf",
+      "bytes": 6236600,
+      "sha256": "3e85231bf27363f12e79c7c3a950c8fb8678ddd323eddc0cfe57496f3f784e6c"
+    },
+    {
+      "archive": "dados/raw/microdados_enem_2023.zip",
+      "member": "microdados_enem_2023/LEIA-ME E DOCUMENTOS TÉCNICOS/matriz_referencia_enem.pdf",
+      "file": "dados/raw/documentacao_enem2023/LEIA-ME E DOCUMENTOS TÉCNICOS/matriz_referencia_enem.pdf",
+      "bytes": 177800,
+      "sha256": "6b56d523ccb85f74f7ed33e0cd679f3dd178ed6f13a5b0948bcfdfe8964ce6a1"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/DADOS/COMPETENCIAS_REDACAO_2023.csv",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/DADOS/COMPETENCIAS_REDACAO_2023.csv",
+      "bytes": 376745450,
+      "sha256": "6cd14982f36d9ca7b9b4d9c1157be29cf6cc0314afb5e97b141566b5ed4db81a"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/DICIONÁRIO/Dicionário_Competencias_Redacao_2023.ods",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/DICIONÁRIO/Dicionário_Competencias_Redacao_2023.ods",
+      "bytes": 6912,
+      "sha256": "88264b718312e34abb5daf5ae95c350daf6ab2fa7034c24bb2c2270b7dab7074"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/DICIONÁRIO/Dicionário_Competencias_Redacao_2023.xlsx",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/DICIONÁRIO/Dicionário_Competencias_Redacao_2023.xlsx",
+      "bytes": 14630,
+      "sha256": "791ee970b33fe589b1e06542b2ac8bc93cead0f794c134b62352ef3eccb501f7"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_R_COMPETENCIAS_REDACAO_2023.R",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_R_COMPETENCIAS_REDACAO_2023.R",
+      "bytes": 6591,
+      "sha256": "4201459b77dac7b884c7c2c129d678c712ff624465b8481130c475b37ec78ea3"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_SAS_COMPETENCIAS_REDACAO_2023.sas",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_SAS_COMPETENCIAS_REDACAO_2023.sas",
+      "bytes": 5678,
+      "sha256": "884961510acfc6a19fd187d02e7bd404f12e02c8c8225970f558c4d48f9fbd18"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_SPSS_COMPETENCIAS_REDACAO_2023.sps",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/INPUTS/INPUT_SPSS_COMPETENCIAS_REDACAO_2023.sps",
+      "bytes": 4631,
+      "sha256": "e740f8b942096707c4745d64478b9c286e4cab6bd5ab9af7815abffc3e30d06e"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/LEIA-ME/Edital_ENEM_2023.pdf",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/LEIA-ME/Edital_ENEM_2023.pdf",
+      "bytes": 371589,
+      "sha256": "f69b93369ac612aa4a4f0be72376a648fb565508cfae6da3fcc10691546048d8"
+    },
+    {
+      "archive": "dados/raw/competencias_redacao_enem_2023.zip",
+      "member": "COMPETENCIAS_REDACAO_2023/LEIA-ME/Leia_Me_Complemento_Enem_2023.pdf",
+      "file": "dados/raw/complementos/COMPETENCIAS_REDACAO_2023/LEIA-ME/Leia_Me_Complemento_Enem_2023.pdf",
+      "bytes": 265812,
+      "sha256": "5942d7ee7c4b355c9ddcd0f6f67b812c0e12e1362ee9da26e11063cdffad442a"
+    }
+  ],
+  "national_archive_matches_historical_sha256": true,
+  "national_csv_matches_historical_sha256": true,
+  "complement_columns": [
+    "NU_INSCRICAO",
+    "NU_ANO",
+    "TP_STATUS_REDACAO",
+    "NU_NOTA_COMP1",
+    "NU_NOTA_COMP2",
+    "NU_NOTA_COMP3",
+    "NU_NOTA_COMP4",
+    "NU_NOTA_COMP5",
+    "NU_NOTA_REDACAO",
+    "TP_STATUS_REDACAO_AV1",
+    "NU_NOTA_AV1",
+    "NU_NOTA_COMP1_AV1",
+    "NU_NOTA_COMP2_AV1",
+    "NU_NOTA_COMP3_AV1",
+    "NU_NOTA_COMP4_AV1",
+    "NU_NOTA_COMP5_AV1",
+    "TP_STATUS_REDACAO_AV2",
+    "NU_NOTA_AV2",
+    "NU_NOTA_COMP1_AV2",
+    "NU_NOTA_COMP2_AV2",
+    "NU_NOTA_COMP3_AV2",
+    "NU_NOTA_COMP4_AV2",
+    "NU_NOTA_COMP5_AV2",
+    "TP_STATUS_REDACAO_AV3",
+    "NU_NOTA_AV3",
+    "NU_NOTA_COMP1_AV3",
+    "NU_NOTA_COMP2_AV3",
+    "NU_NOTA_COMP3_AV3",
+    "NU_NOTA_COMP4_AV3",
+    "NU_NOTA_COMP5_AV3",
+    "TP_STATUS_REDACAO_AV4",
+    "NU_NOTA_AV4",
+    "NU_NOTA_COMP1_AV4",
+    "NU_NOTA_COMP2_AV4",
+    "NU_NOTA_COMP3_AV4",
+    "NU_NOTA_COMP4_AV4",
+    "NU_NOTA_COMP5_AV4"
+  ],
+  "complement_used_for_modeling": false,
+  "reason_complement_excluded": "Competências e resultados da correção da redação não são preditores permitidos para estimar NU_NOTA_CN.",
+  "new_training": false,
+  "new_test_evaluation": false
+}

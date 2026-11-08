@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "check": "Final evaluation refuses incomplete frozen recipes before creating any test lock or final outputs",
+  "exception": "[Errno 2] No such file or directory: 'resultados/ciencias_natureza/checkpoint-4-2026-11-07/congelamento/manifesto.json'",
+  "test_evaluated": false
+}

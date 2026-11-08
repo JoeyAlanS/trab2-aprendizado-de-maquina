@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "archive": "output/checkpoint-6-artigo-2026-11-07.zip",
+  "sha256": "1d91dd2300f2afc84d5b8aa7400437fac33352345aa08f7663468851c4d88b3e",
+  "bytes": 4569882,
+  "members": 67,
+  "crc": "passed",
+  "member_hashes": "all_match",
+  "individual_microdata_included": false
+}

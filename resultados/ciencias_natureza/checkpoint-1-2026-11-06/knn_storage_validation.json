@@ -1,0 +1,8 @@
+{
+  "scope": "Verificação técnica de armazenamento e blocos com dados reais; não é avaliação nacional",
+  "n_train": 10000,
+  "n_validation": 1024,
+  "values_identical": true,
+  "batch_prediction_max_abs_difference": 0.0,
+  "test_evaluated": false
+}

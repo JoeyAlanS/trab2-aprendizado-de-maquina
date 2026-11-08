@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "inputs": {
+    "resultados/ciencias_natureza/cv-recuperado-v2": "3b3988286bf4a3f62a70fa454846c4dd72e60ab282b4cdf28102da6447191d36",
+    "resultados/ciencias_natureza/engineered-v2": "f4301a810890621035170816a4334f8a0478c4e56ae0ba20cc052ee0afd5b576",
+    "resultados/ciencias_natureza/selected-v2": "3ec2c9900cb47e3d53f702998ce5f1d011899bff7425a45bbb603eda42452623",
+    "resultados/ciencias_natureza/pca-v2": "a5a6cd5107a971fec2dc86c38ef8f99fdf41400086165ad0ff0e9741e156ce0e",
+    "resultados/ciencias_natureza/weighted-v2": "d02f8e4dab717a93eb3324e8d9f11f2ef1f5911dba285d19a67ce4be7ba758c0",
+    "resultados/ciencias_natureza/without_socio-v2": "7dadf4c6587f6636754e57d18dead20ce21fb44a3952eaca1f3eba896c2a5b39",
+    "resultados/ciencias_natureza/without_uf-v2": "be035ac67d3d772d1ae42e1e653251705bd217b2072ba79a08280100f9982687"
+  },
+  "rows": 44,
+  "test_evaluated": false,
+  "pending": [
+    "avaliação final e previsões reais de teste"
+  ],
+  "assets": {
+    "experimentos.csv": "fd9c82514f985c2850979aa037f303f360bc47d17275a034000510ef49a9cbce"
+  },
+  "published_from": "resultados/publicacao-corrigida-v3",
+  "source_manifest_sha256": "21858d59ecb2f61c304e24e69ff0b704ae958fdc887db725889c1643b2f310aa"
+}

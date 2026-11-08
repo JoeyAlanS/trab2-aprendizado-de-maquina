@@ -1,0 +1,13 @@
+{
+  "national_searches_started_local": "2026-11-07T01:07:17-03:00",
+  "forest_jobs": 6,
+  "blas_threads_per_process": 2,
+  "cpu_logical": 12,
+  "memory_total_MiB": 15773,
+  "observed_available_MiB_before_third_process": 4103,
+  "wall_times_are_isolated_benchmarks": false,
+  "shared_fit_cache": true,
+  "note": "Tempos incluem custo compartilhado e concorrência; não comparar como benchmark isolado.",
+  "first_logged_svm_fit_local": "2026-11-07T01:15:35.636-03:00",
+  "concurrent_search_processes_max": 3
+}

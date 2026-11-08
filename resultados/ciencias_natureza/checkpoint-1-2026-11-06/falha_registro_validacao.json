@@ -1,0 +1,8 @@
+{
+  "step": "Serialização do resumo da verificação final após concluir os controles",
+  "error_type": "TypeError",
+  "message": "keys must be str, int, float, bool or None, not numpy.int64",
+  "cause": "Chaves do contador de dobras oriundas do pandas não convertidas para tipos JSON nativos no comando diagnóstico",
+  "model_results_modified": false,
+  "resolution": "Converter índices e contagens para tipos nativos e repetir a gravação/verificação final"
+}

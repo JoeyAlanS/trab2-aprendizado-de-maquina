@@ -1,121 +1,110 @@
-# Roteiro e Slides do Acompanhamento Obrigatório
+# Acompanhamento e auditoria final - ENEM 2023
 
-**Projeto Aplicado | Unidade II — Aprendizado de Máquina com Dados do ENEM 2023**  
-**Alvo Numérico:** `NU_NOTA_CN` (Ciências da Natureza e suas Tecnologias)  
-**Entrega:** Apresentação de Andamento com Slides e Roteiro de Fala da Equipe  
-**Repositório:** [https://github.com/joey/trab2-aprendizado-de-maquina](https://github.com/joey/trab2-aprendizado-de-maquina)  
+Joey Alan de Freitas Solis e Paulo Henrico
 
----
+Universidade de Fortaleza (Unifor) - Professor Tulio
 
-## 1. Visão Geral da Apresentação
+Revisão de 7 de novembro de 2026. Este documento registra desenvolvimento, execuções conferidas e limites da validação. Não comprova apresentação oral, submissão no AVA ou compilação dentro de uma conta do Overleaf.
 
-- **Tempo estimado:** 5 a 8 minutos.
-- **Formato:** Apresentação de slides estruturados com gráficos e tabelas (sem exibição crua de código em terminal).
-- **Participação da equipe:** Falas divididas equitativamente entre os integrantes (ex.: Integrante 1: Base e Problema; Integrante 2: Features e Prevenção de Vazamento; Integrante 3: Resultados Preliminares; Integrante 4: Próximos Passos e Dúvidas).
-- **Status do Teste:** O conjunto de teste (20%) permanece estritamente reservado e intocado nesta etapa.
+## 1 Objetivo e metodologia
 
----
+Estimar NU_NOTA_CN a partir de quarenta atributos de perfil socioeconômico, escolar e demográfico, comparando sete famílias de regressão. A fonte nacional contém 3.933.955 linhas e 76 colunas. Foram mantidos os 2.692.427 alvos observados, incluindo 16.547 notas zero. As 1.241.528 ausências de alvo não foram imputadas.
 
-## 2. Estrutura dos Slides e Roteiro de Fala
+A divisão 80/20, semente 42, reserva 538.486 participantes para teste. Os 2.153.941 restantes usam três dobras de validação cruzada, iguais para os modelos. Transformações são ajustadas no treino de cada dobra; identificadores, presença, notas e resultados de outras avaliações ficam fora dos preditores. O teste foi aberto somente após seleção e congelamento das receitas.
 
----
+Os dois ZIPs entregues pelo usuário estão em dados/raw/. Os arquivos passaram por CRC; o ZIP nacional e o CSV coincidem com os hashes históricos. A comparação de todas as células normalizadas do CSV com os 79 Parquets existentes foi aprovada. O complemento de competências da redação está preservado, sem integração à matriz de atributos.
 
-### Slide 1: Abertura e Identificação do Projeto
-- **Título:** Estimativa da Nota de Ciências da Natureza no ENEM 2023
-- **Subtítulo:** Acompanhamento Obrigatório de Andamento — Aprendizado de Máquina (Unidade II)
-- **Equipe:** Integrante 1, Integrante 2, Integrante 3, Integrante 4
-- **Alvo Atribuído:** `NU_NOTA_CN` (Ciências da Natureza e suas Tecnologias)
-- **Link do Repositório:** `github.com/joey/trab2-aprendizado-de-maquina`
-- **Elementos Visuais:** Logomarca institucional Unifor, identificação clara do tema.
+## 2 Checkpoints e entregáveis
 
-> **Fala do Integrante 1 (Abertura - ~1 min):**  
-> *"Olá a todos, professor e colegas. Somos a equipe responsável pelo tema de Ciências da Natureza no ENEM 2023. Nosso objetivo central é investigar em que medida o perfil socioeconômico, demográfico e escolar dos estudantes permite prever sua nota na prova de Ciências da Natureza (`NU_NOTA_CN`). Hoje apresentamos o andamento do projeto, a caracterização da base nacional oficial, as decisões metodológicas de prevenção de vazamento e os resultados preliminares da nossa validação cruzada."*
+| Etapa | Resultado confirmado |
+|---|---|
+| 1 - Modelos | Sete algoritmos, três dobras nacionais cada; 21 avaliações |
+| 2 - Seleção | Stacking, SVM linear e Random Forest entre os sete; critério RMSE |
+| 3 - Curvas iniciais | Três modelos, cinco tamanhos e três dobras; 45 pontos |
+| 4 - Busca e teste | 60 configurações, 180 avaliações CV, 45 pontos finais e teste de cinco modelos |
+| 5 - Visualizações | Coleção de 17 gráficos PNG/SVG, 14 tabelas e galeria local |
+| 6 - Artigo e fonte | Artigo com resultados reais; fonte original reconciliada integralmente |
+| 7 - Entrega atual | Pitch em roteiro, acompanhamento e artigo em LaTeX; PDFs compilados localmente e pacote Overleaf |
 
----
+O pedido atual dispensa slides. O pitch é um roteiro oral com divisão nominal das falas, duração planejada de doze minutos, tabela de consulta e perguntas/respostas. Ensaio, apresentação, prazos e submissão permanecem sob responsabilidade da equipe.
 
-### Slide 2: A Base Nacional Oficial e a População de Estudo
-- **Fonte Oficial:** Inep / Microdados do ENEM 2023 (arquivo nacional completo, sem recortes de conveniência).
-- **Volume Total:** 3.933.955 registros processados integralmente (checksum SHA-256 verificado).
-- **Definição de Elegibilidade para Regressão:**
-  - Registros com nota `NU_NOTA_CN` observada: **2.692.427** participantes (68,44%).
-  - Registros sem nota (ausentes/eliminados): **1.241.528** (mantidos no diagnóstico, excluídos do treino/validação supervisionados).
-  - Notas zero observadas: **16.547** participantes (0,61% dos elegíveis) preservados integralmente.
-  - Treineiros e todas as faixas etárias mantidos na amostra.
-- **Particionamento Rígido:**
-  - 80% Desenvolvimento: **2.153.941** participantes (divididos em 3 dobras fixas de KFold, semente 42).
-  - 20% Teste Reservado: **538.486** participantes (congelados para a avaliação final).
-- **Elemento Visual:** Gráfico de distribuição da nota no desenvolvimento com média (495,77) e notas zero destacadas (`relatorio/images/distribuicao.png`).
+## 3 Todos os experimentos previstos foram executados?
 
-> **Fala do Integrante 1 (Dados e Elegibilidade - ~1.5 min):**  
-> *"Um compromisso central do nosso projeto foi a fidelidade à base nacional completa. Não utilizamos subamostragens arbitrárias. Processamos os 3,93 milhões de inscritos e identificamos 2,69 milhões de candidatos com nota de Ciências da Natureza. Diferenciamos com rigor ausência de prova (candidato faltante) de nota zero (candidato presente com desempenho nulo). Preservamos todos os 16.547 zeros e particionamos a base em 80% para desenvolvimento e 20% para teste com semente fixa 42, mantendo o teste intocado."*
+Sim, há evidências completas das etapas científicas previstas. Isso não significa que todos os algoritmos foram aplicados ao conjunto de teste. A matriz abaixo explicita o que foi executado e conferido.
 
----
+| Tipo de execução | Quantidade e cobertura | Conferência realizada nesta revisão |
+|---|---|---|
+| Sete algoritmos solicitados | 7 modelos x 3 dobras = 21 avaliações | Manifestos, hashes, métricas finitas, três dobras e cobertura nacional |
+| Referências iniciais | Média, linear, Ridge e árvore; 12 avaliações | Mesmos critérios e partições; 2.153.941 validações por modelo somadas |
+| Variantes e hipóteses | 21 avaliações; engenharia, seleção, PCA em dois modelos, ponderação e duas ablações | Resultados por dobra e identidades das fontes |
+| Busca de parâmetros | 5 modelos x 12 configurações x 3 dobras = 180 avaliações | Métricas recompostas das previsões persistidas; comparação com GridSearchCV |
+| Curvas iniciais | 3 modelos x 5 tamanhos x 3 dobras = 45 pontos | Cobertura, arquivos de pontos e hashes dos ajustes |
+| Curvas finais | 45 pontos das receitas congeladas | Identidade dos parâmetros/subconjuntos, integridade e reprodução da CV em 100% |
+| Teste final | 5 modelos; 538.486 participantes iguais por modelo | RMSE, MAE, R² e 260 registros por grupo recompostos das previsões |
 
-### Slide 3: Features Candidatas e Prevenção de Vazamento (*Data Leakage*)
-- **Variáveis Candidatas (40 colunas):**
-  - Numérica: `Q005` (quantidade de pessoas residentes no domicílio).
-  - Demográficas e Escolares (15 colunas): Faixa etária, sexo, cor/raça, estado civil, tipo de escola (`TP_ESCOLA`), modalidade de ensino, UF da prova.
-  - Socioeconômicas (24 colunas): Questões `Q001` a `Q025` (escolaridade e profissão dos pais, renda familiar `Q006`, bens, internet e computadores).
-- **Barreiras de Prevenção de Vazamento (Rigor Metodológico):**
-  - **Zero Vazamento de Desempenho:** Nenhuma nota de outra área (`NU_NOTA_MT`, `NU_NOTA_CH`, etc.), notas da redação, respostas ou gabaritos entram em $X$.
-  - **Variáveis Administrativas Bloqueadas:** Presença (`TP_PRESENCA_*`) e situação da redação (`TP_STATUS_REDACAO`) não são features preditivas.
-  - **Pipeline Estrito:** Imputação pela mediana e codificação *one-hot* calculadas exclusivamente dentro do treino de cada dobra da validação cruzada.
-- **Engenharia de Atributos Inicial:**
-  - `RENDA_PER_CAPITA`: Ponto médio de `Q006` dividido por `Q005`.
-  - `ACESSO_DIGITAL`: Score ordinal combinando computador (`Q024`) e internet (`Q025`).
-  - `ESCOLARIDADE_PAIS`: Escala unificada do nível instrucional de pai e mãe.
+Os sete algoritmos são SVM linear, KNN, Bagging, Pasting, Random Forest, Gradient Boosting e Stacking. O conjunto de teste recebeu apenas Stacking, SVM linear, Random Forest, média e linear de referência. KNN, Bagging, Pasting, Boosting, Ridge e árvore isolada não tiveram teste final, conforme o escopo fixado; não se deve ampliar a seleção depois de consultar o teste.
 
-> **Fala do Integrante 2 (Features e Pipeline - ~1.5 min):**  
-> *"Para predizer a nota, utilizamos 40 atributos de perfil. O cuidado ético e técnico mais importante foi a blindagem contra vazamento de dados. Absolutamente nenhuma nota de outra prova ou gabarito entra no modelo; o algoritmo só enxerga o que uma escola ou governo saberia antes do aluno sentar para fazer o exame. Além disso, todas as transformações estatísticas foram encapsuladas em Pipelines do scikit-learn para garantir que dados da validação nunca interfiram no treinamento da dobra."*
+As curvas finais não representam 45 ajustes totalmente novos. Trinta pontos de SVM/Random Forest reaproveitaram configurações idênticas do Checkpoint 3. Doze pontos do Stacking reutilizaram modelos de base com novo combinador treinado sobre previsões fora da dobra interna; três pontos usaram o treino completo das dobras já calculado nas buscas. A origem de cada ponto está registrada. A revisão não treinou novos modelos nem produziu novas previsões do teste.
 
----
+## 4 Resultados e interpretação
 
-### Slide 4: Resultados Preliminares da Validação Cruzada (3 Dobras)
-- **Protocolo:** Validação Cruzada K-Fold ($K=3$, shuffle=True, semente 42) no conjunto de desenvolvimento completo ($n=2.153.941$).
-- **Métricas:** RMSE (métrica principal), MAE e $R^2$, reportadas com média e desvio padrão amostral ($\text{ddof}=0$).
+| Modelo no teste | RMSE | MAE | R² |
+|---|---|---|---|
+| Stacking | 76,190 | 55,325 | 0,2497 |
+| Linear de referência | 76,517 | 55,616 | 0,2433 |
+| SVM linear | 76,622 | 55,538 | 0,2412 |
+| Random Forest | 76,658 | 55,821 | 0,2405 |
+| Média do treino | 87,959 | 66,285 | aproximadamente zero |
 
-**Tabela de Resultados Preliminares:**
-| Modelo Avaliado | RMSE Médio | MAE Médio | $R^2$ Médio | Tempo 3 Dobras |
-| :--- | :---: | :---: | :---: | :---: |
-| **Baseline (Média do Treino)** | $87,92 \pm 0,08$ | $66,24 \pm 0,04$ | $-0,0000$ | 0,09 s |
-| **Regressão Linear (sem regularização)** | $76,48 \pm 0,05$ | $55,62 \pm 0,04$ | $0,2432$ | 118,26 s |
-| **Ridge ($\alpha=1,0$)** | $76,48 \pm 0,05$ | $55,62 \pm 0,04$ | $0,2433$ | 89,33 s |
-| **Árvore de Decisão (profundidade 12)** | $77,17 \pm 0,04$ | $56,29 \pm 0,02$ | $0,2297$ | 556,22 s |
+Fonte: previsões persistidas dos microdados Inep/ENEM 2023. Métricas em 538.486 participantes; RMSE e MAE em pontos. O teste é separado da validação cruzada usada para selecionar receitas.
 
-- **Principais Conclusões Preliminares:**
-  - O perfil tabular reduz o RMSE em **13,01%** (de 87,92 para 76,48 pontos) em relação à média.
-  - A diferença entre a Regressão Linear sem regularização e o Ridge é inferior a 0,001 ponto de nota, indicando que a multicolinearidade inicial é moderada e bem comportada pelo volume amostral.
-  - A Árvore de Decisão com profundidade 12 apresentou erro superior e custo computacional quase 6 vezes maior que os modelos lineares.
-- **Elemento Visual:** Gráfico de barras comparativo de RMSE e $R^2$ com barras de erro (`relatorio/images/modelos.png`).
+O Stacking reduz o RMSE da média em 13,38%. Sua vantagem sobre a linear é pequena e precisa ser ponderada frente ao custo observado. Os resultados do trio são próximos entre CV e teste, mas isso não comprova generalização para outro ENEM. As buscas produziram ganhos mínimos; não foram calculados testes de significância ou intervalos de confiança.
 
-> **Fala do Integrante 3 (Resultados Preliminares - ~1.5 min):**  
-> *"Nossa primeira rodada de validação cruzada comprovou que o perfil socioeconômico e demográfico possui sinal preditivo real sobre a nota de Ciências da Natureza, reduzindo o erro médio quadrático de 87,9 para 76,5 pontos — um ganho de 13%. Constatamos também que a regressão linear e o Ridge tiveram desempenho idêntico nesta escala, enquanto a árvore de decisão simples sofreu com partições rígidas, obtendo erro ligeiramente maior. Esse $R^2$ de aproximadamente 0,243 estabelece nossa linha de base competitiva para as próximas fases."*
+As curvas mostram gaps finais de RMSE de aproximadamente 0,193, 0,007 e 0,400 para Stacking, SVM e Random Forest. Não há sobreajuste acentuado nesses tamanhos, mas R² baixo isoladamente não demonstra subajuste. O menor treino da curva já tem cerca de 143.596 participantes.
 
----
+Os erros são maiores nos extremos: no Stacking, RMSE de 154,31 abaixo de 400 e 160,74 a partir de 700. Notas baixas são superestimadas e altas são subestimadas em média. Engenharia trouxe ganho pequeno; seleção e PCA pioraram as configurações avaliadas. A ponderação do Ridge piorou o RMSE global para 125,202, embora tenha reduzido erros de extremos na validação. As duas ablações aumentaram o erro, sustentando contribuição preditiva do bloco socioeconômico e da UF, sem interpretação causal.
 
-### Slide 5: Próximos Experimentos e Hipóteses em Investigação
-- **Catálogo de Modelos Adicionais:** Executar Bagging, Pasting, Random Forest, Boosting (*HistGradientBoosting*) e Stacking nas mesmas dobras.
-- **Redução de Dimensionalidade:** Avaliar PCA preservando $\ge 80\%$ da variância acumulada em Ridge e Árvore.
-- **Estratégia de Balanceamento:** Investigar ponderação amostral para penalizar desvios nas notas raras (caudas $<400$ e $>700$).
-- **Busca de Hiperparâmetros:** Aplicar `GridSearchCV` / `RandomizedSearchCV` nos três melhores modelos distintos com $\ge 10$ configurações.
-- **Curva de Aprendizado:** Traçar a curva de 10% a 100% de treino no modelo vencedor para diagnosticar viés e variância.
-- **Hipóteses de Aprofundamento:**
-  - *H1:* Avaliar a ablação comparativa entre o bloco socioeconômico e o bloco escolar/demográfico.
-  - *H2:* Testar se um modelo compacto com 10 atributos preserva $\approx 98\%$ do desempenho.
-- **Dúvidas e Discussão:**
-  - *Trade-off* de balanceamento: ponderar as caudas tende a aumentar o RMSE global; qual tolerância a banca sugere priorizar?
-  - Limite computacional do KNN na inferência de 2 milhões de linhas: viabilidade de indexação aproximada.
+## 5 Testes de software e verificações técnicas
 
-> **Fala do Integrante 4 (Próximos Passos e Fechamento - ~1.5 min):**  
-> *"Nossos próximos passos estão claramente traçados: vamos expandir para os modelos de ensemble e boosting, realizar a busca de hiperparâmetros nos três melhores regressores e avaliar o PCA com 80% de variância. Também construiremos a curva de aprendizado em 5 pontos para verificar se o erro residual é falta de dados ou um limite estrutural das variáveis. Por fim, realizaremos a avaliação definitiva no teste reservado. Agradecemos a atenção e estamos abertos às dúvidas e recomendações do professor!"*
+A suíte existente foi executada nesta revisão: 81 testes aprovados, sem falhas, em 11,44 segundos. Esses testes usam fixtures técnicas de unidade/integração e não constituem experimentos científicos com a população nacional. Não foram criados novos arquivos de testes nem substituídas métricas reais por resultados de fixtures.
 
----
+| Área da suíte existente | Testes aprovados |
+|---|---|
+| Ingestão | 19 |
+| Pré-processamento | 13 |
+| Dashboard | 11 |
+| Estudo e modelos | 9 |
+| Configuração e CLI | 7 |
+| Partições | 7 |
+| Aquisição e integração | 6 |
+| Relações entre atributos | 5 |
+| Download oficial | 4 |
+| Total | 81 |
 
-## 3. Checklist de Validação do Acompanhamento
+Comando executado: .venv/bin/python -m pytest -q, com relatório JUnit em resultados/ciencias_natureza/checkpoint-7-2026-11-07/pytest.xml. A auditoria científica foi executada por scripts/auditar_entrega.py e grava cobertura_execucoes.csv, validacao_buscas.json, validacao_teste.json e auditoria_experimentos.json no mesmo diretório.
 
-- [x] Base nacional completa (3.93M) descrita com clareza.
-- [x] Alvo `NU_NOTA_CN` e elegibilidade (2.69M observados, 16.5k zeros) especificados.
-- [x] Features utilizadas e prevenção de vazamento documentadas.
-- [x] Resultados preliminares de validação cruzada 3-fold com Baseline e regressores apresentados em tabela e gráficos.
-- [x] Próximas hipóteses (PCA, balanceamento, busca, curva e teste) delimitadas.
-- [x] Divisão equilibrada de falas e controle de tempo estruturado.
+Lint, verificação de formatação e compatibilidade das dependências locais foram aprovados. O ambiente numérico foi mantido; a revisão da entrega não alterou os módulos de treinamento. As fontes LaTeX foram compiladas localmente e os PDFs renderizados para inspeção visual. O pacote foi preparado para importação no Overleaf, com instruções de compilador e arquivo principal.
+
+## 6 Limites do que foi validado
+
+Não foram executados teste temporal em outra edição, validação externa, inferência causal, teste de significância, ensaio oral cronometrado ou apresentação. Também não se declara compilação dentro de uma conta Overleaf: a evidência é a compilação local das fontes fornecidas. A suíte foi executada no Linux deste ambiente; execução Windows depende da automação remota e deve ser consultada separadamente.
+
+Os testes do dashboard verificam componentes existentes e não substituem uma nova inspeção visual interativa de todo o navegador nesta revisão. Há registros históricos de verificações do frontend, mas não foram apresentados como se tivessem sido repetidos agora. A rastreabilidade do experimento usa arquivos reais persistidos e hashes; os hashes locais não são uma assinatura emitida pelo Inep.
+
+## 7 Dificuldades, soluções e organização
+
+A ausência inicial dos originais foi resolvida com a incorporação dos ZIPs fornecidos e comparação integral do CSV. O custo do KNN foi tratado por busca exata compacta, conferida contra distâncias de referência. Interrupções de execução motivaram persistência por dobra e bloco, com retomada condicionada à mesma fonte e configuração. Resultados negativos foram mantidos, como a piora global da ponderação.
+
+A limpeza retirou versões preliminares e pacotes duplicados da área ativa de entrega, preservando um arquivo histórico e o inventário de remoções. Dados originais, banco, partições, modelos ajustados e previsões reais permanecem locais. Arquivos grandes ou individuais não integram o commit; os resultados agregados, código, fontes LaTeX, PDFs e evidências verificáveis são publicados no repositório.
+
+A revisão das alterações precede o commit e o push. A identificação do commit e a confirmação de sincronização com o remoto devem ser consultadas no histórico Git e no relato final da entrega, sem antecipar sucesso antes da operação.
+
+## 8 Referências e próximos passos
+
+Dados oficiais: https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem
+
+Repositório: https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina
+
+Importação no Overleaf: https://docs.overleaf.com/managing-projects-and-files/uploading-a-project
+
+As referências científicas completas estão no artigo. Para a equipe, faltam ensaiar as falas, conferir o prazo no AVA e realizar a apresentação/submissão. A duração de doze minutos é planejada, não aferida em ensaio.

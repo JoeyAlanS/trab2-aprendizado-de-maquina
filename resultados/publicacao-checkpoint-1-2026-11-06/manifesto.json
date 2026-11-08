@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "inputs": {
+    "resultados/ciencias_natureza/cv-recuperado-v2": "3b3988286bf4a3f62a70fa454846c4dd72e60ab282b4cdf28102da6447191d36",
+    "resultados/ciencias_natureza/engineered-v2": "f4301a810890621035170816a4334f8a0478c4e56ae0ba20cc052ee0afd5b576",
+    "resultados/ciencias_natureza/selected-v2": "3ec2c9900cb47e3d53f702998ce5f1d011899bff7425a45bbb603eda42452623",
+    "resultados/ciencias_natureza/pca-v2": "a5a6cd5107a971fec2dc86c38ef8f99fdf41400086165ad0ff0e9741e156ce0e",
+    "resultados/ciencias_natureza/weighted-v2": "d02f8e4dab717a93eb3324e8d9f11f2ef1f5911dba285d19a67ce4be7ba758c0",
+    "resultados/ciencias_natureza/without_socio-v2": "7dadf4c6587f6636754e57d18dead20ce21fb44a3952eaca1f3eba896c2a5b39",
+    "resultados/ciencias_natureza/without_uf-v2": "be035ac67d3d772d1ae42e1e653251705bd217b2072ba79a08280100f9982687",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm": "d6ffdd12500edc16ff90a7783fa46640262e90704a2461e0c48ee05396c45c19",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn": "b82f7046df6a82fea1fcadcfe814d94ef9e997d000ed84648909761cf0771613",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging": "81d88ec73ad4015630c87b05689daaec637e0f198b5c29998de3bb849453301e",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting": "b98e394f1387a1652467cf93a6be150adb65b457b103940a4171f07622835819",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest": "09cfbeef65b8f79f4d276acd5e0734af39e48ee29a204310962bcac75edb4c0f",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting": "0eb403205cefeefd2ff6d7d00c0365f7d986d5a58025b7a5a1e3104fa3004b68",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking": "8db78d1b193ea172fd915bfacda04768d0dcc8f83f2c5f282c244852f5502be0"
+  },
+  "rows": 72,
+  "test_evaluated": false,
+  "pending": [
+    "avaliação final e previsões reais de teste"
+  ],
+  "assets": {
+    "experimentos.csv": "8afdabe91cd0f675329c82a49d031cf0f69205fa27fc267af82cc7a51c86924f"
+  }
+}

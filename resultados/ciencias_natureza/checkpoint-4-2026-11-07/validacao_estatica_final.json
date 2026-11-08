@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-07T07:21:45.299410-03:00",
+  "checks": [
+    "ruff check",
+    "ruff format",
+    "compileall",
+    "uv pip check: 54 pacotes compatíveis",
+    "git diff --check"
+  ],
+  "code_sha256": {
+    "src/enem_base/final_selection.py": "3a0bfe5051b7eeffbeaa6f7c040c82fce710974c9fbed5d18c0da41770aa264a",
+    "src/enem_base/frozen_curves.py": "c485d9f98071ea22323f58ec27f71d922564670b63fc8f826fffa0f432e74b4b",
+    "src/enem_base/final_evaluation.py": "9328de2dfac068053abf655143293aa4fd6ae0add9bee50222c686a4576bb359",
+    "scripts/executar_checkpoint4.py": "4158e887a777af0e5f2f5eca436f7438a4f6fcd5ced939df1691848495ca9aae",
+    "scripts/publicar_checkpoint4.py": "92bcac67616841020a0e27a38f7213b836d3f271f4300cdaf89f2ff6b4f93590",
+    "scripts/publicar_buscas_checkpoint4.py": "36411662dfc21d2167181a2934b460a10c43a4193e29746a7c535dee10c4e18c"
+  },
+  "test_evaluated": false,
+  "stage": "Final numeric flow before any full-development fit or test opening"
+}

@@ -1,0 +1,31 @@
+{
+  "checkpoint": 6,
+  "status": "completed",
+  "completed_at": "2026-11-07T19:11:14.599877-03:00",
+  "previous_checkpoint": "resultados/ciencias_natureza/checkpoint-5-2026-11-07/checkpoint.json",
+  "previous_checkpoint_sha256": "3ec9bf50cdaa72c1fa38c846f6374c76f43f467c0fd68646f6e34baa2164fa8d",
+  "report": "docs/checkpoint-6-resultados.md",
+  "report_sha256": "90757ea7fafd41d81175feeb0cf39a449152493e6607a14ff48fb6e30391cf4f",
+  "publication_manifest": "resultados/ciencias_natureza/checkpoint-6-2026-11-07/manifesto.json",
+  "publication_manifest_sha256": "744c6496305d3705fd02223f627afa8697417f2af6c2b27e2d6697d26aecd71f",
+  "pdf": "output/pdf/artigo_ciencias_natureza.pdf",
+  "pdf_sha256": "3183e8ce3577b080dff347158409913e5419118e5aff31d74b4e58719fe3bf23",
+  "pdf_pages": 10,
+  "validations": {
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/validacao_artigo.json": "0cf59e6c4086331d48d2a4a99bea07fcd78810ed9d9d246382892e8ad24db117",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/validacao_csv_parquets.json": "3130f4ef221fc2df1e7a8c8adb2d92536791c2a65166a0ad2a2b24c34df7e1e8",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/validacao_diagramacao.json": "c05daefed62368cfd8ae08ef7ba5bf17fed5d358c31cef7ac94f92091250c695",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/validacao_estatica.json": "dc7a32cf3db26d38aa5763953fd504551a4ec19f1a2a1d9cea62bcb2d2f9bee2",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/validacao_visual.json": "1d86a27c24276c0da377d04be51630de83dc00fa65fd0ca240a8531cac9e8521"
+  },
+  "archive": "output/checkpoint-6-artigo-2026-11-07.zip",
+  "archive_sha256": "1d91dd2300f2afc84d5b8aa7400437fac33352345aa08f7663468851c4d88b3e",
+  "archive_manifest": "output/checkpoint-6-artigo-2026-11-07.manifesto.json",
+  "archive_manifest_sha256": "adc8f713fa9adb4f607763209f5ef711c2ca5af77e371c32060a7eff34d91884",
+  "source_restored": true,
+  "csv_all_cells_equal_after_normalization": true,
+  "new_training": false,
+  "new_test_evaluation": false,
+  "next_checkpoint": 7,
+  "next_checkpoint_started": false
+}

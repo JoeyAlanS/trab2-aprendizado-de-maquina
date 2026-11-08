@@ -18,6 +18,21 @@ def normalize_missing(frame: pd.DataFrame) -> pd.DataFrame:
     return frame.astype(object).where(frame.notna(), np.nan)
 
 
+def dense_knn_input(matrix):
+    """Mesmos valores float64 em memória contígua para a busca exata do sklearn.
+
+    O backend esparso exige muito mais tempo nesta população. A conversão não
+    amostra linhas, altera categorias nem aproxima distâncias. Limite por matriz,
+    não estimativa de toda a memória do processo.
+    """
+    required = int(matrix.shape[0]) * int(matrix.shape[1]) * 8
+    if required > 4 * 1024**3:
+        raise MemoryError(f"Matriz densa do KNN exige {required} bytes; limite de 4 GiB.")
+    if hasattr(matrix, "toarray"):
+        return matrix.toarray(order="C")
+    return np.ascontiguousarray(matrix, dtype=np.float64)
+
+
 def build_preprocessor(
     numeric: list[str],
     categorical: list[str],

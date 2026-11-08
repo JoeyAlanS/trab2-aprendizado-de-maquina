@@ -1,4 +1,9 @@
-# Partições futuras
+# Partições persistidas
+
+Em 05/11/2026, os IDs foram recuperados do SQLite original e confrontados integralmente
+com a divisão por semente 42. A serialização Parquet tem novo hash, mas todos os participantes
+e dobras coincidem com o banco. O manifesto atual guarda o hash anterior e o atual,
+com `partition_membership_verified=true`. Não houve nova escolha de participantes.
 
 As partições oficiais de Ciências da Natureza foram criadas em 21/10/2026, em
 `ciencias-natureza-v1/`: 2.153.941 participantes de desenvolvimento e 538.486 de teste.

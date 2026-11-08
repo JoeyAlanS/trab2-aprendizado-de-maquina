@@ -34,6 +34,11 @@ def main(argv: list[str] | None = None) -> int:
     chart.add_argument("--output", type=Path, required=True)
     official = commands.add_parser("fetch-enem", help="Obter e extrair o pacote oficial de 2023")
     official.add_argument("--raw", type=Path, default=Path("dados/raw"))
+    recovery = commands.add_parser(
+        "recover-database", help="Recuperar dataset e partições de um SQLite real verificado"
+    )
+    recovery.add_argument("--study", type=Path, required=True)
+    recovery.add_argument("--database", type=Path, required=True)
     split = commands.add_parser(
         "split", help="Reservar teste e persistir dobras para o alvo definido"
     )
@@ -53,6 +58,19 @@ def main(argv: list[str] | None = None) -> int:
     database.add_argument("--output", type=Path, required=True)
     database.add_argument("--dashboard", type=Path, required=True)
     database.add_argument("--relations", type=Path, required=True)
+    for command in ("search", "freeze-solution", "learning-curve", "evaluate-final"):
+        sub = commands.add_parser(command, help="Etapa científica com dados reais e proveniência")
+        sub.add_argument("--study", type=Path, required=True)
+        sub.add_argument("--output", type=Path, required=True)
+        if command in {"search", "freeze-solution"}:
+            sub.add_argument("--cv", type=Path, nargs="+", required=True)
+        if command == "freeze-solution":
+            sub.add_argument("--search", type=Path, required=True)
+            sub.add_argument("--variants", type=Path, nargs="+", required=True)
+        if command in {"learning-curve", "evaluate-final"}:
+            sub.add_argument("--solution", type=Path, required=True)
+        if command == "evaluate-final":
+            sub.add_argument("--curve", type=Path, required=True)
     for command, help_text in (
         ("eda", "Explorar somente o desenvolvimento"),
         ("compare", "Comparar modelos no desenvolvimento, sem avaliar teste"),
@@ -61,6 +79,14 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_argument("--study", type=Path, required=True)
         sub.add_argument("--output", type=Path, required=True)
         if command == "compare":
+            from enem_base.variants import VARIANTS
+
+            sub.add_argument("--variant", choices=VARIANTS, default="original")
+            sub.add_argument(
+                "--resume",
+                action="store_true",
+                help="Retomar uma comparação compatível, preservando dobras e blocos concluídos",
+            )
             sub.add_argument(
                 "--models", nargs="+", default=["baseline", "linear", "ridge", "arvore"]
             )
@@ -101,7 +127,11 @@ def main(argv: list[str] | None = None) -> int:
             from enem_base.study import create_study_splits, load_study
 
             study = load_study(args.study)
-            if args.command == "split":
+            if args.command == "recover-database":
+                from enem_base.recovery import recover_dataset
+
+                result = recover_dataset(study, args.database)
+            elif args.command == "split":
                 result = create_study_splits(study)
             elif args.command == "dashboard-data":
                 from enem_base.dashboard import build_dashboard
@@ -119,10 +149,30 @@ def main(argv: list[str] | None = None) -> int:
                 from enem_base.exploration import explore_development
 
                 result = explore_development(study, args.output)
+            elif args.command in {"search", "freeze-solution", "learning-curve", "evaluate-final"}:
+                from enem_base.workflow import (
+                    evaluate_final,
+                    freeze_solution,
+                    learning_curve,
+                    search_models,
+                )
+
+                if args.command == "search":
+                    result = search_models(study, args.cv, args.output)
+                elif args.command == "freeze-solution":
+                    result = freeze_solution(
+                        study, args.cv, args.search, args.variants, args.output
+                    )
+                elif args.command == "learning-curve":
+                    result = learning_curve(study, args.solution, args.output)
+                else:
+                    result = evaluate_final(study, args.solution, args.curve, args.output)
             else:
                 from enem_base.modeling import compare_models
 
-                result = compare_models(study, args.output, tuple(args.models))
+                result = compare_models(
+                    study, args.output, tuple(args.models), variant=args.variant, resume=args.resume
+                )
             print(json.dumps(result, ensure_ascii=False))
     except DataQualityError as error:
         # Apenas contagens e nomes de colunas: não expor linhas de participantes.
@@ -135,6 +185,7 @@ def main(argv: list[str] | None = None) -> int:
         KeyError,
         subprocess.CalledProcessError,
         zipfile.BadZipFile,
+        MemoryError,
     ) as error:
         print(f"Erro: {error}", file=sys.stderr)
         return 2

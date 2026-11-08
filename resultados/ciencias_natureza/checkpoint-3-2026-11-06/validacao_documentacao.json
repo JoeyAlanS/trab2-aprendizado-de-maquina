@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "local_links_checked": 45,
+  "missing_links": [],
+  "reported_ranking_and_comparisons_confirmed": true,
+  "previous_checkpoint_reports_preserved": true,
+  "current_protocol_and_data_hashes_reverified": true,
+  "git_diff_check_exit_code": 0,
+  "report_sha256": "907def8be53447206bb852654bb362cf3d52f5b85b5bdf5342d37d3df963d0e5",
+  "documentation_sha256": {
+    "README.md": "1752b5b48dfd22fb2439668c3a5d3408dab1800740e449220fea6da901ee2f20",
+    "docs/checkpoints.md": "dd9178db011482b9ce310d5a4befa7b76e0f7457e533ba5840df0497ba0471fa",
+    "docs/requisitos.md": "3865228139630a0dc26a33392ed35f411347e09e2cdfa3aa270c9bf0d09df866",
+    "docs/acompanhamento.md": "aa1cdb464f6b1ad9eaf8c0b63805915e2141059108d00c697cde321e58740fc2",
+    "resultados/README.md": "84de9627fada1d62764b9a33229074206de26890b81f4e023db7e01b7eb4132d",
+    "docs/validacao-manual.md": "aa937e2ac329a1e7161f838744ff7961aa48a5112f98a4a2c205400cb7354f57",
+    "docs/checkpoint-3-protocolo.md": "f7e56547e11568344f965ed34be1067598c0a5b2a2ae28f4c2cf67de78bde9c2",
+    "docs/artigo.md": "367c68b75fbdec628c31b131bfcc4d0135171ff60e6914ba13ed4d769ab673ec"
+  }
+}

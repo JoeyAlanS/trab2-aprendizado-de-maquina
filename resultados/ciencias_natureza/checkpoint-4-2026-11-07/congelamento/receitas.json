@@ -1,0 +1,1999 @@
+{
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "recipes": {
+    "stacking": {
+      "model": "stacking",
+      "variant": "original",
+      "parameters": {
+        "final_estimator__alpha": 1000.0
+      },
+      "estimator": {
+        "class": "sklearn.ensemble._stacking.StackingRegressor",
+        "parameters": {
+          "cv": {
+            "class": "sklearn.model_selection._split.KFold",
+            "repr": "KFold(n_splits=3, random_state=42, shuffle=True)"
+          },
+          "estimators": [
+            [
+              "linear",
+              {
+                "class": "sklearn.pipeline.Pipeline",
+                "parameters": {
+                  "memory": null,
+                  "steps": [
+                    [
+                      "preparation",
+                      {
+                        "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                        "parameters": {
+                          "n_jobs": null,
+                          "remainder": "drop",
+                          "sparse_threshold": 1.0,
+                          "transformer_weights": null,
+                          "transformers": [
+                            [
+                              "numeric",
+                              {
+                                "class": "sklearn.pipeline.Pipeline",
+                                "parameters": {
+                                  "memory": null,
+                                  "steps": [
+                                    [
+                                      "missing_adapter",
+                                      {
+                                        "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                        "parameters": {
+                                          "accept_sparse": false,
+                                          "check_inverse": true,
+                                          "feature_names_out": "one-to-one",
+                                          "func": {
+                                            "callable": "enem_base.preprocessing.normalize_missing"
+                                          },
+                                          "inv_kw_args": null,
+                                          "inverse_func": null,
+                                          "kw_args": null,
+                                          "validate": false
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "imputer",
+                                      {
+                                        "class": "sklearn.impute._base.SimpleImputer",
+                                        "parameters": {
+                                          "add_indicator": true,
+                                          "copy": true,
+                                          "fill_value": null,
+                                          "keep_empty_features": true,
+                                          "missing_values": {
+                                            "special_float": "nan"
+                                          },
+                                          "strategy": "median"
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "scaler",
+                                      {
+                                        "class": "sklearn.preprocessing._data.StandardScaler",
+                                        "parameters": {
+                                          "copy": true,
+                                          "with_mean": true,
+                                          "with_std": true
+                                        }
+                                      }
+                                    ]
+                                  ],
+                                  "transform_input": null,
+                                  "verbose": false
+                                }
+                              },
+                              [
+                                "Q005"
+                              ]
+                            ],
+                            [
+                              "categorical",
+                              {
+                                "class": "sklearn.pipeline.Pipeline",
+                                "parameters": {
+                                  "memory": null,
+                                  "steps": [
+                                    [
+                                      "missing_adapter",
+                                      {
+                                        "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                        "parameters": {
+                                          "accept_sparse": false,
+                                          "check_inverse": true,
+                                          "feature_names_out": "one-to-one",
+                                          "func": {
+                                            "callable": "enem_base.preprocessing.normalize_missing"
+                                          },
+                                          "inv_kw_args": null,
+                                          "inverse_func": null,
+                                          "kw_args": null,
+                                          "validate": false
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "imputer",
+                                      {
+                                        "class": "sklearn.impute._base.SimpleImputer",
+                                        "parameters": {
+                                          "add_indicator": false,
+                                          "copy": true,
+                                          "fill_value": "__MISSING__",
+                                          "keep_empty_features": true,
+                                          "missing_values": {
+                                            "special_float": "nan"
+                                          },
+                                          "strategy": "constant"
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "encoder",
+                                      {
+                                        "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                        "parameters": {
+                                          "categories": "auto",
+                                          "drop": null,
+                                          "dtype": {
+                                            "callable": "numpy.float64"
+                                          },
+                                          "feature_name_combiner": "concat",
+                                          "handle_unknown": "ignore",
+                                          "max_categories": null,
+                                          "min_frequency": null,
+                                          "sparse_output": true
+                                        }
+                                      }
+                                    ]
+                                  ],
+                                  "transform_input": null,
+                                  "verbose": false
+                                }
+                              },
+                              [
+                                "TP_FAIXA_ETARIA",
+                                "TP_SEXO",
+                                "TP_ESTADO_CIVIL",
+                                "TP_COR_RACA",
+                                "TP_NACIONALIDADE",
+                                "TP_ST_CONCLUSAO",
+                                "TP_ANO_CONCLUIU",
+                                "TP_ESCOLA",
+                                "TP_ENSINO",
+                                "IN_TREINEIRO",
+                                "TP_DEPENDENCIA_ADM_ESC",
+                                "TP_LOCALIZACAO_ESC",
+                                "TP_SIT_FUNC_ESC",
+                                "SG_UF_PROVA",
+                                "TP_LINGUA",
+                                "Q001",
+                                "Q002",
+                                "Q003",
+                                "Q004",
+                                "Q006",
+                                "Q007",
+                                "Q008",
+                                "Q009",
+                                "Q010",
+                                "Q011",
+                                "Q012",
+                                "Q013",
+                                "Q014",
+                                "Q015",
+                                "Q016",
+                                "Q017",
+                                "Q018",
+                                "Q019",
+                                "Q020",
+                                "Q021",
+                                "Q022",
+                                "Q023",
+                                "Q024",
+                                "Q025"
+                              ]
+                            ]
+                          ],
+                          "verbose": false,
+                          "verbose_feature_names_out": true
+                        }
+                      }
+                    ],
+                    [
+                      "regressor",
+                      {
+                        "class": "sklearn.linear_model._base.LinearRegression",
+                        "parameters": {
+                          "copy_X": true,
+                          "fit_intercept": true,
+                          "n_jobs": null,
+                          "positive": false,
+                          "tol": 1e-06
+                        }
+                      }
+                    ]
+                  ],
+                  "transform_input": null,
+                  "verbose": false
+                }
+              }
+            ],
+            [
+              "arvore",
+              {
+                "class": "sklearn.pipeline.Pipeline",
+                "parameters": {
+                  "memory": null,
+                  "steps": [
+                    [
+                      "preparation",
+                      {
+                        "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                        "parameters": {
+                          "n_jobs": null,
+                          "remainder": "drop",
+                          "sparse_threshold": 1.0,
+                          "transformer_weights": null,
+                          "transformers": [
+                            [
+                              "numeric",
+                              {
+                                "class": "sklearn.pipeline.Pipeline",
+                                "parameters": {
+                                  "memory": null,
+                                  "steps": [
+                                    [
+                                      "missing_adapter",
+                                      {
+                                        "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                        "parameters": {
+                                          "accept_sparse": false,
+                                          "check_inverse": true,
+                                          "feature_names_out": "one-to-one",
+                                          "func": {
+                                            "callable": "enem_base.preprocessing.normalize_missing"
+                                          },
+                                          "inv_kw_args": null,
+                                          "inverse_func": null,
+                                          "kw_args": null,
+                                          "validate": false
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "imputer",
+                                      {
+                                        "class": "sklearn.impute._base.SimpleImputer",
+                                        "parameters": {
+                                          "add_indicator": true,
+                                          "copy": true,
+                                          "fill_value": null,
+                                          "keep_empty_features": true,
+                                          "missing_values": {
+                                            "special_float": "nan"
+                                          },
+                                          "strategy": "median"
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "scaler",
+                                      {
+                                        "class": "sklearn.preprocessing._data.StandardScaler",
+                                        "parameters": {
+                                          "copy": true,
+                                          "with_mean": true,
+                                          "with_std": true
+                                        }
+                                      }
+                                    ]
+                                  ],
+                                  "transform_input": null,
+                                  "verbose": false
+                                }
+                              },
+                              [
+                                "Q005"
+                              ]
+                            ],
+                            [
+                              "categorical",
+                              {
+                                "class": "sklearn.pipeline.Pipeline",
+                                "parameters": {
+                                  "memory": null,
+                                  "steps": [
+                                    [
+                                      "missing_adapter",
+                                      {
+                                        "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                        "parameters": {
+                                          "accept_sparse": false,
+                                          "check_inverse": true,
+                                          "feature_names_out": "one-to-one",
+                                          "func": {
+                                            "callable": "enem_base.preprocessing.normalize_missing"
+                                          },
+                                          "inv_kw_args": null,
+                                          "inverse_func": null,
+                                          "kw_args": null,
+                                          "validate": false
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "imputer",
+                                      {
+                                        "class": "sklearn.impute._base.SimpleImputer",
+                                        "parameters": {
+                                          "add_indicator": false,
+                                          "copy": true,
+                                          "fill_value": "__MISSING__",
+                                          "keep_empty_features": true,
+                                          "missing_values": {
+                                            "special_float": "nan"
+                                          },
+                                          "strategy": "constant"
+                                        }
+                                      }
+                                    ],
+                                    [
+                                      "encoder",
+                                      {
+                                        "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                        "parameters": {
+                                          "categories": "auto",
+                                          "drop": null,
+                                          "dtype": {
+                                            "callable": "numpy.float64"
+                                          },
+                                          "feature_name_combiner": "concat",
+                                          "handle_unknown": "ignore",
+                                          "max_categories": null,
+                                          "min_frequency": null,
+                                          "sparse_output": true
+                                        }
+                                      }
+                                    ]
+                                  ],
+                                  "transform_input": null,
+                                  "verbose": false
+                                }
+                              },
+                              [
+                                "TP_FAIXA_ETARIA",
+                                "TP_SEXO",
+                                "TP_ESTADO_CIVIL",
+                                "TP_COR_RACA",
+                                "TP_NACIONALIDADE",
+                                "TP_ST_CONCLUSAO",
+                                "TP_ANO_CONCLUIU",
+                                "TP_ESCOLA",
+                                "TP_ENSINO",
+                                "IN_TREINEIRO",
+                                "TP_DEPENDENCIA_ADM_ESC",
+                                "TP_LOCALIZACAO_ESC",
+                                "TP_SIT_FUNC_ESC",
+                                "SG_UF_PROVA",
+                                "TP_LINGUA",
+                                "Q001",
+                                "Q002",
+                                "Q003",
+                                "Q004",
+                                "Q006",
+                                "Q007",
+                                "Q008",
+                                "Q009",
+                                "Q010",
+                                "Q011",
+                                "Q012",
+                                "Q013",
+                                "Q014",
+                                "Q015",
+                                "Q016",
+                                "Q017",
+                                "Q018",
+                                "Q019",
+                                "Q020",
+                                "Q021",
+                                "Q022",
+                                "Q023",
+                                "Q024",
+                                "Q025"
+                              ]
+                            ]
+                          ],
+                          "verbose": false,
+                          "verbose_feature_names_out": true
+                        }
+                      }
+                    ],
+                    [
+                      "regressor",
+                      {
+                        "class": "sklearn.tree._classes.DecisionTreeRegressor",
+                        "parameters": {
+                          "ccp_alpha": 0.0,
+                          "criterion": "squared_error",
+                          "max_depth": 12,
+                          "max_features": null,
+                          "max_leaf_nodes": null,
+                          "min_impurity_decrease": 0.0,
+                          "min_samples_leaf": 100,
+                          "min_samples_split": 2,
+                          "min_weight_fraction_leaf": 0.0,
+                          "monotonic_cst": null,
+                          "random_state": 42,
+                          "splitter": "best"
+                        }
+                      }
+                    ]
+                  ],
+                  "transform_input": null,
+                  "verbose": false
+                }
+              }
+            ]
+          ],
+          "final_estimator": {
+            "class": "sklearn.linear_model._ridge.Ridge",
+            "parameters": {
+              "alpha": 1000.0,
+              "copy_X": true,
+              "fit_intercept": true,
+              "max_iter": null,
+              "positive": false,
+              "random_state": null,
+              "solver": "auto",
+              "tol": 0.0001
+            }
+          },
+          "n_jobs": 1,
+          "passthrough": false,
+          "verbose": 0
+        }
+      },
+      "features": [
+        "Q005",
+        "TP_FAIXA_ETARIA",
+        "TP_SEXO",
+        "TP_ESTADO_CIVIL",
+        "TP_COR_RACA",
+        "TP_NACIONALIDADE",
+        "TP_ST_CONCLUSAO",
+        "TP_ANO_CONCLUIU",
+        "TP_ESCOLA",
+        "TP_ENSINO",
+        "IN_TREINEIRO",
+        "TP_DEPENDENCIA_ADM_ESC",
+        "TP_LOCALIZACAO_ESC",
+        "TP_SIT_FUNC_ESC",
+        "SG_UF_PROVA",
+        "TP_LINGUA",
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025"
+      ],
+      "source": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/stacking",
+      "candidate_id": 11,
+      "rmse_mean": 76.17451589961482,
+      "mae_mean": 55.355652186751485,
+      "r2_mean": 0.24935528615241168,
+      "rmse_std": 0.04886829250127911,
+      "mae_std": 0.034432845674622854,
+      "r2_std": 0.0005100534928987937
+    },
+    "svm": {
+      "model": "svm",
+      "variant": "original",
+      "parameters": {},
+      "estimator": {
+        "class": "sklearn.pipeline.Pipeline",
+        "parameters": {
+          "memory": null,
+          "steps": [
+            [
+              "preparation",
+              {
+                "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                "parameters": {
+                  "n_jobs": null,
+                  "remainder": "drop",
+                  "sparse_threshold": 1.0,
+                  "transformer_weights": null,
+                  "transformers": [
+                    [
+                      "numeric",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": true,
+                                  "copy": true,
+                                  "fill_value": null,
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "median"
+                                }
+                              }
+                            ],
+                            [
+                              "scaler",
+                              {
+                                "class": "sklearn.preprocessing._data.StandardScaler",
+                                "parameters": {
+                                  "copy": true,
+                                  "with_mean": true,
+                                  "with_std": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "Q005"
+                      ]
+                    ],
+                    [
+                      "categorical",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": false,
+                                  "copy": true,
+                                  "fill_value": "__MISSING__",
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "constant"
+                                }
+                              }
+                            ],
+                            [
+                              "encoder",
+                              {
+                                "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                "parameters": {
+                                  "categories": "auto",
+                                  "drop": null,
+                                  "dtype": {
+                                    "callable": "numpy.float64"
+                                  },
+                                  "feature_name_combiner": "concat",
+                                  "handle_unknown": "ignore",
+                                  "max_categories": null,
+                                  "min_frequency": null,
+                                  "sparse_output": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "TP_FAIXA_ETARIA",
+                        "TP_SEXO",
+                        "TP_ESTADO_CIVIL",
+                        "TP_COR_RACA",
+                        "TP_NACIONALIDADE",
+                        "TP_ST_CONCLUSAO",
+                        "TP_ANO_CONCLUIU",
+                        "TP_ESCOLA",
+                        "TP_ENSINO",
+                        "IN_TREINEIRO",
+                        "TP_DEPENDENCIA_ADM_ESC",
+                        "TP_LOCALIZACAO_ESC",
+                        "TP_SIT_FUNC_ESC",
+                        "SG_UF_PROVA",
+                        "TP_LINGUA",
+                        "Q001",
+                        "Q002",
+                        "Q003",
+                        "Q004",
+                        "Q006",
+                        "Q007",
+                        "Q008",
+                        "Q009",
+                        "Q010",
+                        "Q011",
+                        "Q012",
+                        "Q013",
+                        "Q014",
+                        "Q015",
+                        "Q016",
+                        "Q017",
+                        "Q018",
+                        "Q019",
+                        "Q020",
+                        "Q021",
+                        "Q022",
+                        "Q023",
+                        "Q024",
+                        "Q025"
+                      ]
+                    ]
+                  ],
+                  "verbose": false,
+                  "verbose_feature_names_out": true
+                }
+              }
+            ],
+            [
+              "regressor",
+              {
+                "class": "sklearn.svm._classes.LinearSVR",
+                "parameters": {
+                  "C": 1.0,
+                  "dual": "auto",
+                  "epsilon": 0.0,
+                  "fit_intercept": true,
+                  "intercept_scaling": 1.0,
+                  "loss": "epsilon_insensitive",
+                  "max_iter": 5000,
+                  "random_state": 42,
+                  "tol": 0.001,
+                  "verbose": 0
+                }
+              }
+            ]
+          ],
+          "transform_input": null,
+          "verbose": false
+        }
+      },
+      "features": [
+        "Q005",
+        "TP_FAIXA_ETARIA",
+        "TP_SEXO",
+        "TP_ESTADO_CIVIL",
+        "TP_COR_RACA",
+        "TP_NACIONALIDADE",
+        "TP_ST_CONCLUSAO",
+        "TP_ANO_CONCLUIU",
+        "TP_ESCOLA",
+        "TP_ENSINO",
+        "IN_TREINEIRO",
+        "TP_DEPENDENCIA_ADM_ESC",
+        "TP_LOCALIZACAO_ESC",
+        "TP_SIT_FUNC_ESC",
+        "SG_UF_PROVA",
+        "TP_LINGUA",
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025"
+      ],
+      "source": [
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking"
+      ],
+      "candidate_id": null,
+      "rmse_mean": 76.57668973803416,
+      "mae_mean": 55.51853993277124,
+      "r2_mean": 0.24140822261454,
+      "rmse_std": 0.059360228502586015,
+      "mae_std": 0.04540308210719403,
+      "r2_std": 0.0005428862523098487
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "variant": "original",
+      "parameters": {
+        "regressor__n_jobs": 6
+      },
+      "estimator": {
+        "class": "sklearn.pipeline.Pipeline",
+        "parameters": {
+          "memory": null,
+          "steps": [
+            [
+              "preparation",
+              {
+                "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                "parameters": {
+                  "n_jobs": null,
+                  "remainder": "drop",
+                  "sparse_threshold": 1.0,
+                  "transformer_weights": null,
+                  "transformers": [
+                    [
+                      "numeric",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": true,
+                                  "copy": true,
+                                  "fill_value": null,
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "median"
+                                }
+                              }
+                            ],
+                            [
+                              "scaler",
+                              {
+                                "class": "sklearn.preprocessing._data.StandardScaler",
+                                "parameters": {
+                                  "copy": true,
+                                  "with_mean": true,
+                                  "with_std": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "Q005"
+                      ]
+                    ],
+                    [
+                      "categorical",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": false,
+                                  "copy": true,
+                                  "fill_value": "__MISSING__",
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "constant"
+                                }
+                              }
+                            ],
+                            [
+                              "encoder",
+                              {
+                                "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                "parameters": {
+                                  "categories": "auto",
+                                  "drop": null,
+                                  "dtype": {
+                                    "callable": "numpy.float64"
+                                  },
+                                  "feature_name_combiner": "concat",
+                                  "handle_unknown": "ignore",
+                                  "max_categories": null,
+                                  "min_frequency": null,
+                                  "sparse_output": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "TP_FAIXA_ETARIA",
+                        "TP_SEXO",
+                        "TP_ESTADO_CIVIL",
+                        "TP_COR_RACA",
+                        "TP_NACIONALIDADE",
+                        "TP_ST_CONCLUSAO",
+                        "TP_ANO_CONCLUIU",
+                        "TP_ESCOLA",
+                        "TP_ENSINO",
+                        "IN_TREINEIRO",
+                        "TP_DEPENDENCIA_ADM_ESC",
+                        "TP_LOCALIZACAO_ESC",
+                        "TP_SIT_FUNC_ESC",
+                        "SG_UF_PROVA",
+                        "TP_LINGUA",
+                        "Q001",
+                        "Q002",
+                        "Q003",
+                        "Q004",
+                        "Q006",
+                        "Q007",
+                        "Q008",
+                        "Q009",
+                        "Q010",
+                        "Q011",
+                        "Q012",
+                        "Q013",
+                        "Q014",
+                        "Q015",
+                        "Q016",
+                        "Q017",
+                        "Q018",
+                        "Q019",
+                        "Q020",
+                        "Q021",
+                        "Q022",
+                        "Q023",
+                        "Q024",
+                        "Q025"
+                      ]
+                    ]
+                  ],
+                  "verbose": false,
+                  "verbose_feature_names_out": true
+                }
+              }
+            ],
+            [
+              "regressor",
+              {
+                "class": "sklearn.ensemble._forest.RandomForestRegressor",
+                "parameters": {
+                  "bootstrap": true,
+                  "ccp_alpha": 0.0,
+                  "criterion": "squared_error",
+                  "max_depth": 12,
+                  "max_features": 0.8,
+                  "max_leaf_nodes": null,
+                  "max_samples": null,
+                  "min_impurity_decrease": 0.0,
+                  "min_samples_leaf": 100,
+                  "min_samples_split": 2,
+                  "min_weight_fraction_leaf": 0.0,
+                  "monotonic_cst": null,
+                  "n_estimators": 30,
+                  "n_jobs": 6,
+                  "oob_score": false,
+                  "random_state": 42,
+                  "verbose": 0,
+                  "warm_start": false
+                }
+              }
+            ]
+          ],
+          "transform_input": null,
+          "verbose": false
+        }
+      },
+      "features": [
+        "Q005",
+        "TP_FAIXA_ETARIA",
+        "TP_SEXO",
+        "TP_ESTADO_CIVIL",
+        "TP_COR_RACA",
+        "TP_NACIONALIDADE",
+        "TP_ST_CONCLUSAO",
+        "TP_ANO_CONCLUIU",
+        "TP_ESCOLA",
+        "TP_ENSINO",
+        "IN_TREINEIRO",
+        "TP_DEPENDENCIA_ADM_ESC",
+        "TP_LOCALIZACAO_ESC",
+        "TP_SIT_FUNC_ESC",
+        "SG_UF_PROVA",
+        "TP_LINGUA",
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025"
+      ],
+      "source": [
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking"
+      ],
+      "candidate_id": null,
+      "rmse_mean": 76.64287238876545,
+      "mae_mean": 55.85049842734323,
+      "r2_mean": 0.24009617623976956,
+      "rmse_std": 0.04613474782129662,
+      "mae_std": 0.029102108222633365,
+      "r2_std": 0.000607118168370164
+    },
+    "baseline": {
+      "model": "baseline",
+      "variant": "original",
+      "parameters": {},
+      "estimator": {
+        "class": "sklearn.dummy.DummyRegressor",
+        "parameters": {
+          "constant": null,
+          "quantile": null,
+          "strategy": "mean"
+        }
+      },
+      "features": [
+        "Q005",
+        "TP_FAIXA_ETARIA",
+        "TP_SEXO",
+        "TP_ESTADO_CIVIL",
+        "TP_COR_RACA",
+        "TP_NACIONALIDADE",
+        "TP_ST_CONCLUSAO",
+        "TP_ANO_CONCLUIU",
+        "TP_ESCOLA",
+        "TP_ENSINO",
+        "IN_TREINEIRO",
+        "TP_DEPENDENCIA_ADM_ESC",
+        "TP_LOCALIZACAO_ESC",
+        "TP_SIT_FUNC_ESC",
+        "SG_UF_PROVA",
+        "TP_LINGUA",
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025"
+      ],
+      "source": [
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking"
+      ],
+      "candidate_id": null,
+      "rmse_mean": 87.92106772621143,
+      "mae_mean": 66.23960631091263,
+      "r2_mean": -1.5487018221923183e-06,
+      "rmse_std": 0.07755725413017117,
+      "mae_std": 0.0444589868459734,
+      "r2_std": 1.095294399133491e-06
+    },
+    "linear_reference": {
+      "model": "linear",
+      "variant": "original",
+      "parameters": {},
+      "estimator": {
+        "class": "sklearn.pipeline.Pipeline",
+        "parameters": {
+          "memory": null,
+          "steps": [
+            [
+              "preparation",
+              {
+                "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                "parameters": {
+                  "n_jobs": null,
+                  "remainder": "drop",
+                  "sparse_threshold": 1.0,
+                  "transformer_weights": null,
+                  "transformers": [
+                    [
+                      "numeric",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": true,
+                                  "copy": true,
+                                  "fill_value": null,
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "median"
+                                }
+                              }
+                            ],
+                            [
+                              "scaler",
+                              {
+                                "class": "sklearn.preprocessing._data.StandardScaler",
+                                "parameters": {
+                                  "copy": true,
+                                  "with_mean": true,
+                                  "with_std": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "Q005"
+                      ]
+                    ],
+                    [
+                      "categorical",
+                      {
+                        "class": "sklearn.pipeline.Pipeline",
+                        "parameters": {
+                          "memory": null,
+                          "steps": [
+                            [
+                              "missing_adapter",
+                              {
+                                "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                "parameters": {
+                                  "accept_sparse": false,
+                                  "check_inverse": true,
+                                  "feature_names_out": "one-to-one",
+                                  "func": {
+                                    "callable": "enem_base.preprocessing.normalize_missing"
+                                  },
+                                  "inv_kw_args": null,
+                                  "inverse_func": null,
+                                  "kw_args": null,
+                                  "validate": false
+                                }
+                              }
+                            ],
+                            [
+                              "imputer",
+                              {
+                                "class": "sklearn.impute._base.SimpleImputer",
+                                "parameters": {
+                                  "add_indicator": false,
+                                  "copy": true,
+                                  "fill_value": "__MISSING__",
+                                  "keep_empty_features": true,
+                                  "missing_values": {
+                                    "special_float": "nan"
+                                  },
+                                  "strategy": "constant"
+                                }
+                              }
+                            ],
+                            [
+                              "encoder",
+                              {
+                                "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                "parameters": {
+                                  "categories": "auto",
+                                  "drop": null,
+                                  "dtype": {
+                                    "callable": "numpy.float64"
+                                  },
+                                  "feature_name_combiner": "concat",
+                                  "handle_unknown": "ignore",
+                                  "max_categories": null,
+                                  "min_frequency": null,
+                                  "sparse_output": true
+                                }
+                              }
+                            ]
+                          ],
+                          "transform_input": null,
+                          "verbose": false
+                        }
+                      },
+                      [
+                        "TP_FAIXA_ETARIA",
+                        "TP_SEXO",
+                        "TP_ESTADO_CIVIL",
+                        "TP_COR_RACA",
+                        "TP_NACIONALIDADE",
+                        "TP_ST_CONCLUSAO",
+                        "TP_ANO_CONCLUIU",
+                        "TP_ESCOLA",
+                        "TP_ENSINO",
+                        "IN_TREINEIRO",
+                        "TP_DEPENDENCIA_ADM_ESC",
+                        "TP_LOCALIZACAO_ESC",
+                        "TP_SIT_FUNC_ESC",
+                        "SG_UF_PROVA",
+                        "TP_LINGUA",
+                        "Q001",
+                        "Q002",
+                        "Q003",
+                        "Q004",
+                        "Q006",
+                        "Q007",
+                        "Q008",
+                        "Q009",
+                        "Q010",
+                        "Q011",
+                        "Q012",
+                        "Q013",
+                        "Q014",
+                        "Q015",
+                        "Q016",
+                        "Q017",
+                        "Q018",
+                        "Q019",
+                        "Q020",
+                        "Q021",
+                        "Q022",
+                        "Q023",
+                        "Q024",
+                        "Q025"
+                      ]
+                    ]
+                  ],
+                  "verbose": false,
+                  "verbose_feature_names_out": true
+                }
+              }
+            ],
+            [
+              "regressor",
+              {
+                "class": "sklearn.linear_model._base.LinearRegression",
+                "parameters": {
+                  "copy_X": true,
+                  "fit_intercept": true,
+                  "n_jobs": null,
+                  "positive": false,
+                  "tol": 1e-06
+                }
+              }
+            ]
+          ],
+          "transform_input": null,
+          "verbose": false
+        }
+      },
+      "features": [
+        "Q005",
+        "TP_FAIXA_ETARIA",
+        "TP_SEXO",
+        "TP_ESTADO_CIVIL",
+        "TP_COR_RACA",
+        "TP_NACIONALIDADE",
+        "TP_ST_CONCLUSAO",
+        "TP_ANO_CONCLUIU",
+        "TP_ESCOLA",
+        "TP_ENSINO",
+        "IN_TREINEIRO",
+        "TP_DEPENDENCIA_ADM_ESC",
+        "TP_LOCALIZACAO_ESC",
+        "TP_SIT_FUNC_ESC",
+        "SG_UF_PROVA",
+        "TP_LINGUA",
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025"
+      ],
+      "source": [
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting",
+        "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking"
+      ],
+      "candidate_id": null,
+      "rmse_mean": 76.48379917770431,
+      "mae_mean": 55.62318572316807,
+      "r2_mean": 0.24324747096210522,
+      "rmse_std": 0.05426879115593309,
+      "mae_std": 0.04000317340151104,
+      "r2_std": 0.0004909560684665685
+    }
+  },
+  "primary_models": [
+    "stacking",
+    "svm",
+    "random_forest"
+  ],
+  "curve_models": [
+    "stacking",
+    "svm",
+    "random_forest"
+  ],
+  "academic_solution": "stacking",
+  "academic_recipe": {
+    "model": "stacking",
+    "variant": "original",
+    "parameters": {
+      "final_estimator__alpha": 1000.0
+    },
+    "estimator": {
+      "class": "sklearn.ensemble._stacking.StackingRegressor",
+      "parameters": {
+        "cv": {
+          "class": "sklearn.model_selection._split.KFold",
+          "repr": "KFold(n_splits=3, random_state=42, shuffle=True)"
+        },
+        "estimators": [
+          [
+            "linear",
+            {
+              "class": "sklearn.pipeline.Pipeline",
+              "parameters": {
+                "memory": null,
+                "steps": [
+                  [
+                    "preparation",
+                    {
+                      "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                      "parameters": {
+                        "n_jobs": null,
+                        "remainder": "drop",
+                        "sparse_threshold": 1.0,
+                        "transformer_weights": null,
+                        "transformers": [
+                          [
+                            "numeric",
+                            {
+                              "class": "sklearn.pipeline.Pipeline",
+                              "parameters": {
+                                "memory": null,
+                                "steps": [
+                                  [
+                                    "missing_adapter",
+                                    {
+                                      "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                      "parameters": {
+                                        "accept_sparse": false,
+                                        "check_inverse": true,
+                                        "feature_names_out": "one-to-one",
+                                        "func": {
+                                          "callable": "enem_base.preprocessing.normalize_missing"
+                                        },
+                                        "inv_kw_args": null,
+                                        "inverse_func": null,
+                                        "kw_args": null,
+                                        "validate": false
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "imputer",
+                                    {
+                                      "class": "sklearn.impute._base.SimpleImputer",
+                                      "parameters": {
+                                        "add_indicator": true,
+                                        "copy": true,
+                                        "fill_value": null,
+                                        "keep_empty_features": true,
+                                        "missing_values": {
+                                          "special_float": "nan"
+                                        },
+                                        "strategy": "median"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "scaler",
+                                    {
+                                      "class": "sklearn.preprocessing._data.StandardScaler",
+                                      "parameters": {
+                                        "copy": true,
+                                        "with_mean": true,
+                                        "with_std": true
+                                      }
+                                    }
+                                  ]
+                                ],
+                                "transform_input": null,
+                                "verbose": false
+                              }
+                            },
+                            [
+                              "Q005"
+                            ]
+                          ],
+                          [
+                            "categorical",
+                            {
+                              "class": "sklearn.pipeline.Pipeline",
+                              "parameters": {
+                                "memory": null,
+                                "steps": [
+                                  [
+                                    "missing_adapter",
+                                    {
+                                      "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                      "parameters": {
+                                        "accept_sparse": false,
+                                        "check_inverse": true,
+                                        "feature_names_out": "one-to-one",
+                                        "func": {
+                                          "callable": "enem_base.preprocessing.normalize_missing"
+                                        },
+                                        "inv_kw_args": null,
+                                        "inverse_func": null,
+                                        "kw_args": null,
+                                        "validate": false
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "imputer",
+                                    {
+                                      "class": "sklearn.impute._base.SimpleImputer",
+                                      "parameters": {
+                                        "add_indicator": false,
+                                        "copy": true,
+                                        "fill_value": "__MISSING__",
+                                        "keep_empty_features": true,
+                                        "missing_values": {
+                                          "special_float": "nan"
+                                        },
+                                        "strategy": "constant"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "encoder",
+                                    {
+                                      "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                      "parameters": {
+                                        "categories": "auto",
+                                        "drop": null,
+                                        "dtype": {
+                                          "callable": "numpy.float64"
+                                        },
+                                        "feature_name_combiner": "concat",
+                                        "handle_unknown": "ignore",
+                                        "max_categories": null,
+                                        "min_frequency": null,
+                                        "sparse_output": true
+                                      }
+                                    }
+                                  ]
+                                ],
+                                "transform_input": null,
+                                "verbose": false
+                              }
+                            },
+                            [
+                              "TP_FAIXA_ETARIA",
+                              "TP_SEXO",
+                              "TP_ESTADO_CIVIL",
+                              "TP_COR_RACA",
+                              "TP_NACIONALIDADE",
+                              "TP_ST_CONCLUSAO",
+                              "TP_ANO_CONCLUIU",
+                              "TP_ESCOLA",
+                              "TP_ENSINO",
+                              "IN_TREINEIRO",
+                              "TP_DEPENDENCIA_ADM_ESC",
+                              "TP_LOCALIZACAO_ESC",
+                              "TP_SIT_FUNC_ESC",
+                              "SG_UF_PROVA",
+                              "TP_LINGUA",
+                              "Q001",
+                              "Q002",
+                              "Q003",
+                              "Q004",
+                              "Q006",
+                              "Q007",
+                              "Q008",
+                              "Q009",
+                              "Q010",
+                              "Q011",
+                              "Q012",
+                              "Q013",
+                              "Q014",
+                              "Q015",
+                              "Q016",
+                              "Q017",
+                              "Q018",
+                              "Q019",
+                              "Q020",
+                              "Q021",
+                              "Q022",
+                              "Q023",
+                              "Q024",
+                              "Q025"
+                            ]
+                          ]
+                        ],
+                        "verbose": false,
+                        "verbose_feature_names_out": true
+                      }
+                    }
+                  ],
+                  [
+                    "regressor",
+                    {
+                      "class": "sklearn.linear_model._base.LinearRegression",
+                      "parameters": {
+                        "copy_X": true,
+                        "fit_intercept": true,
+                        "n_jobs": null,
+                        "positive": false,
+                        "tol": 1e-06
+                      }
+                    }
+                  ]
+                ],
+                "transform_input": null,
+                "verbose": false
+              }
+            }
+          ],
+          [
+            "arvore",
+            {
+              "class": "sklearn.pipeline.Pipeline",
+              "parameters": {
+                "memory": null,
+                "steps": [
+                  [
+                    "preparation",
+                    {
+                      "class": "sklearn.compose._column_transformer.ColumnTransformer",
+                      "parameters": {
+                        "n_jobs": null,
+                        "remainder": "drop",
+                        "sparse_threshold": 1.0,
+                        "transformer_weights": null,
+                        "transformers": [
+                          [
+                            "numeric",
+                            {
+                              "class": "sklearn.pipeline.Pipeline",
+                              "parameters": {
+                                "memory": null,
+                                "steps": [
+                                  [
+                                    "missing_adapter",
+                                    {
+                                      "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                      "parameters": {
+                                        "accept_sparse": false,
+                                        "check_inverse": true,
+                                        "feature_names_out": "one-to-one",
+                                        "func": {
+                                          "callable": "enem_base.preprocessing.normalize_missing"
+                                        },
+                                        "inv_kw_args": null,
+                                        "inverse_func": null,
+                                        "kw_args": null,
+                                        "validate": false
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "imputer",
+                                    {
+                                      "class": "sklearn.impute._base.SimpleImputer",
+                                      "parameters": {
+                                        "add_indicator": true,
+                                        "copy": true,
+                                        "fill_value": null,
+                                        "keep_empty_features": true,
+                                        "missing_values": {
+                                          "special_float": "nan"
+                                        },
+                                        "strategy": "median"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "scaler",
+                                    {
+                                      "class": "sklearn.preprocessing._data.StandardScaler",
+                                      "parameters": {
+                                        "copy": true,
+                                        "with_mean": true,
+                                        "with_std": true
+                                      }
+                                    }
+                                  ]
+                                ],
+                                "transform_input": null,
+                                "verbose": false
+                              }
+                            },
+                            [
+                              "Q005"
+                            ]
+                          ],
+                          [
+                            "categorical",
+                            {
+                              "class": "sklearn.pipeline.Pipeline",
+                              "parameters": {
+                                "memory": null,
+                                "steps": [
+                                  [
+                                    "missing_adapter",
+                                    {
+                                      "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                                      "parameters": {
+                                        "accept_sparse": false,
+                                        "check_inverse": true,
+                                        "feature_names_out": "one-to-one",
+                                        "func": {
+                                          "callable": "enem_base.preprocessing.normalize_missing"
+                                        },
+                                        "inv_kw_args": null,
+                                        "inverse_func": null,
+                                        "kw_args": null,
+                                        "validate": false
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "imputer",
+                                    {
+                                      "class": "sklearn.impute._base.SimpleImputer",
+                                      "parameters": {
+                                        "add_indicator": false,
+                                        "copy": true,
+                                        "fill_value": "__MISSING__",
+                                        "keep_empty_features": true,
+                                        "missing_values": {
+                                          "special_float": "nan"
+                                        },
+                                        "strategy": "constant"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    "encoder",
+                                    {
+                                      "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                                      "parameters": {
+                                        "categories": "auto",
+                                        "drop": null,
+                                        "dtype": {
+                                          "callable": "numpy.float64"
+                                        },
+                                        "feature_name_combiner": "concat",
+                                        "handle_unknown": "ignore",
+                                        "max_categories": null,
+                                        "min_frequency": null,
+                                        "sparse_output": true
+                                      }
+                                    }
+                                  ]
+                                ],
+                                "transform_input": null,
+                                "verbose": false
+                              }
+                            },
+                            [
+                              "TP_FAIXA_ETARIA",
+                              "TP_SEXO",
+                              "TP_ESTADO_CIVIL",
+                              "TP_COR_RACA",
+                              "TP_NACIONALIDADE",
+                              "TP_ST_CONCLUSAO",
+                              "TP_ANO_CONCLUIU",
+                              "TP_ESCOLA",
+                              "TP_ENSINO",
+                              "IN_TREINEIRO",
+                              "TP_DEPENDENCIA_ADM_ESC",
+                              "TP_LOCALIZACAO_ESC",
+                              "TP_SIT_FUNC_ESC",
+                              "SG_UF_PROVA",
+                              "TP_LINGUA",
+                              "Q001",
+                              "Q002",
+                              "Q003",
+                              "Q004",
+                              "Q006",
+                              "Q007",
+                              "Q008",
+                              "Q009",
+                              "Q010",
+                              "Q011",
+                              "Q012",
+                              "Q013",
+                              "Q014",
+                              "Q015",
+                              "Q016",
+                              "Q017",
+                              "Q018",
+                              "Q019",
+                              "Q020",
+                              "Q021",
+                              "Q022",
+                              "Q023",
+                              "Q024",
+                              "Q025"
+                            ]
+                          ]
+                        ],
+                        "verbose": false,
+                        "verbose_feature_names_out": true
+                      }
+                    }
+                  ],
+                  [
+                    "regressor",
+                    {
+                      "class": "sklearn.tree._classes.DecisionTreeRegressor",
+                      "parameters": {
+                        "ccp_alpha": 0.0,
+                        "criterion": "squared_error",
+                        "max_depth": 12,
+                        "max_features": null,
+                        "max_leaf_nodes": null,
+                        "min_impurity_decrease": 0.0,
+                        "min_samples_leaf": 100,
+                        "min_samples_split": 2,
+                        "min_weight_fraction_leaf": 0.0,
+                        "monotonic_cst": null,
+                        "random_state": 42,
+                        "splitter": "best"
+                      }
+                    }
+                  ]
+                ],
+                "transform_input": null,
+                "verbose": false
+              }
+            }
+          ]
+        ],
+        "final_estimator": {
+          "class": "sklearn.linear_model._ridge.Ridge",
+          "parameters": {
+            "alpha": 1000.0,
+            "copy_X": true,
+            "fit_intercept": true,
+            "max_iter": null,
+            "positive": false,
+            "random_state": null,
+            "solver": "auto",
+            "tol": 0.0001
+          }
+        },
+        "n_jobs": 1,
+        "passthrough": false,
+        "verbose": 0
+      }
+    },
+    "features": [
+      "Q005",
+      "TP_FAIXA_ETARIA",
+      "TP_SEXO",
+      "TP_ESTADO_CIVIL",
+      "TP_COR_RACA",
+      "TP_NACIONALIDADE",
+      "TP_ST_CONCLUSAO",
+      "TP_ANO_CONCLUIU",
+      "TP_ESCOLA",
+      "TP_ENSINO",
+      "IN_TREINEIRO",
+      "TP_DEPENDENCIA_ADM_ESC",
+      "TP_LOCALIZACAO_ESC",
+      "TP_SIT_FUNC_ESC",
+      "SG_UF_PROVA",
+      "TP_LINGUA",
+      "Q001",
+      "Q002",
+      "Q003",
+      "Q004",
+      "Q006",
+      "Q007",
+      "Q008",
+      "Q009",
+      "Q010",
+      "Q011",
+      "Q012",
+      "Q013",
+      "Q014",
+      "Q015",
+      "Q016",
+      "Q017",
+      "Q018",
+      "Q019",
+      "Q020",
+      "Q021",
+      "Q022",
+      "Q023",
+      "Q024",
+      "Q025"
+    ],
+    "source": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/stacking",
+    "candidate_id": 11,
+    "rmse_mean": 76.17451589961482,
+    "mae_mean": 55.355652186751485,
+    "r2_mean": 0.24935528615241168,
+    "rmse_std": 0.04886829250127911,
+    "mae_std": 0.034432845674622854,
+    "r2_std": 0.0005100534928987937
+  },
+  "inputs": {
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_cache.json": "2ef7a6376cd58403fdf36a26cf0d6cc63d1db60be0845cb0536e92e34a1b7c9c",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/svm/manifesto.json": "8bb36f050ca145876edf9eba365ae0e80cba0f6b7a52d99379f63a19c8f7b760",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/linear/manifesto.json": "1b2d10cdad6a4638312da2c8dabbdb2907dbf134e97f3a9ffb289bcbff31263f",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/ridge/manifesto.json": "30ad63b652c94d95312cbe375bf86d3de843db4d927be78f2990424e8edde563",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/random_forest/manifesto.json": "9d816664b447dcc63c66cda6c9c6bb8c48fc3e6fa4052613e87db67eddfb6c80",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/buscas/stacking/manifesto.json": "bb5562ab602f886a0930cd3809ce19f79eda8939f71ef0a960e58f5ca0e982a3",
+    "resultados/ciencias_natureza/engineered-v2/manifesto.json": "f4301a810890621035170816a4334f8a0478c4e56ae0ba20cc052ee0afd5b576",
+    "resultados/ciencias_natureza/selected-v2/manifesto.json": "3ec2c9900cb47e3d53f702998ce5f1d011899bff7425a45bbb603eda42452623",
+    "resultados/ciencias_natureza/pca-v2/manifesto.json": "a5a6cd5107a971fec2dc86c38ef8f99fdf41400086165ad0ff0e9741e156ce0e",
+    "resultados/ciencias_natureza/weighted-v2/manifesto.json": "d02f8e4dab717a93eb3324e8d9f11f2ef1f5911dba285d19a67ce4be7ba758c0",
+    "resultados/ciencias_natureza/without_socio-v2/manifesto.json": "7dadf4c6587f6636754e57d18dead20ce21fb44a3952eaca1f3eba896c2a5b39",
+    "resultados/ciencias_natureza/without_uf-v2/manifesto.json": "be035ac67d3d772d1ae42e1e653251705bd217b2072ba79a08280100f9982687",
+    "resultados/ciencias_natureza/checkpoint-3-2026-11-06/checkpoint.json": "e929f268cbdbcbe02322e4540b0c12bde44f55349780c4d089eb1353b4ab3509",
+    "resultados/ciencias_natureza/checkpoint-3-2026-11-06/stacking/manifesto.json": "bc4c36b341ef376e4a3fb87c0ed0f4999375d4b44db055b045319d83e0b1c8b8",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking/manifesto.json": "8db78d1b193ea172fd915bfacda04768d0dcc8f83f2c5f282c244852f5502be0",
+    "resultados/ciencias_natureza/checkpoint-3-2026-11-06/svm/manifesto.json": "90ea4ba594f1b6d02958302efa599d5dacdfb8508fab8e839be0c1bcdd3f4ad3",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm/manifesto.json": "d6ffdd12500edc16ff90a7783fa46640262e90704a2461e0c48ee05396c45c19",
+    "resultados/ciencias_natureza/checkpoint-3-2026-11-06/random_forest/manifesto.json": "7d7467b30158adda7ad2646cc264e3d9bd611c834580b8ec0bb6487c4d8dae77",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest/manifesto.json": "09cfbeef65b8f79f4d276acd5e0734af39e48ee29a204310962bcac75edb4c0f",
+    "resultados/ciencias_natureza/cv-recuperado-v2/manifesto.json": "3b3988286bf4a3f62a70fa454846c4dd72e60ab282b4cdf28102da6447191d36",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn/manifesto.json": "b82f7046df6a82fea1fcadcfe814d94ef9e997d000ed84648909761cf0771613",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging/manifesto.json": "81d88ec73ad4015630c87b05689daaec637e0f198b5c29998de3bb849453301e",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting/manifesto.json": "b98e394f1387a1652467cf93a6be150adb65b457b103940a4171f07622835819",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting/manifesto.json": "0eb403205cefeefd2ff6d7d00c0365f7d986d5a58025b7a5a1e3104fa3004b68",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_buscas.json": "b9433f2e31c21b9ceb6d0cc697e9f6d848fe79848682e4476241d8ae36fb2f52"
+  },
+  "search_protocol_sha256": "e294e036f7cb3138a157d9b57b634837348090a7baf57a8ff204ddde07bb1540",
+  "selection_criterion": "RMSE médio, MAE médio, R² médio; apenas desenvolvimento",
+  "test_ranking_is_descriptive": true,
+  "test_criterion": [
+    "rmse ascending",
+    "mae ascending",
+    "r2 descending",
+    "model ascending"
+  ],
+  "score_edges": [
+    0,
+    400,
+    500,
+    600,
+    700,
+    "+inf"
+  ],
+  "group_fields": [
+    "TP_ESCOLA",
+    "SG_UF_PROVA",
+    "Q006"
+  ],
+  "learning_fractions": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "selection_code_sha256": "3a0bfe5051b7eeffbeaa6f7c040c82fce710974c9fbed5d18c0da41770aa264a",
+  "test_evaluated": false
+}

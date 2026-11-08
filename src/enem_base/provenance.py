@@ -32,9 +32,9 @@ def verify_sha256(path: Path, expected: str, message: str) -> None:
     if expected in variants:
         raise ValueError(
             f"{message}: {path.name} difere do manifesto apenas no fim de linha (CRLF/LF). "
-            "O conteúdo é o mesmo; restaure a cópia versionada com "
-            f"'git add --renormalize . && git checkout -- \"{path}\"' "
-            "ou gere o artefato novamente."
+            "O conteúdo textual é o mesmo, mas a identidade em bytes mudou. "
+            "Preserve a cópia atual; restaure o artefato original cujo hash foi registrado "
+            "ou gere uma nova execução com novos manifestos."
         )
     raise ValueError(f"{message}: {path.name}")
 
@@ -76,8 +76,19 @@ def runtime_metadata() -> dict:
         "platform": platform.platform(),
         "git_commit": commit,
         "git_dirty": dirty,
+        "source_code_sha256": {
+            str(path.relative_to(code_root)): sha256_file(path)
+            for path in sorted((code_root / "src/enem_base").glob("*.py"))
+        },
         "dependencies": {
             name: importlib.metadata.version(name)
-            for name in ("enem-base", "pandas", "pyarrow", "scikit-learn", "matplotlib")
+            for name in (
+                "enem-base",
+                "pandas",
+                "pyarrow",
+                "scikit-learn",
+                "matplotlib",
+                "faiss-cpu",
+            )
         },
     }

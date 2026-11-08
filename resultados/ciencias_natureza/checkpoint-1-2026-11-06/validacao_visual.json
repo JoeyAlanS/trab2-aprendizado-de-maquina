@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "method": "Inspeção visual das três figuras; duas PNG idênticas entre versões e gráfico por faixa reinspecionado após reposicionar legenda",
+  "previous_publication_issue": "publicacao/erros_por_faixa.png: legenda encobria pontos da primeira faixa; versão preservada",
+  "final_publication": "resultados/ciencias_natureza/checkpoint-1-2026-11-06/publicacao-v2",
+  "images": [
+    {
+      "file": "comparacao_rmse.png",
+      "pixels": [
+        2005,
+        1232
+      ],
+      "dpi": [
+        219.9894,
+        219.9894
+      ],
+      "sha256": "b65a71af8eccb53ac827ede27985e0382ca14720b7bdec395c01a7c877a76cd1"
+    },
+    {
+      "file": "metricas_complementares.png",
+      "pixels": [
+        2665,
+        1232
+      ],
+      "dpi": [
+        219.9894,
+        219.9894
+      ],
+      "sha256": "5691dda705b82c0ba08281f22eec0aebe1a9019fc6d574ecfcc5c1f92d6c65e6"
+    },
+    {
+      "file": "erros_por_faixa.png",
+      "pixels": [
+        2225,
+        1232
+      ],
+      "dpi": [
+        219.9894,
+        219.9894
+      ],
+      "sha256": "ae8a9b1eb6ca39ee5a009c5da1282047743f0c4e5cec9dacd6890659a40f42cf"
+    }
+  ],
+  "svg_xml_valid": true
+}

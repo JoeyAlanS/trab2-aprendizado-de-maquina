@@ -24,3 +24,7 @@ dados/** text eol=lf
 *.db binary
 *.joblib binary
 *.pkl binary
+# SVGs gerados pelo Matplotlib têm espaços finais em caminhos XML. Preservar seus
+# bytes selados nos manifestos; a verificação de espaços continua no código/texto.
+resultados/**/*.svg -whitespace
+historico/**/*.svg -whitespace

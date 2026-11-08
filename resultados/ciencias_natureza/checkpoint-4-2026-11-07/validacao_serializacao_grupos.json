@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "diagnostic_only": true,
+  "real_development_rows": 2048,
+  "groups": 52,
+  "csv_group_metrics_recomputed": true,
+  "test_evaluated": false,
+  "code_sha256": "d6b337168126d4fe3b0300ca89fd0bac569457abf7d96db0ec9200bd1a3cb337"
+}

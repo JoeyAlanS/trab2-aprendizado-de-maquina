@@ -79,20 +79,12 @@ $env:ENEM_RELATIONS_DIR = (Resolve-Path 'resultados/ciencias_natureza/relacoes-v
 .\.venv\Scripts\python.exe -m streamlit run app/app.py
 ```
 
-O PDF final fica em `output/pdf/relatorio_ciencias_natureza.pdf`. Fonte, imagens e
-tabelas ficam em `relatorio/`. `scripts/gerar_relatorio.py` regenera as figuras e
-tabelas dos snapshots verificados, preservando a narrativa em `main.tex`.
-Para compilar com o Tectonic já disponível nesta sessão:
-
-```powershell
-.\scripts\compilar_relatorio.ps1
-```
-
-Em outro computador, pode-se abrir `relatorio/` no editor LaTeX do Codex ou instalar
-Tectonic pelo [projeto oficial](https://github.com/tectonic-typesetting/tectonic).
-O executável portátil utilizado é 0.17.0, obtido da distribuição oficial de Windows
-e mantido em `tmp/tools/`, fora do versionamento. Não foi instalado globalmente.
-O arquivo ZIP de fontes na pasta de saída permite transportar o projeto LaTeX.
+Os relatórios preliminares dessa etapa foram arquivados em
+`historico/2026-11-07/limpeza-pre-entrega.zip`. A entrega atual usa fontes LaTeX em
+`relatorio/`, com artigo, roteiro do pitch e acompanhamento. Ver
+[instruções de compilação e Overleaf](../relatorio/README.md).
+Os snapshots de relações e o exportador do dashboard continuam disponíveis;
+não dependem dos relatórios preliminares arquivados.
 
 ## Banco de dados no projeto existente
 

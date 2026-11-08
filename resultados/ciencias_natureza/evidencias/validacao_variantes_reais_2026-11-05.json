@@ -1,0 +1,59 @@
+{
+  "scope": "Verificação técnica com registros reais existentes; não é comparação científica nacional",
+  "test_evaluated": false,
+  "synthetic_data_created": false,
+  "source_part": "part-00000.parquet",
+  "checks": [
+    {
+      "variant": "engineered",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": []
+    },
+    {
+      "variant": "selected",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": [
+        "selected_features"
+      ]
+    },
+    {
+      "variant": "pca",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": [
+        "pca_components",
+        "pca_input_dimensions",
+        "pca_explained_variance_ratio"
+      ]
+    },
+    {
+      "variant": "weighted",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": [
+        "weight_bin_edges",
+        "weight_bin_counts"
+      ]
+    },
+    {
+      "variant": "without_socio",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": []
+    },
+    {
+      "variant": "without_uf",
+      "status": "passed",
+      "n_train": 10000,
+      "n_validation": 2000,
+      "diagnostic_keys": []
+    }
+  ]
+}

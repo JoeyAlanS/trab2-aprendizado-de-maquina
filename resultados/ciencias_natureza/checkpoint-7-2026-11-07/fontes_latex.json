@@ -1,0 +1,25 @@
+{
+  "source_documents": {
+    "docs/artigo-fonte.md": "90fd9de5a5f45052ca24821656d807729bb10676d46696ac6c4711d91c1e818c",
+    "docs/artigo.md": "0742ba68e08d3fa2144d0fba525827474207ce49a71590d54202d55e35b8421c",
+    "docs/pitch.md": "025c3e688955ef575e7728e78ca7e657f13d7f50a49bcbe16362d0d011d57949",
+    "docs/acompanhamento.md": "65ffc190bb59ef8eec9e6b86e63ab5e0d17451b8eb699d581a4fb84d6f365ef7"
+  },
+  "assets": {
+    "relatorio/acompanhamento.tex": "b2d1898d61f44d205f880aadaa4affb718bd7344248eac41c4dd67f029b706b2",
+    "relatorio/artigo.tex": "028688b4da4acd88d700fd6b29da285f830e1ab97d96b6be709af79bbcc9dba9",
+    "relatorio/figuras/01_distribuicao.png": "bbeaecc8cb8585162a28f7a05e0a24778d948d9da6ad9b3aaa5f809e360f4e82",
+    "relatorio/figuras/02_iniciais.png": "6a91d120d603c7f583a8bfcaaf8191248b356e964f06f64534a9e989ba245583",
+    "relatorio/figuras/03_pca.png": "b88d43406fb8911a65430a572ea11bc523c9a4aa33e06aec53f425c371e67696",
+    "relatorio/figuras/04_buscas.png": "f4848e3d22fda4bc9ca998a044b5ecbb802c3c7d2a22936d244255bb55e4e1bc",
+    "relatorio/figuras/05_curvas.png": "466183ba972eba9bc6102e36690a0f60e751a0cd355514372101db68424ed0af",
+    "relatorio/figuras/06_diagnostico_teste.png": "4476ee561e252791f8996e771d270dcc52edd6be08149d137dc6f04f000ee133",
+    "relatorio/figuras/07_grupos.png": "61cb7fb1cd5befc9866f444d412ed2450276cc807aa9b7c8540cb3d6acae2c89",
+    "relatorio/main.tex": "83db4df425379047278a5f7c032e32b06cd7c0ac88656c086a847c59b02b800c",
+    "relatorio/pitch.tex": "0ddf10b71096cce1e4cf3f631952f5f8a169d492ccc346c4b90b4a7402c8c314"
+  },
+  "scientific_results_changed": false,
+  "default_main": "main.tex",
+  "compiler": "XeLaTeX (Overleaf); Tectonic 0.17.0 (verificação local)",
+  "portable_font": "Times equivalente via mathptmx, sem fontes externas proprietárias"
+}

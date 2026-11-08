@@ -1,52 +1,47 @@
-# Rastreabilidade dos requisitos
+# Rastreabilidade dos requisitos — revisão de 07/11/2026
 
-Fonte: `referencias/enunciado-projeto2.pdf`, fornecido pelo usuário. As páginas abaixo
-são as páginas numeradas do documento (16 páginas). O pedido atual limita a execução
-à preparação geral; as entregas finais do enunciado não são consideradas concluídas.
+Fontes: enunciado Markdown fornecido e `referencias/enunciado-projeto2.pdf`.
+O enunciado define os critérios acadêmicos; não comprova que as entregas ocorreram.
+“Implementado” não significa “executado”. A conclusão depende das evidências indicadas.
 
-**Continuação em 21/10/2026:** o tema foi definido como Ciências da Natureza (NU_NOTA_CN).
-A tabela abaixo preserva o registro da fase 1. A execução atual da fonte nacional,
-partições, EDA e comparação inicial é documentada em `andamento_ciencias_natureza.md`.
-Os resultados iniciais não comprovam, por si só, todas as exigências finais de modelagem.
+| Exigência | Estado verificável | Evidência ou pendência |
+|---|---|---|
+| Alvo de regressão definido | Atendido: NU_NOTA_CN | `configs/ciencias_natureza.toml` |
+| Fonte nacional integral, 3.933.955 linhas e 76 colunas | Originais incorporados e base integral conferida | CRC dos ZIPs; hashes históricos; todas as células normalizadas do CSV iguais aos 79 Parquets (Checkpoint 6) |
+| Diagnóstico de todos; supervisão apenas com alvo observado | Atendido | 2.692.427 elegíveis; 1.241.528 sem alvo; qualidade e partições |
+| Preservar zeros, treineiros e faixas etárias; não exigir outras notas | Atendido | 16.547 zeros nacionais, sem filtros por perfil ou por notas de outras áreas |
+| Entradas sem notas, respostas, gabaritos, presença, resultados ou IDs | Implementado e usado nas execuções | `features.py`, `preprocessing.py`, lista de 40 entradas no TOML |
+| Dicionário, categorias, ausências, duplicatas e distribuição | Evidências existentes | `eda-v1`, `dashboard-v1`, `relacoes-v1`; limitações de códigos documentadas |
+| Integração externa, quando utilizada | Não utilizada; opcional | Não alegar indicadores externos no artigo |
+| 80/20, semente 42, IDs persistidos | Atendido | 2.153.941 desenvolvimento; 538.486 teste; recuperação comparou cada ID/dobra com o banco |
+| KFold de três dobras, mesmas partições, sem validação fixa adicional | Atendido nas execuções concluídas | `validation_fold`, manifestos e contagens das dobras |
+| Transformações ajustadas somente no treino | Implementado e aplicado | Pipelines de engenharia, seleção, PCA e regressores; pesos usam apenas y do treino |
+| Baseline, linear sem/com regularização e árvore | Executados e reproduzidos | `cv-recuperado-v2`, 12 avaliações; métricas idênticas ao histórico |
+| SVM, KNN, bagging, pasting, Random Forest, boosting e stacking | Concluído e validado no Checkpoint 1 | 21 avaliações nacionais; `checkpoint-1-2026-11-06/publicacao-v2/checkpoint_validado.json` |
+| Seleção dos três entre os sete algoritmos solicitados | Concluído e validado no Checkpoint 2 | Stacking, SVM linear e Random Forest; escopo explícito, tabela, justificativa e configurações em `checkpoint-2-2026-11-06` |
+| Três features criadas, justificadas e comparadas | Executado | `engineered-v2`; recursos por morador, acesso digital e escolaridade parental |
+| Método de seleção comparado | Executado | `selected-v2`; F-regression, 75% das colunas codificadas |
+| PCA em pelo menos dois regressores | Executado | `pca-v2`: Ridge e árvore; 45 componentes em cada dobra, critério ≥80% |
+| Balanceamento adequado à regressão, somente no treino | Executado, com piora global | `weighted-v2`: Ridge ponderado; métricas gerais e por faixa registradas |
+| Busca nos três melhores distintos, ≥10 configurações por modelo | Concluída e validada no Checkpoint 4 | GridSearchCV: 60 configurações, 180 avaliações nacionais, zero avisos; métricas recalculadas das previsões; união dos escopos |
+| RMSE, MAE, R², tempo, média e desvio | Atendido nas comparações executadas | `resultados/experimentos.csv`: 54 dobras e 18 resumos; 11 entradas originais e sete combinações de modelo/variante |
+| Duas hipóteses adicionais | Executadas; interpretação inicial documentada | `without_socio-v2` e `without_uf-v2`; mesma configuração Ridge |
+| Curvas dos três selecionados: cinco tamanhos e três dobras | Concluído e validado no Checkpoint 3 | 45 pontos, 15 resumos, três figuras PNG/SVG, análise de ajuste e generalização; configurações iniciais |
+| Curva da solução final após buscas e congelamento | Concluída e validada no Checkpoint 4 | 45 pontos das três receitas finais, incluindo Stacking alpha=1.000; reprodução da CV e gráficos conferidos antes do teste |
+| Avaliação final: baseline, linear e solução nos mesmos IDs | Concluída e validada no Checkpoint 4 | Trio, baseline e linear em 538.486 IDs; cinco reajustes completos, métricas recompostas das previsões e trava persistente |
+| Resíduos, erros por faixa e por grupo com n | Concluído no Checkpoint 4 | Resíduos e 260 registros por faixa, escola, UF e renda; métricas e contagens recompostas; nove gráficos finais revisados |
+| Seis figuras e tabela obrigatórias do artigo | Integrado e validado | Artigo do Checkpoint 6: sete figuras, três tabelas e quadro de configurações; coleção completa preservada no Checkpoint 5 |
+| Código, ambiente, partições, experimentos e reprodução | Código e evidências preparados para publicação | README/locks/manifestos; dados e previsões individuais ignorados no Git; commit/push registrados no histórico Git |
+| Acompanhamento: slides PDF e participação de todos | Documento concluído; apresentação não realizada | `output/pdf/acompanhamento.pdf`, fonte LaTeX; slides dispensados pelo pedido atual |
+| Artigo ABNT, até dez páginas incluindo referências | Concluído no Checkpoint 6 | Versão atual: `output/pdf/artigo_latex.pdf`, fonte `relatorio/artigo.tex`; original do CP6 preservado |
+| Pitch de 10–15 min, slides PDF, todos participam | Roteiro concluído; ensaio e apresentação pendentes | `output/pdf/pitch.pdf`, fonte LaTeX e pacote Overleaf; sem slides conforme pedido |
+| Prazos no AVA | Não verificável no ambiente | Equipe precisa consultar e registrar |
 
-| Exigência do documento | Referência | Atendimento na fase 1 | Próxima evidência |
-|---|---|---|---|
-| Regressão de uma das cinco notas do ENEM 2023 | p. 3 | `features.ENEM_TARGETS`; alvo não selecionado | Registro de atribuição da equipe |
-| Fonte nacional completa: 3.933.955 linhas, 76 colunas | pp. 4-5 | Contrato `configs/enem2023.toml`, leitura de todos os lotes | Processamento e diagnóstico da fonte oficial |
-| Diagnosticar todos; supervisionado só com alvo observado | p. 4 | Importação sem filtro; `splits.make_split_table` exige alvo | Contagens reais e manifesto das partições |
-| Não imputar alvo, não converter ausência em zero, não exigir outras notas | p. 4 | Limpeza sem imputação; testes de zero e elegibilidade | Auditoria do conjunto elegível real |
-| Manter treineiros, faixas etárias e zeros | p. 4 | Nenhum filtro por perfil, idade ou nota | Diagnóstico de cobertura e perdas |
-| Proibir notas, competências, respostas, gabaritos e resultados em X | p. 5 | Barreiras em `features.validate_features` e revisão semântica documentada | Lista justificada de features e de derivados |
-| Presença e situação da redação só para diagnóstico | p. 5 | Bloqueio na fábrica de pré-processamento | Revisão do X final |
-| Identificador só para controle; ano constante | p. 5 | Identificador textual; ambos bloqueados nas features | Verificação das matrizes usadas pelos modelos |
-| Integração externa: 2023, território correto, uma linha por participante | p. 5 | `integration.merge_context`, cardinalidade e cobertura | Fonte e significado da chave, se houver integração |
-| Analisar tipos, ausências, categorias e duplicatas | pp. 5, 8 | Diagnóstico técnico incremental; categorias preservadas sem recodificação semântica | EDA do desenvolvimento pelo dicionário |
-| 80/20, random_state=42, IDs persistidos | p. 6 | Funções de partição e persistência testadas com dados fictícios | IDs e hashes reais em `dados/splits/` |
-| KFold(3, shuffle=True, random_state=42), mesmas dobras; sem outra validação fixa | p. 6 | `validation_fold` por participante do desenvolvimento | Uso dos índices em todas as comparações |
-| Todo ajuste de transformação no treino da dobra | p. 7 | Fábrica não ajustada; teste de imputação e categoria inédita | Pipeline completo passado à CV e busca |
-| Baseline pela média | pp. 5, 9 | Planejado; não treinado | DummyRegressor(mean) por dobra |
-| Linear sem e com regularização, SVM, árvore, KNN, bagging, pasting, floresta, boosting, stacking | p. 9 | Plano metodológico, sem modelos instanciados | Comparação na base elegível completa |
-| Pelo menos três features criadas e método de seleção | pp. 6, 8 | Campos de decisão e roteiro, sem features escolhidas | Hipóteses, fórmulas e comparação |
-| PCA em pelo menos dois regressores | pp. 6, 9-10 | Interface futura descrita; escolha de componentes pendente | Variância explicada e comparação com/sem PCA |
-| Balanceamento adequado à regressão só no treino | pp. 6, 10 | Plano e limites documentados | Mesmo regressor com e sem estratégia |
-| Busca nos três melhores regressores distintos, ≥10 configurações válidas/modelo, três dobras | pp. 6, 10 | Registro de experimentos preparado | Espaços de busca e comparação antes/depois |
-| RMSE principal; MAE, R², tempos, média e desvio por dobra | pp. 6-7 | Esquema `resultados/experimentos.csv` vazio | Métricas reais na escala original |
-| Fixar solução pelo desenvolvimento e avaliar teste somente ao final | pp. 6-7 | Procedimento documentado, sem comando de treino/teste | Baseline, linear sem regularização e solução final nos mesmos participantes |
-| Resíduos = observado − previsto; erros por faixa e por grupo com n | pp. 10, 14 | Esquema de previsões e plano de figuras | Análises reais de desenvolvimento e teste separadas |
-| Curva do modelo final: 10%,25%,50%,75%,100% do treino de cada dobra | p. 10 | Roteiro; sem curva fictícia de desempenho | RMSE treino/validação, média e desvio nas três dobras |
-| Duas hipóteses adicionais para aprofundamento integral | p. 11 | Possibilidades em `decisoes.md`; não escolhidas | Duas comparações justificadas e interpretadas |
-| Repositório com README, dependências, código, partições e experimentos | pp. 8, 12 | Estrutura local, lock, testes e CI preparados | Publicação e acesso pelo professor, quando solicitados |
-| Acompanhamento: slides PDF, todos participam, baseline + ≥1 regressor em CV, sem teste | p. 12 | Roteiro em `templates/acompanhamento.md` | Apresentação com resultados reais |
-| Artigo ABNT em PDF, até 10 páginas, incluindo referências | pp. 12, 14-15 | Roteiro em `templates/artigo.md` | Documento e revisão conforme guia da biblioteca |
-| Figuras e tabela obrigatórias do artigo | p. 14 | Checklist no roteiro do artigo | Gráficos com fonte, eixos, n e interpretação |
-| Pitch presencial 10-15 minutos, participação de todos, slides PDF | pp. 12, 15 | Roteiro em `templates/pitch.md` | `docs/pitch.pdf` e apresentação |
-| Prazos no AVA | pp. 12, 15 | Pendência explícita; nenhuma data inventada | Equipe consultar e registrar prazos |
+Os 28 arquivos invalidados foram preservados com hashes em
+`historico/2026-11-05/artefatos-nao-validados.zip`. Não usar esses números ou figuras.
+Resultados sem melhoria são válidos e devem ser discutidos; o enunciado não exige R² mínimo.
+Relatório detalhado: [correção](relatorio-correcao-2026-11-05.md).
+Atualização dos sete algoritmos: [Checkpoint 1](checkpoint-1-resultados.md).
+Seleção entre os sete e diagnóstico de escopo: [Checkpoint 2](checkpoint-2-resultados.md).
 
-## Fronteiras de interpretação
-
-O tamanho e a quantidade de colunas são requisitos do enunciado, ainda não medições
-locais da base oficial. A estrutura em `dados/` é uma adaptação permitida pela p. 8.
-Os arquivos de resultados contêm só cabeçalhos e não comprovam atendimento de modelagem.
-O gráfico fictício valida a rotina de geração de figuras e não serve como resultado do ENEM.
-Zero desempenho, ausência de ganho ou R² negativo devem ser discutidos; o documento não
-exige ranking nem R² mínimo. Redes neurais ficam fora do escopo da disciplina (p. 9).
+Curvas iniciais do trio e sua validação: [Checkpoint 3](checkpoint-3-resultados.md).

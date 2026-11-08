@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scenario": "Random Forest real ainda incompleta; outros seis modelos concluídos",
+  "command": [
+    ".venv/bin/python",
+    "scripts/publicar_checkpoint1.py",
+    "--study",
+    "configs/ciencias_natureza.toml",
+    "--runs",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06",
+    "--output",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/publicacao-bloqueada-incompleta"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/scripts/publicar_checkpoint1.py\", line 210, in <module>\n    main()\n    ~~~~^^\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/scripts/publicar_checkpoint1.py\", line 205, in main\n    result = publish(load_study(args.study), args.runs, args.output)\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/scripts/publicar_checkpoint1.py\", line 43, in publish\n    rows, manifest = comparison_rows(path, provenance)\n                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/src/enem_base/evidence.py\", line 88, in comparison_rows\n    manifest = read_run(path, expected)\n  File \"/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/src/enem_base/evidence.py\", line 66, in read_run\n    raise ValueError(f\"Execução incompleta: {path}\")\nValueError: Execução incompleta: resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest\n",
+  "output_created": false,
+  "publisher_sha256": "0ebf4c8003ada4e7935925811e58d19247e061562cd8f13af206efe0a0429464",
+  "test_evaluated": false
+}

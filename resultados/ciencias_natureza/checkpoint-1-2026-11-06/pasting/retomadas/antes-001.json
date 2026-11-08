@@ -1,0 +1,344 @@
+{
+  "created_at_utc": "2026-11-06T04:11:34.186475+00:00",
+  "python": "3.13.17",
+  "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+  "git_commit": "e9f04552830fb12863b69ef7be5de0515619507a",
+  "git_dirty": true,
+  "source_code_sha256": {
+    "src/enem_base/__init__.py": "5fcabeaa7b73ffcf0e87c1e2eb6039eb6c9d8a8eb600815c98cd829df1ab4db7",
+    "src/enem_base/__main__.py": "91f20eada44a1eccff337d9553aa2392f036f648d4b3dd21b288904d5fe179da",
+    "src/enem_base/acquisition.py": "22f3e0e0cbbd3f1423916901adbb4d9ea6e896a74210ed2d2f99c961a2f5c1bf",
+    "src/enem_base/cleaning.py": "256f42677d4ee5fba0daa3d55aff1bd27c560f337c4b3613f0ec49cfce27c72d",
+    "src/enem_base/cli.py": "3803a18ffeb2268bef1d0ce685a32cde352edccb619d00125614bb8f19f25923",
+    "src/enem_base/config.py": "4ac6de2f5c64c64560ed590ee237d59e807a24a4c14698dac9b0e7466e6bae25",
+    "src/enem_base/dashboard.py": "7d2aeece5a358c5be487a16360a01f1c61a8d419cdc1859485823c80337fa3a1",
+    "src/enem_base/dashboard_ui.py": "9686418be2373dd920a1cd3e274a98f80e4a854a30c943092d4c13c7a79dd85d",
+    "src/enem_base/database.py": "8669dbcd5b80a23e9280a4c6f74b0c790f7854828dcef0d5b86757436bebde51",
+    "src/enem_base/evidence.py": "ba58b4aadeb1a625e8d54645102d3862bf9771bf7c48768d2b40a42a2b7a0312",
+    "src/enem_base/exploration.py": "415c1f514d8a7fcb676d5fa823e6f25b5d0484fe681f25b68c56b0de43d1b205",
+    "src/enem_base/exports.py": "1548b2e4b81cf9e3c8334ec2e0d6f535eb54008c4a03db3de20da95b09891928",
+    "src/enem_base/features.py": "44420ada99020c8f5dc4f77e4f1057e28440989db0f652e0e2875510ddc9ca89",
+    "src/enem_base/ingestion.py": "ee42e74643de981037af4f952849bc06fce7978e41d3ea9ae6a874aa15ec4003",
+    "src/enem_base/integration.py": "1d65f4a3cfbe962ae58fb3c4c25bcd5fc38f27b67f7130972aa8d6bfbb980943",
+    "src/enem_base/modeling.py": "aaec49026a834f681c67e227a67cb175dc2e5187f67c28fde4168b7c02a8bb07",
+    "src/enem_base/neighbors.py": "317674be4f2e6a90d918844bde80dff78595811bf7f54d91b422fd67f337a868",
+    "src/enem_base/official.py": "5d661dc646ed2d387b5274062726fae5a8ba50d503a64fdf82c0b0a3c0966f45",
+    "src/enem_base/preprocessing.py": "1da006461960b588541fa56bd1349c502cba829bc3ec641c8075e9242c323881",
+    "src/enem_base/provenance.py": "d41a5961aa5d7de84ea0619669a89c7331804345b56177c7d05fd283f200e347",
+    "src/enem_base/quality.py": "90afec110f607dd754586911fe08305807f5d29c2d1fa7f3c46bf446718b5571",
+    "src/enem_base/recovery.py": "43c7dc6c46d87af34b2e65fd1e05d9476ebff44c57d7c577e0867bf4d293e431",
+    "src/enem_base/relations.py": "be9f72664d5ba5a6244e5bc0494e82cb01fc5b340cd54755791fb965d352efc7",
+    "src/enem_base/reporting.py": "1cc90edc6e214e5309405d7a1c4fb30a4ae84a24385885eb7d914fc2d9c220d5",
+    "src/enem_base/splits.py": "1951908394f0e73191eaca02a5e3d416ddd04c6114cacc692956980fa3115060",
+    "src/enem_base/study.py": "74af9b57fc9613679b6d7cc36a42cddb7c98c62d07773c0d7105bee2b04e1c55",
+    "src/enem_base/variants.py": "32ce03c3f2ff80649c5b21b4144b99238a0a8adaeb6d5c1d0af537ab01337515",
+    "src/enem_base/visualization.py": "c57c71dd554dd8e3f6bc8aef383507394b57d209e6f65044d6acffe94435e03f",
+    "src/enem_base/workflow.py": "11df7d174645004c98c502854ff331ae0434a38ccf459b19f892b3b1bbd49aed"
+  },
+  "dependencies": {
+    "enem-base": "0.1.0",
+    "pandas": "3.1.0",
+    "pyarrow": "24.0.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "faiss-cpu": "1.15.1"
+  },
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "test_evaluated": false,
+  "status": "running",
+  "models": [
+    "pasting"
+  ],
+  "features": [
+    "Q005",
+    "TP_FAIXA_ETARIA",
+    "TP_SEXO",
+    "TP_ESTADO_CIVIL",
+    "TP_COR_RACA",
+    "TP_NACIONALIDADE",
+    "TP_ST_CONCLUSAO",
+    "TP_ANO_CONCLUIU",
+    "TP_ESCOLA",
+    "TP_ENSINO",
+    "IN_TREINEIRO",
+    "TP_DEPENDENCIA_ADM_ESC",
+    "TP_LOCALIZACAO_ESC",
+    "TP_SIT_FUNC_ESC",
+    "SG_UF_PROVA",
+    "TP_LINGUA",
+    "Q001",
+    "Q002",
+    "Q003",
+    "Q004",
+    "Q006",
+    "Q007",
+    "Q008",
+    "Q009",
+    "Q010",
+    "Q011",
+    "Q012",
+    "Q013",
+    "Q014",
+    "Q015",
+    "Q016",
+    "Q017",
+    "Q018",
+    "Q019",
+    "Q020",
+    "Q021",
+    "Q022",
+    "Q023",
+    "Q024",
+    "Q025"
+  ],
+  "variant": "original",
+  "experiment_kind": "comparison",
+  "numeric_imputation": "median fitted within each fold",
+  "categorical_encoding": "one-hot with explicit missing category; unknown ignored",
+  "evaluated_set": "development_cv",
+  "seed": 42,
+  "n_splits": 3,
+  "std_ddof": 0,
+  "all_development_rows": true,
+  "parameters": {
+    "pasting": {
+      "class": "sklearn.pipeline.Pipeline",
+      "parameters": {
+        "memory": null,
+        "steps": [
+          [
+            "preparation",
+            {
+              "class": "sklearn.compose._column_transformer.ColumnTransformer",
+              "parameters": {
+                "n_jobs": null,
+                "remainder": "drop",
+                "sparse_threshold": 1.0,
+                "transformer_weights": null,
+                "transformers": [
+                  [
+                    "numeric",
+                    {
+                      "class": "sklearn.pipeline.Pipeline",
+                      "parameters": {
+                        "memory": null,
+                        "steps": [
+                          [
+                            "missing_adapter",
+                            {
+                              "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                              "parameters": {
+                                "accept_sparse": false,
+                                "check_inverse": true,
+                                "feature_names_out": "one-to-one",
+                                "func": {
+                                  "callable": "enem_base.preprocessing.normalize_missing"
+                                },
+                                "inv_kw_args": null,
+                                "inverse_func": null,
+                                "kw_args": null,
+                                "validate": false
+                              }
+                            }
+                          ],
+                          [
+                            "imputer",
+                            {
+                              "class": "sklearn.impute._base.SimpleImputer",
+                              "parameters": {
+                                "add_indicator": true,
+                                "copy": true,
+                                "fill_value": null,
+                                "keep_empty_features": true,
+                                "missing_values": {
+                                  "special_float": "nan"
+                                },
+                                "strategy": "median"
+                              }
+                            }
+                          ],
+                          [
+                            "scaler",
+                            {
+                              "class": "sklearn.preprocessing._data.StandardScaler",
+                              "parameters": {
+                                "copy": true,
+                                "with_mean": true,
+                                "with_std": true
+                              }
+                            }
+                          ]
+                        ],
+                        "transform_input": null,
+                        "verbose": false
+                      }
+                    },
+                    [
+                      "Q005"
+                    ]
+                  ],
+                  [
+                    "categorical",
+                    {
+                      "class": "sklearn.pipeline.Pipeline",
+                      "parameters": {
+                        "memory": null,
+                        "steps": [
+                          [
+                            "missing_adapter",
+                            {
+                              "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                              "parameters": {
+                                "accept_sparse": false,
+                                "check_inverse": true,
+                                "feature_names_out": "one-to-one",
+                                "func": {
+                                  "callable": "enem_base.preprocessing.normalize_missing"
+                                },
+                                "inv_kw_args": null,
+                                "inverse_func": null,
+                                "kw_args": null,
+                                "validate": false
+                              }
+                            }
+                          ],
+                          [
+                            "imputer",
+                            {
+                              "class": "sklearn.impute._base.SimpleImputer",
+                              "parameters": {
+                                "add_indicator": false,
+                                "copy": true,
+                                "fill_value": "__MISSING__",
+                                "keep_empty_features": true,
+                                "missing_values": {
+                                  "special_float": "nan"
+                                },
+                                "strategy": "constant"
+                              }
+                            }
+                          ],
+                          [
+                            "encoder",
+                            {
+                              "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                              "parameters": {
+                                "categories": "auto",
+                                "drop": null,
+                                "dtype": {
+                                  "callable": "numpy.float64"
+                                },
+                                "feature_name_combiner": "concat",
+                                "handle_unknown": "ignore",
+                                "max_categories": null,
+                                "min_frequency": null,
+                                "sparse_output": true
+                              }
+                            }
+                          ]
+                        ],
+                        "transform_input": null,
+                        "verbose": false
+                      }
+                    },
+                    [
+                      "TP_FAIXA_ETARIA",
+                      "TP_SEXO",
+                      "TP_ESTADO_CIVIL",
+                      "TP_COR_RACA",
+                      "TP_NACIONALIDADE",
+                      "TP_ST_CONCLUSAO",
+                      "TP_ANO_CONCLUIU",
+                      "TP_ESCOLA",
+                      "TP_ENSINO",
+                      "IN_TREINEIRO",
+                      "TP_DEPENDENCIA_ADM_ESC",
+                      "TP_LOCALIZACAO_ESC",
+                      "TP_SIT_FUNC_ESC",
+                      "SG_UF_PROVA",
+                      "TP_LINGUA",
+                      "Q001",
+                      "Q002",
+                      "Q003",
+                      "Q004",
+                      "Q006",
+                      "Q007",
+                      "Q008",
+                      "Q009",
+                      "Q010",
+                      "Q011",
+                      "Q012",
+                      "Q013",
+                      "Q014",
+                      "Q015",
+                      "Q016",
+                      "Q017",
+                      "Q018",
+                      "Q019",
+                      "Q020",
+                      "Q021",
+                      "Q022",
+                      "Q023",
+                      "Q024",
+                      "Q025"
+                    ]
+                  ]
+                ],
+                "verbose": false,
+                "verbose_feature_names_out": true
+              }
+            }
+          ],
+          [
+            "regressor",
+            {
+              "class": "sklearn.ensemble._bagging.BaggingRegressor",
+              "parameters": {
+                "bootstrap": false,
+                "bootstrap_features": false,
+                "estimator": {
+                  "class": "sklearn.tree._classes.DecisionTreeRegressor",
+                  "parameters": {
+                    "ccp_alpha": 0.0,
+                    "criterion": "squared_error",
+                    "max_depth": 8,
+                    "max_features": null,
+                    "max_leaf_nodes": null,
+                    "min_impurity_decrease": 0.0,
+                    "min_samples_leaf": 100,
+                    "min_samples_split": 2,
+                    "min_weight_fraction_leaf": 0.0,
+                    "monotonic_cst": null,
+                    "random_state": 42,
+                    "splitter": "best"
+                  }
+                },
+                "max_features": 1.0,
+                "max_samples": 0.7,
+                "n_estimators": 20,
+                "n_jobs": 2,
+                "oob_score": false,
+                "random_state": 42,
+                "verbose": 0,
+                "warm_start": false
+              }
+            }
+          ]
+        ],
+        "transform_input": null,
+        "verbose": false
+      }
+    }
+  },
+  "execution": {
+    "threadpool_limit": 2,
+    "working_memory_mib": 64,
+    "knn_prediction_batch_rows": 2048,
+    "knn_search": "ExactProfileKNeighborsRegressor; binary exhaustive search plus numeric distance; no subsampling"
+  }
+}

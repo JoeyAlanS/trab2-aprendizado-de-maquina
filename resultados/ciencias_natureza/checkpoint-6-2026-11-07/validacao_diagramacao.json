@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "pages": 10,
+  "font": "Times New Roman incorporada",
+  "body_size_pt": 12,
+  "body_leading_pt": 18,
+  "margins_cm": {
+    "top": 3,
+    "right": 3,
+    "left": 2,
+    "bottom": 2
+  },
+  "layout": [
+    {
+      "page": 1,
+      "content_bottom_pt": 242.85039370078755,
+      "remaining_pt": 186.15748031496076
+    },
+    {
+      "page": 2,
+      "content_bottom_pt": 127.85039370078755,
+      "remaining_pt": 71.15748031496078
+    },
+    {
+      "page": 3,
+      "content_bottom_pt": 68.85039370078755,
+      "remaining_pt": 12.157480314960779
+    },
+    {
+      "page": 4,
+      "content_bottom_pt": 57.25039370078753,
+      "remaining_pt": 0.5574803149607561
+    },
+    {
+      "page": 5,
+      "content_bottom_pt": 69.25039370078755,
+      "remaining_pt": 12.557480314960785
+    },
+    {
+      "page": 6,
+      "content_bottom_pt": 74.0503937007876,
+      "remaining_pt": 17.357480314960824
+    },
+    {
+      "page": 7,
+      "content_bottom_pt": 123.25039370078758,
+      "remaining_pt": 66.55748031496081
+    },
+    {
+      "page": 8,
+      "content_bottom_pt": 59.250393700787555,
+      "remaining_pt": 2.5574803149607845
+    },
+    {
+      "page": 9,
+      "content_bottom_pt": 98.85039370078755,
+      "remaining_pt": 42.15748031496078
+    },
+    {
+      "page": 10,
+      "content_bottom_pt": 352.85039370078755,
+      "remaining_pt": 296.15748031496076
+    }
+  ],
+  "inputs": {
+    "docs/artigo-fonte.md": "90fd9de5a5f45052ca24821656d807729bb10676d46696ac6c4711d91c1e818c",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/01_distribuicao.png": "bbeaecc8cb8585162a28f7a05e0a24778d948d9da6ad9b3aaa5f809e360f4e82",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/03_pca.png": "b88d43406fb8911a65430a572ea11bc523c9a4aa33e06aec53f425c371e67696",
+    "resultados/experimentos.csv": "8afdabe91cd0f675329c82a49d031cf0f69205fa27fc267af82cc7a51c86924f",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/02_iniciais.png": "6a91d120d603c7f583a8bfcaaf8191248b356e964f06f64534a9e989ba245583",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/04_buscas.png": "f4848e3d22fda4bc9ca998a044b5ecbb802c3c7d2a22936d244255bb55e4e1bc",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/05_curvas.png": "466183ba972eba9bc6102e36690a0f60e751a0cd355514372101db68424ed0af",
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/tabelas/comparacao_teste.csv": "65a2039f0cec191ea03393295c169732a21535d090fc5013b26dde2b0b1331ea",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/06_diagnostico_teste.png": "4476ee561e252791f8996e771d270dcc52edd6be08149d137dc6f04f000ee133",
+    "resultados/ciencias_natureza/checkpoint-6-2026-11-07/figuras/07_grupos.png": "61cb7fb1cd5befc9866f444d412ed2450276cc807aa9b7c8540cb3d6acae2c89"
+  },
+  "pdf_sha256": "3183e8ce3577b080dff347158409913e5419118e5aff31d74b4e58719fe3bf23",
+  "visual_review": "passed",
+  "visual_review_evidence": "validacao_visual.json"
+}

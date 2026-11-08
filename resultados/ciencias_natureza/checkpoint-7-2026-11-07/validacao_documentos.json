@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "documents": [
+    {
+      "file": "output/pdf/artigo_latex.pdf",
+      "sha256": "24127effd7ec3137acf20a84eed1df481bc2d046835223d146f5088a38647b1d",
+      "pages": 10,
+      "paper": "A4",
+      "metrics_and_authors_confirmed": true,
+      "text_within_page": true,
+      "producer": "xdvipdfmx (0.1)",
+      "visual_review": "Todas as páginas renderizadas e inspecionadas; sem cortes, sobreposições ou glifos ausentes."
+    },
+    {
+      "file": "output/pdf/pitch.pdf",
+      "sha256": "d2ca0c9d2057b206fe86cc7c07d02021ad14b3436658dc18e576c3579be69661",
+      "pages": 6,
+      "paper": "A4",
+      "metrics_and_authors_confirmed": true,
+      "text_within_page": true,
+      "producer": "xdvipdfmx (0.1)",
+      "visual_review": "Todas as páginas renderizadas e inspecionadas; sem cortes, sobreposições ou glifos ausentes."
+    },
+    {
+      "file": "output/pdf/acompanhamento.pdf",
+      "sha256": "94566d2d5ddc27dadec97f08fb5929b7355305d7cec8bdc3fbfc1539be33d170",
+      "pages": 5,
+      "paper": "A4",
+      "metrics_and_authors_confirmed": true,
+      "text_within_page": true,
+      "producer": "xdvipdfmx (0.1)",
+      "visual_review": "Todas as páginas renderizadas e inspecionadas; sem cortes, sobreposições ou glifos ausentes."
+    }
+  ],
+  "standalone_zip_pitch_text_matches": true,
+  "visual_review_pages": 21,
+  "article_figure_count": 7,
+  "article_table_count": 3,
+  "article_configuration_table_count": 1,
+  "slides_created": false,
+  "oral_rehearsal_performed": false,
+  "compiled_in_overleaf_account": false
+}

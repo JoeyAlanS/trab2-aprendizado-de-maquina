@@ -1,0 +1,370 @@
+{
+  "status": "passed",
+  "local_links": [
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-3-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-4-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-2-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-1-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoints.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/checkpoint-4-resultados.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/relatorio-correcao-2026-11-05.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validacao-manual.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/auditoria-2026-11-05.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-3-protocolo.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-protocolo.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-curvas.md"
+    },
+    {
+      "document": "docs/checkpoints.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "relatorio-correcao-2026-11-05.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/requisitos.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-3-protocolo.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-protocolo.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-curvas.md"
+    },
+    {
+      "document": "docs/validacao-manual.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/acompanhamento.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoints.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-2-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-3-resultados.md"
+    },
+    {
+      "document": "docs/artigo.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/pitch.md",
+      "target": "checkpoint-1-resultados.md"
+    },
+    {
+      "document": "docs/pitch.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/frontend.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/artigo_ciencias_natureza_rascunho.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "relatorio/README.md",
+      "target": "../docs/checkpoint-1-resultados.md"
+    },
+    {
+      "document": "relatorio/README.md",
+      "target": "../docs/checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/checkpoint-4-protocolo.md",
+      "target": "checkpoint-4-resultados.md"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "checkpoint-4-protocolo.md"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/comparacao_antes_depois.png"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/magnitude_melhorias.png"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/antes_depois.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/todas_configuracoes.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/congelamento/receitas.json"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/congelamento/candidatos.json"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_buscas.json"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_visual_buscas.json"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../src/enem_base/final_selection.py"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../src/enem_base/frozen_curves.py"
+    },
+    {
+      "document": "docs/checkpoint-4-buscas.md",
+      "target": "../src/enem_base/final_evaluation.py"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_curvas_finais/curvas_rmse.png"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_curvas_finais/lacuna_generalizacao.png"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_curvas_finais/curvas_por_dobra.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_curvas_finais/curvas_resumo.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_curvas_finais.json"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../src/enem_base/frozen_curves.py"
+    },
+    {
+      "document": "docs/checkpoint-4-curvas.md",
+      "target": "../scripts/publicar_curvas_checkpoint4.py"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "checkpoint-4-buscas.md"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "checkpoint-4-curvas.md"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/comparacao_teste.png"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/validacao_versus_teste.png"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/observado_versus_previsto.png"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/distribuicao_residuos.png"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/erros_faixa_nota.png"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/avaliacao_final/previsoes_teste.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/avaliacao_final/experimentos.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/avaliacao_final/erros_grupos.csv"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/congelamento/receitas.json"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_teste.json"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_visual_teste.json"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../scripts/executar_buscas_checkpoint4.py"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../scripts/executar_checkpoint4.py"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "../scripts/publicar_checkpoint4.py"
+    },
+    {
+      "document": "docs/checkpoint-4-resultados.md",
+      "target": "checkpoint-4-protocolo.md"
+    }
+  ],
+  "local_link_count": 86,
+  "global_test_metrics_match_report": true,
+  "tail_error_analysis_present": true,
+  "future_checkpoints_not_claimed_complete": true,
+  "documentation_sha256": {
+    "README.md": "fcfb08631e44e46284b4dbb6cecbc3a708a0aab976e2823b3c03fd086d48e002",
+    "resultados/README.md": "b9a63bfa2a9ec9c5daef6401e3525fc607bbe1e4ac25f3a75a8981b7ffdda3e1",
+    "docs/checkpoints.md": "c030ef67faa4d1437c898e57589e95ebf0cefa30d3c6b43f560a302e1c27bc42",
+    "docs/requisitos.md": "b41dd287f5b675919f5cfd48000f7734448987cf6bca9ca5117f4d07347cf9b0",
+    "docs/validacao-manual.md": "12a3465a2da91df42d651669f85a398719ca9d7a99a0b145c90af1776e29c34c",
+    "docs/acompanhamento.md": "18c653d2f479227b7ff9cc8164002bd295e3bd247436bd8bbdfd6872324c2c74",
+    "docs/artigo.md": "73ee84afd816f39f19e7714cba74e536111df35ad0453d16f60a085ba72b4a6d",
+    "docs/pitch.md": "36ff3052a76d52a291f2292df714a9de18b4b9663a67da6c7f3100478dbaaad5",
+    "docs/frontend.md": "21625d2786fcabc6a7ea5c0aa3fe049e7c364204c53ba17604f648bf7a60a79b",
+    "docs/artigo_ciencias_natureza_rascunho.md": "5b0a2a0459ea3e81443830a4a386b30d4f8e9829d4772c812db1effba875bb8e",
+    "relatorio/README.md": "5c50ff6c2599febb24e8edf8fd54008f6411ba778467549da9285da78c4b8abe",
+    "docs/checkpoint-4-protocolo.md": "efd90c2a887956abc368bb17c1e7fbb230382f84d245f89d5bb540083519badf",
+    "docs/checkpoint-4-buscas.md": "9701e93a16dd13f4ce80699d7f7811d97d82e37328c37bcf9593474bea04e55e",
+    "docs/checkpoint-4-curvas.md": "7dd9aca0118bf1b6a28cdf6dfa0cc1678cef10cfe28018dae492cbe426b0ac3d",
+    "docs/checkpoint-4-resultados.md": "8de28eea7895a1531dcbbabc2120b2fc7a5f3c90ba9043fd31c2718f3aec2ef5"
+  }
+}

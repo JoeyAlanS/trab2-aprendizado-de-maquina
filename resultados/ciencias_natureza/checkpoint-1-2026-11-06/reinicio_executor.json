@@ -1,0 +1,6 @@
+{
+  "reason": "Reinício do orquestrador após o Bagging concluído para isolar cada família em processo próprio e liberar memória; nenhuma dobra concluída descartada",
+  "bagging_completed": true,
+  "old_process_group": 164203,
+  "test_evaluated": false
+}

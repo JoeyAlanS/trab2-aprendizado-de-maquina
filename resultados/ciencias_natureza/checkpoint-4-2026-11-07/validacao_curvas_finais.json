@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-07T07:33:20.246749-03:00",
+  "points": 45,
+  "models": 3,
+  "warnings": 0,
+  "full_fraction_reproduces_frozen_cv": true,
+  "origins": {
+    "checkpoint3_exact_parameters": 30,
+    "checkpoint3_bases_new_oof_meta": 12,
+    "search_full_training_fold": 3
+  },
+  "inputs": {
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/stacking/manifesto.json": "7520459532dd4653af1d369a6bb9def6257c1b144a75fcb175f0abeae5429a3b",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/svm/manifesto.json": "2bdafc701de5a46df87c0500267e5bcc7a5922443bde12ada0b3a5decace08b8",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/random_forest/manifesto.json": "18385380c2d61e77cc95029df1729bc28b62871efafc26a271a0ecc59c96179b"
+  },
+  "frozen_sha256": "b59d2211c73c4b98f6f4f0251854ddf79fb90d3e4f903f96259e6c134d5cb856",
+  "test_evaluated": false
+}

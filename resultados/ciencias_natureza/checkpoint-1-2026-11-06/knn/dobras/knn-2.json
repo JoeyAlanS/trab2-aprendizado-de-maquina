@@ -1,0 +1,844 @@
+{
+  "status": "completed",
+  "sha256": "46a7ecfe3f1a756c0e567c63d0bc550d6f0860b80d63edbab4e129254ed39f91",
+  "context": {
+    "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+    "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+    "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+    "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+    "target": "NU_NOTA_CN",
+    "n_development": 2153941,
+    "test_evaluated": false,
+    "model": "knn",
+    "fold": 2,
+    "variant": "original",
+    "parameters": {
+      "class": "sklearn.pipeline.Pipeline",
+      "parameters": {
+        "memory": null,
+        "steps": [
+          [
+            "preparation",
+            {
+              "class": "sklearn.compose._column_transformer.ColumnTransformer",
+              "parameters": {
+                "n_jobs": null,
+                "remainder": "drop",
+                "sparse_threshold": 1.0,
+                "transformer_weights": null,
+                "transformers": [
+                  [
+                    "numeric",
+                    {
+                      "class": "sklearn.pipeline.Pipeline",
+                      "parameters": {
+                        "memory": null,
+                        "steps": [
+                          [
+                            "missing_adapter",
+                            {
+                              "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                              "parameters": {
+                                "accept_sparse": false,
+                                "check_inverse": true,
+                                "feature_names_out": "one-to-one",
+                                "func": {
+                                  "callable": "enem_base.preprocessing.normalize_missing"
+                                },
+                                "inv_kw_args": null,
+                                "inverse_func": null,
+                                "kw_args": null,
+                                "validate": false
+                              }
+                            }
+                          ],
+                          [
+                            "imputer",
+                            {
+                              "class": "sklearn.impute._base.SimpleImputer",
+                              "parameters": {
+                                "add_indicator": true,
+                                "copy": true,
+                                "fill_value": null,
+                                "keep_empty_features": true,
+                                "missing_values": {
+                                  "special_float": "nan"
+                                },
+                                "strategy": "median"
+                              }
+                            }
+                          ],
+                          [
+                            "scaler",
+                            {
+                              "class": "sklearn.preprocessing._data.StandardScaler",
+                              "parameters": {
+                                "copy": true,
+                                "with_mean": true,
+                                "with_std": true
+                              }
+                            }
+                          ]
+                        ],
+                        "transform_input": null,
+                        "verbose": false
+                      }
+                    },
+                    [
+                      "Q005"
+                    ]
+                  ],
+                  [
+                    "categorical",
+                    {
+                      "class": "sklearn.pipeline.Pipeline",
+                      "parameters": {
+                        "memory": null,
+                        "steps": [
+                          [
+                            "missing_adapter",
+                            {
+                              "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                              "parameters": {
+                                "accept_sparse": false,
+                                "check_inverse": true,
+                                "feature_names_out": "one-to-one",
+                                "func": {
+                                  "callable": "enem_base.preprocessing.normalize_missing"
+                                },
+                                "inv_kw_args": null,
+                                "inverse_func": null,
+                                "kw_args": null,
+                                "validate": false
+                              }
+                            }
+                          ],
+                          [
+                            "imputer",
+                            {
+                              "class": "sklearn.impute._base.SimpleImputer",
+                              "parameters": {
+                                "add_indicator": false,
+                                "copy": true,
+                                "fill_value": "__MISSING__",
+                                "keep_empty_features": true,
+                                "missing_values": {
+                                  "special_float": "nan"
+                                },
+                                "strategy": "constant"
+                              }
+                            }
+                          ],
+                          [
+                            "encoder",
+                            {
+                              "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                              "parameters": {
+                                "categories": "auto",
+                                "drop": null,
+                                "dtype": {
+                                  "callable": "numpy.float64"
+                                },
+                                "feature_name_combiner": "concat",
+                                "handle_unknown": "ignore",
+                                "max_categories": null,
+                                "min_frequency": null,
+                                "sparse_output": true
+                              }
+                            }
+                          ]
+                        ],
+                        "transform_input": null,
+                        "verbose": false
+                      }
+                    },
+                    [
+                      "TP_FAIXA_ETARIA",
+                      "TP_SEXO",
+                      "TP_ESTADO_CIVIL",
+                      "TP_COR_RACA",
+                      "TP_NACIONALIDADE",
+                      "TP_ST_CONCLUSAO",
+                      "TP_ANO_CONCLUIU",
+                      "TP_ESCOLA",
+                      "TP_ENSINO",
+                      "IN_TREINEIRO",
+                      "TP_DEPENDENCIA_ADM_ESC",
+                      "TP_LOCALIZACAO_ESC",
+                      "TP_SIT_FUNC_ESC",
+                      "SG_UF_PROVA",
+                      "TP_LINGUA",
+                      "Q001",
+                      "Q002",
+                      "Q003",
+                      "Q004",
+                      "Q006",
+                      "Q007",
+                      "Q008",
+                      "Q009",
+                      "Q010",
+                      "Q011",
+                      "Q012",
+                      "Q013",
+                      "Q014",
+                      "Q015",
+                      "Q016",
+                      "Q017",
+                      "Q018",
+                      "Q019",
+                      "Q020",
+                      "Q021",
+                      "Q022",
+                      "Q023",
+                      "Q024",
+                      "Q025"
+                    ]
+                  ]
+                ],
+                "verbose": false,
+                "verbose_feature_names_out": true
+              }
+            }
+          ],
+          [
+            "regressor",
+            {
+              "class": "enem_base.neighbors.ExactProfileKNeighborsRegressor",
+              "parameters": {
+                "algorithm": "auto",
+                "leaf_size": 30,
+                "metric": "minkowski",
+                "metric_params": null,
+                "n_jobs": 2,
+                "n_neighbors": 25,
+                "p": 2,
+                "weights": "distance"
+              }
+            }
+          ]
+        ],
+        "transform_input": null,
+        "verbose": false
+      }
+    },
+    "dependencies": {
+      "enem-base": "0.1.0",
+      "pandas": "3.1.0",
+      "pyarrow": "24.0.0",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "faiss-cpu": "1.15.1"
+    },
+    "implementation": {
+      "src/enem_base/neighbors.py": "317674be4f2e6a90d918844bde80dff78595811bf7f54d91b422fd67f337a868",
+      "src/enem_base/preprocessing.py": "1da006461960b588541fa56bd1349c502cba829bc3ec641c8075e9242c323881",
+      "src/enem_base/study.py": "74af9b57fc9613679b6d7cc36a42cddb7c98c62d07773c0d7105bee2b04e1c55",
+      "src/enem_base/variants.py": "32ce03c3f2ff80649c5b21b4144b99238a0a8adaeb6d5c1d0af537ab01337515"
+    },
+    "train_ids_sha256": "fc3250637543e429c18739239dadfb988409dc53b3b110b2cf04f3165e9181d9",
+    "validation_ids_sha256": "5ea58d5afa5cbbeb1897d1925c00e529b042f1686f322959182c991d7ffd8edd"
+  },
+  "record": {
+    "experiment_id": "knn-original-knn",
+    "row_type": "fold",
+    "model": "knn",
+    "hypothesis": "Comparação inicial do perfil tabular para estimar a nota CN",
+    "features_json": "[\"Q005\", \"TP_FAIXA_ETARIA\", \"TP_SEXO\", \"TP_ESTADO_CIVIL\", \"TP_COR_RACA\", \"TP_NACIONALIDADE\", \"TP_ST_CONCLUSAO\", \"TP_ANO_CONCLUIU\", \"TP_ESCOLA\", \"TP_ENSINO\", \"IN_TREINEIRO\", \"TP_DEPENDENCIA_ADM_ESC\", \"TP_LOCALIZACAO_ESC\", \"TP_SIT_FUNC_ESC\", \"SG_UF_PROVA\", \"TP_LINGUA\", \"Q001\", \"Q002\", \"Q003\", \"Q004\", \"Q006\", \"Q007\", \"Q008\", \"Q009\", \"Q010\", \"Q011\", \"Q012\", \"Q013\", \"Q014\", \"Q015\", \"Q016\", \"Q017\", \"Q018\", \"Q019\", \"Q020\", \"Q021\", \"Q022\", \"Q023\", \"Q024\", \"Q025\"]",
+    "preparation_json": "{\"variant\": \"original\"}",
+    "variant": "original",
+    "parameters_json": "{\"class\": \"sklearn.pipeline.Pipeline\", \"parameters\": {\"memory\": null, \"steps\": [[\"preparation\", {\"class\": \"sklearn.compose._column_transformer.ColumnTransformer\", \"parameters\": {\"n_jobs\": null, \"remainder\": \"drop\", \"sparse_threshold\": 1.0, \"transformer_weights\": null, \"transformers\": [[\"numeric\", {\"class\": \"sklearn.pipeline.Pipeline\", \"parameters\": {\"memory\": null, \"steps\": [[\"missing_adapter\", {\"class\": \"sklearn.preprocessing._function_transformer.FunctionTransformer\", \"parameters\": {\"accept_sparse\": false, \"check_inverse\": true, \"feature_names_out\": \"one-to-one\", \"func\": {\"callable\": \"enem_base.preprocessing.normalize_missing\"}, \"inv_kw_args\": null, \"inverse_func\": null, \"kw_args\": null, \"validate\": false}}], [\"imputer\", {\"class\": \"sklearn.impute._base.SimpleImputer\", \"parameters\": {\"add_indicator\": true, \"copy\": true, \"fill_value\": null, \"keep_empty_features\": true, \"missing_values\": {\"special_float\": \"nan\"}, \"strategy\": \"median\"}}], [\"scaler\", {\"class\": \"sklearn.preprocessing._data.StandardScaler\", \"parameters\": {\"copy\": true, \"with_mean\": true, \"with_std\": true}}]], \"transform_input\": null, \"verbose\": false}}, [\"Q005\"]], [\"categorical\", {\"class\": \"sklearn.pipeline.Pipeline\", \"parameters\": {\"memory\": null, \"steps\": [[\"missing_adapter\", {\"class\": \"sklearn.preprocessing._function_transformer.FunctionTransformer\", \"parameters\": {\"accept_sparse\": false, \"check_inverse\": true, \"feature_names_out\": \"one-to-one\", \"func\": {\"callable\": \"enem_base.preprocessing.normalize_missing\"}, \"inv_kw_args\": null, \"inverse_func\": null, \"kw_args\": null, \"validate\": false}}], [\"imputer\", {\"class\": \"sklearn.impute._base.SimpleImputer\", \"parameters\": {\"add_indicator\": false, \"copy\": true, \"fill_value\": \"__MISSING__\", \"keep_empty_features\": true, \"missing_values\": {\"special_float\": \"nan\"}, \"strategy\": \"constant\"}}], [\"encoder\", {\"class\": \"sklearn.preprocessing._encoders.OneHotEncoder\", \"parameters\": {\"categories\": \"auto\", \"drop\": null, \"dtype\": {\"callable\": \"numpy.float64\"}, \"feature_name_combiner\": \"concat\", \"handle_unknown\": \"ignore\", \"max_categories\": null, \"min_frequency\": null, \"sparse_output\": true}}]], \"transform_input\": null, \"verbose\": false}}, [\"TP_FAIXA_ETARIA\", \"TP_SEXO\", \"TP_ESTADO_CIVIL\", \"TP_COR_RACA\", \"TP_NACIONALIDADE\", \"TP_ST_CONCLUSAO\", \"TP_ANO_CONCLUIU\", \"TP_ESCOLA\", \"TP_ENSINO\", \"IN_TREINEIRO\", \"TP_DEPENDENCIA_ADM_ESC\", \"TP_LOCALIZACAO_ESC\", \"TP_SIT_FUNC_ESC\", \"SG_UF_PROVA\", \"TP_LINGUA\", \"Q001\", \"Q002\", \"Q003\", \"Q004\", \"Q006\", \"Q007\", \"Q008\", \"Q009\", \"Q010\", \"Q011\", \"Q012\", \"Q013\", \"Q014\", \"Q015\", \"Q016\", \"Q017\", \"Q018\", \"Q019\", \"Q020\", \"Q021\", \"Q022\", \"Q023\", \"Q024\", \"Q025\"]]], \"verbose\": false, \"verbose_feature_names_out\": true}}], [\"regressor\", {\"class\": \"enem_base.neighbors.ExactProfileKNeighborsRegressor\", \"parameters\": {\"algorithm\": \"auto\", \"leaf_size\": 30, \"metric\": \"minkowski\", \"metric_params\": null, \"n_jobs\": 2, \"n_neighbors\": 25, \"p\": 2, \"weights\": \"distance\"}}]], \"transform_input\": null, \"verbose\": false}}",
+    "evaluated_set": "development_cv",
+    "fold": 2,
+    "rmse": 77.86803421270409,
+    "mae": 56.82583072253045,
+    "r2": 0.21487955262614622,
+    "elapsed_seconds": 1021.4951807339999,
+    "prediction_blocks_reused": 0,
+    "n_train": 1435961,
+    "n_evaluated": 717980,
+    "warnings_json": "[]",
+    "diagnostics_json": "{\"knn_backend\": \"faiss_IndexBinaryFlat_exact_partitioned_euclidean\", \"knn_numeric_groups\": 20, \"knn_input_dimensions\": 235}",
+    "conclusion": "Métricas observadas; comparar média e variação das dobras.",
+    "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+    "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+    "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+    "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+    "target": "NU_NOTA_CN",
+    "n_development": 2153941,
+    "test_evaluated": false
+  },
+  "groups": [
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "faixa_nota",
+      "category": "[600,700)",
+      "n": 63458,
+      "rmse": 97.92795568598422,
+      "mae": 87.23449905148246,
+      "r2": -12.822671951809482,
+      "mean_residual": 86.01710592930206
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "faixa_nota",
+      "category": "[700,+inf)",
+      "n": 8310,
+      "rmse": 156.5321568329679,
+      "mae": 148.9819316824576,
+      "r2": -31.89381123850106,
+      "mean_residual": 148.94809293396182
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "faixa_nota",
+      "category": "[400,500)",
+      "n": 302161,
+      "rmse": 50.39133991992828,
+      "mae": 39.300091807594434,
+      "r2": -2.31479363379879,
+      "mean_residual": -28.180690056000252
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "faixa_nota",
+      "category": "[500,600)",
+      "n": 267737,
+      "rmse": 57.31140494218338,
+      "mae": 47.724157489039726,
+      "r2": -3.359977808838302,
+      "mean_residual": 36.51831857243684
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "faixa_nota",
+      "category": "[0,400)",
+      "n": 76314,
+      "rmse": 157.56267699088372,
+      "mae": 122.82891022295577,
+      "r2": -2.1030900957342498,
+      "mean_residual": -122.76704872235476
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "TP_ESCOLA",
+      "category": "1",
+      "n": 436539,
+      "rmse": 79.71683738460698,
+      "mae": 57.72226966048269,
+      "r2": 0.20900665414617836,
+      "mean_residual": -1.3844049457518646
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "TP_ESCOLA",
+      "category": "2",
+      "n": 222240,
+      "rmse": 73.33552259551539,
+      "mae": 53.814135351653725,
+      "r2": 0.10423452028469293,
+      "mean_residual": -2.3998571830982103
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "TP_ESCOLA",
+      "category": "3",
+      "n": 59201,
+      "rmse": 80.54712314557835,
+      "mae": 61.521505148450885,
+      "r2": 0.09377104789586599,
+      "mean_residual": -4.606709569976149
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "RN",
+      "n": 19568,
+      "rmse": 77.27154555379794,
+      "mae": 56.646655407168275,
+      "r2": 0.20352197048108245,
+      "mean_residual": 1.0253346098141947
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "SP",
+      "n": 109754,
+      "rmse": 77.45407461798747,
+      "mae": 57.20749068449979,
+      "r2": 0.20737064635058644,
+      "mean_residual": -3.8791727361576687
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "MG",
+      "n": 67083,
+      "rmse": 78.25300047315051,
+      "mae": 57.82256922545145,
+      "r2": 0.19145477591061033,
+      "mean_residual": 3.933782279586597
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "DF",
+      "n": 13672,
+      "rmse": 83.81513026922332,
+      "mae": 60.06234186992292,
+      "r2": 0.2495782339335434,
+      "mean_residual": -3.070091590008898
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "MT",
+      "n": 11280,
+      "rmse": 83.77261655768918,
+      "mae": 58.16427474625371,
+      "r2": 0.1336713779595441,
+      "mean_residual": -10.982510289831628
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "PA",
+      "n": 41073,
+      "rmse": 75.6721407442706,
+      "mae": 54.7312117357518,
+      "r2": 0.14456086253366085,
+      "mean_residual": -3.5879991711806083
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "ES",
+      "n": 13068,
+      "rmse": 77.06792595742225,
+      "mae": 56.89121253751731,
+      "r2": 0.18658479020177043,
+      "mean_residual": 3.8668657355693954
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "PE",
+      "n": 40817,
+      "rmse": 74.71303212710839,
+      "mae": 55.71754030106486,
+      "r2": 0.17470468673349082,
+      "mean_residual": 0.11019988149496227
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "BA",
+      "n": 58875,
+      "rmse": 74.35629199625957,
+      "mae": 54.75938751949345,
+      "r2": 0.1791035372971218,
+      "mean_residual": -0.5342090916896493
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "PR",
+      "n": 30818,
+      "rmse": 83.95655678813033,
+      "mae": 59.549128773560476,
+      "r2": 0.17302866451019872,
+      "mean_residual": -6.25936688887067
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "CE",
+      "n": 46704,
+      "rmse": 79.34303246367882,
+      "mae": 58.5793983868033,
+      "r2": 0.19859761465614878,
+      "mean_residual": 3.9152554158437445
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "AL",
+      "n": 14749,
+      "rmse": 75.41695773684914,
+      "mae": 55.2843557903537,
+      "r2": 0.18428453652276033,
+      "mean_residual": -3.734108767808195
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "RJ",
+      "n": 49424,
+      "rmse": 83.0503279769326,
+      "mae": 58.746685064251565,
+      "r2": 0.17895446209534183,
+      "mean_residual": -2.474087852239458
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "GO",
+      "n": 25864,
+      "rmse": 77.6064199321515,
+      "mae": 56.77939592264048,
+      "r2": 0.21683566076146865,
+      "mean_residual": -1.2197371341047714
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "RO",
+      "n": 6097,
+      "rmse": 77.94539570303336,
+      "mae": 55.70254067308439,
+      "r2": 0.12306941298949692,
+      "mean_residual": -7.694039525765257
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "AM",
+      "n": 12893,
+      "rmse": 73.66033193593539,
+      "mae": 54.4667670233589,
+      "r2": 0.16745637655292533,
+      "mean_residual": -9.855960753576527
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "SE",
+      "n": 12639,
+      "rmse": 76.46262624933462,
+      "mae": 56.47735129560067,
+      "r2": 0.20934157994884872,
+      "mean_residual": 1.7461683507324701
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "MA",
+      "n": 30010,
+      "rmse": 73.79862845039982,
+      "mae": 55.05686441449342,
+      "r2": 0.15728297424826088,
+      "mean_residual": -5.9558140521422915
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "AP",
+      "n": 4822,
+      "rmse": 76.59809360683464,
+      "mae": 54.774382415373076,
+      "r2": 0.1352749072800552,
+      "mean_residual": -9.050877148735472
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "PB",
+      "n": 23544,
+      "rmse": 75.76723838876309,
+      "mae": 55.89473799260504,
+      "r2": 0.20118968924171998,
+      "mean_residual": -0.351593539111944
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "RS",
+      "n": 29505,
+      "rmse": 77.64617581316799,
+      "mae": 55.50863776486819,
+      "r2": 0.17831264888307463,
+      "mean_residual": -3.764825981553377
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "PI",
+      "n": 19019,
+      "rmse": 75.65368150398402,
+      "mae": 56.1210396823139,
+      "r2": 0.20899396335538833,
+      "mean_residual": -0.5548772907755909
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "SC",
+      "n": 16728,
+      "rmse": 87.64220121926026,
+      "mae": 59.34829907828306,
+      "r2": 0.16050943630864356,
+      "mean_residual": -5.951959663990655
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "MS",
+      "n": 8369,
+      "rmse": 75.11026305178127,
+      "mae": 56.36066271148909,
+      "r2": 0.20527054034482273,
+      "mean_residual": -8.31422262743625
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "AC",
+      "n": 4124,
+      "rmse": 74.03935792164943,
+      "mae": 55.401243299245124,
+      "r2": 0.14476161574435575,
+      "mean_residual": -5.258152562394276
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "TO",
+      "n": 5856,
+      "rmse": 74.05265898719422,
+      "mae": 55.759347587306294,
+      "r2": 0.1908422784239422,
+      "mean_residual": -9.592284149880708
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "SG_UF_PROVA",
+      "category": "RR",
+      "n": 1625,
+      "rmse": 75.45196327690422,
+      "mae": 58.86401786737174,
+      "r2": 0.18593738459032538,
+      "mean_residual": -5.423427740110799
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "B",
+      "n": 208772,
+      "rmse": 74.62254228053274,
+      "mae": 53.8903720156505,
+      "r2": 0.05136470722281472,
+      "mean_residual": -2.540480966475107
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "C",
+      "n": 111294,
+      "rmse": 76.20456433220254,
+      "mae": 55.511120559536565,
+      "r2": 0.0685707571443771,
+      "mean_residual": -2.37783174324322
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "G",
+      "n": 53935,
+      "rmse": 79.97251443166037,
+      "mae": 59.06822737882652,
+      "r2": 0.10381197507194784,
+      "mean_residual": -1.3880952093422134
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "D",
+      "n": 79124,
+      "rmse": 77.55439539156366,
+      "mae": 56.7074296825881,
+      "r2": 0.0730702647455942,
+      "mean_residual": -2.258227779942102
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "E",
+      "n": 56111,
+      "rmse": 77.09247004049641,
+      "mae": 57.10176551597787,
+      "r2": 0.09432382220264723,
+      "mean_residual": -1.438186783000359
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "I",
+      "n": 18535,
+      "rmse": 81.99814620233559,
+      "mae": 61.08376252190163,
+      "r2": 0.12418084340392566,
+      "mean_residual": 0.5982960624024793
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "A",
+      "n": 41871,
+      "rmse": 73.42944978517603,
+      "mae": 52.31791217401783,
+      "r2": 0.05796898420150387,
+      "mean_residual": -4.6471309668557215
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "K",
+      "n": 13197,
+      "rmse": 82.86339377908024,
+      "mae": 62.20200118741466,
+      "r2": 0.12911921263582582,
+      "mean_residual": 0.9885171478608381
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "H",
+      "n": 29458,
+      "rmse": 82.16749291848532,
+      "mae": 60.735527548008726,
+      "r2": 0.11616116605259841,
+      "mean_residual": -1.250323150506012
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "F",
+      "n": 34252,
+      "rmse": 80.22858190780063,
+      "mae": 59.135270447155236,
+      "r2": 0.10149390663440405,
+      "mean_residual": -0.24756092245819508
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "J",
+      "n": 16458,
+      "rmse": 82.3011202820455,
+      "mae": 61.12041594690602,
+      "r2": 0.12908889775248034,
+      "mean_residual": 0.6717188571669466
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "L",
+      "n": 9003,
+      "rmse": 85.61478472312625,
+      "mae": 63.287318814092515,
+      "r2": 0.12986410696625117,
+      "mean_residual": -0.540197483058342
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "O",
+      "n": 9319,
+      "rmse": 83.88950848379608,
+      "mae": 62.8474969967228,
+      "r2": 0.1451022117705999,
+      "mean_residual": -1.2589722493086695
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "N",
+      "n": 9122,
+      "rmse": 86.42274602271469,
+      "mae": 63.23272091116411,
+      "r2": 0.1111467694502194,
+      "mean_residual": -1.5132517637759981
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "P",
+      "n": 8670,
+      "rmse": 87.89678345769453,
+      "mae": 64.9787370971734,
+      "r2": 0.12378735457270307,
+      "mean_residual": -1.890679840725231
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "Q",
+      "n": 11294,
+      "rmse": 92.83546064547191,
+      "mae": 67.01226071997802,
+      "r2": 0.13247519421845078,
+      "mean_residual": -4.722195567065353
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "group": "Q006",
+      "category": "M",
+      "n": 7565,
+      "rmse": 84.78388224495322,
+      "mae": 63.11333801534459,
+      "r2": 0.13031574998361573,
+      "mean_residual": 3.1298990201647237
+    }
+  ]
+}

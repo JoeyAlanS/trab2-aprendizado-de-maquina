@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "created_at": "2026-11-07T17:15:56.998991-03:00",
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "scripts/publicar_checkpoint5.py",
+        "scripts/validar_checkpoint5.py"
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "scripts/publicar_checkpoint5.py",
+        "scripts/validar_checkpoint5.py"
+      ],
+      "exit_code": 0,
+      "output": "2 files already formatted\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts/publicar_checkpoint5.py",
+        "scripts/validar_checkpoint5.py"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "Checked 54 packages in 13ms\nAll installed packages are compatible\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "scripts_sha256": {
+    "scripts/publicar_checkpoint5.py": "2a10acd48689cc4813f4aaad6a3fc4d5b2d6ac7f93e009e30042cc38e805e6bc",
+    "scripts/validar_checkpoint5.py": "70ca2965fa57020df8ab60fe3731c245d1d1fa22be2451c7d5311ea1ab1c54dd"
+  }
+}

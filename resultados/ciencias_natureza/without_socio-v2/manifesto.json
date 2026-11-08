@@ -1,0 +1,229 @@
+{
+  "created_at_utc": "2026-11-05T22:07:29.035240+00:00",
+  "python": "3.13.17",
+  "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+  "git_commit": "e9f04552830fb12863b69ef7be5de0515619507a",
+  "git_dirty": true,
+  "source_code_sha256": {
+    "src/enem_base/__init__.py": "5fcabeaa7b73ffcf0e87c1e2eb6039eb6c9d8a8eb600815c98cd829df1ab4db7",
+    "src/enem_base/__main__.py": "91f20eada44a1eccff337d9553aa2392f036f648d4b3dd21b288904d5fe179da",
+    "src/enem_base/acquisition.py": "22f3e0e0cbbd3f1423916901adbb4d9ea6e896a74210ed2d2f99c961a2f5c1bf",
+    "src/enem_base/cleaning.py": "256f42677d4ee5fba0daa3d55aff1bd27c560f337c4b3613f0ec49cfce27c72d",
+    "src/enem_base/cli.py": "3803a18ffeb2268bef1d0ce685a32cde352edccb619d00125614bb8f19f25923",
+    "src/enem_base/config.py": "4ac6de2f5c64c64560ed590ee237d59e807a24a4c14698dac9b0e7466e6bae25",
+    "src/enem_base/dashboard.py": "7d2aeece5a358c5be487a16360a01f1c61a8d419cdc1859485823c80337fa3a1",
+    "src/enem_base/dashboard_ui.py": "9686418be2373dd920a1cd3e274a98f80e4a854a30c943092d4c13c7a79dd85d",
+    "src/enem_base/database.py": "8669dbcd5b80a23e9280a4c6f74b0c790f7854828dcef0d5b86757436bebde51",
+    "src/enem_base/evidence.py": "ba58b4aadeb1a625e8d54645102d3862bf9771bf7c48768d2b40a42a2b7a0312",
+    "src/enem_base/exploration.py": "415c1f514d8a7fcb676d5fa823e6f25b5d0484fe681f25b68c56b0de43d1b205",
+    "src/enem_base/exports.py": "bb319fad1f65ce8409c5a5f6fcae332a4c0493c219d5ca49893b934454c9bbc1",
+    "src/enem_base/features.py": "44420ada99020c8f5dc4f77e4f1057e28440989db0f652e0e2875510ddc9ca89",
+    "src/enem_base/ingestion.py": "ee42e74643de981037af4f952849bc06fce7978e41d3ea9ae6a874aa15ec4003",
+    "src/enem_base/integration.py": "1d65f4a3cfbe962ae58fb3c4c25bcd5fc38f27b67f7130972aa8d6bfbb980943",
+    "src/enem_base/modeling.py": "f326480b09fd121e5b4a64e6ffb56fe1d11653dd7ad01531fbf1d6a73b964029",
+    "src/enem_base/official.py": "5d661dc646ed2d387b5274062726fae5a8ba50d503a64fdf82c0b0a3c0966f45",
+    "src/enem_base/preprocessing.py": "c553f2cf5d59e9dcc50ff76f861d691b975d7d2a6fa5bc6e0a4758380abb2bc8",
+    "src/enem_base/provenance.py": "bd89773d9833ad59f052cfbf636b57fbd65f24b76ccbccdb8058280de0298262",
+    "src/enem_base/quality.py": "90afec110f607dd754586911fe08305807f5d29c2d1fa7f3c46bf446718b5571",
+    "src/enem_base/recovery.py": "43c7dc6c46d87af34b2e65fd1e05d9476ebff44c57d7c577e0867bf4d293e431",
+    "src/enem_base/relations.py": "be9f72664d5ba5a6244e5bc0494e82cb01fc5b340cd54755791fb965d352efc7",
+    "src/enem_base/reporting.py": "1cc90edc6e214e5309405d7a1c4fb30a4ae84a24385885eb7d914fc2d9c220d5",
+    "src/enem_base/splits.py": "1951908394f0e73191eaca02a5e3d416ddd04c6114cacc692956980fa3115060",
+    "src/enem_base/study.py": "74af9b57fc9613679b6d7cc36a42cddb7c98c62d07773c0d7105bee2b04e1c55",
+    "src/enem_base/variants.py": "3adf905bb3ec9f6603e82b0461a88fde4d8e943aaa73a098578dc01b1207d900",
+    "src/enem_base/visualization.py": "c57c71dd554dd8e3f6bc8aef383507394b57d209e6f65044d6acffe94435e03f",
+    "src/enem_base/workflow.py": "8c7806a8090c414b0c4bd1a79ba5f2773b4601177e9f3e1303f73cfdaef48f9c"
+  },
+  "dependencies": {
+    "enem-base": "0.1.0",
+    "pandas": "3.1.0",
+    "pyarrow": "24.0.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "test_evaluated": false,
+  "status": "completed",
+  "models": [
+    "ridge"
+  ],
+  "features": [
+    "TP_FAIXA_ETARIA",
+    "TP_SEXO",
+    "TP_ESTADO_CIVIL",
+    "TP_COR_RACA",
+    "TP_NACIONALIDADE",
+    "TP_ST_CONCLUSAO",
+    "TP_ANO_CONCLUIU",
+    "TP_ESCOLA",
+    "TP_ENSINO",
+    "IN_TREINEIRO",
+    "TP_DEPENDENCIA_ADM_ESC",
+    "TP_LOCALIZACAO_ESC",
+    "TP_SIT_FUNC_ESC",
+    "SG_UF_PROVA",
+    "TP_LINGUA"
+  ],
+  "variant": "without_socio",
+  "experiment_kind": "comparison",
+  "numeric_imputation": "median fitted within each fold",
+  "categorical_encoding": "one-hot with explicit missing category; unknown ignored",
+  "evaluated_set": "development_cv",
+  "seed": 42,
+  "n_splits": 3,
+  "std_ddof": 0,
+  "all_development_rows": true,
+  "parameters": {
+    "ridge": {
+      "class": "sklearn.pipeline.Pipeline",
+      "parameters": {
+        "memory": null,
+        "steps": [
+          [
+            "preparation",
+            {
+              "class": "sklearn.compose._column_transformer.ColumnTransformer",
+              "parameters": {
+                "n_jobs": null,
+                "remainder": "drop",
+                "sparse_threshold": 1.0,
+                "transformer_weights": null,
+                "transformers": [
+                  [
+                    "categorical",
+                    {
+                      "class": "sklearn.pipeline.Pipeline",
+                      "parameters": {
+                        "memory": null,
+                        "steps": [
+                          [
+                            "missing_adapter",
+                            {
+                              "class": "sklearn.preprocessing._function_transformer.FunctionTransformer",
+                              "parameters": {
+                                "accept_sparse": false,
+                                "check_inverse": true,
+                                "feature_names_out": "one-to-one",
+                                "func": {
+                                  "callable": "enem_base.preprocessing.normalize_missing"
+                                },
+                                "inv_kw_args": null,
+                                "inverse_func": null,
+                                "kw_args": null,
+                                "validate": false
+                              }
+                            }
+                          ],
+                          [
+                            "imputer",
+                            {
+                              "class": "sklearn.impute._base.SimpleImputer",
+                              "parameters": {
+                                "add_indicator": false,
+                                "copy": true,
+                                "fill_value": "__MISSING__",
+                                "keep_empty_features": true,
+                                "missing_values": {
+                                  "special_float": "nan"
+                                },
+                                "strategy": "constant"
+                              }
+                            }
+                          ],
+                          [
+                            "encoder",
+                            {
+                              "class": "sklearn.preprocessing._encoders.OneHotEncoder",
+                              "parameters": {
+                                "categories": "auto",
+                                "drop": null,
+                                "dtype": {
+                                  "callable": "numpy.float64"
+                                },
+                                "feature_name_combiner": "concat",
+                                "handle_unknown": "ignore",
+                                "max_categories": null,
+                                "min_frequency": null,
+                                "sparse_output": true
+                              }
+                            }
+                          ]
+                        ],
+                        "transform_input": null,
+                        "verbose": false
+                      }
+                    },
+                    [
+                      "TP_FAIXA_ETARIA",
+                      "TP_SEXO",
+                      "TP_ESTADO_CIVIL",
+                      "TP_COR_RACA",
+                      "TP_NACIONALIDADE",
+                      "TP_ST_CONCLUSAO",
+                      "TP_ANO_CONCLUIU",
+                      "TP_ESCOLA",
+                      "TP_ENSINO",
+                      "IN_TREINEIRO",
+                      "TP_DEPENDENCIA_ADM_ESC",
+                      "TP_LOCALIZACAO_ESC",
+                      "TP_SIT_FUNC_ESC",
+                      "SG_UF_PROVA",
+                      "TP_LINGUA"
+                    ]
+                  ]
+                ],
+                "verbose": false,
+                "verbose_feature_names_out": true
+              }
+            }
+          ],
+          [
+            "regressor",
+            {
+              "class": "sklearn.linear_model._ridge.Ridge",
+              "parameters": {
+                "alpha": 1.0,
+                "copy_X": true,
+                "fit_intercept": true,
+                "max_iter": null,
+                "positive": false,
+                "random_state": null,
+                "solver": "lsqr",
+                "tol": 1e-05
+              }
+            }
+          ]
+        ],
+        "transform_input": null,
+        "verbose": false
+      }
+    }
+  },
+  "results": [
+    {
+      "model": "ridge",
+      "evaluated_set": "development_cv",
+      "n_splits": 3,
+      "elapsed_seconds": 20.082548358001077,
+      "std_ddof": 0,
+      "warning_count": 0,
+      "rmse_mean": 80.35094262224641,
+      "rmse_std": 0.049117689597145665,
+      "mae_mean": 59.08094817206171,
+      "mae_std": 0.02702093400251276,
+      "r2_mean": 0.16478755521519536,
+      "r2_std": 0.00045269430101182263
+    }
+  ],
+  "assets": {
+    "comparacao_cv.png": "1b2b95d28367ff5434132d9c0bdb6d1159d34e24e4d5d5b3bc359bdbab51a00c",
+    "erros_grupos.csv": "8ae51b6e91f852c1ce0826cdfbf71879cf968f5ab42972830f514e7305941663",
+    "experimentos.csv": "ead523389a5615826617e7b97bf40ce7083a4fc99920aed914eea69964a93f44",
+    "resumo_cv.csv": "8296c5364eacc457b7fbe6d2f79fadeec66ec130379004594cb39c56c46a8722"
+  }
+}

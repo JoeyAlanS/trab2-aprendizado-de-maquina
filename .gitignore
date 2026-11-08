@@ -27,3 +27,17 @@ resultados/figuras/*
 .streamlit/secrets.toml
 dados/database/**/*.sqlite3
 dados/database/**/*.sqlite3-*
+resultados/**/.run-*.lock
+resultados/**/predicoes_parciais/
+resultados/**/modelos_ajustados/
+resultados/**/cache_buscas/
+
+# Previsões individuais e produtos temporários permanecem locais.
+resultados/**/previsoes_teste.csv
+resultados/**/validacao_retomada_blocos/*.parquet
+relatorio/*.aux
+relatorio/*.log
+relatorio/*.out
+relatorio/*.toc
+relatorio/*.xdv
+relatorio/*.synctex.gz

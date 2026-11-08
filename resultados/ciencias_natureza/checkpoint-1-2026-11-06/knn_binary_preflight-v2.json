@@ -1,0 +1,23 @@
+{
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "test_evaluated": false,
+  "scope": "Benchmark e equivalência das distâncias com treino completo da dobra 0; não é resultado de desempenho preditivo",
+  "fit_seconds": 1.1350236289999884,
+  "query_seconds": 0.47726648400021077,
+  "n_train": 1435960,
+  "n_validation_queries": 512,
+  "reference_queries": 64,
+  "max_distance_error_reference": 2.6645352591003757e-15,
+  "max_distance_error_direct": 4.440892098500626e-16,
+  "max_prediction_error_batching": 0.0,
+  "zero_distance_real_training_queries_verified": true,
+  "numeric_groups": 20,
+  "backend": "faiss_IndexBinaryFlat_exact_partitioned_euclidean",
+  "approximate_search": false,
+  "previous_probe": "A primeira sondagem foi interrompida por subtração de matrizes esparsas sem broadcasting no código de conferência; corrigido usando apenas os 25 vizinhos reais de cada consulta em arrays densos."
+}

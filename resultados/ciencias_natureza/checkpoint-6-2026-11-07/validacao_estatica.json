@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "command": [
+    ".venv/bin/ruff",
+    "check",
+    "scripts/incorporar_fontes_2023.py",
+    "scripts/validar_fontes_2023.py",
+    "scripts/figuras_checkpoint6.py",
+    "scripts/publicar_checkpoint6.py",
+    "scripts/validar_checkpoint6.py"
+  ],
+  "output": "All checks passed!",
+  "scripts": {
+    "scripts/incorporar_fontes_2023.py": "4170db5dc9d4274fe8da730bf12907974c6bec4981414b1b244a20b60eaf446d",
+    "scripts/validar_fontes_2023.py": "b28c7d592f87e435e43cfd111ad59aa92e9be87aacbeb945f571641eab75cbd9",
+    "scripts/figuras_checkpoint6.py": "0ce6e8bd96ecce3b45209050e6fe84a069dffa286d1c16f44b24e8c16ffa5307",
+    "scripts/publicar_checkpoint6.py": "3a7ccc77c7851fe0905a52b4a2b78e43ea3b7b8878df65054320a6554b1caf69",
+    "scripts/validar_checkpoint6.py": "2630fc2a51b2b13737cc3a3da537a529a95595159ace4514df6842d0f4059ac7"
+  },
+  "new_test_files": false
+}

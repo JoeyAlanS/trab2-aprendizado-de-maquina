@@ -1,0 +1,27 @@
+{
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "test_evaluated": false,
+  "scope": "Benchmark técnico com treino completo da dobra 0 e 64 consultas reais da validação; não é métrica científica",
+  "results": [
+    {
+      "storage": "sparse",
+      "seconds_64_queries": 7.390446658000201,
+      "estimated_full_validation_hours": 23.030383168218933
+    },
+    {
+      "storage": "dense_float64",
+      "seconds_64_queries": 0.5892471580000347,
+      "estimated_full_validation_hours": 1.8362337836285716
+    }
+  ],
+  "distance_max_abs_error": 0.0,
+  "same_neighbor_indices": false,
+  "train_rows": 1435960,
+  "queries": 64,
+  "encoded_columns": 235
+}

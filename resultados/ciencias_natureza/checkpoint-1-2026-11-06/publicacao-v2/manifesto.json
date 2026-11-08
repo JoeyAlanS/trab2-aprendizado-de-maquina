@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "inputs": {
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/svm": "d6ffdd12500edc16ff90a7783fa46640262e90704a2461e0c48ee05396c45c19",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/knn": "b82f7046df6a82fea1fcadcfe814d94ef9e997d000ed84648909761cf0771613",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/bagging": "81d88ec73ad4015630c87b05689daaec637e0f198b5c29998de3bb849453301e",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/pasting": "b98e394f1387a1652467cf93a6be150adb65b457b103940a4171f07622835819",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/random_forest": "09cfbeef65b8f79f4d276acd5e0734af39e48ee29a204310962bcac75edb4c0f",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/boosting": "0eb403205cefeefd2ff6d7d00c0365f7d986d5a58025b7a5a1e3104fa3004b68",
+    "resultados/ciencias_natureza/checkpoint-1-2026-11-06/stacking": "8db78d1b193ea172fd915bfacda04768d0dcc8f83f2c5f282c244852f5502be0"
+  },
+  "rows": 28,
+  "test_evaluated": false,
+  "pending": [
+    "avaliação final e previsões reais de teste"
+  ],
+  "assets": {
+    "experimentos.csv": "2b68c30270c42ce68847111d56e4cf513fe12ace61eac36c3cb22ee168e13e2e"
+  }
+}

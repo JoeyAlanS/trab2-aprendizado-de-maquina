@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-07T01:23:43.574297-03:00",
+  "checks": [
+    "ruff check",
+    "ruff format",
+    "compileall",
+    "uv pip check: 54 pacotes compatíveis",
+    "git diff --check"
+  ],
+  "code_sha256": {
+    "src/enem_base/final_selection.py": "bc1cba99d8cb07820e0e1b7e085dbe2835a1229a9bc9125fceb135dc8c585614",
+    "src/enem_base/frozen_curves.py": "c485d9f98071ea22323f58ec27f71d922564670b63fc8f826fffa0f432e74b4b",
+    "src/enem_base/final_evaluation.py": "d6b337168126d4fe3b0300ca89fd0bac569457abf7d96db0ec9200bd1a3cb337",
+    "scripts/executar_checkpoint4.py": "4158e887a777af0e5f2f5eca436f7438a4f6fcd5ced939df1691848495ca9aae",
+    "scripts/publicar_checkpoint4.py": "1d546acac6825182502302be370b6352d6fcd14899c426a643d2f1235e12a343"
+  },
+  "test_evaluated": false
+}

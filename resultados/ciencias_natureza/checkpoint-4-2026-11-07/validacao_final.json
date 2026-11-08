@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "validated_at": "2026-11-07T11:52:49.662501-03:00",
+  "checkpoint": 4,
+  "validation_files": {
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_buscas.json": "b9433f2e31c21b9ceb6d0cc697e9f6d848fe79848682e4476241d8ae36fb2f52",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_curvas_finais.json": "653b5dd02af2fea1c2880b67e48d0f64a79508f6cd2cefd9967114195e043f80",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_ajustes_finais.json": "f25709f4ed33f02e3585cd40486d5d03dbc097d174ac6451f92626a322cbc983",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_teste.json": "59e74189ab849eeb811474408705b98330eb1fab9440c95717954c1d65fe20f0",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_visual_buscas.json": "633cad646e5d9321484735e65ba864cba14e06a89e46beb5db56a873c4601c86",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_visual_curvas_finais.json": "dc2ea6feb048cf060ff1aa852999d95a899861c0be020008bd8ce64aeee9dae5",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_visual_teste.json": "0d7c438dc0385660e0c410764851569271f97f84d5f9e91d4c4f6fb4971bf5d0",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_retomada_final.json": "82dbb839dc6b4c62c8b0afe4a2e6d00f3f9236a9513484869e7e00b6c495ed48",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_estatica_encerramento.json": "ab9122a976f56d0d806f9a15387c10eacf6bccca8843e990dba5acecdfadb37a",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_integridade_encerramento.json": "bd4496712c8eea670ee84b136266c4c659be75434546e4978026998822781bd8",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/validacao_documentacao.json": "587a596677e6c17577f9e8ee82999b78105ea95165d848fe5502334be0da230b"
+  },
+  "search_configurations": 60,
+  "search_fold_evaluations": 180,
+  "final_curve_points": 45,
+  "full_development_fits": 5,
+  "n_development": 2153941,
+  "n_test": 538486,
+  "zero_scores_retained": 3311,
+  "group_metric_rows": 260,
+  "final_figures_png": 9,
+  "final_figures_svg": 9,
+  "pretest_search_figures": 2,
+  "pretest_curve_figures": 2,
+  "source_archives_verified": true,
+  "numerical_code_unchanged": true,
+  "original_experiments_unchanged": 72,
+  "prior_checkpoint_reports_unchanged": true,
+  "completed_resume_preserves_scientific_files": true,
+  "test_evaluated": true,
+  "next_checkpoint_started": false,
+  "limitations": [
+    "CSV bruto e ZIP original ausentes; SQLite recuperado e 79 Parquets verificados.",
+    "Uma edição e uma partição aleatória; sem avaliação temporal ou externa.",
+    "Erros maiores nas faixas extremas; sem inferência causal ou teste de significância.",
+    "Artigo, PDFs e organização final das figuras ainda pendentes."
+  ]
+}

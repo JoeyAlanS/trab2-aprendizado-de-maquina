@@ -1,0 +1,253 @@
+{
+  "database_sha256": "b56dbfd746ddb9de089605e39909f1293e94e7dc440a725d17ad7d43350ed1e5",
+  "quick_check": "ok",
+  "foreign_key_violations": 0,
+  "national_counts": {
+    "rows": 3933955,
+    "observed_target": 2692427,
+    "zero_target": 16547,
+    "wrong_year": 0,
+    "unique_ids": 3933955
+  },
+  "partition_counts": [
+    [
+      "development",
+      2153941
+    ],
+    [
+      "test",
+      538486
+    ]
+  ],
+  "runs": [
+    {
+      "run": "resultados/ciencias_natureza/cv-recuperado-v2",
+      "status": "completed",
+      "fold_records": 12,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "baseline",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 0.055793654000353854,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 87.92106772621143,
+          "rmse_std": 0.07755725413017117,
+          "mae_mean": 66.23960631091263,
+          "mae_std": 0.0444589868459734,
+          "r2_mean": -1.5487018221923183e-06,
+          "r2_std": 1.095294399133491e-06
+        },
+        {
+          "model": "linear",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 79.63737255700016,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 76.48379917770431,
+          "rmse_std": 0.05426879115593309,
+          "mae_mean": 55.62318572316807,
+          "mae_std": 0.04000317340151104,
+          "r2_mean": 0.24324747096210522,
+          "r2_std": 0.0004909560684665685
+        },
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 57.84219104300064,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 76.483609814686,
+          "rmse_std": 0.054371377767174996,
+          "mae_mean": 55.62303557518921,
+          "mae_std": 0.03999368938241402,
+          "r2_mean": 0.24325122145380448,
+          "r2_std": 0.0004881231208603985
+        },
+        {
+          "model": "arvore",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 397.74020643999984,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 77.1667743117019,
+          "rmse_std": 0.04239334244901067,
+          "mae_mean": 56.29035672483787,
+          "mae_std": 0.02208147050138798,
+          "r2_mean": 0.22967184498636714,
+          "r2_std": 0.0005387364988054035
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/engineered-v2",
+      "status": "completed",
+      "fold_records": 3,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 66.42709128999923,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 76.45795916552234,
+          "rmse_std": 0.05272998288301089,
+          "mae_mean": 55.59472165331679,
+          "mae_std": 0.03853358793654511,
+          "r2_mean": 0.24375870460699908,
+          "r2_std": 0.0004841694448305013
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/pca-v2",
+      "status": "completed",
+      "fold_records": 6,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 52.71239228400009,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 77.73271439234678,
+          "rmse_std": 0.06895306892929932,
+          "mae_mean": 56.74749257735721,
+          "mae_std": 0.04854576671466225,
+          "r2_mean": 0.21833169218727413,
+          "r2_std": 0.000461935519229162
+        },
+        {
+          "model": "arvore",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 269.1502358580001,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 78.32784865915362,
+          "rmse_std": 0.03713254593065074,
+          "mae_mean": 57.31752624068207,
+          "mae_std": 0.014192756103511148,
+          "r2_mean": 0.20631607494575108,
+          "r2_std": 0.0007261901138563457
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/selected-v2",
+      "status": "completed",
+      "fold_records": 3,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 60.282235392000075,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 76.52913859896624,
+          "rmse_std": 0.053526900988007074,
+          "mae_mean": 55.64292556391698,
+          "mae_std": 0.03826870587925647,
+          "r2_mean": 0.24235000937025253,
+          "r2_std": 0.0004638046351889438
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/weighted-v2",
+      "status": "completed",
+      "fold_records": 3,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 67.80482761599978,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 125.20217218951025,
+          "rmse_std": 0.13596119440578475,
+          "mae_mean": 100.5626346234963,
+          "mae_std": 0.11621045446046457,
+          "r2_mean": -1.0278771707163197,
+          "r2_std": 0.00793311482083528
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/without_socio-v2",
+      "status": "completed",
+      "fold_records": 3,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 20.082548358001077,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 80.35094262224641,
+          "rmse_std": 0.049117689597145665,
+          "mae_mean": 59.08094817206171,
+          "mae_std": 0.02702093400251276,
+          "r2_mean": 0.16478755521519536,
+          "r2_std": 0.00045269430101182263
+        }
+      ]
+    },
+    {
+      "run": "resultados/ciencias_natureza/without_uf-v2",
+      "status": "completed",
+      "fold_records": 3,
+      "n_development": 2153941,
+      "test_evaluated": false,
+      "group_counts_match": true,
+      "results": [
+        {
+          "model": "ridge",
+          "evaluated_set": "development_cv",
+          "n_splits": 3,
+          "elapsed_seconds": 56.18739222699969,
+          "std_ddof": 0,
+          "warning_count": 0,
+          "rmse_mean": 76.6606621683908,
+          "rmse_std": 0.05195327905448733,
+          "mae_mean": 55.779257443410664,
+          "mae_std": 0.03867543640073724,
+          "r2_mean": 0.23974356150391915,
+          "r2_std": 0.00043331431027073013
+        }
+      ]
+    }
+  ],
+  "historical_cv_metrics_exact_match": true,
+  "archived_files": 28,
+  "archive_hashes_match": true,
+  "archive_crc_valid": true,
+  "test_lock_absent": true
+}

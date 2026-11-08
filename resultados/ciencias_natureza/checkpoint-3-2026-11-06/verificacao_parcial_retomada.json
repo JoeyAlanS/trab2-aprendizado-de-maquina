@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "scientific_checkpoint_completed": false,
+  "verified_points": 32,
+  "counts": {
+    "random_forest": 9,
+    "stacking": 8,
+    "svm": 15
+  },
+  "warning_count": 0,
+  "full_training_comparisons": [
+    {
+      "model": "stacking",
+      "fold": 0,
+      "differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "model": "svm",
+      "fold": 0,
+      "differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "model": "svm",
+      "fold": 1,
+      "differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "model": "svm",
+      "fold": 2,
+      "differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "model": "random_forest",
+      "fold": 0,
+      "differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    }
+  ],
+  "test_evaluated": false,
+  "protocol_sha256": "755d6b4ef034d275ad796de46689c454b8afb7eb28d412d93d7d25d363a9c079"
+}

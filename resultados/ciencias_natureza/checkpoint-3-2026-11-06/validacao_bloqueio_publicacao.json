@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "incomplete_publication_refused": true,
+  "output_created": false,
+  "observed_error": "[Errno 2] No such file or directory: 'resultados/ciencias_natureza/checkpoint-3-2026-11-06/stacking/manifesto.json'",
+  "publisher_sha256": "f5e02d39d0afeac01be6afa7ed11a9604cb2fee78a68ace548fe1e85bc8a6d15",
+  "scientific_checkpoint_completed": false
+}

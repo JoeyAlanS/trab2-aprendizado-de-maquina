@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "data_source": "SQLite nacional real; nenhuma fixture sintética",
+  "database_sha256": "b56dbfd746ddb9de089605e39909f1293e94e7dc440a725d17ad7d43350ed1e5",
+  "database_unchanged": true,
+  "checks": [
+    {
+      "action": "visao_geral",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "filtro_CE",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "limpar_filtros",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "explorar",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "modelos",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "metodo",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "relacoes",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "Relações com a nota",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "Cruzamentos de perfis",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "Associações entre entradas",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "action": "Relatório PDF",
+      "status": "passed",
+      "errors": []
+    }
+  ],
+  "download_labels": [
+    "Baixar relatório em PDF",
+    "Baixar todas as tabelas (ZIP)"
+  ],
+  "download_payloads_opened_manually": false
+}

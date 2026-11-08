@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "scope": "Recomposição integral das métricas de KNN a partir de previsões reais persistidas e alvos apenas do desenvolvimento",
+  "test_evaluated": false,
+  "n_evaluated": 2153941,
+  "manifest_sha256": "b82f7046df6a82fea1fcadcfe814d94ef9e997d000ed84648909761cf0771613",
+  "folds": [
+    {
+      "fold": 0,
+      "blocks": 351,
+      "rows": 717981,
+      "ids_match": true,
+      "metrics": {
+        "rmse": 77.86512132622676,
+        "mae": 56.839255085147634,
+        "r2": 0.21445660906507935
+      }
+    },
+    {
+      "fold": 1,
+      "blocks": 351,
+      "rows": 717980,
+      "ids_match": true,
+      "metrics": {
+        "rmse": 77.95508798115219,
+        "mae": 56.88360603047541,
+        "r2": 0.21579045158709154
+      }
+    },
+    {
+      "fold": 2,
+      "blocks": 351,
+      "rows": 717980,
+      "ids_match": true,
+      "metrics": {
+        "rmse": 77.86803421270409,
+        "mae": 56.82583072253045,
+        "r2": 0.21487955262614622
+      }
+    }
+  ]
+}

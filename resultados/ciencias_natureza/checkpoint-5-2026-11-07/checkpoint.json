@@ -1,0 +1,31 @@
+{
+  "checkpoint": 5,
+  "status": "completed",
+  "completed_at": "2026-11-07T17:16:40.206048-03:00",
+  "timezone": "America/Fortaleza",
+  "previous_checkpoint": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/checkpoint.json",
+  "previous_checkpoint_sha256": "3f66cbd43b21d3408ba8c52c16e4f853cc065722336088710ed67809a815d45f",
+  "figure_count": 17,
+  "png_dpi": 300,
+  "svg_count": 17,
+  "csv_table_count": 14,
+  "new_training": false,
+  "new_test_evaluation": false,
+  "publication": "resultados/ciencias_natureza/checkpoint-5-2026-11-07",
+  "publication_manifest_sha256": "a1d61f5f598ea9c6f96ce0985f0a1238b2f6331bc3e4d5c8a1d92957227bae11",
+  "report": "docs/checkpoint-5-resultados.md",
+  "report_sha256": "7af3e2cdb82589c3831128a05fdc505ec88503ead7732d6d88daa35e3dfa807f",
+  "validations": {
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao.json": "ea8ce32f27a666c96cceadde0487081202719a2dd08cb7062c509fbd0ef87872",
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao_visual.json": "67308ca86d261a4a3f086b79a1d5fd53eadf4cd68a307d4c93482ed9e7f300a8",
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao_estatica.json": "b01c14470e1c06e1c22b895af387971caf6af1da884838440610cfb43cd7d758",
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao_preservacao.json": "7d62b90ff5495fc3ade4487a43bfa727665010534dfed0d6c0ec5ac63d5dc99c",
+    "resultados/ciencias_natureza/checkpoint-5-2026-11-07/validacao_documentacao.json": "2144646396342ecca2ee29de7ebd7ed544dd0340833125d0307ac5cd8ec237d3"
+  },
+  "archive": "output/checkpoint-5-visualizacoes-2026-11-07.zip",
+  "archive_sha256": "bb4b240fba665fcda0aee87f1336ba300fe00d20cb93b7418afe352f83b8f2a2",
+  "archive_manifest": "output/checkpoint-5-visualizacoes-2026-11-07.manifesto.json",
+  "archive_manifest_sha256": "9577bfdcee520390c33b22fd557732a36909b045edb29266f1cbee8f6230ff9a",
+  "next_checkpoint": 6,
+  "next_checkpoint_started": false
+}

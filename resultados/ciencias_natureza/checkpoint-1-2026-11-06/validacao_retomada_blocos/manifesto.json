@@ -1,0 +1,39 @@
+{
+  "context": {
+    "scope": "Validação técnica de retomada; registros reais do desenvolvimento",
+    "test_evaluated": false,
+    "rows": 512,
+    "batch_size": 128
+  },
+  "blocks": {
+    "0": {
+      "file": "bloco-0000000-0000128.parquet",
+      "sha256": "5353b75028f05cb93ebcad987ad23c180dff979101a59d343380af08ce070036",
+      "rows": 128,
+      "prediction_seconds": 0.017238762000033603
+    },
+    "128": {
+      "file": "bloco-0000128-0000256.parquet",
+      "sha256": "b2166553dafa39223d52ef46e5631161d9771a859228cd4cffc4014302d3002d",
+      "rows": 128,
+      "prediction_seconds": 0.018637554000065393
+    },
+    "256": {
+      "file": "bloco-0000256-0000384.parquet",
+      "sha256": "b3ad502ef809960bcb8b00e0955632df453763e501caa52aa592c9ccdc3eba37",
+      "rows": 128,
+      "prediction_seconds": 0.015044635999970524
+    },
+    "384": {
+      "file": "bloco-0000384-0000512.parquet",
+      "sha256": "e9da7eb13dd87d6af2754be9bb6f59a147736106700babe06c13a4aeed75a57a",
+      "rows": 128,
+      "prediction_seconds": 0.014976113999978224
+    }
+  },
+  "fit_seconds": [
+    0.16231978099995104,
+    0.0
+  ],
+  "status": "completed"
+}

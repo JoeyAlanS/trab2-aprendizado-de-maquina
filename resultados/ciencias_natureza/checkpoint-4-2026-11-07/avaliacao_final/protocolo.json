@@ -1,0 +1,36 @@
+{
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "frozen_sha256": "b59d2211c73c4b98f6f4f0251854ddf79fb90d3e4f903f96259e6c134d5cb856",
+  "curve_inputs": {
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/stacking/manifesto.json": "7520459532dd4653af1d369a6bb9def6257c1b144a75fcb175f0abeae5429a3b",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/svm/manifesto.json": "2bdafc701de5a46df87c0500267e5bcc7a5922443bde12ada0b3a5decace08b8",
+    "resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/random_forest/manifesto.json": "18385380c2d61e77cc95029df1729bc28b62871efafc26a271a0ecc59c96179b"
+  },
+  "code_sha256": "21b3eeae866f9e96697c762aa40457d2c68493f79475eed92a2161656a3aa824",
+  "models": [
+    "stacking",
+    "svm",
+    "random_forest",
+    "baseline",
+    "linear_reference"
+  ],
+  "primary_models": [
+    "stacking",
+    "svm",
+    "random_forest"
+  ],
+  "academic_solution": "stacking",
+  "prediction_batch_size": 100000,
+  "test_criterion": [
+    "rmse ascending",
+    "mae ascending",
+    "r2 descending",
+    "model ascending"
+  ],
+  "no_post_test_tuning": true
+}

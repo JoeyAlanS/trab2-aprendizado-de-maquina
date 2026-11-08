@@ -1,0 +1,14 @@
+{
+  "knn_started_concurrently_at_utc": "2026-11-06T04:14:22.275666+00:00",
+  "reason": "O índice compacto permite executar KNN e uma família de árvores sem reduzir a população; somente tarefas do checkpoint 1",
+  "concurrent_models_maximum": 3,
+  "threads_per_model": 2,
+  "timing_interpretation": "Tempos de parede observados em execução parcialmente concorrente; não usar como benchmark isolado entre algoritmos",
+  "evaluation_criteria_unchanged": true,
+  "next_checkpoint_started": false,
+  "resource_adjustment": {
+    "at_utc": "2026-11-06T10:31:11.038835+00:00",
+    "available_memory_mib": 5177,
+    "reason": "Pasting concluído liberou processos e memória; RF, KNN e Boosting usam no máximo dois threads por modelo, sem mudar estimadores ou população."
+  }
+}

@@ -3,6 +3,7 @@
 import shutil
 import subprocess
 import zipfile
+import zlib
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -16,8 +17,14 @@ def obtain_official(raw: Path) -> dict:
     raw = raw.resolve()
     raw.mkdir(parents=True, exist_ok=True)
     lock = raw / ".enem2023-download.lock"
-    with lock.open("x", encoding="utf-8") as stream:
-        stream.write(datetime.now(UTC).isoformat())
+    try:
+        with lock.open("x", encoding="utf-8") as stream:
+            stream.write(datetime.now(UTC).isoformat())
+    except FileExistsError as error:
+        raise FileExistsError(
+            f"Trava de download existente: {lock}. Confirme se há transferência ativa. "
+            "Se estiver abandonada, preserve a trava antes de iniciar uma nova tentativa."
+        ) from error
     try:
         return _obtain_official(raw)
     finally:
@@ -32,6 +39,8 @@ def _obtain_official(raw: Path) -> dict:
     """
     raw = raw.resolve()
     raw.mkdir(parents=True, exist_ok=True)
+    if (raw / "enem2023.source.json").exists():
+        raise FileExistsError("Manifesto oficial já existe; preservar a execução anterior.")
     archive = raw / "microdados_enem_2023.zip"
     partial = raw / "microdados_enem_2023.zip.part"
     if not archive.exists():
@@ -106,6 +115,12 @@ def _obtain_official(raw: Path) -> dict:
                     raise
             if destination.stat().st_size != info.file_size:
                 raise ValueError("Arquivo extraído existente tem tamanho incompatível com o ZIP.")
+            crc = 0
+            with destination.open("rb") as stream:
+                for block in iter(lambda: stream.read(1024 * 1024), b""):
+                    crc = zlib.crc32(block, crc)
+            if crc != info.CRC:
+                raise ValueError("Conteúdo extraído não corresponde ao CRC do membro do ZIP.")
             extracted.append(
                 {
                     "member": info.filename,

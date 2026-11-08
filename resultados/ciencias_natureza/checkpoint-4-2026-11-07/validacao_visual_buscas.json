@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "publication": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2",
+  "figures": {
+    "magnitude_melhorias.png": "684a5f8a20502251a5549a21cf94fb1bbd56d6c7c2bbbc941ffcab21923e9e6b",
+    "comparacao_antes_depois.png": "46c28947c0fcde23fba86919402a292a49a6f44e8fc6722b7965833f658b8ddd"
+  },
+  "checks": [
+    "Títulos, eixos e rodapés legíveis",
+    "Legenda fora da região dos dados",
+    "Valores derivam da seleção congelada",
+    "Dois PNG 300 dpi e dois SVG"
+  ],
+  "supersedes_visual_version": "publicacao_buscas: legenda sobrepunha Random Forest",
+  "test_evaluated": false
+}

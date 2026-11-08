@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "check": "busca_inicial_incompleta",
+      "command": [
+        "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/.venv/bin/python",
+        "-m",
+        "enem_base",
+        "search",
+        "--study",
+        "configs/ciencias_natureza.toml",
+        "--cv",
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "--output",
+        "resultados/ciencias_natureza/busca-incompleta-bloqueada"
+      ],
+      "exit_code": 2,
+      "stderr": "Erro: Comparação inicial incompleta. Faltam: ['bagging', 'boosting', 'knn', 'pasting', 'random_forest', 'stacking', 'svm']",
+      "expected_exit_code": 2,
+      "output_not_created": true,
+      "passed": true
+    },
+    {
+      "check": "comparacao_existente",
+      "command": [
+        "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/.venv/bin/python",
+        "-m",
+        "enem_base",
+        "compare",
+        "--study",
+        "configs/ciencias_natureza.toml",
+        "--output",
+        "resultados/ciencias_natureza/cv-recuperado-v2"
+      ],
+      "exit_code": 2,
+      "stderr": "Erro: A comparação já existe; escolha um novo diretório.",
+      "expected_exit_code": 2,
+      "passed": true
+    },
+    {
+      "check": "recuperacao_existente",
+      "command": [
+        "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/.venv/bin/python",
+        "-m",
+        "enem_base",
+        "recover-database",
+        "--study",
+        "configs/ciencias_natureza.toml",
+        "--database",
+        "dados/database/enem2023-v1/enem2023.sqlite3"
+      ],
+      "exit_code": 2,
+      "stderr": "Erro: Dataset/partições já existem; preserve-os e escolha novas saídas.",
+      "expected_exit_code": 2,
+      "passed": true
+    },
+    {
+      "check": "solucao_nao_congelada",
+      "command": [
+        "/home/joey/Documentos/GitHub/trab2-aprendizado-de-maquina/.venv/bin/python",
+        "-m",
+        "enem_base",
+        "evaluate-final",
+        "--study",
+        "configs/ciencias_natureza.toml",
+        "--solution",
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "--curve",
+        "resultados/ciencias_natureza/cv-recuperado-v2",
+        "--output",
+        "resultados/ciencias_natureza/teste-bloqueado"
+      ],
+      "exit_code": 2,
+      "stderr": "Erro: Exige solução congelada pelo comando freeze-solution.",
+      "expected_exit_code": 2,
+      "output_not_created": true,
+      "passed": true
+    }
+  ],
+  "test_lock_absent": true,
+  "synthetic_inputs_created": false
+}

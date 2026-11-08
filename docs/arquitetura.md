@@ -1,5 +1,12 @@
 # Arquitetura e contratos
 
+**Extensão de 05/11/2026:** `recovery.py` recupera a base limpa e as partições de SQLite
+verificado; `variants.py` concentra engenharia, seleção, PCA, pesos e ablações;
+`workflow.py` coordena buscas, congelamento, curva e teste final; `evidence.py` confere
+proveniência e hashes; `exports.py` publica somente resultados efetivamente persistidos.
+As descrições da fase inicial abaixo são mantidas como contexto arquitetural.
+O estado de execução de cada etapa está em `relatorio-correcao-2026-11-05.md`.
+
 O pacote `enem_base` usa layout `src/`, com instalação editável no ambiente isolado.
 A CLI coordena módulos pequenos; não há lógica de negócio em notebooks.
 

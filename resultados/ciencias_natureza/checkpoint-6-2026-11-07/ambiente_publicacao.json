@@ -1,0 +1,26 @@
+{
+  "publication_python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "publication_packages": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.21.4",
+    "pdfplumber": "0.11.9",
+    "Pillow": "13.0.0"
+  },
+  "font_source_url": "https://downloads.sourceforge.net/corefonts/times32.exe",
+  "font_package_sha256": "db56595ec6ef5d3de5c24994f001f03b2a13e37cee27bc25c58f6f43e8f807ab",
+  "font_files": {
+    "Timesbi.TTF": "192e1b0d18e90334e999a99f8c32808d6a2e74b3698b8cd90c943c2249a46549",
+    "Timesbd.TTF": "4357b63cef20c01661a53c5dae70ffd20cb4765503aaed6d38b17a57c5a90bff",
+    "Times.TTF": "4e98adeff8ccc8ef4e3ece8d4547e288ff85fdc9c7ca711a4599c234874bbe86",
+    "Timesi.TTF": "c25ae529b4cecdbca148b6ccb862ee0abad770af8b1fd29c8dba619d1b8da78a"
+  },
+  "guide": {
+    "url": "https://unifor.br/documents/d/guest/guia-de-normalizacao",
+    "edition": 2025,
+    "access_date": "2026-11-07",
+    "sha256": "84bc205ce70c932365e3cfb90f7c2703d8fdf2a1e50cb7b665581c3b78968a05"
+  },
+  "sklearn_documentation_release": "https://scikit-learn.org/stable/whats_new/v1.9.html",
+  "numerical_environment_unchanged": true,
+  "uv_lock_sha256": "94b68200bbad5dd058c406e68f85ccba0893bb2947fc1c72aa1996a55c8c0aca"
+}

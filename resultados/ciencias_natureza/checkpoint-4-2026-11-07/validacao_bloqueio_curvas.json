@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "check": "Incomplete frozen curves refuse final training before creating final protocol or opening test",
+  "exception": "Execução incompleta: resultados/ciencias_natureza/checkpoint-4-2026-11-07/curvas_finais/stacking",
+  "test_evaluated": false,
+  "final_code_sha256": "9328de2dfac068053abf655143293aa4fd6ae0add9bee50222c686a4576bb359"
+}

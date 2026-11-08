@@ -72,7 +72,8 @@ por UF, escola, sexo, treineiro, renda e intervalo de nota. A média de um recor
 `ddof=1`. O histograma usa intervalos **[início, fim), de 25 pontos**; somente o
 histograma é agrupado por faixa, sem aproximação da média ou do desvio.
 
-O teste de **538.486 participantes** permanece reservado. A interface só conhece
+O teste de **538.486 participantes** foi avaliado no
+[Checkpoint 4](checkpoint-4-resultados.md). A interface descrita aqui ainda só conhece
 sua contagem de protocolo. As notas zero do desenvolvimento continuam incluídas.
 “Não respondeu” é categoria própria; a UF representa a aplicação da prova.
 

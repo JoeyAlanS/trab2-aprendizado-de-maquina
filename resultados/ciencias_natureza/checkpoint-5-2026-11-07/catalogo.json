@@ -1,0 +1,214 @@
+{
+  "figures": [
+    {
+      "id": "01_distribuicao",
+      "title": "Distribuição da nota alvo no desenvolvimento",
+      "stage": "Desenvolvimento",
+      "caption": "Todos os 2.153.941 participantes do desenvolvimento; 13.236 notas zero preservadas. Ausência de nota não foi convertida em zero. Intervalos de 25 pontos.",
+      "tables": [
+        "tabelas/distribuicao_desenvolvimento.csv",
+        "tabelas/populacao.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/01_distribuicao.png",
+      "svg": "figuras/01_distribuicao.svg"
+    },
+    {
+      "id": "02_sete_algoritmos",
+      "title": "Comparação nacional dos sete algoritmos — configurações iniciais",
+      "stage": "Desenvolvimento",
+      "caption": "Mesmas três dobras e 40 entradas. Barras de erro: DP populacional entre dobras; não intervalos de confiança.",
+      "tables": [
+        "tabelas/comparacao_sete.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/02_sete_algoritmos.png",
+      "svg": "figuras/02_sete_algoritmos.svg"
+    },
+    {
+      "id": "03_trio_selecionado",
+      "title": "Três selecionados na validação — detalhe das diferenças",
+      "stage": "Desenvolvimento",
+      "caption": "Seleção do Checkpoint 2 entre os sete. Eixos ampliados, sem barras partindo de zero; a seleção não usa o teste.",
+      "tables": [
+        "tabelas/trio_selecionado_inicial.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/03_trio_selecionado.png",
+      "svg": "figuras/03_trio_selecionado.svg"
+    },
+    {
+      "id": "04_catalogo_variantes",
+      "title": "Referências, engenharia de atributos e variantes — validação cruzada",
+      "stage": "Desenvolvimento",
+      "caption": "Inclui baseline e resultados sem melhoria. As variantes são comparações do modelo indicado, não novas buscas sobre o teste. Tempos completos estão na tabela.",
+      "tables": [
+        "tabelas/comparacoes_cv_completas.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/04_catalogo_variantes.png",
+      "svg": "figuras/04_catalogo_variantes.svg"
+    },
+    {
+      "id": "05_pca",
+      "title": "PCA — número de componentes escolhido em cada treino",
+      "stage": "Desenvolvimento",
+      "caption": "PCA centrado, ajustado apenas no treino de cada dobra. Ridge e árvore retiveram 45 componentes para alcançar pelo menos 80% da variância; as seis curvas quase coincidem.",
+      "tables": [
+        "tabelas/pca_variancia.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/05_pca.png",
+      "svg": "figuras/05_pca.svg"
+    },
+    {
+      "id": "06_buscas",
+      "title": "Modelos antes e depois das buscas",
+      "stage": "Desenvolvimento",
+      "caption": "Cinco modelos, 12 configurações por modelo. Inclui o trio solicitado e os três melhores do catálogo ampliado.",
+      "tables": [
+        "tabelas/antes_depois.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/comparacao_antes_depois",
+      "png": "figuras/06_buscas.png",
+      "svg": "figuras/06_buscas.svg"
+    },
+    {
+      "id": "07_ganhos_buscas",
+      "title": "Magnitude das melhorias nas buscas",
+      "stage": "Desenvolvimento",
+      "caption": "Ganhos muito pequenos; a mudança do Stacking não demonstrou relevância prática ou estatística.",
+      "tables": [
+        "tabelas/antes_depois.csv",
+        "tabelas/todas_configuracoes.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao_buscas-v2/magnitude_melhorias",
+      "png": "figuras/07_ganhos_buscas.png",
+      "svg": "figuras/07_ganhos_buscas.svg"
+    },
+    {
+      "id": "08_curvas_finais",
+      "title": "Curvas das configurações finais",
+      "stage": "Desenvolvimento",
+      "caption": "Treino e validação em cinco tamanhos, nas três dobras; receitas fixadas antes do teste.",
+      "tables": [
+        "tabelas/curvas_resumo.csv",
+        "tabelas/curvas_por_dobra.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/curvas_configuracoes_finais",
+      "png": "figuras/08_curvas_finais.png",
+      "svg": "figuras/08_curvas_finais.svg"
+    },
+    {
+      "id": "09_teste",
+      "title": "Comparação final no teste",
+      "stage": "Teste",
+      "caption": "Trio, baseline e linear nos mesmos 538.486 participantes. A linear tem RMSE menor que SVM e Random Forest.",
+      "tables": [
+        "tabelas/comparacao_teste.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/comparacao_teste",
+      "png": "figuras/09_teste.png",
+      "svg": "figuras/09_teste.svg"
+    },
+    {
+      "id": "10_cv_teste",
+      "title": "Validação versus teste",
+      "stage": "Teste",
+      "caption": "CV em três dobras e teste em modelos reajustados no desenvolvimento completo; populações de treino distintas.",
+      "tables": [
+        "tabelas/validacao_e_teste.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/validacao_versus_teste",
+      "png": "figuras/10_cv_teste.png",
+      "svg": "figuras/10_cv_teste.svg"
+    },
+    {
+      "id": "11_observado_previsto",
+      "title": "Notas observadas versus previstas",
+      "stage": "Teste",
+      "caption": "Todos os participantes; mesma escala de células e linha da previsão perfeita para o trio.",
+      "tables": [
+        "tabelas/comparacao_teste.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/observado_versus_previsto",
+      "png": "figuras/11_observado_previsto.png",
+      "svg": "figuras/11_observado_previsto.svg"
+    },
+    {
+      "id": "12_distribuicao_residuos",
+      "title": "Distribuição dos resíduos",
+      "stage": "Teste",
+      "caption": "Intervalos comuns e todos os resíduos; a média global não descreve os erros extremos.",
+      "tables": [
+        "tabelas/comparacao_teste.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/distribuicao_residuos",
+      "png": "figuras/12_distribuicao_residuos.png",
+      "svg": "figuras/12_distribuicao_residuos.svg"
+    },
+    {
+      "id": "13_faixas",
+      "title": "Erros por faixa de nota",
+      "stage": "Teste",
+      "caption": "Faixas fixadas no desenvolvimento e tamanhos dos grupos. Erros maiores nas notas extremas.",
+      "tables": [
+        "tabelas/erros_grupos.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/erros_faixa_nota",
+      "png": "figuras/13_faixas.png",
+      "svg": "figuras/13_faixas.svg"
+    },
+    {
+      "id": "14_escola",
+      "title": "Erros por tipo de escola",
+      "stage": "Teste",
+      "caption": "Códigos de TP_ESCOLA e contagens; associação observacional, sem inferência causal.",
+      "tables": [
+        "tabelas/erros_grupos.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/erros_tp_escola",
+      "png": "figuras/14_escola.png",
+      "svg": "figuras/14_escola.svg"
+    },
+    {
+      "id": "15_uf",
+      "title": "Erros por UF de aplicação",
+      "stage": "Teste",
+      "caption": "UF da prova não é necessariamente residência; contagens por UF na tabela.",
+      "tables": [
+        "tabelas/erros_grupos.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/erros_sg_uf_prova",
+      "png": "figuras/15_uf.png",
+      "svg": "figuras/15_uf.svg"
+    },
+    {
+      "id": "16_renda",
+      "title": "Erros por faixa de renda",
+      "stage": "Teste",
+      "caption": "Categorias de Q006; contagens na tabela. Diferenças não determinam a capacidade individual.",
+      "tables": [
+        "tabelas/erros_grupos.csv"
+      ],
+      "origin": "resultados/ciencias_natureza/checkpoint-4-2026-11-07/publicacao-v2/erros_q006",
+      "png": "figuras/16_renda.png",
+      "svg": "figuras/16_renda.svg"
+    },
+    {
+      "id": "17_residuos_previsto",
+      "title": "Resíduos do Stacking em função da nota prevista",
+      "stage": "Teste",
+      "caption": "Todos os 538.486 participantes agregados em células, sem amostra ou corte de extremos. Resíduo negativo: superestimação. A dispersão remanescente limita a precisão individual.",
+      "tables": [
+        "tabelas/residuos_stacking_celulas.csv"
+      ],
+      "origin": "Gerado de tabelas verificadas",
+      "png": "figuras/17_residuos_previsto.png",
+      "svg": "figuras/17_residuos_previsto.svg"
+    }
+  ],
+  "source": "Inep / ENEM 2023",
+  "new_training": false,
+  "new_test_evaluation": false
+}

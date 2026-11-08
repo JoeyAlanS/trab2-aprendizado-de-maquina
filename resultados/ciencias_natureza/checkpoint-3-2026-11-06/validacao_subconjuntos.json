@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "method": "Independent reconstruction from persisted partition IDs only; no target or predictors read",
+  "development": 2153941,
+  "reserved_test_ids": 538486,
+  "all_partition_ids_unique": true,
+  "points": [
+    {
+      "fold": 0,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717981,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 0,
+      "fraction": 0.25,
+      "n_train": 358990,
+      "n_validation": 717981,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 0,
+      "fraction": 0.5,
+      "n_train": 717980,
+      "n_validation": 717981,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 0,
+      "fraction": 0.75,
+      "n_train": 1076970,
+      "n_validation": 717981,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 1435960,
+      "n_validation": 717981,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 1,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 1,
+      "fraction": 0.25,
+      "n_train": 358990,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 1,
+      "fraction": 0.5,
+      "n_train": 717980,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 1,
+      "fraction": 0.75,
+      "n_train": 1076970,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 1435961,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 2,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 2,
+      "fraction": 0.25,
+      "n_train": 358990,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 2,
+      "fraction": 0.5,
+      "n_train": 717980,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 2,
+      "fraction": 0.75,
+      "n_train": 1076970,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    },
+    {
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 1435961,
+      "n_validation": 717980,
+      "nested": true,
+      "disjoint": true
+    }
+  ],
+  "protocol_sha256": "755d6b4ef034d275ad796de46689c454b8afb7eb28d412d93d7d25d363a9c079",
+  "test_evaluated": false
+}

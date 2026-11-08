@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "source_sha256": "c8b1fae0a97b6ac826d950d16696efa3d89c133b0165128aadd2997c2315b666",
+  "splits_sha256": "02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873",
+  "study_sha256": "5adb3a7f9a76d87acfbafa08dfc5fc5de18cd815be51595cd6c9727ed8446d27",
+  "dictionary_sha256": "a433dd8ec13b17735c87689443e72451a45273ef60315c3f2a728f518fef4e94",
+  "target": "NU_NOTA_CN",
+  "n_development": 2153941,
+  "test_evaluated": false,
+  "diagnostic": "Independent NumPy recomputation from stored fits: full train/validation of first point, three models; batch comparison on 2048 real validation rows",
+  "checks": [
+    {
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717981,
+      "max_metric_difference": 1.4210854715202004e-14,
+      "batch_vs_single_max_difference": 0.0,
+      "fit_sha256": "49b1e1c02c4b0ff586177c78157a354726b227be0cdc16f45d030ae42413cd6a"
+    },
+    {
+      "model": "random_forest",
+      "fold": 0,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717981,
+      "max_metric_difference": 4.263256414560601e-14,
+      "batch_vs_single_max_difference": 2.2737367544323206e-13,
+      "fit_sha256": "6d611db78dcda75fc0ae709cb98f09e21a1b0364f5d484f6eafc4c5de6dbf1ac"
+    },
+    {
+      "model": "stacking",
+      "fold": 0,
+      "fraction": 0.1,
+      "n_train": 143596,
+      "n_validation": 717981,
+      "max_metric_difference": 4.263256414560601e-14,
+      "batch_vs_single_max_difference": 0.0,
+      "fit_sha256": "8892ea2d785a3c13a7dbbf0c0e73d10cdb3d15f3ebeeecc7f2518a3d0455eb66"
+    }
+  ],
+  "new_fits": 0
+}

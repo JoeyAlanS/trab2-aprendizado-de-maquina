@@ -1,0 +1,2 @@
+model,evaluated_set,n_splits,elapsed_seconds,std_ddof,warning_count,rmse_mean,rmse_std,mae_mean,mae_std,r2_mean,r2_std
+boosting,development_cv,3,535.0349544219998,0,0,77.58912117919277,0.06830630335844767,56.7302371899606,0.046734036619755955,0.22121686896680082,0.0005375594613622091

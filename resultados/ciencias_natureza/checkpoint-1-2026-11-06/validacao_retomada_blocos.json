@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "n_real_train": 10000,
+  "n_real_validation": 512,
+  "saved_before_interruption": 256,
+  "reused_blocks": 2,
+  "computed_after_resume": 256,
+  "max_prediction_difference": 0.0,
+  "test_evaluated": false,
+  "synthetic_data_created": false
+}

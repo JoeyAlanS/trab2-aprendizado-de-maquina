@@ -1,0 +1,118 @@
+{
+  "scope": "Construção, clone e validade dos nomes de parâmetros; não comprova treino nem convergência",
+  "variants": [
+    {
+      "variant": "original",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "stacking",
+        "svm"
+      ]
+    },
+    {
+      "variant": "engineered",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "svm"
+      ]
+    },
+    {
+      "variant": "selected",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "svm"
+      ]
+    },
+    {
+      "variant": "pca",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "svm"
+      ]
+    },
+    {
+      "variant": "weighted",
+      "cloneable_models": [
+        "ridge"
+      ]
+    },
+    {
+      "variant": "without_socio",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "stacking",
+        "svm"
+      ]
+    },
+    {
+      "variant": "without_uf",
+      "cloneable_models": [
+        "arvore",
+        "bagging",
+        "baseline",
+        "boosting",
+        "knn",
+        "linear",
+        "pasting",
+        "random_forest",
+        "ridge",
+        "stacking",
+        "svm"
+      ]
+    }
+  ],
+  "search_configurations_per_model": {
+    "linear": 12,
+    "ridge": 12,
+    "svm": 12,
+    "arvore": 12,
+    "knn": 12,
+    "bagging": 12,
+    "pasting": 12,
+    "random_forest": 12,
+    "boosting": 12,
+    "stacking": 12
+  },
+  "fit_executed": false,
+  "data_created": false
+}

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "national_fold_evaluations": 36,
+  "metrics_recomputed_from_predictions": true,
+  "maximum_difference": 0.0,
+  "manifest_sha256": "9d816664b447dcc63c66cda6c9c6bb8c48fc3e6fa4052613e87db67eddfb6c80",
+  "test_evaluated": false
+}
