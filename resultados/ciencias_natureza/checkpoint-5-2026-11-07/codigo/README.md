@@ -1,1 +1,0 @@
-Os scripts foram executados na raiz do repositório trab2-aprendizado-de-maquina, com o pacote enem_base instalado e as entradas registradas no manifesto disponíveis. Estas cópias documentam o código e o ambiente; não incluem microdados, modelos ou todas as dependências locais do projeto. Para regenerar, usar o repositório e as instruções do relatório do Checkpoint 5.
