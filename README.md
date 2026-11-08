@@ -3,7 +3,7 @@
 Projeto acadêmico de regressão para estimar a nota de Ciências da Natureza
 (`NU_NOTA_CN`) com informações socioeconômicas, escolares e demográficas do ENEM 2023.
 
-**Autores:** Joey Alan de Freitas Solis e Paulo Henrico  
+**Autores:** Joey Alan de Freitas Solis e Paulo Henrico.
 **Instituição:** Universidade de Fortaleza (Unifor); **professor:** Tulio
 
 ## Resultados
