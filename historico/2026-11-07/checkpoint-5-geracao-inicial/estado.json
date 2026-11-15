@@ -1,5 +1,0 @@
-{
-  "status": "interrupted",
-  "reason": "Leitura do histograma repetia a construção do filtro de 2.153.941 IDs em cada parte; alterada para uma única filtragem após leitura das duas colunas. Gráficos iniciais preservados; nenhuma mudança em modelos ou teste.",
-  "scientific_results_changed": false
-}

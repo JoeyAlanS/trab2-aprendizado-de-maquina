@@ -1,0 +1,45 @@
+% Retrospectiva do desenvolvimento; não representa uma apresentação realizada no passado.
+% Este PDF não inclui resultados do teste reservado.
+\input{slides_tema.tex}
+\begin{document}
+\begin{frame}\titlepage\centering\textcolor{verde}{Acompanhamento: retrospectiva dos experimentos no desenvolvimento}\end{frame}
+\begin{frame}{Base, alvo e participantes}
+\duas{\begin{tabular}{lr}\toprule Base nacional & 3.933.955\\Colunas originais & 76\\Sem alvo observado & 1.241.528\\Elegíveis & 2.692.427\\Desenvolvimento & 2.153.941\\Teste reservado & 538.486\\\bottomrule\end{tabular}}{\begin{itemize}\item Alvo: NU\_NOTA\_CN.
+\item 16.547 zeros mantidos; ausência não é zero.
+\item Fonte real: microdados do Inep, ENEM 2023.
+\item Este acompanhamento utiliza apenas resultados do desenvolvimento.\end{itemize}}
+\end{frame}
+\begin{frame}{Features, limpeza e representação}
+\begin{itemize}\item 40 entradas: moradores, perfil demográfico/escolar e questionário.
+\item ID somente para controle; outras notas, presença e respostas fora de X.
+\item Ingestão valida tipos, ausências, ano, IDs e contagens, preservando originais.
+\item Q005: mediana, indicador quando aplicável e padronização.
+\item Categorias: ausência explícita + one-hot; 235 dimensões originais.
+\item Estatísticas de preparação ajustadas no treino de cada dobra.\end{itemize}
+\fonte{Fontes de implementação: configs/ciencias\_natureza.toml; cleaning.py; preprocessing.py.}
+\end{frame}
+\begin{frame}{Distribuição do alvo no desenvolvimento}
+\figura{01_distribuicao.png}
+\fonte{Inep, ENEM 2023. Notas extremas são menos frequentes; zero é resultado observado.}
+\end{frame}
+\begin{frame}{Protocolo e validação cruzada}
+\begin{block}{Partições comuns}80\% desenvolvimento e 20\% teste, random\_state=42; três dobras no desenvolvimento, persistidas em dados/splits/.\end{block}
+\centering\begin{tabular}{lcc}\toprule Rodada & Treino & Validação\\\midrule 1 & B+C & A\\2 & A+C & B\\3 & A+B & C\\\bottomrule\end{tabular}
+\vspace{3mm}\begin{itemize}\item RMSE principal; MAE e R\textsuperscript{2} complementares.
+\item Comparar média e DP das mesmas dobras.
+\item Não escolher solução com resultados do teste.\end{itemize}
+\end{frame}
+\begin{frame}{Resultados da comparação inicial}
+\figura{18_comparacao_completa.png}
+\fonte{Baseline: RMSE 87,921. Stacking: 76,175. Todos possuem três dobras completas; nenhuma métrica de teste nesta figura.}
+\end{frame}
+\begin{frame}{Investigações seguintes e questões de pesquisa}
+\begin{itemize}\item Criar três atributos: recursos por morador, acesso digital e escolaridade.
+\item Seleção, PCA e ponderação das faixas raras melhoram a previsão?
+\item Quanto muda o erro ao retirar questionário ou UF?
+\item Comparar parâmetros dos melhores regressores e curvas progressivas.
+\item Congelar a solução e somente depois avaliar o teste final.
+\end{itemize}
+\fonte{Retrospectiva: essas investigações foram posteriormente executadas e estão documentadas no artigo e no pitch. Este PDF não comprova apresentação ou submissão anterior.}
+\end{frame}
+\end{document}

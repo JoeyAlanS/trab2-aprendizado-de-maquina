@@ -1,23 +1,26 @@
 # Dados preparados
 
-**Estado em 05/11/2026:** os arquivos locais foram recuperados da cópia SQLite original,
-com todas as linhas, sem recriar o CSV bruto. O manifesto atual registra a recuperação,
-os hashes dos novos Parquet e os metadados históricos de ingestão. A reexecução em
-`resultados/ciencias_natureza/cv-recuperado-v2` reproduziu exatamente as métricas históricas.
-O texto abaixo descreve a ingestão original, não uma nova transferência realizada hoje.
+`enem2023-v1/` contém 79 partes Parquet, `qualidade.json` e `manifesto.json`.
+A ingestão preserva 3.933.955 linhas e 76 colunas: a ausência do alvo é contabilizada
+antes de excluir participantes da modelagem supervisionada.
 
-`enem2023-v1/` contém a importação nacional aprovada de 21/10/2026: 3.933.955 linhas,
-76 colunas e 79 partes. O manifesto da **ingestão** permanece neutro quanto ao alvo e
-registra `models_trained=false` porque essa etapa apenas prepara dados. O alvo de
-pesquisa está em `configs/ciencias_natureza.toml` e os treinamentos efetivamente
-executados estão em `resultados/ciencias_natureza/cv-inicial-v1/manifesto.json`.
+```bash
+.venv/bin/python -m enem_base prepare --config configs/enem2023.toml
+```
 
-Uma subpasta por execução aprovada: partes `part-00000.parquet`, `qualidade.json` e
-`manifesto.json`. Usar nomes novos e contratos TOML versionados. Não editar Parquet
-manualmente. Saídas e temporários não são versionados automaticamente.
+Executar em destino novo: não editar ou sobrescrever as partes existentes.
+O código `src/enem_base/cleaning.py` normaliza ausências e tipos; `ingestion.py`
+valida o contrato, grava lotes e seus hashes. As features e suas transformações são
+selecionadas depois, dentro do pipeline de cada treinamento.
+`resultados/colunas.csv` registra os campos criados, utilizados e excluídos de X,
+e as features codificadas selecionadas em cada dobra. Campos excluídos de X
+continuam preservados nos originais e na importação.
 
-Para ler o dataset com pandas, selecionar **somente** os arquivos `*.parquet`, pois
-o diretório também contém JSON. Em escala nacional, ler apenas as colunas necessárias
-ou usar `pyarrow.dataset` com lista explícita das partes, sem concatenar tudo por rotina.
+A base local foi recuperada do SQLite original e posteriormente confrontada,
+célula a célula, com o CSV nacional fornecido: conteúdo normalizado idêntico.
+Não se usaram dados artificiais nos experimentos nacionais. As pequenas bases
+fictícias estão restritas a `tests/fixtures/`, para testes de software.
 
-`exemplo-v1/` é fictício. Sua validação não demonstra desempenho na base nacional.
+Para leitura, selecionar explicitamente `part-*.parquet`, pois a pasta também
+contém metadados. Em análises nacionais, ler apenas as colunas necessárias.
+Os arquivos grandes são ignorados pelo Git e regenerados pelos comandos acima.

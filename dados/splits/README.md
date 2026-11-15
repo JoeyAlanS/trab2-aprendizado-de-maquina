@@ -1,20 +1,30 @@
-# Partições persistidas
+# Desenvolvimento, teste e dobras
 
-Em 05/11/2026, os IDs foram recuperados do SQLite original e confrontados integralmente
-com a divisão por semente 42. A serialização Parquet tem novo hash, mas todos os participantes
-e dobras coincidem com o banco. O manifesto atual guarda o hash anterior e o atual,
-com `partition_membership_verified=true`. Não houve nova escolha de participantes.
+`ciencias-natureza-v1/particoes.parquet` persiste `NU_INSCRICAO`, `partition` e
+`validation_fold`. `manifesto.json` registra alvo, fonte, semente e hashes.
+São 2.692.427 participantes com `NU_NOTA_CN` observada:
 
-As partições oficiais de Ciências da Natureza foram criadas em 21/10/2026, em
-`ciencias-natureza-v1/`: 2.153.941 participantes de desenvolvimento e 538.486 de teste.
-Alvo: NU_NOTA_CN. O teste ainda não foi avaliado. `splits.save_splits` recebe uma tabela
-apenas com identificador e alvo e exige o SHA-256 da fonte.
+| Partição | Participantes | Uso |
+|---|---:|---|
+| development | 2.153.941 | exploração, comparação e escolhas |
+| test | 538.486 | avaliação final após congelar a solução |
 
-O resultado contém `particoes.parquet` e `manifesto.json` com alvo, fonte, hash das
-partições e contagens. `partition` é development ou test. `validation_fold` é 0,1,2
-para desenvolvimento e nulo para teste. Na dobra k, usar os outros valores para
-treinar e k para validar. Não adicionar outra parcela fixa de validação.
+Divisão aleatória 80/20, semente 42. O desenvolvimento possui três dobras:
+0 (717.981), 1 (717.980), 2 (717.980). Na rodada k, treinar nas outras duas e
+validar em k. O teste não pertence a nenhuma dobra. O ID é controle, nunca entrada.
 
-Não incluir o identificador em X. Não regenerar partições entre modelos. São locais
-e ignoradas por padrão; após a definição do alvo, planejar a entrega dos IDs/hashes
-exigidos pelo documento e conferir o conteúdo antes da publicação.
+Em uma instalação nova, depois de preparar os dados:
+
+```bash
+.venv/bin/python -m enem_base split --study configs/ciencias_natureza.toml
+```
+
+A função `save_splits` em `src/enem_base/splits.py` salva os IDs e verifica a fonte.
+Não recriar partições entre modelos. O SHA-256 da serialização local atual é
+`02b7f7a866e6a8ad40dd82711007b883bd4f5a6898d5cd84b9602059e9667873`.
+A recuperação local preservou todos os IDs e dobras originais; outra serialização
+pode ter hash diferente, que exige conferir a igualdade dos participantes.
+
+O teste **já foi avaliado**. `avaliacao_final.json` registra a trava de avaliação.
+Não apagá-la para testar novas escolhas na mesma partição. Os arquivos individuais
+são grandes e ignorados pelo Git; obter a fonte e usar o comando acima os regenera.

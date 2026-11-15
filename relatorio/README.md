@@ -1,64 +1,56 @@
-# Entrega LaTeX para Overleaf
+# Fontes LaTeX para Overleaf
 
-O pacote `output/overleaf-enem2023.zip` contém fontes independentes, figuras e este guia.
-O roteiro do pitch é um documento de texto; não utiliza Beamer nem cria slides.
+O pacote `output/overleaf-enem2023.zip` contém os TEX, todas as figuras e este guia.
+Não depende dos microdados, do Python nem de caminhos pessoais para compilar.
 
-## Importar e compilar
+## Importar
 
-1. No Overleaf, criar um projeto a partir de **Existing project (.zip)** e enviar o ZIP.
-2. Selecionar **XeLaTeX** como compilador. Não é necessário executar Python no Overleaf.
-3. Escolher o documento principal:
-   - `main.tex` ou `pitch.tex`: roteiro oral, falas dos autores e perguntas/respostas;
-   - `artigo.tex`: artigo científico, com dez páginas incluindo as referências;
-   - `acompanhamento.tex`: andamento e auditoria das execuções.
-4. Compilar e baixar o PDF. Os TEX e a pasta `figuras/` ficam na raiz do projeto.
+1. Criar projeto no Overleaf usando **Existing project (.zip)**.
+2. Enviar o ZIP e selecionar **XeLaTeX** como compilador.
+3. Selecionar o documento principal:
 
-As fontes foram compiladas localmente com **Tectonic 0.17.0**, que usa o motor XeTeX.
-A importação/compilação dentro de uma conta Overleaf não foi executada. A conferência
-local inclui uma compilação do `main.tex` extraído do ZIP, sem depender da árvore do repositório.
+| Fonte | Conteúdo | PDF da entrega |
+|---|---|---|
+| `main.tex` ou `slides_pitch.tex` | 20 slides; cerca de 12 minutos; Joey 1-10, Paulo 11-20 | `docs/pitch.pdf` |
+| `slides_acompanhamento.tex` | 7 slides; retrospectiva do desenvolvimento, sem métricas de teste | `docs/acompanhamento.pdf` |
+| `artigo.tex` | Artigo científico, 10 páginas | `output/pdf/artigo_latex.pdf` |
+| `pitch.tex` | Roteiro oral detalhado, sem slides | `output/pdf/pitch.pdf` |
+| `acompanhamento.tex` | Texto de andamento e conferência | `output/pdf/acompanhamento.pdf` |
 
-As fontes usam somente pacotes LaTeX comuns, codificação UTF-8 e a família Times
-portável de `mathptmx`. Isso evita depender dos arquivos proprietários Times New Roman
-que foram usados no PDF histórico do Checkpoint 6. Corpo de 12 pontos e margens seguem
-o guia institucional utilizado; detalhes de formatação estão nos preâmbulos.
+O tema compartilhado dos slides está em `slides_tema.tex`. Figuras ficam em
+`figuras/`; não renomear ou remover sem atualizar os TEX. Os arquivos usam pacotes
+LaTeX comuns e fontes portáteis. A compilação local usa Tectonic (motor XeTeX).
+A importação dentro de uma conta Overleaf não foi executada.
 
-## Editar
+Os slides de acompanhamento são uma **retrospectiva preparada agora**; não comprovam
+que uma apresentação ou submissão ocorreu no passado. Apresentam apenas informações
+e resultados do desenvolvimento, com os experimentos seguintes identificados como
+posteriormente realizados. O pitch inclui os resultados finais reais.
 
-É possível editar diretamente `pitch.tex`, `artigo.tex` e `acompanhamento.tex` no Overleaf.
-O arquivo `main.tex` apenas seleciona o pitch. A compilação não modifica os TEX.
-Os textos de trabalho estão em `docs/pitch.md`, `docs/acompanhamento.md` e
-`docs/artigo-fonte.md`. O artigo LaTeX resume um parágrafo de resíduos para ajustar
-sua diagramação; os resultados científicos são os mesmos da versão do Checkpoint 6.
+## Compilar e empacotar localmente
 
-Para regenerar os TEX a partir desses textos, executar explicitamente:
-
-```bash
-.venv/bin/python scripts/publicar_latex.py
-```
-
-Esse comando sobrescreve os TEX gerados. Portanto, preservar alterações feitas
-diretamente no Overleaf antes de usá-lo. Para apenas compilar as fontes presentes:
+Na raiz do repositório, com o executável Tectonic disponível:
 
 ```bash
-.venv/bin/python scripts/compilar_latex.py --tectonic /caminho/para/tectonic
+.venv/bin/python scripts/compilar_slides.py --tectonic tectonic
 ```
 
-Saídas: `output/pdf/pitch.pdf`, `output/pdf/artigo_latex.pdf` e
-`output/pdf/acompanhamento.pdf`. Auxiliares e logs ficam em `tmp/latex-build/`, fora do Git.
-Para reconstruir o ZIP, compactar o conteúdo desta pasta com os TEX na raiz,
-incluindo `figuras/` e este README, sem logs nem arquivos auxiliares.
+Isso gera `output/pdf/slides_pitch.pdf` e `slides_acompanhamento.pdf`, publica cópias
+em `docs/` e atualiza o ZIP independente. Logs e auxiliares ficam em `tmp/`, ignorada
+pelo Git. Revisar as páginas renderizadas depois de alterações de diagramação.
 
-## Evidências
+Para compilar somente o artigo sem mudar o PDF histórico em `docs/artigo.pdf`:
 
-A revisão científica está em `resultados/ciencias_natureza/checkpoint-7-2026-11-07/`:
-`auditoria_experimentos.json`, `cobertura_execucoes.csv`, `validacao_buscas.json` e
-`validacao_teste.json`. A suíte existente de software teve 81 testes aprovados,
-registrados em `pytest.xml`. Testes unitários não substituem avaliações nacionais.
+```bash
+cd relatorio
+tectonic --outdir ../output/pdf artigo.tex
+```
 
-O teste reservado inclui Stacking, SVM linear, Random Forest, média e linear.
-Os demais algoritmos possuem validação cruzada completa, mas não foram aplicados
-ao teste final. As curvas finais reutilizam cálculos compatíveis, conforme registro
-individual; não devem ser contadas como 45 treinamentos inteiramente novos.
+O artigo em `docs/artigo.pdf` é a versão científica histórica de dez páginas,
+preservada com seu hash. A fonte LaTeX oferece os mesmos resultados com diagramação
+portátil; não é alegada identidade binária entre as duas versões.
 
-Guia de importação: https://docs.overleaf.com/managing-projects-and-files/uploading-a-project
-Repositório: https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina
+Os TEX dos slides podem ser editados diretamente. O gerador legado
+`scripts/publicar_latex.py` produz apenas os textos corridos e redefine `main.tex`
+para o roteiro oral: não é necessário executá-lo para compilar esta entrega.
+Preservar alterações feitas no Overleaf antes de regenerar qualquer fonte.

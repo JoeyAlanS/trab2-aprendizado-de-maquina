@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def example_config(tmp_path):
-    return replace(load_config(ROOT / "configs/exemplo.toml"), output=tmp_path / "dataset")
+    return replace(load_config(ROOT / "tests/fixtures/exemplo.toml"), output=tmp_path / "dataset")
 
 
 @pytest.fixture

@@ -1,0 +1,25 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern,booktabs,amsmath,graphicx}
+\definecolor{azul}{HTML}{172D3C}
+\definecolor{verde}{HTML}{087F8C}
+\setbeamercolor{normal text}{fg=azul,bg=white}
+\setbeamercolor{frametitle}{fg=azul}
+\setbeamercolor{structure}{fg=verde}
+\setbeamercolor{block title}{fg=white,bg=verde}
+\setbeamercolor{block body}{bg=verde!6}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{footline}{\hspace{5mm}\scriptsize ENEM 2023 | Unifor\hfill\insertframenumber/\inserttotalframenumber\hspace{5mm}\vspace{3mm}}
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\graphicspath{{figuras/}}
+\newcommand{\figura}[1]{\begin{center}\includegraphics[width=.96\linewidth,height=5.35cm,keepaspectratio]{#1}\end{center}}
+\newcommand{\fonte}[1]{\par\vspace{1mm}{\tiny #1\par}}
+\newcommand{\duas}[2]{\begin{columns}[T,onlytextwidth]\begin{column}{.48\textwidth}#1\end{column}\begin{column}{.48\textwidth}#2\end{column}\end{columns}}
+\title{Comparação nacional de modelos\\ENEM 2023}
+\author{Joey Alan de Freitas Solis \and Paulo Henrico}
+\institute{Universidade de Fortaleza (Unifor)\\Professor Tulio}
+\date{}

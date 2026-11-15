@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "n_test": 538486,
+  "models": 5,
+  "metrics_recomputed": [
+    {
+      "model": "stacking",
+      "rmse": 76.18959041498846,
+      "mae": 55.32501823071574,
+      "r2": 0.24971108461076186
+    },
+    {
+      "model": "linear_reference",
+      "rmse": 76.51679409620913,
+      "mae": 55.615725576140555,
+      "r2": 0.24325286768426024
+    },
+    {
+      "model": "svm",
+      "rmse": 76.62217144510254,
+      "mae": 55.53760157792207,
+      "r2": 0.2411670793699866
+    },
+    {
+      "model": "random_forest",
+      "rmse": 76.65793001819297,
+      "mae": 55.82077125279086,
+      "r2": 0.24045863914519772
+    },
+    {
+      "model": "baseline",
+      "rmse": 87.95929377202492,
+      "mae": 66.28501900292774,
+      "r2": -1.6579968149521562e-06
+    }
+  ],
+  "test_ids_sha256": "cf1129dc822717639f33bedb13c2e9192afdc5265da6079899dd5212720caac2",
+  "all_group_counts_cover_test": true,
+  "all_group_metrics_recomputed": true,
+  "final_manifest_sha256": "c2f3d6b4793c5203cbbd53afa68f893039e7b39879649dfa47a0cbcf6e2c1d68",
+  "test_evaluated": true
+}

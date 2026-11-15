@@ -26,7 +26,7 @@ def test_official_contract_has_no_selected_target():
     ],
 )
 def test_invalid_config_rejected(tmp_path, old, new):
-    text = (ROOT / "configs/exemplo.toml").read_text(encoding="utf-8")
+    text = (ROOT / "tests/fixtures/exemplo.toml").read_text(encoding="utf-8")
     config = tmp_path / "config.toml"
     config.write_text(text.replace(old, new), encoding="utf-8")
     with pytest.raises(ValueError):
@@ -35,8 +35,8 @@ def test_invalid_config_rejected(tmp_path, old, new):
 
 def test_cli_processes_config_with_explicit_relative_root(tmp_path, capsys):
     # Criar contrato fora da raiz comprova que a origem não depende do cwd.
-    text = (ROOT / "configs/exemplo.toml").read_text(encoding="utf-8")
-    text = text.replace('root = ".."', 'root = "' + ROOT.as_posix() + '"')
+    text = (ROOT / "tests/fixtures/exemplo.toml").read_text(encoding="utf-8")
+    text = text.replace('root = "../.."', 'root = "' + ROOT.as_posix() + '"')
     text = text.replace(
         'output = "dados/processed/exemplo-v1"',
         'output = "' + (tmp_path / "output").as_posix() + '"',

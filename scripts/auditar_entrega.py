@@ -1,6 +1,9 @@
 """Conferir execuções existentes sem treinar ou alterar os checkpoints científicos."""
 
+import argparse
 import json
+import zipfile
+from contextlib import contextmanager
 from pathlib import Path
 from unittest.mock import patch
 
@@ -20,8 +23,32 @@ CP4 = BASE / "checkpoint-4-2026-11-07"
 MODELS = ["svm", "knn", "bagging", "pasting", "random_forest", "boosting", "stacking"]
 
 
-def main():
-    OUT.mkdir(exist_ok=True)
+@contextmanager
+def archived_reports():
+    """Materializar temporariamente documentos históricos exigidos pelos hashes.
+
+    O ZIP preserva os bytes originais sem repor relatórios obsoletos na apresentação.
+    Nenhuma verificação científica é desabilitada; só arquivos criados aqui são removidos.
+    """
+    archive = Path("resultados/evidencias/protocolos.zip")
+    created = []
+    try:
+        with zipfile.ZipFile(archive) as package:
+            for name in ("docs/checkpoint-2-resultados.md", "docs/checkpoint-3-resultados.md"):
+                path = Path(name)
+                if not path.exists():
+                    with path.open("xb") as stream:
+                        stream.write(package.read(name))
+                    created.append(path)
+        yield
+    finally:
+        for path in created:
+            path.unlink()
+
+
+def main(out: Path = OUT):
+    # Não sobrescrever evidências de uma conferência anterior.
+    out.mkdir(parents=True, exist_ok=False)
     config = load_study(Path("configs/ciencias_natureza.toml"))
     protocol = json.loads((CP4 / "protocolo_buscas.json").read_text())
     coverage = []
@@ -50,10 +77,10 @@ def main():
     print("Comparações: 54 avaliações por dobra confirmadas.", flush=True)
 
     def redirected(path, payload):
-        # Os validadores originais calculam as métricas, mas sua evidência vai para o CP7.
+        # Redirecionar a evidência, preservando as execuções científicas originais.
         if Path(path).parent != CP4:
             raise ValueError(f"Escrita inesperada: {path}")
-        write_json(OUT / Path(path).name, payload)
+        write_json(out / Path(path).name, payload)
 
     with patch("enem_base.final_selection.atomic_json", redirected):
         _, searches, _ = validate_searches(config, CP4)
@@ -117,9 +144,9 @@ def main():
                 "source": str(CP4 / "avaliacao_final"),
             }
         )
-    pd.DataFrame(coverage).to_csv(OUT / "cobertura_execucoes.csv", index=False)
+    pd.DataFrame(coverage).to_csv(out / "cobertura_execucoes.csv", index=False)
     write_json(
-        OUT / "auditoria_experimentos.json",
+        out / "auditoria_experimentos.json",
         {
             "status": "passed",
             "comparison_fold_evaluations": 54,
@@ -147,11 +174,14 @@ def main():
             ),
             "new_training": False,
             "new_test_predictions": False,
-            "coverage_sha256": sha256_file(OUT / "cobertura_execucoes.csv"),
+            "coverage_sha256": sha256_file(out / "cobertura_execucoes.csv"),
         },
     )
     print("Curvas e teste: evidências aprovadas, cinco modelos e 260 grupos conferidos.")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=OUT)
+    with archived_reports():
+        main(parser.parse_args().output)

@@ -23,6 +23,8 @@ resultados/execucoes/
 resultados/falhas/
 resultados/figuras/*
 !resultados/figuras/README.md
+!resultados/figuras/*.png
+!resultados/figuras/*.svg
 *.log
 .streamlit/secrets.toml
 dados/database/**/*.sqlite3

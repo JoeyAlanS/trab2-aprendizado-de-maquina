@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "comparison_fold_evaluations": 54,
+  "initial_models": 11,
+  "requested_seven_fold_evaluations": 21,
+  "variant_fold_evaluations": 21,
+  "search_configurations": 60,
+  "search_fold_evaluations": 180,
+  "initial_curve_points": 45,
+  "final_curve_points": 45,
+  "final_models": [
+    "stacking",
+    "linear_reference",
+    "svm",
+    "random_forest",
+    "baseline"
+  ],
+  "n_test_per_model": 538486,
+  "final_curve_origins": {
+    "checkpoint3_exact_parameters": 30,
+    "checkpoint3_bases_new_oof_meta": 12,
+    "search_full_training_fold": 3
+  },
+  "models_without_reserved_test": [
+    "knn",
+    "bagging",
+    "pasting",
+    "boosting",
+    "ridge",
+    "arvore"
+  ],
+  "reason": "O protocolo prevê teste final do trio selecionado mais média e linear de referência.",
+  "new_training": false,
+  "new_test_predictions": false,
+  "coverage_sha256": "89c159ba28e0d1e341875e9e135a864699ea3438b0d9f5a6557f2aeb40bd9e77"
+}

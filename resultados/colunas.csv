@@ -1,0 +1,1076 @@
+variant,fold,column,scope,action,reason
+engineered,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+engineered,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+engineered,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+engineered,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+engineered,,ACESSO_DIGITAL,engenharia,criada,fórmula em src/enem_base/variants.py
+engineered,,COMPUTADORES_POR_MORADOR,engenharia,criada,fórmula em src/enem_base/variants.py
+engineered,,ESCOLARIDADE_PAIS_MAX,engenharia,criada,fórmula em src/enem_base/variants.py
+original,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+original,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+original,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+original,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+original,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+original,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+original,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+original,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+pca,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+pca,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+pca,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+pca,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,0.0,categorical__IN_TREINEIRO_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__IN_TREINEIRO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q001_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q002_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q003_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q004_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q004_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q004_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q004_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q004_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_I,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_J,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_K,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_L,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_N,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_O,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_P,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q006_Q,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q007_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q007_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q007_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q007_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q008_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q008_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q008_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q008_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q008_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q009_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q009_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q009_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q009_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q009_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q010_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q010_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q010_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q010_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q010_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q011_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q011_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q012_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q012_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q012_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q012_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q013_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q013_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q013_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q013_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q014_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q014_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q014_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q015_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q015_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q016_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q016_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q016_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q017_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q017_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q018_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q018_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q019_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q019_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q019_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q019_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q019_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q020_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q020_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q021_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q021_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q022_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q022_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q022_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q022_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q022_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q023_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q023_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q024_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q024_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q024_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q024_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q024_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q025_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__Q025_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_AC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_AL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_AM,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_AP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_BA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_CE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_DF,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_ES,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_MA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_MG,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_PA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_PB,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_PE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_PI,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_PR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_RJ,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_RO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_RS,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_SC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_SE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_SP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__SG_UF_PROVA_TO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_17,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_8,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ANO_CONCLUIU_9,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_COR_RACA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_COR_RACA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_COR_RACA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_COR_RACA_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_DEPENDENCIA_ADM_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_DEPENDENCIA_ADM_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_DEPENDENCIA_ADM_ESC_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_DEPENDENCIA_ADM_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ENSINO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ENSINO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ENSINO___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ESCOLA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ESCOLA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ESCOLA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ESTADO_CIVIL_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_FAIXA_ETARIA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_FAIXA_ETARIA_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_FAIXA_ETARIA_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_LINGUA_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_LINGUA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_LOCALIZACAO_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_LOCALIZACAO_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_LOCALIZACAO_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_NACIONALIDADE_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_NACIONALIDADE_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_SEXO_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_SEXO_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_SIT_FUNC_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ST_CONCLUSAO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ST_CONCLUSAO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ST_CONCLUSAO_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,categorical__TP_ST_CONCLUSAO_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,numeric__ACESSO_DIGITAL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,numeric__COMPUTADORES_POR_MORADOR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,numeric__ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,numeric__Q005,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,0.0,numeric__missingindicator_ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__IN_TREINEIRO_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__IN_TREINEIRO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q001_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q002_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q003_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q004_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q004_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q004_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q004_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q004_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_I,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_J,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_K,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_L,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_N,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_O,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_P,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q006_Q,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q007_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q007_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q007_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q007_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q008_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q008_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q008_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q008_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q008_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q009_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q009_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q009_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q009_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q009_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q010_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q010_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q010_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q010_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q010_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q011_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q011_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q012_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q012_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q012_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q012_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q013_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q013_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q013_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q013_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q014_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q014_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q014_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q015_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q015_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q016_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q016_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q016_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q017_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q017_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q018_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q018_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q019_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q019_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q019_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q019_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q019_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q020_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q020_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q021_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q021_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q022_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q022_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q022_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q022_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q022_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q023_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q023_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q024_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q024_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q024_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q024_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q024_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q025_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__Q025_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_AC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_AL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_AM,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_AP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_BA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_CE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_DF,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_ES,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_MA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_MG,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_PA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_PB,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_PE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_PI,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_PR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_RJ,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_RO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_RS,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_SC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_SE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_SP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__SG_UF_PROVA_TO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_17,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_8,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ANO_CONCLUIU_9,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_COR_RACA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_COR_RACA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_COR_RACA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_COR_RACA_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_DEPENDENCIA_ADM_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_DEPENDENCIA_ADM_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_DEPENDENCIA_ADM_ESC_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_DEPENDENCIA_ADM_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ENSINO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ENSINO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ENSINO___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ESCOLA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ESCOLA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ESCOLA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ESTADO_CIVIL_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ESTADO_CIVIL_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_FAIXA_ETARIA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_FAIXA_ETARIA_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_FAIXA_ETARIA_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_LINGUA_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_LINGUA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_LOCALIZACAO_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_LOCALIZACAO_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_LOCALIZACAO_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_NACIONALIDADE_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_NACIONALIDADE_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_SEXO_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_SEXO_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ST_CONCLUSAO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ST_CONCLUSAO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ST_CONCLUSAO_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,categorical__TP_ST_CONCLUSAO_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,numeric__ACESSO_DIGITAL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,numeric__COMPUTADORES_POR_MORADOR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,numeric__ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,numeric__Q005,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,1.0,numeric__missingindicator_ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__IN_TREINEIRO_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__IN_TREINEIRO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q001_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q002_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q003_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q004_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q004_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q004_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q004_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q004_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_G,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_H,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_I,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_J,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_K,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_L,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_N,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_O,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_P,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q006_Q,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q007_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q007_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q007_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q007_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q008_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q008_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q008_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q008_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q008_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q009_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q009_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q009_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q009_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q009_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q010_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q010_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q010_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q010_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q010_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q011_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q011_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q012_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q012_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q012_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q012_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q013_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q013_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q013_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q013_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q014_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q014_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q014_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q015_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q015_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q016_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q016_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q016_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q017_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q017_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q018_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q018_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q019_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q019_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q019_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q019_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q019_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q020_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q020_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q021_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q021_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q022_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q022_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q022_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q022_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q022_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q023_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q023_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q024_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q024_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q024_C,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q024_D,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q024_E,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q025_A,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__Q025_B,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_AC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_AL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_AM,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_AP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_BA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_CE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_DF,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_ES,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_MA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_MG,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_PA,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_PB,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_PE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_PI,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_PR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_RJ,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_RO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_RS,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_SC,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_SE,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_SP,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__SG_UF_PROVA_TO,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_12,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_17,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ANO_CONCLUIU_9,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_COR_RACA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_COR_RACA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_COR_RACA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_COR_RACA_5,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_DEPENDENCIA_ADM_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_DEPENDENCIA_ADM_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_DEPENDENCIA_ADM_ESC_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_DEPENDENCIA_ADM_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ENSINO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ENSINO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ENSINO___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ESCOLA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ESCOLA_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ESCOLA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ESTADO_CIVIL_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_FAIXA_ETARIA_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_FAIXA_ETARIA_6,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_FAIXA_ETARIA_7,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_LINGUA_0,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_LINGUA_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_LOCALIZACAO_ESC_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_LOCALIZACAO_ESC_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_LOCALIZACAO_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_NACIONALIDADE_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_NACIONALIDADE_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_SEXO_F,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_SEXO_M,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_SIT_FUNC_ESC___MISSING__,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ST_CONCLUSAO_1,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ST_CONCLUSAO_2,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ST_CONCLUSAO_3,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,categorical__TP_ST_CONCLUSAO_4,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,numeric__ACESSO_DIGITAL,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,numeric__COMPUTADORES_POR_MORADOR,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,numeric__ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,numeric__Q005,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,2.0,numeric__missingindicator_ESCOLARIDADE_PAIS_MAX,coluna_codificada,selecionada,"SelectPercentile(f_regression, percentile=75) no treino da dobra"
+selected,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+selected,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+selected,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+selected,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+selected,,ACESSO_DIGITAL,engenharia,criada,fórmula em src/enem_base/variants.py
+selected,,COMPUTADORES_POR_MORADOR,engenharia,criada,fórmula em src/enem_base/variants.py
+selected,,ESCOLARIDADE_PAIS_MAX,engenharia,criada,fórmula em src/enem_base/variants.py
+weighted,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+weighted,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+weighted,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+weighted,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+weighted,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+without_socio,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+without_socio,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q001,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q002,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q003,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q004,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q005,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q006,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q007,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q008,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q009,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q010,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q011,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q012,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q013,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q014,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q015,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q016,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q017,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q018,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q019,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q020,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q021,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q022,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q023,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q024,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,Q025,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,SG_UF_PROVA,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+without_socio,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_socio,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_PROVA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_PROVA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_PROVA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_PROVA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,CO_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,IN_TREINEIRO,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,NO_MUNICIPIO_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NO_MUNICIPIO_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_ANO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_INSCRICAO,coluna_fonte,fora_de_X,controle; nunca preditor
+without_uf,,NU_NOTA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_CN,coluna_fonte,fora_de_X,alvo; nunca preditor
+without_uf,,NU_NOTA_COMP1,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_COMP2,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_COMP3,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_COMP4,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_COMP5,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,NU_NOTA_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,Q001,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q002,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q003,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q004,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q005,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q006,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q007,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q008,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q009,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q010,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q011,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q012,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q013,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q014,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q015,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q016,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q017,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q018,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q019,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q020,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q021,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q022,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q023,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q024,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,Q025,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,SG_UF_ESC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,SG_UF_PROVA,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_ANO_CONCLUIU,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_COR_RACA,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_DEPENDENCIA_ADM_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_ENSINO,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_ESCOLA,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_ESTADO_CIVIL,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_FAIXA_ETARIA,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_LINGUA,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_LOCALIZACAO_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_NACIONALIDADE,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_PRESENCA_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_PRESENCA_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_PRESENCA_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_PRESENCA_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_SEXO,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_SIT_FUNC_ESC,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TP_STATUS_REDACAO,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TP_ST_CONCLUSAO,coluna_fonte,entrada,seleção explícita do protocolo
+without_uf,,TX_GABARITO_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_GABARITO_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_GABARITO_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_GABARITO_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_RESPOSTAS_CH,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_RESPOSTAS_CN,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_RESPOSTAS_LC,coluna_fonte,fora_de_X,seleção explícita do protocolo
+without_uf,,TX_RESPOSTAS_MT,coluna_fonte,fora_de_X,seleção explícita do protocolo
