@@ -15,12 +15,19 @@ Não depende dos microdados, do Python nem de caminhos pessoais para compilar.
 | `slides_acompanhamento.tex` | 7 slides; retrospectiva do desenvolvimento, sem métricas de teste | `docs/acompanhamento.pdf` |
 | `artigo.tex` | Artigo científico revisado, 10 páginas | `docs/artigo.pdf` |
 | `pitch.tex` | Roteiro oral detalhado, sem slides | `output/pdf/pitch.pdf` |
+| `roteiro_pitch_detalhado.tex` | Roteiro atualizado dos 23 slides finais, com explicações e perguntas de defesa | `output/pdf/roteiro_pitch_detalhado.pdf` |
 | `acompanhamento.tex` | Texto de andamento e conferência | `output/pdf/acompanhamento.pdf` |
 
 O tema compartilhado dos slides está em `slides_tema.tex`. Figuras ficam em
 `figuras/`; não renomear ou remover sem atualizar os TEX. Os arquivos usam pacotes
 LaTeX comuns e fontes portáteis. A compilação local usa Tectonic (motor XeTeX).
 A importação dentro de uma conta Overleaf não foi executada.
+
+O roteiro atualizado possui também um pacote independente,
+`output/roteiro-pitch-overleaf.zip`. Importar o ZIP no Overleaf, selecionar
+`main.tex` e usar XeLaTeX. Ele inclui as miniaturas dos 23 slides aprovados.
+Para compilar a fonte do repositório, executar `tectonic roteiro_pitch_detalhado.tex`
+dentro de `relatorio/`. O texto pode ser editado diretamente no TEX.
 
 Os slides de acompanhamento são uma **retrospectiva preparada agora**; não comprovam
 que uma apresentação ou submissão ocorreu no passado. Apresentam apenas informações

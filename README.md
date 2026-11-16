@@ -44,7 +44,8 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 | Acompanhamento | [PDF](docs/acompanhamento.pdf) |
 | Artigo científico (10 páginas) | [PDF](docs/artigo.pdf) |
 | Pitch | [PDF](docs/pitch.pdf) |
-| Apresentação final no Canva (20 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) · [PDF exportado](output/apresentacao/ENEM_2023_Canva.pdf) · [Roteiro](output/apresentacao/Guia_ENEM_20_Slides.md) |
+| Apresentação final no Canva (23 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) · [Roteiro](output/apresentacao/Guia_ENEM_23_Slides.md) |
+| Roteiro detalhado para apresentar os 23 slides | [PDF](output/pdf/roteiro_pitch_detalhado.pdf) · [Fonte LaTeX](relatorio/roteiro_pitch_detalhado.tex) · [ZIP para Overleaf](output/roteiro-pitch-overleaf.zip) |
 | Resultados dos 11 modelos/configurações iniciais | [Tabela](resultados/comparacao_modelos.csv) · [Gráfico](resultados/figuras/18_comparacao_completa.png) |
 | Registro de experimentos | [CSV](resultados/experimentos.csv) · [Formato e evidências](resultados/README.md) |
 | Seleção e criação de colunas | [CSV](resultados/colunas.csv) |
@@ -55,6 +56,13 @@ A dashboard apresenta o catálogo completo de validação e os cinco resultados 
 teste final na página **Modelos**. Ela lê as tabelas publicadas e confere seus hashes,
 sem treinar novamente. Exploração e filtros usam exclusivamente o desenvolvimento;
 o snapshot exploratório histórico e seus manifestos permanecem preservados.
+
+Para publicar no Streamlit Community Cloud, selecionar o repositório
+`JoeyAlanS/trab2-aprendizado-de-maquina`, branch `master`, arquivo `app/app.py`
+e Python **3.13** em configurações avançadas. As dependências da interface estão
+em `app/requirements.txt`; os agregados e resultados necessários já estão no Git.
+O aplicativo público usa os snapshots quando o banco SQLite local está ausente.
+Não é necessário enviar microdados, modelos ajustados ou previsões individuais.
 
 Os dados e modelos grandes permanecem locais. Um clone contém código, configurações,
 tabelas agregadas, documentos e figuras. Os nomes históricos das execuções científicas
