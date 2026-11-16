@@ -1,8 +1,15 @@
 """Iniciar da raiz: python -m streamlit run app/app.py."""
 
-import streamlit as st
+import sys
+from pathlib import Path
 
-from enem_base.dashboard_ui import dashboard_data, model_results, sidebar_filters
+# Community Cloud instala apenas as dependências da interface. O código do
+# projeto vem do próprio checkout, sem exigir o ambiente de treinamento.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+import streamlit as st  # noqa: E402
+
+from enem_base.dashboard_ui import dashboard_data, model_results, sidebar_filters  # noqa: E402
 
 st.set_page_config(
     page_title="Ciências da Natureza | ENEM 2023",
