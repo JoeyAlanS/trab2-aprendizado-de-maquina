@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCUMENTS = {"artigo": "artigo_latex", "pitch": "pitch", "acompanhamento": "acompanhamento"}
+DOCUMENTS = {"artigo": "artigo_latex", "acompanhamento": "acompanhamento"}
 
 
 def main():

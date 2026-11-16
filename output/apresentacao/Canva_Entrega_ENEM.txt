@@ -1,9 +1,8 @@
 Apresentação final: ENEM 2023 — 23 slides revisados
 Canva: https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit
-Roteiro planejado: 15 a 20 minutos (Joey 1–10, Paulo 11–23).
-Guia de fala: Guia_ENEM_23_Slides.md
-Roteiro detalhado em PDF: ../pdf/roteiro_pitch_detalhado.pdf
-Fonte editável do roteiro: ../../relatorio/roteiro_pitch_detalhado.tex
+Duração planejada: 13 minutos, dentro dos 10 a 15 exigidos (Joey 1–10, Paulo 11–23; 6min30 cada).
+Pitch em PDF da entrega: ../../docs/pitch.pdf (23 slides em LaTeX, na mesma sequência temática).
 Fonte de conteúdo para importação: ENEM_2023_Design_Final.html
 O design final editável está no Canva; o HTML conserva o conteúdo e seu modelo de origem.
+O PDF em LaTeX possui design próprio; não é uma exportação visual do Canva.
 Os tempos são planejados, ainda dependem de ensaio.

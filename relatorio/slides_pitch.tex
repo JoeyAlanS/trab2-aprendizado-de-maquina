@@ -1,9 +1,10 @@
-% XeLaTeX no Overleaf. 20 slides, roteiro de aproximadamente 12 minutos.
-% Joey apresenta slides 1--10; Paulo apresenta 11--20.
+% XeLaTeX no Overleaf. 23 slides, meta de 13 minutos, sujeita a ensaio.
+% Joey apresenta slides 1--10; Paulo apresenta 11--23.
+% Mesma sequência do Canva final; versão própria em LaTeX, sem exportar o Canva.
 \input{slides_tema.tex}
 \begin{document}
 \begin{frame}\titlepage\centering\textcolor{verde}{Previsão da nota de Ciências da Natureza a partir do perfil}\end{frame}
-\begin{frame}{Problema e objetivo}
+\begin{frame}{Pergunta de pesquisa e objetivos}
 \begin{block}{Pergunta de pesquisa}Quanto o perfil socioeconômico, escolar e demográfico permite estimar a nota de Ciências da Natureza?\end{block}
 \begin{itemize}\item Comparar dez regressores/configurações e a média de referência.
 \item Medir erro e generalização entre participantes da mesma edição.
@@ -11,14 +12,14 @@
 \end{itemize}
 \fonte{Fonte dos dados: Inep, microdados do ENEM 2023. Estudo observacional, sem inferência causal.}
 \end{frame}
-\begin{frame}{Base nacional e participantes}
+\begin{frame}{População e divisão dos dados}
 \duas{\begin{tabular}{lr}\toprule Base original & 3.933.955\\Sem alvo & 1.241.528\\Alvo observado & 2.692.427\\\midrule Desenvolvimento & 2.153.941\\Teste reservado & 538.486\\\bottomrule\end{tabular}}{\begin{itemize}\item 76 colunas na fonte; 40 entradas originais.
 \item 16.547 notas zero mantidas.
 \item Nota ausente não é zero nem é imputada.
 \item Somente dados reais na modelagem nacional.\end{itemize}}
 \fonte{Inep, 2023. ZIP e CSV originais preservados; 79 Parquets confrontados integralmente com o CSV normalizado.}
 \end{frame}
-\begin{frame}{Entradas e prevenção de vazamento}
+\begin{frame}{40 atributos originais de perfil}
 \duas{\textbf{40 campos de perfil}\begin{itemize}\item Q005: moradores (numérico).
 \item 15 campos demográficos/escolares, UF da prova e língua.
 \item 24 questões categóricas: escolaridade, ocupação, renda, bens e acesso digital.\end{itemize}}{\textbf{Fora de X}\begin{itemize}\item NU\_INSCRICAO: somente controle.
@@ -27,7 +28,7 @@
 \item Competências de redação não integradas.\end{itemize}}
 \fonte{Lista completa: configs/ciencias\_natureza.toml. Registro das colunas: resultados/colunas.csv.}
 \end{frame}
-\begin{frame}{Preparação dos dados}
+\begin{frame}{Pré-processamento e prevenção de vazamento}
 \begin{enumerate}\item Ingestão: espaços, tokens de ausência, tipos, ano, IDs e contagens.
 \item Q005: mediana e padronização; indicador de ausência quando aplicável.
 \item Categorias: ausência explícita e one-hot; desconhecimento preservado conforme o dicionário.
@@ -35,27 +36,65 @@
 \begin{block}{Representação original}235 dimensões nos ajustes registrados. Indicadores categóricos são binários; Q005 permanece numérica.\end{block}
 \fonte{Código: cleaning.py, ingestion.py e preprocessing.py em src/enem\_base/.}
 \end{frame}
-\begin{frame}{Treinamento e validação cruzada}
+\begin{frame}{Três dobras com o teste reservado}
 \centering\begin{tabular}{lccc}\toprule Rodada & A (dobra 0) & B (dobra 1) & C (dobra 2)\\\midrule 1 & \textbf{Validação} & Treino & Treino\\2 & Treino & \textbf{Validação} & Treino\\3 & Treino & Treino & \textbf{Validação}\\\bottomrule\end{tabular}
 \vspace{4mm}\begin{itemize}\item Desenvolvimento: 80\%; teste separado: 20\%; semente 42.
 \item As mesmas três dobras e métricas para todos os modelos.
 \item O teste não participa de seleção de atributos ou parâmetros.\end{itemize}
 \fonte{IDs persistidos em dados/splits/. Dobras A/B/C: 717.981 / 717.980 / 717.980 participantes.}
 \end{frame}
-\begin{frame}{Todos os modelos obrigatórios foram comparados}
+\begin{frame}{Dez regressores efetivamente avaliados}
 \small\begin{tabular}{p{3.1cm}p{10cm}}\toprule Modelo & Como produz a previsão\\\midrule
-Linear / Ridge & Combinação linear; Ridge penaliza coeficientes grandes com L2.\\
+Linear & Combinação linear sem regularização.\\
+Ridge & Combinação linear com penalização L2.\\
 Árvore & Regras sucessivas até regiões de nota média.\\
 SVM linear & Função linear regularizada com perda insensível a epsilon.\\
 KNN & Média ponderada dos 25 vizinhos euclidianos exatos.\\
-Bagging / Pasting & Média de árvores em subamostras com / sem reposição.\\
+Bagging & Média de árvores em subamostras com reposição.\\
+Pasting & Média de árvores em subamostras sem reposição.\\
 Random Forest & Árvores e sorteio de atributos nas divisões.\\
 Gradient Boosting & Árvores sequenciais para reduzir o erro.\\
 Stacking & Combina previsões de linear e árvore com Ridge.\\
 Média & Baseline: prevê a média aprendida no treino.\\\bottomrule\end{tabular}
 \fonte{Três dobras completas por configuração inicial. Código: modeling.py; KNN exato: neighbors.py.}
 \end{frame}
-\begin{frame}{Stacking e o papel do Ridge}
+\begin{frame}{Linear sem regularização}
+\begin{block}{Como aprende}Combina os atributos preparados com coeficientes aprendidos para minimizar a soma dos erros quadráticos. Não há penalização L1 ou L2.\end{block}
+\[
+\widehat y=b+\sum_j w_jx_j,\qquad \min_{b,w}\sum_i(y_i-\widehat y_i)^2
+\]
+\begin{itemize}
+\item \texttt{LinearRegression(tol=1e-6)} na comparação inicial.
+\item RMSE de CV: 76,484; terceiro colocado antes do arredondamento.
+\item Referência no teste: RMSE 76,517, próxima do Stacking.
+\end{itemize}
+\fonte{Fórmula estrutural, não coeficientes numéricos estimados. Fonte: resultados/comparacao\_modelos.csv e experimentos.csv.}
+\end{frame}
+\begin{frame}{Ridge: regularização L2}
+\begin{block}{Como aprende}Acrescenta uma penalização aos coeficientes da regressão linear. Alpha controla a força da penalização.\end{block}
+\[
+\min_{b,w}\sum_i(y_i-b-x_i^Tw)^2+\alpha\lVert w\rVert_2^2
+\]
+\begin{itemize}
+\item Configuração inicial: \texttt{alpha=1}, \texttt{solver=lsqr}, \texttt{tol=1e-5}.
+\item Recebe os atributos preparados; RMSE de CV: 76,484, segundo lugar.
+\item Ridge isolada e Ridge combinadora do Stacking têm entradas diferentes.
+\item Não houve avaliação final da Ridge isolada no teste reservado.
+\end{itemize}
+\fonte{Fonte: modeling.py, comparacao\_modelos.csv e experimentos.csv. A busca da Ridge isolada selecionou alpha=10.}
+\end{frame}
+\begin{frame}{Árvore de decisão isolada}
+\begin{block}{Como aprende}Divide os dados por regras sobre os atributos. Cada folha prevê a média das notas do treino naquela região.\end{block}
+\begin{itemize}
+\item \texttt{DecisionTreeRegressor}: profundidade máxima 12.
+\item Pelo menos 100 participantes por folha; semente 42.
+\item RMSE de CV: 77,167; sexta colocada no catálogo completo.
+\item Limites de profundidade e folha restringem a complexidade do ajuste.
+\item Também é base do Stacking, que combina sua previsão com a linear.
+\end{itemize}
+\fonte{Fonte: modeling.py e resultados/comparacao\_modelos.csv. A árvore isolada possui CV completa, sem teste final próprio.}
+\end{frame}
+\begin{frame}{Stacking: duas bases e um combinador}
 \begin{block}{Bases}Regressão linear + árvore de decisão. Cada uma possui seu próprio pipeline.\end{block}
 \begin{block}{Combinação sem vazamento}Três dobras internas geram previsões fora da dobra: cada participante é previsto por uma base que não treinou nele. Ridge aprende a combinar essas previsões.\end{block}
 \[
@@ -64,7 +103,7 @@ Média & Baseline: prevê a média aprendida no treino.\\\bottomrule\end{tabular
 \]
 \fonte{Expressão estrutural: os coeficientes são aprendidos nos dados, não são constantes escolhidas manualmente.}
 \end{frame}
-\begin{frame}{Métricas e comparação justa}
+\begin{frame}{Métricas e modelos de referência}
 \[
 \mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_i(y_i-\widehat y_i)^2}
 \qquad
@@ -76,24 +115,35 @@ Média & Baseline: prevê a média aprendida no treino.\\\bottomrule\end{tabular
 \item Teste: resultado único, separado da média de CV.
 \item Tempos registrados; caches e cargas concorrentes limitam comparações de custo.\end{itemize}
 \end{frame}
-\begin{frame}{Comparação inicial do catálogo completo}
+\begin{frame}{Catálogo completo e seleção pelo RMSE}
 \figura{18_comparacao_completa.png}
 \fonte{Trio global: Stacking, Ridge e linear. No recorte de sete algoritmos: Stacking, SVM e Random Forest.}
 \end{frame}
-\begin{frame}{Engenharia, seleção e aprofundamento}
+\begin{frame}{Engenharia de atributos}
 \begin{itemize}\item Computadores por morador: contagem limitada de Q024 dividida por Q005 válida.
 \item Acesso digital: presença de computador + internet (0 a 2).
 \item Escolaridade dos responsáveis: máximo, quando ambas as respostas são conhecidas.
-\item Seleção de 75\% dos atributos codificados por f\_regression, no treino.
-\item Ablações: retirar questionário socioeconômico ou UF piorou o Ridge.
-\item Ponderação de faixas raras: RMSE global piorou; não foi adotada.\end{itemize}
-\fonte{Comparações nacionais nas mesmas dobras. Não se inferem efeitos causais de renda, escola ou localização. Código: variants.py.}
+\item Q024: contagem limitada; quatro ou mais computadores representados pelo mínimo 4.
+\item Valores inválidos ou desconhecidos preservados como ausentes.
+\item Ridge: RMSE 76,458 com engenharia, contra 76,484 original.\end{itemize}
+\fonte{Ganho descritivo pequeno, nas mesmas dobras. Fórmulas e limites: variants.py. Fonte: resultados/experimentos.csv.}
 \end{frame}
-\begin{frame}{PCA: compactação sem ganho preditivo}
+\begin{frame}{Seleção de atributos e PCA}
 \figura{05_pca.png}
-\fonte{Desenvolvimento: limiar de 80\%; 45/235 componentes em cada ajuste de Ridge e árvore. O RMSE aumentou nos dois modelos; PCA não compõe a solução final.}
+\fonte{Seleção: f\_regression, 75\% dos atributos codificados, no treino; sem ganho. PCA: limiar de 80\%, 45/235 componentes em Ridge e árvore, com aumento do RMSE. Nenhum dos dois integra a receita final.}
 \end{frame}
-\begin{frame}{Busca de hiperparâmetros no desenvolvimento}
+\begin{frame}{Ponderação e duas ablações}
+\begin{itemize}
+\item Ponderação: inverso da frequência de dez faixas, calculado no treino.
+\item Ridge ponderada: RMSE 125,202; piora global, apesar de ganhos nos extremos.
+\item Sem questionário socioeconômico: RMSE 80,351.
+\item Sem UF de aplicação: RMSE 76,661.
+\item Ambos os blocos contribuíram para prever neste protocolo.
+\end{itemize}
+\begin{block}{Decisão}Manter a receita original e discutir os resultados sem melhoria. As ablações não estimam efeitos causais.\end{block}
+\fonte{Fonte: resultados/experimentos.csv. Referência Ridge original: RMSE 76,484. Mesmas três dobras; teste fora dessas decisões.}
+\end{frame}
+\begin{frame}{Busca de hiperparâmetros}
 \centering\begin{tabular}{lrr}\toprule Modelo & RMSE inicial & Menor RMSE da busca\\\midrule
 Stacking & 76,174515932 & 76,174515900\\
 Ridge & 76,483610 & 76,483572\\
@@ -105,11 +155,11 @@ Random Forest & 76,642872 & 76,642872\\\bottomrule\end{tabular}
 \item Stacking final: Ridge combinador com alpha=1.000. Teste fora da busca.\end{itemize}
 \fonte{GridSearchCV com dobras persistidas. Valores reais, arredondados para exibição. Fontes: tuning.py e final\_selection.py.}
 \end{frame}
-\begin{frame}{Curvas de aprendizado e generalização}
+\begin{frame}{Curvas de aprendizado dos três modelos}
 \figura{08_curvas_finais.png}
 \fonte{Desenvolvimento: 10\%, 25\%, 50\%, 75\% e 100\% do treino, validação fixa; média e DP nas três dobras. Pequenos intervalos não comprovam desempenho em outro ano. Reuso compatível registrado.}
 \end{frame}
-\begin{frame}{Teste reservado: cinco receitas já congeladas}
+\begin{frame}{Teste final em 538.486 participantes}
 \centering\begin{tabular}{lrrr}\toprule Modelo & RMSE & MAE & R\textsuperscript{2}\\\midrule
 \textbf{Stacking} & \textbf{76,190} & \textbf{55,325} & \textbf{0,2497}\\
 Linear de referência & 76,517 & 55,616 & 0,2433\\
@@ -119,25 +169,22 @@ Média & 87,959 & 66,285 & -0,000002\\\bottomrule\end{tabular}
 \vspace{3mm}\begin{block}{Resultado final}538.486 participantes em comum. Stacking reduziu o RMSE em 13,38\% em relação à média.\end{block}
 \fonte{O enunciado exige média, linear e solução final no teste. SVM e Random Forest são avaliações adicionais; os demais possuem CV completa.}
 \end{frame}
-\begin{frame}{Notas observadas versus previstas}
-\figura{11_observado_previsto.png}
-\fonte{Teste reservado completo. Diagonal: previsão perfeita. Concentração central: superestimação das notas baixas e subestimação das altas.}
-\end{frame}
-\begin{frame}{Os maiores erros aparecem nos extremos}
+\begin{frame}{Erros concentrados nos extremos}
 \duas{\includegraphics[width=\linewidth,height=5cm,keepaspectratio]{13_faixas.png}}{\begin{itemize}\item Abaixo de 400: RMSE 154,31; n=57.759.
 \item Entre 400 e 500: RMSE 48,12; n=226.331.
 \item A partir de 700: RMSE 160,74; n=6.318.
+\item Superestimação de notas baixas e subestimação das altas.
 \item A métrica global não descreve bem todos os participantes.\end{itemize}}
 \fonte{Teste, Stacking. Limites das faixas definidos antes da abertura do teste.}
 \end{frame}
-\begin{frame}{Erros por grupo e análise dos resíduos}
+\begin{frame}{Análise por grupos de participantes}
 \duas{\includegraphics[width=\linewidth,height=5cm,keepaspectratio]{14_escola.png}}{\begin{itemize}\item TP\_ESCOLA=1: não informado; n=327.386.
 \item Pública: n=166.819; privada: n=44.281.
 \item Também há análises por renda, UF da prova e resíduos.
 \item Comparação descritiva: grupos diferem em tamanho e composição.\end{itemize}}
 \fonte{Fonte: Inep, ENEM 2023; teste reservado. UF da prova não é necessariamente UF de residência.}
 \end{frame}
-\begin{frame}{Reprodutibilidade e limites}
+\begin{frame}{Limites e rastreabilidade}
 \begin{itemize}\item Originais, preparação, IDs de partição, código e resultados separados.
 \item Configurações, métricas por dobra, tempos e hashes registrados.
 \item Conferência independente: métricas recompostas das previsões já existentes.
@@ -146,7 +193,7 @@ Média & 87,959 & 66,285 & -0,000002\\\bottomrule\end{tabular}
 \item Previsões de perfil não determinam capacidade individual nem substituem avaliação.\end{itemize}
 \fonte{Repositório: github.com/JoeyAlanS/trab2-aprendizado-de-maquina. Modelo e pipeline: src/enem\_base/.}
 \end{frame}
-\begin{frame}{Conclusões e próximos estudos}
+\begin{frame}{Conclusões e próximos passos}
 \begin{block}{Conclusão}Todos os regressores obrigatórios foram comparados. Stacking teve o menor RMSE de desenvolvimento e apresentou RMSE 76,190 no teste reservado.\end{block}
 \begin{itemize}\item O perfil ajuda a prever parte da variação, com limitações nos extremos.
 \item Mais transformação ou complexidade não garantiu melhor desempenho.

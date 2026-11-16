@@ -11,11 +11,9 @@ Não depende dos microdados, do Python nem de caminhos pessoais para compilar.
 
 | Fonte | Conteúdo | PDF da entrega |
 |---|---|---|
-| `main.tex` ou `slides_pitch.tex` | 20 slides; cerca de 12 minutos; Joey 1-10, Paulo 11-20 | `docs/pitch.pdf` |
+| `main.tex` ou `slides_pitch.tex` | 23 slides; meta de 13 minutos; Joey 1-10, Paulo 11-23 | `docs/pitch.pdf` |
 | `slides_acompanhamento.tex` | 7 slides; retrospectiva do desenvolvimento, sem métricas de teste | `docs/acompanhamento.pdf` |
 | `artigo.tex` | Artigo científico revisado, 10 páginas | `docs/artigo.pdf` |
-| `pitch.tex` | Roteiro oral detalhado, sem slides | `output/pdf/pitch.pdf` |
-| `roteiro_pitch_detalhado.tex` | Roteiro atualizado dos 23 slides finais, com explicações e perguntas de defesa | `output/pdf/roteiro_pitch_detalhado.pdf` |
 | `acompanhamento.tex` | Texto de andamento e conferência | `output/pdf/acompanhamento.pdf` |
 
 O tema compartilhado dos slides está em `slides_tema.tex`. Figuras ficam em
@@ -23,11 +21,11 @@ O tema compartilhado dos slides está em `slides_tema.tex`. Figuras ficam em
 LaTeX comuns e fontes portáteis. A compilação local usa Tectonic (motor XeTeX).
 A importação dentro de uma conta Overleaf não foi executada.
 
-O roteiro atualizado possui também um pacote independente,
-`output/roteiro-pitch-overleaf.zip`. Importar o ZIP no Overleaf, selecionar
-`main.tex` e usar XeLaTeX. Ele inclui as miniaturas dos 23 slides aprovados.
-Para compilar a fonte do repositório, executar `tectonic roteiro_pitch_detalhado.tex`
-dentro de `relatorio/`. O texto pode ser editado diretamente no TEX.
+O pitch em LaTeX segue a sequência temática dos 23 slides finais do
+Canva, incluindo Linear, Ridge e Árvore nos slides 8, 9 e 10. O PDF em LaTeX tem
+design próprio e usa os gráficos originais do projeto; não é uma exportação do Canva.
+O enunciado prevê 10 a 15 minutos. A meta de ensaio é 13 minutos, divididos em
+6min30 para cada autor.
 
 Os slides de acompanhamento são uma **retrospectiva preparada agora**; não comprovam
 que uma apresentação ou submissão ocorreu no passado. Apresentam apenas informações
@@ -59,8 +57,8 @@ explicita o catálogo completo e a separação entre seleção e teste. A versã
 permanece em `output/pdf/artigo_ciencias_natureza.pdf`. Os PDFs das duas versões
 não têm identidade binária. O ZIP contém a fonte LaTeX revisada.
 
-Os TEX dos slides podem ser editados diretamente. O gerador legado
-`scripts/publicar_latex.py` produz apenas os textos corridos e redefine `main.tex`
-para o roteiro oral quando executado sem `--article-only`: não é necessário
+Os TEX dos slides podem ser editados diretamente. O gerador
+`scripts/publicar_latex.py` produz os textos do artigo e do acompanhamento,
+preservando os slides e o documento principal `main.tex`. Não é necessário
 executá-lo para compilar os slides desta entrega.
 Preservar alterações feitas no Overleaf antes de regenerar qualquer fonte.

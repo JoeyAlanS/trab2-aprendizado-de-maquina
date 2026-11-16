@@ -19,6 +19,7 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 │   └── splits/               # IDs de desenvolvimento/teste e três dobras
 ├── notebooks/                # análise dos resultados reais, sem treinamento implícito
 ├── src/enem_base/             # preparação, modelos, treinamento e avaliação
+├── app/                      # dashboard e dependências para o Streamlit
 ├── scripts/                  # execução, conferência e publicação
 ├── tests/                    # verificações de software e fixtures isoladas
 ├── resultados/
@@ -36,6 +37,7 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 │   └── referencias/           # enunciado e dicionário
 ├── relatorio/                 # fontes LaTeX, figuras e instruções de compilação
 ├── apresentacao/              # galeria comentada para apresentação
+├── output/                    # apresentação e pacote editável para Overleaf
 └── .gitignore
 ```
 
@@ -43,9 +45,8 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 |---|---|
 | Acompanhamento | [PDF](docs/acompanhamento.pdf) |
 | Artigo científico (10 páginas) | [PDF](docs/artigo.pdf) |
-| Pitch | [PDF](docs/pitch.pdf) |
-| Apresentação final no Canva (23 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) · [Roteiro](output/apresentacao/Guia_ENEM_23_Slides.md) |
-| Roteiro detalhado para apresentar os 23 slides | [PDF](output/pdf/roteiro_pitch_detalhado.pdf) · [Fonte LaTeX](relatorio/roteiro_pitch_detalhado.tex) · [ZIP para Overleaf](output/roteiro-pitch-overleaf.zip) |
+| Pitch em LaTeX (23 slides; meta de 13 minutos) | [PDF](docs/pitch.pdf) · [Fonte](relatorio/slides_pitch.tex) |
+| Apresentação final no Canva (23 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) |
 | Resultados dos 11 modelos/configurações iniciais | [Tabela](resultados/comparacao_modelos.csv) · [Gráfico](resultados/figuras/18_comparacao_completa.png) |
 | Registro de experimentos | [CSV](resultados/experimentos.csv) · [Formato e evidências](resultados/README.md) |
 | Seleção e criação de colunas | [CSV](resultados/colunas.csv) |
@@ -57,12 +58,48 @@ teste final na página **Modelos**. Ela lê as tabelas publicadas e confere seus
 sem treinar novamente. Exploração e filtros usam exclusivamente o desenvolvimento;
 o snapshot exploratório histórico e seus manifestos permanecem preservados.
 
-Para publicar no Streamlit Community Cloud, selecionar o repositório
-`JoeyAlanS/trab2-aprendizado-de-maquina`, branch `master`, arquivo `app/app.py`
-e Python **3.13** em configurações avançadas. As dependências da interface estão
-em `app/requirements.txt`; os agregados e resultados necessários já estão no Git.
-O aplicativo público usa os snapshots quando o banco SQLite local está ausente.
-Não é necessário enviar microdados, modelos ajustados ou previsões individuais.
+O PDF do pitch em LaTeX acompanha a sequência temática dos 23 slides do Canva e
+possui design próprio. A exposição
+deve durar **10 a 15 minutos**, conforme o enunciado; a meta de ensaio é 13 minutos,
+com 6min30 por autor.
+
+### Publicação no Streamlit Community Cloud
+
+A configuração está preparada para execução sem os arquivos individuais locais.
+Após entrar em [share.streamlit.io](https://share.streamlit.io/), criar o aplicativo
+com os seguintes campos:
+
+| Campo | Valor |
+|---|---|
+| Repositório | `JoeyAlanS/trab2-aprendizado-de-maquina` |
+| Branch | `master` |
+| Arquivo principal | `app/app.py` |
+| Python, em configurações avançadas | `3.13` |
+
+As dependências da interface estão em `app/requirements.txt`; os agregados e
+resultados necessários já estão no Git. O aplicativo usa os snapshots quando o
+banco SQLite local está ausente. Não enviar microdados, modelos ajustados,
+previsões individuais ou credenciais. O dashboard não executa treinamentos.
+
+Se o login apresentar erro, tentar a opção de entrada por e-mail descrita na
+[documentação oficial](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-account/sign-in-sign-out).
+O erro de autenticação ocorre antes do processo de implantação do código.
+
+### Correspondência com o documento de entrega
+
+| Exigência | Evidência no repositório |
+|---|---|
+| Originais, preparação e partições separados | `dados/raw/`, `dados/processed/`, `dados/splits/`; instruções e comandos de reprodução |
+| Diagnóstico e regras de preparação | `src/enem_base/`, `resultados/colunas.csv`, figuras e artigo |
+| Dez regressores e média nas mesmas três dobras | `resultados/comparacao_modelos.csv` e linhas de comparação em `experimentos.csv` |
+| Engenharia, seleção, PCA em dois modelos, ponderação e duas ablações | Linhas de variantes em `experimentos.csv`; código em `variants.py` |
+| Busca nos três melhores e curvas do modelo final | Buscas em cinco modelos, incluindo o trio global; curvas e tabelas em `resultados/` |
+| Avaliação final, previsões e erros por grupos | Cinco receitas no teste; `previsoes_teste.csv` local; tabelas e figuras agregadas no Git |
+| Acompanhamento, artigo de até dez páginas e pitch | Os três PDFs em `docs/`; fontes em `relatorio/` |
+| Material editável para apresentação | Slides no Canva e fontes LaTeX no ZIP do Overleaf |
+
+Essa correspondência documenta os arquivos e experimentos. Comparecimento,
+participação na apresentação e submissão no AVA dependem da equipe.
 
 Os dados e modelos grandes permanecem locais. Um clone contém código, configurações,
 tabelas agregadas, documentos e figuras. Os nomes históricos das execuções científicas
@@ -251,6 +288,9 @@ usar a auditoria abaixo, que recompõe métricas das previsões já salvas.
 **6. Conferência e organização da entrega existente:**
 
 ```bash
+# Conferência portátil, inclusive em um clone sem os arquivos individuais:
+.venv/bin/python scripts/verificar_publicacao.py
+# Auditoria integral dos experimentos, quando os caches locais estiverem disponíveis:
 .venv/bin/python scripts/auditar_entrega.py --output resultados/nova-verificacao
 .venv/bin/python scripts/organizar_entrega.py --verification resultados/nova-verificacao
 .venv/bin/python notebooks/01_analise_resultados.py

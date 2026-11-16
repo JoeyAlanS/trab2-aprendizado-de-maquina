@@ -227,8 +227,6 @@ def document(name):
         if block.startswith("# "):
             tex.append(r"\begin{center}\large\textbf{" + inline(block[2:]) + r"}\end{center}")
         elif block.startswith("## "):
-            if name == "pitch" and block.startswith("## Números para consulta"):
-                tex.append(r"\Needspace{14\baselineskip}")
             tex.append(r"\heading{" + inline(block[3:]) + "}")
         elif block.startswith("|"):
             tex.append(table(rows_from_markdown(block), long=True))
@@ -248,12 +246,8 @@ def main():
     if args.article_only:
         print("Artigo LaTeX gerado; slides e evidências históricas preservados.")
         return
-    document("pitch")
     document("acompanhamento")
-    (OUT / "main.tex").write_text(
-        "% Documento principal padrão do pacote: roteiro do pitch.\n\\input{pitch.tex}\n"
-    )
-    sources = ["docs/artigo-fonte.md", "docs/artigo.md", "docs/pitch.md", "docs/acompanhamento.md"]
+    sources = ["docs/artigo-fonte.md", "docs/artigo.md", "docs/acompanhamento.md"]
     files = sorted(p for p in OUT.rglob("*") if p.is_file() and p.suffix in (".tex", ".png"))
     manifest = {
         "source_documents": {
@@ -270,7 +264,7 @@ def main():
     (CP7 / "fontes_latex.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     )
-    print("Fontes LaTeX geradas: artigo, pitch e acompanhamento.")
+    print("Fontes LaTeX geradas: artigo e acompanhamento; slides preservados.")
 
 
 if __name__ == "__main__":
