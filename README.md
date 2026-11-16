@@ -44,11 +44,17 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 | Acompanhamento | [PDF](docs/acompanhamento.pdf) |
 | Artigo científico (10 páginas) | [PDF](docs/artigo.pdf) |
 | Pitch | [PDF](docs/pitch.pdf) |
+| Apresentação final no Canva (20 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) · [PDF exportado](output/apresentacao/ENEM_2023_Canva.pdf) · [Roteiro](output/apresentacao/Guia_ENEM_20_Slides.md) |
 | Resultados dos 11 modelos/configurações iniciais | [Tabela](resultados/comparacao_modelos.csv) · [Gráfico](resultados/figuras/18_comparacao_completa.png) |
 | Registro de experimentos | [CSV](resultados/experimentos.csv) · [Formato e evidências](resultados/README.md) |
 | Seleção e criação de colunas | [CSV](resultados/colunas.csv) |
 | Galeria com explicações | [Abrir](apresentacao/index.html) |
 | Fontes para Overleaf | [Guia](relatorio/README.md) · [ZIP](output/overleaf-enem2023.zip) |
+
+A dashboard apresenta o catálogo completo de validação e os cinco resultados do
+teste final na página **Modelos**. Ela lê as tabelas publicadas e confere seus hashes,
+sem treinar novamente. Exploração e filtros usam exclusivamente o desenvolvimento;
+o snapshot exploratório histórico e seus manifestos permanecem preservados.
 
 Os dados e modelos grandes permanecem locais. Um clone contém código, configurações,
 tabelas agregadas, documentos e figuras. Os nomes históricos das execuções científicas

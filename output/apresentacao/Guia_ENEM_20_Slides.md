@@ -9,7 +9,7 @@ Duração planejada: 12 minutos, a confirmar em ensaio. Joey apresenta slides 1�
 Comparamos modelos para estimar a nota de Ciências da Natureza usando o perfil dos participantes. Todos os resultados científicos desta apresentação usam microdados reais do ENEM 2023.
 
 **Imagem / diagrama**
-Capa editorial azul-petróleo, faixa verde e grandes números sete e três. São quantidades do protocolo, não métricas de desempenho.
+Capa com identidade visual azul-clara, título do ENEM e escopo de dez regressores. A média é uma referência adicional.
 
 **Aprofundamento para perguntas**
 
@@ -138,7 +138,7 @@ As letras são partes fixas dos dados de desenvolvimento. Primeiro treinamos com
 Matriz A/B/C: uma célula de validação em cada linha e duas de treino. As três linhas representam rodadas, não três testes finais.
 
 **Aprofundamento para perguntas**
-A corresponde à dobra 0. Os treinos têm 1.435.960, 1.435.961 e 1.435.961 participantes. A semente 42 torna a divisão reproduzível com os mesmos dados e configuração; não garante transferência para outro ano. A validação orienta comparação e parâmetros. O teste final permanece reservado até escolher e congelar as receitas.
+A corresponde à dobra 0. Os treinos têm 1.435.960, 1.435.961 e 1.435.961 participantes. A semente 42 torna a divisão reproduzível com os mesmos dados e configuração; não garante transferência para outro ano. A validação orienta comparação e parâmetros. O teste ficou separado durante as escolhas. As receitas foram congeladas antes da avaliação final, já concluída e apresentada no slide 16.
 
 **Trechos exatos de código**
 ```python
@@ -167,7 +167,7 @@ src/enem_base/splits.py, linhas 31–46:
 **Autor:** Joey · **Tempo planejado:** 65s
 
 **Fala sugerida**
-Todos os sete algoritmos foram treinados nas três dobras. Bagging e Pasting diferem na reposição. Random Forest também sorteia atributos. Boosting constrói árvores em sequência. KNN usa perfis próximos e a SVM aprende uma fórmula linear. O Stacking combina dois modelos de base.
+Dez regressores foram treinados nas mesmas três dobras, além da média de referência. A tabela detalha o recorte de sete famílias; linear, Ridge e árvore isolada também foram avaliados. Bagging e Pasting diferem na reposição. Random Forest também sorteia atributos. Boosting constrói árvores em sequência. KNN usa perfis próximos e a SVM aprende uma fórmula linear. O Stacking combina dois modelos de base.
 
 **Imagem / diagrama**
 Comparação por mecanismo e configuração, mantendo os nomes das sete famílias separados.
@@ -320,14 +320,14 @@ def regression_metrics(observed, predicted) -> dict:
 
 **Fonte:** Código e dados reais do projeto.
 
-## Slide 10 — Comparação dos sete e escolha do trio
+## Slide 10 — Catálogo completo e seleção pelo RMSE
 **Autor:** Joey · **Tempo planejado:** 20s
 
 **Fala sugerida**
-O Stacking teve o menor RMSE médio entre as sete famílias, seguido de SVM e Random Forest. Todos foram avaliados nas mesmas dobras. Os outros quatro tiveram erro maior nessas configurações, por isso ficaram fora do teste reservado.
+No catálogo completo, os menores RMSE médios foram Stacking (76,174516), Ridge (76,483610) e linear (76,483799). No recorte de sete famílias, o trio foi Stacking, SVM e Random Forest. Todos usam as mesmas dobras. As buscas cobriram a união dos dois trios, com cinco modelos. Stacking foi a solução selecionada no desenvolvimento e seguiu para o teste com as referências obrigatórias e os dois modelos adicionais.
 
 **Imagem / diagrama**
-Gráfico real com RMSE, MAE e R², fonte e DP. Aponte valores, não apenas tamanho das barras.
+Gráfico original 18_comparacao_completa.png: RMSE médio e DP dos dez regressores e da média nas três dobras. Menor é melhor. Ridge e linear empatam visualmente pelo arredondamento, mas Ridge teve RMSE ligeiramente menor antes dele.
 
 **Aprofundamento para perguntas**
 Bagging: 77,484; Gradient Boosting: 77,589; Pasting: 77,609; KNN: 77,896. As diferenças são observadas, sem teste de significância. MAE e R² confirmaram a ordem do trio. No catálogo ampliado, incluindo referências, os três menores RMSE iniciais foram Stacking, Ridge e linear. Isso motivou a busca em cinco modelos sem substituir o trio solicitado. Não foi identificada uma causa única para cada diferença entre algoritmos.
@@ -335,9 +335,11 @@ Bagging: 77,484; Gradient Boosting: 77,589; Pasting: 77,609; KNN: 77,896. As dif
 **Trechos exatos de código**
 Não é necessário neste slide.
 
-**Fonte:** apresentacao/tabelas/comparacao_sete.csv
+**Fonte:** resultados/comparacao_modelos.csv e resultados/figuras/18_comparacao_completa.png
 
 ## Slide 11 — Engenharia de atributos
+
+ESCOLARIDADE_PAIS_MAX exige os dois níveis conhecidos. Se algum responsável tiver escolaridade desconhecida, a feature derivada fica ausente.
 **Autor:** Paulo · **Tempo planejado:** 35s
 
 **Fala sugerida**
@@ -564,7 +566,7 @@ A consistência observada vale para esta divisão do ENEM 2023. Não houve teste
 Duas colunas para limites e evidências. Separe claramente testes de código e validação dos modelos.
 
 **Aprofundamento para perguntas**
-A suíte existente teve 81 testes aprovados em Linux em 09/11/2026. Não alegar Windows ou testes externos nesta apresentação. São 54 avaliações iniciais/variantes, 180 avaliações de busca, 45 pontos iniciais e 45 finais de curvas, cinco modelos no teste. Requisitos e entregas: artigo em LaTeX/PDF, acompanhamento, pitch e código com resultados. dados/splits contém partições locais; previsoes_teste.csv e modelos ajustados ficam locais e fora do Git. O GitHub contém código, métricas agregadas, figuras e manifestos. A limpeza retirou documentos de acompanhamento antigos; não afirmar que arquivos excluídos ainda estão publicados.
+A suíte teve 87 testes de software aprovados em Linux em 15/11/2026, nesta revisão. Não alegar Windows ou testes externos nesta apresentação. São 54 avaliações iniciais/variantes, 180 avaliações de busca, 45 pontos iniciais e 45 finais de curvas, cinco modelos no teste. Requisitos e entregas: artigo em LaTeX/PDF, acompanhamento, pitch e código com resultados. dados/splits contém partições locais; previsoes_teste.csv e modelos ajustados ficam locais e fora do Git. O GitHub contém código, métricas agregadas, figuras e manifestos. A limpeza retirou documentos de acompanhamento antigos; não afirmar que arquivos excluídos ainda estão publicados.
 
 **Trechos exatos de código**
 ```python
@@ -590,7 +592,7 @@ A contribuição é uma comparação nacional com partições consistentes e res
 Fecho com destaque tipográfico, conclusões e fontes. Propostas futuras são identificadas como não executadas.
 
 **Aprofundamento para perguntas**
-Fontes: Inep, Microdados do ENEM 2023 e dicionário; Pedregosa et al., Scikit-learn: Machine Learning in Python, JMLR 2011; Douze et al., The Faiss library, arXiv 2401.08281, 2024; documentação do scikit-learn utilizada no projeto. Referências completas em docs/artigo.md. Para perguntas, consultar o guia, a lista integral dos atributos e as 17 figuras da galeria. Demonstrar código nos slides 5 (pré-processamento), 6 (partições), 7 (modelos), 8 (Stacking), 11–14 (variantes/busca) e 19 (fit somente no treino).
+Fontes: Inep, Microdados do ENEM 2023 e dicionário; Pedregosa et al., Scikit-learn: Machine Learning in Python, JMLR 2011; Douze et al., The Faiss library, arXiv 2401.08281, 2024; documentação do scikit-learn utilizada no projeto. Referências completas em docs/artigo.md. Para perguntas, consultar o guia, a lista integral dos atributos e as 18 figuras originais do projeto. Demonstrar código nos slides 5 (pré-processamento), 6 (partições), 7 (modelos), 8 (Stacking), 11–14 (variantes/busca) e 19 (fit somente no treino).
 
 **Trechos exatos de código**
 Não é necessário neste slide.

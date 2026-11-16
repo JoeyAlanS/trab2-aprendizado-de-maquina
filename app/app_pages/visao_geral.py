@@ -3,6 +3,7 @@
 import streamlit as st
 
 from enem_base.dashboard_ui import (
+    MODEL_LABELS,
     NAVY,
     TEAL,
     chart,
@@ -13,10 +14,12 @@ from enem_base.dashboard_ui import (
     group_table,
     histogram,
     metric_row,
+    model_results,
     number,
 )
 
 data = dashboard_data()
+published = model_results(data)
 cube = current_cube(data)
 st.header("Visão geral", anchor=False)
 cohort_caption(data, cube)
@@ -45,7 +48,13 @@ with st.container(horizontal=True, vertical_alignment="distribute"):
         ("Base nacional", "source_rows", "Registros preservados na importação."),
         ("Com nota CN", "eligible", "Elegíveis, incluindo notas zero."),
         ("Desenvolvimento · 80%", "development", "Exploração e validação em três dobras."),
-        ("Teste reservado · 20%", "test", "Ainda sem avaliação de modelos."),
+        (
+            "Teste final · 20%",
+            "test",
+            "Avaliação final concluída para cinco modelos."
+            if published is not None
+            else "Resultados finais não carregados nesta instalação.",
+        ),
     ):
         with st.container(border=True, width=245, height="stretch"):
             st.caption(label)
@@ -57,18 +66,24 @@ st.caption(
 )
 
 with st.container(border=True):
-    st.subheader("Uma primeira leitura dos modelos", anchor=False)
-    best = data.cv.sort_values("rmse_mean").iloc[0]
-    baseline = data.cv.loc[data.cv.model.eq("baseline"), "rmse_mean"].iloc[0]
+    st.subheader("Resultados dos modelos", anchor=False)
+    cv = published.cv if published is not None else data.cv
+    best = cv.sort_values("rmse_mean").iloc[0]
+    baseline = cv.loc[cv.model.eq("baseline"), "rmse_mean"].iloc[0]
     improvement = (baseline - best.rmse_mean) / baseline * 100
     st.markdown(
-        f"Linear e Ridge apresentaram resultados praticamente iguais na validação inicial: "
+        f"{MODEL_LABELS.get(best.model, best.model)} apresentou o menor erro nesta validação: "
         f"**RMSE de {number(best.rmse_mean, 2)} pontos**, cerca de "
         f"**{number(improvement, 1)}%** abaixo da referência pela média."
     )
     st.caption(
         "Resultados globais de validação cruzada; os filtros não recalculam modelos. "
-        "Ainda não há um modelo final selecionado."
+        + (
+            "O Stacking selecionado no desenvolvimento já foi avaliado no teste: "
+            "RMSE de 76,190 pontos. Consulte as métricas finais na página Modelos."
+            if published is not None
+            else "Somente o resumo inicial está disponível neste painel."
+        )
     )
     st.page_link(
         "app_pages/modelos.py", label="Ver comparação dos modelos", icon=":material/arrow_forward:"

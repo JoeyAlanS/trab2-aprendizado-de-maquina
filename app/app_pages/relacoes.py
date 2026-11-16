@@ -347,16 +347,17 @@ elif mode == "Associações entre entradas":
     )
 
 else:
-    st.subheader("Relatório técnico em LaTeX", anchor=False)
+    st.subheader("Artigo científico em LaTeX", anchor=False)
     st.markdown(
         "O relatório documenta a origem dos dados, limpeza, partições, "
-        "varredura das relações, resultados iniciais dos modelos, funcionamento do frontend "
-        "e limites do estudo. O teste permanece reservado."
+        "variantes, comparação dos modelos, seleção no desenvolvimento, "
+        "avaliação final e limites do estudo. As análises interativas desta página "
+        "continuam restritas ao desenvolvimento."
     )
-    pdf = PROJECT_ROOT / "output/pdf/relatorio_ciencias_natureza.pdf"
+    pdf = PROJECT_ROOT / "docs/artigo.pdf"
     if pdf.exists():
         st.download_button(
-            "Baixar relatório em PDF",
+            "Baixar artigo em PDF",
             pdf.read_bytes(),
             file_name=pdf.name,
             mime="application/pdf",
@@ -367,7 +368,7 @@ else:
         st.caption("Fonte editável e figuras na pasta relatorio/ do projeto.")
     else:
         st.info(
-            "Relatório em geração. "
+            "Artigo não encontrado nesta instalação. "
             "As análises completas já podem ser consultadas nas outras opções."
         )
     package = BytesIO()
@@ -384,7 +385,8 @@ else:
             )
         archive.writestr(
             "LEIA-ME.txt",
-            "Somente desenvolvimento. Teste reservado. "
+            "Tabelas exclusivamente do desenvolvimento. "
+            "Os resultados do teste final são apresentados separadamente na página Modelos. "
             "Efeitos principais excluem ausências por par; perfis e cruzamentos as preservam. "
             "Códigos seguem o dicionário oficial ENEM 2023. Separador ; e decimal vírgula.",
         )

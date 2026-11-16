@@ -1,6 +1,8 @@
-Apresentação final: ENEM 2023 — Design final completo — 20 slides
-Canva: https://www.canva.com/d/LPztrNX-s59YsAE
+Apresentação final: ENEM 2023 — 20 slides revisados
+Canva: https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit
+PDF exportado do Canva: ENEM_2023_Canva.pdf
 Roteiro planejado: 12 minutos (Joey 1–10, Paulo 11–20).
 Guia de fala: Guia_ENEM_20_Slides.md
-Fonte editável de importação: ENEM_2023_Design_Final.html
+Fonte de conteúdo para importação: ENEM_2023_Design_Final.html
+O design final editável está no Canva; o HTML conserva o conteúdo e seu modelo de origem.
 Os tempos são planejados, ainda dependem de ensaio.

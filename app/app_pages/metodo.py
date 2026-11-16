@@ -6,9 +6,10 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from enem_base.dashboard_ui import GOLD, base_chart, chart, dashboard_data, number
+from enem_base.dashboard_ui import GOLD, base_chart, chart, dashboard_data, model_results, number
 
 data = dashboard_data()
+published = model_results(data)
 st.header("Qualidade e método", anchor=False)
 st.caption("Diagnósticos globais. Os filtros laterais não alteram esta página.")
 quality = data.quality
@@ -106,42 +107,63 @@ with st.container(border=True):
         "Não houve remoção de participantes por perfil ou por nota zero.\n\n"
         "**2. Alvo observado → divisão 80/20**\n\n"
         "NU_NOTA_CN é o alvo. Apenas sua ausência impede entrada na regressão. "
-        "A partição é fixa, com semente 42 e teste reservado.\n\n"
+        "A partição é fixa, com semente 42. O teste fica separado das decisões "
+        "de desenvolvimento e é usado na avaliação final após congelar as receitas.\n\n"
         "**3. Desenvolvimento → validação em três dobras**\n\n"
         "Imputação numérica pela mediana, padronização e codificação one-hot são ajustadas "
         "no treino de cada dobra. Notas de outras áreas, respostas, presença e identificadores "
         "não entram como preditores.\n\n"
-        "**4. Dashboard → agregados do desenvolvimento**\n\n"
+        "**4. Exploração → agregados do desenvolvimento**\n\n"
         "Filtros combinam contagens, somas e somas dos quadrados das notas originais. "
         "As médias são ponderadas pelo número de participantes. O histograma usa intervalos "
         "de 25 pontos; não é usado para aproximar as médias ou o desvio padrão."
     )
 
-with st.expander("Etapas ainda pendentes"):
-    st.markdown(
-        "- Ampliar e comparar as famílias de modelos exigidas.\n"
-        "- Executar seleção de variáveis, PCA, buscas e análises complementares.\n"
-        "- Consolidar hipóteses e curvas de aprendizagem.\n"
-        "- Congelar a seleção, avaliar o teste uma única vez e analisar os erros.\n"
-        "- Concluir o artigo e a apresentação com os resultados finais."
+if published is not None:
+    with st.expander("Experimentos concluídos e próximos estudos"):
+        st.markdown(
+            "- Dez regressores e média: 33 avaliações iniciais nas três dobras.\n"
+            "- Engenharia, seleção, PCA, ponderação e ablações: 21 avaliações adicionais.\n"
+            "- Busca: cinco modelos × 12 configurações × três dobras = 180 avaliações.\n"
+            "- Curvas de Stacking, SVM e Random Forest: 45 pontos iniciais e 45 finais, "
+            "com reuso registrado de ajustes compatíveis.\n"
+            "- Stacking selecionado no desenvolvimento; cinco modelos avaliados no teste final.\n"
+            "- Artigo, tabelas e figuras dos resultados publicados no repositório.\n\n"
+            "**Próximos estudos, ainda não executados:** outra edição do ENEM, "
+            "partições por grupos e intervalos de predição. "
+            "Não houve teste de significância entre modelos."
+        )
+else:
+    st.info(
+        "O painel carregou apenas o snapshot exploratório inicial. "
+        "A ausência dos resultados finais nesta instalação não indica experimentos pendentes."
     )
 with st.expander("Rastreabilidade e downloads"):
     st.caption(
         f"Snapshot gerado em {data.manifest['created_at_utc']}. "
         "Arquivos agregados e resultados conferidos por hash na leitura."
     )
-    st.json(
-        {
-            key: data.manifest[key]
-            for key in (
-                "source_sha256",
-                "splits_sha256",
-                "study_sha256",
-                "dictionary_sha256",
-                "test_evaluated",
-            )
-        }
+    st.caption(
+        "O manifesto abaixo pertence ao snapshot histórico de exploração: "
+        "test_evaluated=false descreve esse artefato, não o estado atual do projeto."
     )
+    provenance = {
+        key: data.manifest[key]
+        for key in (
+            "source_sha256",
+            "splits_sha256",
+            "study_sha256",
+            "dictionary_sha256",
+            "test_evaluated",
+        )
+    }
+    st.json(provenance)
+    if published is not None:
+        st.caption(
+            "A página Modelos lê a entrega posterior, com hashes próprios e teste concluído. "
+            "Os manifestos históricos permanecem preservados."
+        )
+        st.json({"test_evaluated": True, **published.provenance})
     st.download_button(
         "Baixar manifesto do painel",
         json.dumps(data.manifest, ensure_ascii=False, indent=2),

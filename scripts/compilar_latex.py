@@ -8,7 +8,6 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CP7 = ROOT / "resultados/ciencias_natureza/checkpoint-7-2026-11-07"
 DOCUMENTS = {"artigo": "artigo_latex", "pitch": "pitch", "acompanhamento": "acompanhamento"}
 
 
@@ -17,6 +16,7 @@ def main():
     parser.add_argument(
         "--tectonic", default="tectonic", help="Executável Tectonic 0.17.0 ou compatível"
     )
+    parser.add_argument("--documents", nargs="+", choices=DOCUMENTS, default=list(DOCUMENTS))
     args = parser.parse_args()
     engine = shutil.which(args.tectonic)
     if engine is None:
@@ -28,7 +28,8 @@ def main():
     build.mkdir(parents=True, exist_ok=True)
     output.mkdir(parents=True, exist_ok=True)
     records = []
-    for stem, destination in DOCUMENTS.items():
+    for stem in args.documents:
+        destination = DOCUMENTS[stem]
         command = [engine, "--keep-logs", "--outdir", str(build), f"{stem}.tex"]
         result = subprocess.run(command, cwd=ROOT / "relatorio", text=True, capture_output=True)
         (build / f"{stem}.console.txt").write_text(result.stdout + result.stderr)
@@ -39,6 +40,8 @@ def main():
             raise ValueError(f"Revisar composição de {stem}: excesso de largura ou glifo ausente")
         path = output / f"{destination}.pdf"
         shutil.copyfile(build / f"{stem}.pdf", path)
+        if stem == "artigo":
+            shutil.copyfile(path, ROOT / "docs/artigo.pdf")
         records.append(
             {
                 "source": f"relatorio/{stem}.tex",
@@ -52,7 +55,7 @@ def main():
         )
         print(f"Compilado: {path.relative_to(ROOT)}")
     version = subprocess.check_output([engine, "--version"], text=True).strip()
-    (CP7 / "compilacao_latex.json").write_text(
+    (build / "compilacao_latex.json").write_text(
         json.dumps(
             {
                 "status": "passed",

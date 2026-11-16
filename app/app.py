@@ -2,7 +2,7 @@
 
 import streamlit as st
 
-from enem_base.dashboard_ui import dashboard_data, sidebar_filters
+from enem_base.dashboard_ui import dashboard_data, model_results, sidebar_filters
 
 st.set_page_config(
     page_title="Ciências da Natureza | ENEM 2023",
@@ -32,20 +32,24 @@ st.title("Ciências da Natureza", anchor=False)
 st.markdown("Perfil socioeconômico, contexto escolar e desempenho no exame.")
 with st.container(horizontal=True):
     st.badge("Dados oficiais do Inep", color="green", icon=":material/verified:")
-    st.badge("Estudo em andamento", color="blue")
 
 try:
     data = dashboard_data()
+    results = model_results(data)
 except (OSError, ValueError, KeyError) as error:
     st.error("Os dados do painel estão ausentes ou não passaram na verificação de integridade.")
     st.markdown(
-        "Prepare o snapshot seguindo `docs/frontend.md`. "
+        "Prepare os dados e resultados seguindo o README do repositório. "
         "Nenhum dado fictício é usado como substituto."
     )
     with st.expander("Detalhe para diagnóstico"):
         st.code(str(error), language=None)
     st.stop()
 
+st.badge(
+    "Avaliação final concluída" if results is not None else "Resumo de desenvolvimento",
+    color="green" if results is not None else "blue",
+)
 sidebar_filters(data)
 page.run()
 

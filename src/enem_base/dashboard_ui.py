@@ -17,6 +17,7 @@ from enem_base.dashboard import (
     load_dashboard,
     statistics,
 )
+from enem_base.dashboard_results import RESULT_ASSETS, ModelResults, load_model_results
 from enem_base.database import DatabaseData, load_database
 from enem_base.relations import RELATION_ASSETS, RelationData, load_relations
 
@@ -33,6 +34,14 @@ MODEL_LABELS = {
     "linear": "Regressão linear",
     "ridge": "Ridge",
     "arvore": "Árvore de decisão",
+    "svm": "SVM linear",
+    "knn": "KNN (25 vizinhos)",
+    "bagging": "Bagging",
+    "pasting": "Pasting",
+    "random_forest": "Random Forest",
+    "boosting": "Gradient Boosting",
+    "stacking": "Stacking",
+    "linear_reference": "Linear de referência",
 }
 
 
@@ -81,6 +90,33 @@ def dashboard_data() -> DashboardData:
         for name in ("manifesto.json", *ASSETS)
     )
     return _cached_data(str(path), signature)
+
+
+@st.cache_data(max_entries=2, ttl=3600, show_spinner="Conferindo os resultados finais…")
+def _cached_results(path: str, signature: tuple, expected: dict) -> ModelResults:
+    return load_model_results(Path(path), expected)
+
+
+def model_results(data: DashboardData) -> ModelResults | None:
+    explicit = os.environ.get("ENEM_RESULTS_DIR")
+    if not explicit and any(
+        os.environ.get(name)
+        for name in ("ENEM_DASHBOARD_DIR", "ENEM_RELATIONS_DIR", "ENEM_DATABASE")
+    ):
+        # Uma fonte explicitamente selecionada nunca herda resultados nacionais.
+        return None
+    path = Path(explicit) if explicit else PROJECT_ROOT / "resultados"
+    if not explicit and not (path / "manifesto_entrega.json").exists():
+        return None
+    signature = tuple(
+        (name, (path / name).stat().st_mtime_ns, (path / name).stat().st_size)
+        for name in ("manifesto_entrega.json", *RESULT_ASSETS)
+    )
+    expected = {
+        key: data.manifest[key]
+        for key in ("source_sha256", "study_sha256", "target", "n_development", "population")
+    }
+    return _cached_results(str(path), signature, expected)
 
 
 @st.cache_data(max_entries=2, ttl=3600, show_spinner="Conferindo as análises de relações…")
@@ -179,7 +215,10 @@ def sidebar_filters(data: DashboardData) -> None:
         st.divider()
         st.markdown(f"**{number(current)} participantes** no recorte")
         st.caption("Sem seleção de UF = todas. Somente desenvolvimento; notas zero preservadas.")
-        st.badge("Teste reservado", color="blue", icon=":material/lock:")
+        if model_results(data) is not None:
+            st.badge("Teste final concluído", color="green", icon=":material/check_circle:")
+        else:
+            st.badge("Exploração do desenvolvimento", color="blue")
 
 
 def current_cube(data: DashboardData) -> pd.DataFrame:

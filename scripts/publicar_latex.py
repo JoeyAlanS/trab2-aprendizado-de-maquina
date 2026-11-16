@@ -1,5 +1,6 @@
 """Gerar fontes portáveis da entrega; não treina nem consulta novos dados de teste."""
 
+import argparse
 import hashlib
 import json
 import re
@@ -204,13 +205,6 @@ def article():
                 )
                 abstract = False
             else:
-                if page_no == 8 and block.startswith("A Figura 6 mostra"):
-                    block = (
-                        "Na Figura 6, as previsões ocupam faixa mais estreita que as notas "
-                        "observadas. Os resíduos incluem notas zero com erros negativos. "
-                        "Os extremos são aproximados de valores intermediários, apesar "
-                        "do RMSE global semelhante na validação e no teste."
-                    )
                 value = inline(block)
                 if abstract or page_no == 10:
                     tex.append(
@@ -245,9 +239,15 @@ def document(name):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--article-only", action="store_true")
+    args = parser.parse_args()
     OUT.mkdir(exist_ok=True)
     (OUT / "figuras").mkdir(exist_ok=True)
     article()
+    if args.article_only:
+        print("Artigo LaTeX gerado; slides e evidências históricas preservados.")
+        return
     document("pitch")
     document("acompanhamento")
     (OUT / "main.tex").write_text(

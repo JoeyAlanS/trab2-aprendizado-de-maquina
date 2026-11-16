@@ -18,11 +18,12 @@ from enem_base.dashboard import (
     load_dashboard,
     statistics,
 )
+from enem_base.dashboard_results import load_model_results
 from enem_base.database import build_database, load_database, readonly_connection
 from enem_base.exploration import explore_development
 from enem_base.ingestion import prepare
 from enem_base.modeling import compare_models
-from enem_base.provenance import write_json
+from enem_base.provenance import sha256_file, write_json
 from enem_base.relations import build_relations, load_relations, pair_cells
 from enem_base.study import StudyConfig, create_study_splits, load_development
 
@@ -198,6 +199,113 @@ def test_ui_missing_bundle_explains_recovery(tmp_path, monkeypatch):
     assert not at.exception
     assert at.error and "integridade" in at.error[0].value
     assert not at.metric
+
+
+@pytest.fixture
+def published_results(dashboard_bundle, tmp_path):
+    """Tabelas agregadas adaptadas à população fictícia, apenas para testar a UI."""
+    import pandas as pd
+
+    output = tmp_path / "published"
+    output.mkdir()
+    expected = load_dashboard(dashboard_bundle).manifest
+    experiments = pd.read_csv(ROOT / "resultados/experimentos.csv")
+    for key in ("source_sha256", "study_sha256", "target", "n_development"):
+        experiments.loc[experiments[key].notna(), key] = expected[key]
+    initial = experiments.stage.eq("comparacao_inicial")
+    folds = initial & experiments.row_type.eq("fold")
+    experiments.loc[folds, "n_train"] = 32
+    experiments.loc[folds, "n_evaluated"] = 16
+    experiments.loc[initial & experiments.row_type.eq("summary"), "n_evaluated"] = 48
+    final = experiments.stage.eq("teste_final")
+    experiments.loc[final, "n_train"] = 48
+    experiments.loc[final, "n_evaluated"] = 12
+    experiments.to_csv(output / "experimentos.csv", index=False)
+    (output / "comparacao_modelos.csv").write_bytes(
+        (ROOT / "resultados/comparacao_modelos.csv").read_bytes()
+    )
+    write_json(
+        output / "manifesto_entrega.json",
+        {
+            "status": "passed",
+            "experiment_rows": len(experiments),
+            "test_rows": 12,
+            "outputs": {
+                f"resultados/{name}": sha256_file(output / name)
+                for name in ("experimentos.csv", "comparacao_modelos.csv")
+            },
+        },
+    )
+    return output, expected
+
+
+def test_published_results_separate_cv_from_test_and_select_on_cv(published_results):
+    path, expected = published_results
+    results = load_model_results(path, expected)
+    assert len(results.cv) == 11
+    assert len(results.folds) == 33
+    assert len(results.test) == 5
+    assert results.selected_model == "stacking"
+    assert results.folds.evaluated_set.eq("development_cv").all()
+    assert results.test.evaluated_set.eq("test").all()
+    assert "ridge" in set(results.cv.model) - set(results.test.model)
+
+
+def test_published_results_reject_corruption_and_other_source(published_results):
+    path, expected = published_results
+    with pytest.raises(ValueError, match="source_sha256"):
+        load_model_results(path, {**expected, "source_sha256": "other-source"})
+    with (path / "comparacao_modelos.csv").open("a") as stream:
+        stream.write("\n")
+    with pytest.raises(ValueError, match="Integridade"):
+        load_model_results(path, expected)
+
+
+@pytest.mark.parametrize("change", ["missing_fold", "wrong_summary", "test_as_cv"])
+def test_published_results_reconcile_sealed_tables(published_results, change):
+    import json
+
+    import pandas as pd
+
+    path, expected = published_results
+    target = path / "experimentos.csv"
+    frame = pd.read_csv(target)
+    if change == "missing_fold":
+        frame = frame.drop(frame.index[0])
+    elif change == "wrong_summary":
+        row = frame.index[frame.row_type.eq("summary")][0]
+        frame.loc[row, "rmse"] += 1
+    else:
+        frame.loc[frame.stage.eq("teste_final"), "evaluated_set"] = "development_cv"
+    frame.to_csv(target, index=False)
+    manifest = json.loads((path / "manifesto_entrega.json").read_text())
+    manifest["experiment_rows"] = len(frame)
+    manifest["outputs"]["resultados/experimentos.csv"] = sha256_file(target)
+    write_json(path / "manifesto_entrega.json", manifest)
+    with pytest.raises(ValueError, match="Catálogo|Resumo"):
+        load_model_results(path, expected)
+
+
+def test_ui_completed_experiments_and_test_are_visible(
+    dashboard_bundle, published_results, monkeypatch
+):
+    path, _ = published_results
+    monkeypatch.setenv("ENEM_DASHBOARD_DIR", str(dashboard_bundle))
+    monkeypatch.setenv("ENEM_RESULTS_DIR", str(path))
+    at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=30).run()
+    assert not at.exception
+    assert any("Stacking" in item.value for item in at.markdown)
+    at.switch_page("app_pages/modelos.py").run()
+    assert not at.exception
+    assert [len(table.value) for table in at.dataframe] == [11, 5]
+    assert not at.success
+    assert not any("pendentes" in item.value for item in at.info)
+    at.segmented_control(key="cv_metric").set_value("R²").run()
+    assert not at.exception
+    assert len(at.dataframe[1].value) == 5
+    at.switch_page("app_pages/metodo.py").run()
+    assert not at.exception
+    assert any("Experimentos concluídos" in item.label for item in at.expander)
 
 
 def test_relations_cover_all_pairs_and_missing_sensitivity(dashboard_study, tmp_path):
