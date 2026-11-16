@@ -43,6 +43,7 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 
 | Entrega | Acesso |
 |---|---|
+| Dashboard no Streamlit | [Abrir aplicativo](https://enem2023-ciencias-natureza.streamlit.app/) · estado da implantação abaixo |
 | Acompanhamento | [PDF](docs/acompanhamento.pdf) |
 | Artigo científico (10 páginas) | [PDF](docs/artigo.pdf) |
 | Pitch em LaTeX (23 slides; meta de 13 minutos) | [PDF](docs/pitch.pdf) · [Fonte](relatorio/slides_pitch.tex) |
@@ -64,6 +65,13 @@ deve durar **10 a 15 minutos**, conforme o enunciado; a meta de ensaio é 13 min
 com 6min30 por autor.
 
 ### Publicação no Streamlit Community Cloud
+
+Endereço criado: [enem2023-ciencias-natureza.streamlit.app](https://enem2023-ciencias-natureza.streamlit.app/).
+O compartilhamento está público. Na verificação de 16/11/2026, a instalação das
+dependências e a inicialização do servidor terminaram, mas o endereço permaneceu
+na tela de carregamento mesmo após uma reinicialização. **A navegação pública
+ainda precisa ser confirmada.** As cinco páginas passaram na conferência local
+de um clone sem microdados ou SQLite; isso não substitui a verificação na nuvem.
 
 A configuração está preparada para execução sem os arquivos individuais locais.
 Após entrar em [share.streamlit.io](https://share.streamlit.io/), criar o aplicativo
