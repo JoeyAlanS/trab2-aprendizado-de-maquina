@@ -43,7 +43,7 @@ def main():
     for name in required:
         if not (ROOT / name).is_file():
             raise ValueError(f"Arquivo da entrega ausente: {name}")
-    for name in ("acompanhamento", "artigo", "pitch"):
+    for name in ("acompanhamento", "artigo", "apresentacao_canva"):
         path = ROOT / "docs" / f"{name}.pdf"
         with path.open("rb") as stream:
             if stream.read(5) != b"%PDF-":
@@ -66,10 +66,7 @@ def main():
         verified += 1
     print(f"Integridade: {verified} produtos conferidos, sem alterar resultados.")
 
-    slides = (ROOT / "relatorio/slides_pitch.tex").read_text(encoding="utf-8")
-    if len(re.findall(r"\\begin\{frame\}", slides)) != 23:
-        raise ValueError("O pitch em LaTeX deve conter 23 slides.")
-    for source in ("slides_pitch.tex", "slides_acompanhamento.tex", "artigo.tex"):
+    for source in ("slides_acompanhamento.tex", "artigo.tex"):
         content = (ROOT / "relatorio" / source).read_text(encoding="utf-8")
         images = re.findall(r"\\(?:includegraphics(?:\[[^\]]*\])?|figura)\{([^}]+)\}", content)
         for image in images:
@@ -92,13 +89,12 @@ def main():
                 raise ValueError(f"Pacote corrompido: {name}")
             for source in (
                 "main.tex",
-                "slides_pitch.tex",
                 "slides_acompanhamento.tex",
                 "artigo.tex",
             ):
                 if package.read(source) != (ROOT / "relatorio" / source).read_bytes():
                     raise ValueError(f"Fonte desatualizada no pacote {name}: {source}")
-    print("Documentos: PDFs presentes; pitch com 23 slides; imagens e pacote Overleaf íntegros.")
+    print("Documentos: PDFs presentes; apresentação do Canva; imagens e pacote Overleaf íntegros.")
     print("Publicação conferida. Esta verificação não publica o aplicativo no Streamlit.")
 
 

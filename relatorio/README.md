@@ -11,7 +11,7 @@ Não depende dos microdados, do Python nem de caminhos pessoais para compilar.
 
 | Fonte | Conteúdo | PDF da entrega |
 |---|---|---|
-| `main.tex` ou `slides_pitch.tex` | 23 slides; meta de 13 minutos; Joey 1-10, Paulo 11-23 | `docs/pitch.pdf` |
+| `entrega.tex` | Documento de entrega de uma página, com identificação e sete links | `docs/entrega.pdf` |
 | `slides_acompanhamento.tex` | 7 slides; retrospectiva do desenvolvimento, sem métricas de teste | `docs/acompanhamento.pdf` |
 | `artigo.tex` | Artigo científico revisado, 10 páginas | `docs/artigo.pdf` |
 | `acompanhamento.tex` | Texto de andamento e conferência | `output/pdf/acompanhamento.pdf` |
@@ -21,16 +21,14 @@ O tema compartilhado dos slides está em `slides_tema.tex`. Figuras ficam em
 LaTeX comuns e fontes portáteis. A compilação local usa Tectonic (motor XeTeX).
 A importação dentro de uma conta Overleaf não foi executada.
 
-O pitch em LaTeX segue a sequência temática dos 23 slides finais do
-Canva, incluindo Linear, Ridge e Árvore nos slides 8, 9 e 10. O PDF em LaTeX tem
-design próprio e usa os gráficos originais do projeto; não é uma exportação do Canva.
-O enunciado prevê 10 a 15 minutos. A meta de ensaio é 13 minutos, divididos em
-6min30 para cada autor.
+A apresentação final é exportada diretamente do Canva para `docs/apresentacao_canva.pdf`,
+preservando o design original e os 23 slides. Sua versão editável fica no Canva.
+O pacote LaTeX não contém uma apresentação alternativa do pitch.
 
 Os slides de acompanhamento são uma **retrospectiva preparada agora**; não comprovam
 que uma apresentação ou submissão ocorreu no passado. Apresentam apenas informações
 e resultados do desenvolvimento, com os experimentos seguintes identificados como
-posteriormente realizados. O pitch inclui os resultados finais reais.
+posteriormente realizados. A apresentação do Canva inclui os resultados finais reais.
 
 ## Compilar e empacotar localmente
 
@@ -40,7 +38,7 @@ Na raiz do repositório, com o executável Tectonic disponível:
 .venv/bin/python scripts/compilar_slides.py --tectonic tectonic
 ```
 
-Isso gera `output/pdf/slides_pitch.pdf` e `slides_acompanhamento.pdf`, publica cópias
+Isso gera `output/pdf/slides_acompanhamento.pdf`, publica uma cópia
 em `docs/` e atualiza o ZIP independente. Logs e auxiliares ficam em `tmp/`, ignorada
 pelo Git. Revisar as páginas renderizadas depois de alterações de diagramação.
 

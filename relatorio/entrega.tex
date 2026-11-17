@@ -1,0 +1,55 @@
+% Documento independente. Compilar com XeLaTeX no Overleaf ou Tectonic.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{helvet,geometry,array,tabularx,xcolor,colortbl,hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\geometry{left=1.8cm,right=1.8cm,top=2.2cm,bottom=1.8cm}
+\definecolor{titulo}{HTML}{121C30}
+\definecolor{texto}{HTML}{34435B}
+\definecolor{linha}{HTML}{D9E2EF}
+\definecolor{fundo}{HTML}{F6F8FB}
+\hypersetup{colorlinks=true,urlcolor=blue,pdftitle={Documento de Entrega - Projeto 2 - ENEM 2023},pdfauthor={Joey Alan de Freitas Solis; Paulo Henrico}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\setlength{\tabcolsep}{9pt}
+\arrayrulecolor{linha}
+\newcommand{\secao}[1]{\par\vspace{11pt}{\color{titulo}\fontsize{20}{24}\selectfont\bfseries #1}\par\vspace{3pt}}
+\newcommand{\acesso}[2]{\href{#1}{\underline{#2}}}
+\begin{document}
+\color{texto}
+{\color{titulo}\fontsize{21}{26}\selectfont\bfseries Documento de Entrega do Projeto}\par
+\vspace{9pt}
+{\color{titulo}\large\bfseries Projeto 2 - Aprendizado de Máquina com Dados do ENEM}\par
+
+\secao{Identificação do Trabalho}
+\begin{itemize}
+\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}
+\item \textbf{Projeto:} Comparação nacional de modelos de regressão - ENEM 2023.
+\item \textbf{Autores:} Joey Alan de Freitas Solis e Paulo Henrico.
+\item \textbf{Instituição:} Universidade de Fortaleza (Unifor). \textbf{Professor:} Tulio.
+\item \textbf{Alvo:} Nota de Ciências da Natureza (\texttt{NU\_NOTA\_CN}).
+\item \textbf{Data do documento:} 16 de novembro de 2026.
+\end{itemize}
+
+\secao{Central de Entregáveis e Links}
+A tabela reúne os documentos, as apresentações, o painel e as evidências dos experimentos do Projeto 2. Todos os links abaixo são clicáveis.
+
+\vspace{3pt}
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash\bfseries}p{4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{3.45cm}|}
+\hline
+\rowcolor{fundo}\color{titulo}Entregável & \color{titulo}\textbf{Descrição} & \color{titulo}\textbf{Link de Acesso}\\\hline
+Apresentação no Canva & Apresentação final com 23 slides sobre metodologia, modelos e resultados. & \acesso{https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit}{Acessar Slides}\\\hline
+Apresentação em PDF & Exportação da apresentação final do Canva, preservando o design dos 23 slides. & \acesso{https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina/blob/master/docs/apresentacao_canva.pdf}{Acessar PDF}\\\hline
+Artigo Científico & Artigo de dez páginas com métodos, resultados, discussão e referências. & \acesso{https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina/blob/master/docs/artigo.pdf}{Acessar Artigo}\\\hline
+Acompanhamento & Apresentação do desenvolvimento, dos dados e dos resultados preliminares. & \acesso{https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina/blob/master/docs/acompanhamento.pdf}{Acessar PDF}\\\hline
+Dashboard Interativo & Painel de exploração e comparação dos modelos. & \acesso{https://enem2023-ciencias-natureza.streamlit.app/}{Acessar Dashboard}\\\hline
+Repositório no GitHub & Código-fonte, dependências, documentação e instruções de reprodução. & \acesso{https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina}{Acessar Repositório}\\\hline
+Resultados e Experimentos & Métricas por dobra, buscas, variantes e avaliação final, separando validação e teste. & \acesso{https://github.com/JoeyAlanS/trab2-aprendizado-de-maquina/blob/master/resultados/experimentos.csv}{Acessar Resultados}\\\hline
+\end{tabularx}}
+
+\end{document}

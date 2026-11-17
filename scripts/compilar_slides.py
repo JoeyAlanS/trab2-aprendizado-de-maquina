@@ -20,8 +20,8 @@ def main():
     output = ROOT / "output/pdf"
     build.mkdir(parents=True, exist_ok=True)
     output.mkdir(parents=True, exist_ok=True)
-    # Compilar e conferir ambos antes de substituir os documentos da entrega.
-    documents = [("slides_pitch", "pitch"), ("slides_acompanhamento", "acompanhamento")]
+    # A apresentação final é exportada do Canva; compilar somente o acompanhamento.
+    documents = [("slides_acompanhamento", "acompanhamento")]
     for source, _ in documents:
         result = subprocess.run(
             [engine, "--keep-logs", "--outdir", str(build), f"{source}.tex"],

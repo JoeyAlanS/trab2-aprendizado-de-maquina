@@ -33,7 +33,7 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 ├── docs/
 │   ├── acompanhamento.pdf
 │   ├── artigo.pdf
-│   ├── pitch.pdf
+│   ├── apresentacao_canva.pdf
 │   └── referencias/           # enunciado e dicionário
 ├── relatorio/                 # fontes LaTeX, figuras e instruções de compilação
 ├── apresentacao/              # galeria comentada para apresentação
@@ -43,10 +43,11 @@ Estudo nacional de **regressão** para estimar a nota de Ciências da Natureza
 
 | Entrega | Acesso |
 |---|---|
-| Dashboard no Streamlit | [Abrir aplicativo](https://enem2023-ciencias-natureza.streamlit.app/) · estado da implantação abaixo |
+| Documento de entrega e central de links | [PDF](docs/entrega.pdf) · [Fonte LaTeX](relatorio/entrega.tex) · [Overleaf](output/entrega-overleaf.zip) |
+| Dashboard no Streamlit | [Abrir aplicativo](https://enem2023-ciencias-natureza.streamlit.app/) |
 | Acompanhamento | [PDF](docs/acompanhamento.pdf) |
 | Artigo científico (10 páginas) | [PDF](docs/artigo.pdf) |
-| Pitch em LaTeX (23 slides; meta de 13 minutos) | [PDF](docs/pitch.pdf) · [Fonte](relatorio/slides_pitch.tex) |
+| Apresentação final em PDF (Canva; 23 slides) | [PDF](docs/apresentacao_canva.pdf) |
 | Apresentação final no Canva (23 slides) | [Editar no Canva](https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit) |
 | Resultados dos 11 modelos/configurações iniciais | [Tabela](resultados/comparacao_modelos.csv) · [Gráfico](resultados/figuras/18_comparacao_completa.png) |
 | Registro de experimentos | [CSV](resultados/experimentos.csv) · [Formato e evidências](resultados/README.md) |
@@ -59,20 +60,9 @@ teste final na página **Modelos**. Ela lê as tabelas publicadas e confere seus
 sem treinar novamente. Exploração e filtros usam exclusivamente o desenvolvimento;
 o snapshot exploratório histórico e seus manifestos permanecem preservados.
 
-O PDF do pitch em LaTeX acompanha a sequência temática dos 23 slides do Canva e
-possui design próprio. A exposição
-deve durar **10 a 15 minutos**, conforme o enunciado; a meta de ensaio é 13 minutos,
-com 6min30 por autor.
-
 ### Publicação no Streamlit Community Cloud
 
 Endereço criado: [enem2023-ciencias-natureza.streamlit.app](https://enem2023-ciencias-natureza.streamlit.app/).
-O compartilhamento está público. Na verificação de 16/11/2026, a instalação das
-dependências e a inicialização do servidor terminaram, mas o endereço permaneceu
-na tela de carregamento mesmo após uma reinicialização. **A navegação pública
-ainda precisa ser confirmada.** As cinco páginas passaram na conferência local
-de um clone sem microdados ou SQLite; isso não substitui a verificação na nuvem.
-
 A configuração está preparada para execução sem os arquivos individuais locais.
 Após entrar em [share.streamlit.io](https://share.streamlit.io/), criar o aplicativo
 com os seguintes campos:

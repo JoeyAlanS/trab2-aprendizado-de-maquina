@@ -1,8 +1,8 @@
 Apresentação final: ENEM 2023 — 23 slides revisados
 Canva: https://www.canva.com/design/DAHbBYEq0BQ/NpBSvagoxA2EQUM0qQ8hSg/edit
 Duração planejada: 13 minutos, dentro dos 10 a 15 exigidos (Joey 1–10, Paulo 11–23; 6min30 cada).
-Pitch em PDF da entrega: ../../docs/pitch.pdf (23 slides em LaTeX, na mesma sequência temática).
+Apresentação em PDF: ../../docs/apresentacao_canva.pdf (exportação original do Canva).
 Fonte de conteúdo para importação: ENEM_2023_Design_Final.html
 O design final editável está no Canva; o HTML conserva o conteúdo e seu modelo de origem.
-O PDF em LaTeX possui design próprio; não é uma exportação visual do Canva.
+O PDF final preserva o design original do Canva.
 Os tempos são planejados, ainda dependem de ensaio.
